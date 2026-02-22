@@ -100,18 +100,37 @@
     </div>
     <a *ngIf="!username" class="font-bold p-button-secondary" icon="pi pi-google" pButton pRipple label="Entrar" href="{{ env.roBackendUrl + '/auth/google' }}"></a>
   </div>
-  <p-dialog header="Apoiar" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visible" [style]="{ 'min-width': '300px' }">
-    <div class="card flex flex-column align-items-center gap-2 flex-wrap">
-      <div>
-        <img src="assets/demo/images/others/qr.jpg" alt="QR" style="width: 300px" />
-      </div>
-      <div class="font-bold" style="background-color: var(--surface-0); color: var(--green-400)">Obrigado!</div>
-      <div>
-        <a href="https://web.facebook.com/zfehu.oivgwhy" target="_blank" rel="noreferrer noopener">
-          <p-chip label="Tong Aphisit" icon="pi pi-facebook"></p-chip>
-        </a>
-      </div>
+  <p-dialog header="Apoiar" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visible" [style]="{ 'min-width': '380px' }">
+    <div class="mb-3 p-3" style="background-color: var(--surface-ground); border-radius: 6px;">
+      <p class="mt-0 mb-2" style="color: var(--text-color-secondary)">
+        Este projeto é uma adaptação para o servidor <strong style="color: var(--primary-color)">LATAM</strong> baseada no calculador original
+        <strong style="color: var(--yellow-300)">RO Calculator</strong> criado por <strong>Tong Aphisit</strong>.
+      </p>
+      <p class="mb-0" style="color: var(--text-color-secondary)">
+        Se quiser apoiar, escolha uma das opções abaixo:
+      </p>
     </div>
+    <p-tabView>
+      <p-tabPanel header="Pix (BR)">
+        <div class="flex flex-column align-items-center gap-2">
+          <div style="color: var(--text-color-secondary)">QR Code Pix em breve</div>
+          <div class="font-bold" style="color: var(--green-400)">Obrigado!</div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Autor Original">
+        <div class="flex flex-column align-items-center gap-2">
+          <div>
+            <img src="assets/demo/images/others/qr.jpg" alt="QR PromptPay" style="width: 280px" />
+          </div>
+          <div class="font-bold" style="color: var(--green-400)">Apoie o criador original!</div>
+          <div>
+            <a href="https://web.facebook.com/zfehu.oivgwhy" target="_blank" rel="noreferrer noopener">
+              <p-chip label="Tong Aphisit" icon="pi pi-facebook"></p-chip>
+            </a>
+          </div>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
   </p-dialog>
 
   <p-dialog header="Informações adicionais" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visibleInfo" [style]="{ width: '50vw' }">

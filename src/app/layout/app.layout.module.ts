@@ -21,6 +21,7 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { ChipModule } from 'primeng/chip';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { TabViewModule } from 'primeng/tabview';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { UserProfileModule } from './pages/user-profile/user-profile.module';
@@ -51,6 +52,7 @@ import { UserProfileModule } from './pages/user-profile/user-profile.module';
     DialogModule,
     ChipModule,
     TabMenuModule,
+    TabViewModule,
     ConfirmDialogModule,
     ToastModule,
     UserProfileModule,
