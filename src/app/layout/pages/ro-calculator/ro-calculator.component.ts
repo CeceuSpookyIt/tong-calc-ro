@@ -2688,4 +2688,45 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.allSelectedMonsterIds = [this.selectedMonster, ...(this.selectedMonsterIds || [])];
     this.isShowMonsterEle = true;
   }
+
+  exportBuild() {
+    const data = toUpsertPresetModel(this.model, this.selectedCharacter);
+    const json = JSON.stringify(data, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    const className = ClassID[this.model.class] || 'build';
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+    a.download = `build-${className}-${timestamp}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  importBuild() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = () => {
+      const file = input.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(reader.result as string);
+          if (!parsed.class) {
+            this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Arquivo inválido: campo "class" não encontrado.' });
+            return;
+          }
+          this.loadItemSet(parsed).subscribe(() => {
+            this.messageService.add({ severity: 'success', summary: 'Importado', detail: 'Build carregada com sucesso.' });
+          });
+        } catch (e) {
+          this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Falha ao ler o arquivo JSON.' });
+        }
+      };
+      reader.readAsText(file);
+    };
+    input.click();
+  }
 }

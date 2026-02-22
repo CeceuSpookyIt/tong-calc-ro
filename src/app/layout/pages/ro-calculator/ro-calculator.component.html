@@ -42,6 +42,8 @@
                 (click)="updatePreset(presetName.value)"
               ></button>
               <button type="button" class="p-button-secondary" pButton icon="pi pi-cog" [disabled]="isInProcessingPreset" (click)="openPresetManagement()"></button>
+              <button type="button" class="p-button-info" pButton icon="pi pi-upload" pTooltip="Exportar Build" [disabled]="!model.class" (click)="exportBuild()"></button>
+              <button type="button" class="p-button-warning" pButton icon="pi pi-download" pTooltip="Importar Build" [disabled]="isInProcessingPreset" (click)="importBuild()"></button>
             </div>
           </div>
           <div class="col-12">
