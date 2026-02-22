@@ -13,5 +13,18 @@
 
   <body>
     <app-root></app-root>
+    <script>
+      // Fallback: load missing item icons from Divine Pride (static CDN)
+      // Uses src check instead of dataset flag so Angular re-renders still trigger fallback
+      document.addEventListener('error', function(e) {
+        var img = e.target;
+        if (img.tagName === 'IMG' && img.src.indexOf('/images/items/') !== -1 && img.src.indexOf('divine-pride') === -1) {
+          var match = img.src.match(/\/images\/items\/(\d+)\.png/);
+          if (match) {
+            img.src = 'https://static.divine-pride.net/images/items/item/' + match[1] + '.png';
+          }
+        }
+      }, true);
+    </script>
   </body>
 </html>

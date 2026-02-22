@@ -48,17 +48,17 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
   env = environment;
 
   infos = [
-    'ข้อมูลไอเทม มอนสเตอร์ และสกิล ทั้งหมดมาจากเว็บ "divine-pride"',
-    'เปลี่ยน Theme ทึ่ปุ่ม Config ตรงขวากลาง',
-    'ข้อมูลที่บันทึกไว้จะถูกเก็บไว้ที่ browser, ถ้าล้างข้อมูล browser ก็จะถูกลบไปด้วย',
-    'เงื่อนไขที่เขียนไว้ว่า "ทุกๆการเรียนรู้สกิล" ต้องกดอัพในช่อง "Learn to get bonuses" ถึงจะได้ bonus, ถ้าไม่มีให้อัพจะให้เป็น bonus เป็น Lv MAX',
-    'options ในแถวอาวุธจะอยู่ตลอด สามารถใช้เป็น What if ได้',
-    'My Magical Element ใน options = เพิ่ม Damage ทางเวทมนตร์ธาตุ ...',
-    'การเปรียบเทียบอาวุธ 2 มือยังไม่รองรับการเปลี่ยนมือซ้าย',
-    'Job 61-64, 66-69 จะได้ Bonus ไม่ตรงเพราะไม่มีข้อมูล',
-    'Tab "Summary" คือ ใส่อะไรบ้าง/อัพสกิลอะไรบ้าง/การคำนวนทั้งหมด',
-    'Tab "Equipments Summary" คือ bonus ของไอเทมแบบภาพรวม',
-    'Tab "Item Descriptions" คือ bonus ของไอเทมแต่ละชิ้นและคำอธิบาย (เอาไว้ตรวจสอบว่าได้ bonus ถูกไหม)',
+    'Dados de itens, monstros e skills vêm do "divine-pride"',
+    'Mude o tema no botão Config (centro-direita)',
+    'Os dados salvos ficam no browser — se limpar os dados do browser, serão apagados',
+    'Condições "para cada nível de skill aprendido" requerem definir o nível em "Learn to get bonuses". Se não tiver opção, o bônus aplica no Lv MAX',
+    'As opções na linha da arma ficam sempre visíveis — use como "What if"',
+    'My Magical Element nas opções = Aumenta dano mágico elemental...',
+    'A comparação de arma de 2 mãos ainda não suporta trocar a mão esquerda',
+    'Job 61-64, 66-69 podem ter bônus imprecisos por falta de dados',
+    'Tab "Summary" = equipamentos, skills e todos os cálculos',
+    'Tab "Equipments Summary" = bônus dos itens de forma geral',
+    'Tab "Item Descriptions" = bônus de cada item e descrição (para verificar se os bônus estão corretos)',
   ];
 
   references: { label: string; link: string; writer: string; date?: string; }[] = [

@@ -293,7 +293,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Abyss Square',
-      label: '[V3] Abyss Square Lv5 (อยู่นอกพื้นที่สกิล)',
+      label: '[V3] Abyss Square Lv5 (fora da área da skill)',
       value: 'Abyss Square==5',
       acd: 0.5,
       fct: 1.5,

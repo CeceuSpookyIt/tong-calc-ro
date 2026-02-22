@@ -161,6 +161,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'Platinum Altar',
   'Poisonous Weapon',
   'Potent Venom',
+  'Potion Pitcher',
   'Power Maximize',
   'Power of Flock',
   'Power of Land',
