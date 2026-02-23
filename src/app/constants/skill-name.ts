@@ -112,6 +112,7 @@ const ACTIVE_PASSIVE_SKILL_NAMES = [
   'Illusion - Shadow',
   'Illusion - Shock',
   'Impositio Manus',
+  'Concentration',
   'Improve Concentration',
   'Improve Dodge',
   'Increase HP Recovery',

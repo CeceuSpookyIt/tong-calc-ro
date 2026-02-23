@@ -374,7 +374,7 @@
                   </div>
                   <div class="col-12" [pTooltip]="statDeltaTooltips['cri_row']" [escape]="false" tooltipPosition="right">
                     CriRate:
-                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalCri || 0 }} %</span>
+                    <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.calc?.totalCri || 0 }}</span>
                     Dmg: <span class="font-semibold px-1 summary_stat_atk">{{ totalSummary?.criDmg || 0 }} %</span>
                   </div>
                   <div class="col-12" [pTooltip]="statDeltaTooltips['melee_range_row']" [escape]="false" tooltipPosition="right">
@@ -465,6 +465,12 @@
         <div class="section-card mt-2">
         <div class="section-header"><i class="pi pi-bolt"></i> Simular</div>
         <div class="grid grid-nogutter battle_summary">
+          <div class="col-12">
+            <div class="field-checkbox my-2">
+              <p-checkbox [(ngModel)]="isRedAura" [binary]="true" inputId="redAura" (ngModelChange)="onSkillClassChange()"></p-checkbox>
+              <label for="redAura" class="font-semibold ml-2">Aura Vermelha (÷1000)</label>
+            </div>
+          </div>
           <div class="col-12" [hidden]="!chanceList?.length">
             <p-fieldset legend="Has a chance" [toggleable]="true">
               <div *ngFor="let category of chanceList" class="field-checkbox my-2">

@@ -320,7 +320,7 @@ export class RuneKnight extends LordKnight {
           label: 'Yes',
           value: 2,
           isUse: true,
-          bonus: { p_size_all: 30, criDmg: 30, melee: 30, range: 30, hpPercent: 30, spPercent: 30 },
+          bonus: { p_size_all: 30, criDmg: 30, melee: 30, range: 30, hpPercent: 30, spPercent: 30, 'autocast__Runic Explosion': '5,30,onhit' },
         },
         { label: 'No', value: 0, isUse: false },
       ],
@@ -332,6 +332,15 @@ export class RuneKnight extends LordKnight {
       isMasteryAtk: true,
       dropdown: [
         { label: 'Yes', value: 1, isUse: true, bonus: { atk: 70 } },
+        { label: 'No', value: 0, isUse: false },
+      ],
+    },
+    {
+      name: 'Concentration',
+      label: 'Concentration 5',
+      inputType: 'selectButton',
+      dropdown: [
+        { label: 'Yes', value: 5, isUse: true, bonus: { atkPercent: 25 } },
         { label: 'No', value: 0, isUse: false },
       ],
     },

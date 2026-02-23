@@ -6,6 +6,7 @@ export interface AutocastEntry {
   chancePercent: number;
   trigger: AutocastTrigger;
   sourceItemName: string;
+  useLearned?: boolean;
 }
 
 export interface AutocastDamageSummary {

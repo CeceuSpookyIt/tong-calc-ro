@@ -253,6 +253,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   chanceList = [] as ChanceModel[];
   selectedChances = [] as string[];
+  isRedAura = false;
 
   isCalculating = false;
   private calculator = new Calculator();
@@ -526,6 +527,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         tap(() => {
           this.calculator.setSelectedChances(this.selectedChances).recalcExtraBonus(this.model.selectedAtkSkill);
           this.totalSummary = this.calculator.getTotalSummary();
+          if (this.isRedAura) {
+            this.applyRedAuraDivisor(this.totalSummary);
+          }
           this.calculateToSelectedMonsters();
 
           if (this.isEnableCompare) {
@@ -806,6 +810,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const calc = this.prepare(this.calculator);
 
     this.totalSummary = calc.getTotalSummary();
+    if (this.isRedAura) {
+      this.applyRedAuraDivisor(this.totalSummary);
+    }
     const modelSummary = calc.getModelSummary() as any;
     this.modelSummary = { ...modelSummary, rawOptionTxts: modelSummary.rawOptionTxts.filter(Boolean) };
     const x = calc.getItemSummary();
@@ -827,6 +834,39 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     // this.possiblyDamages = calc.getPossiblyDamages().map((a) => ({ label: `${a}`, value: a }));
 
     this.calculateToSelectedMonsters();
+  }
+
+  private applyRedAuraDivisor(summary: any) {
+    if (!summary) return;
+    const d = summary.dmg;
+    if (d) {
+      const dmgKeys = [
+        'basicMinDamage', 'basicMaxDamage', 'criMinDamage', 'criMaxDamage',
+        'skillMinDamage', 'skillMaxDamage', 'skillCriMinDamage', 'skillCriMaxDamage',
+        'effectedBasicDamageMin', 'effectedBasicDamageMax',
+        'effectedBasicCriDamageMin', 'effectedBasicCriDamageMax',
+        'effectedSkillDamageMin', 'effectedSkillDamageMax',
+        'basicDps', 'effectedBasicDps', 'skillDps', 'effectedSkillDps',
+      ];
+      for (const key of dmgKeys) {
+        if (typeof d[key] === 'number') {
+          d[key] = Math.floor(d[key] / 1000);
+        }
+      }
+    }
+    const ac = summary.autocast;
+    if (ac) {
+      if (typeof ac.totalDps === 'number') ac.totalDps = Math.floor(ac.totalDps / 1000);
+      if (typeof ac.combinedBasicDps === 'number') ac.combinedBasicDps = Math.floor(ac.combinedBasicDps / 1000);
+      for (const entry of ac.entries || []) {
+        for (const key of ['minDamage', 'maxDamage', 'avgDamage', 'dps']) {
+          if (typeof entry[key] === 'number') entry[key] = Math.floor(entry[key] / 1000);
+        }
+      }
+    }
+    if (summary.calc) {
+      if (typeof summary.calc.dps === 'number') summary.calc.dps = Math.floor(summary.calc.dps / 1000);
+    }
   }
 
   private getStatValue(summary: any, path: string): number {
@@ -1216,7 +1256,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         stats: { elementShortName, level, elementName, raceName, scaleName, health, class: _class },
       } = monster;
 
-      return {
+      const result = {
         id,
         label: `${level} ${name} (${raceName}, ${scaleName.at(0)}, ${elementName})`,
         health,
@@ -1224,6 +1264,14 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         elementName: elementShortName,
         ...calculated,
       };
+      if (this.isRedAura) {
+        for (const key of ['basicMinDamage', 'basicMaxDamage', 'criMinDamage', 'criMaxDamage',
+          'skillMinDamage', 'skillMaxDamage', 'skillCriMinDamage', 'skillCriMaxDamage',
+          'basicDps', 'skillDps']) {
+          if (typeof result[key] === 'number') result[key] = Math.floor(result[key] / 1000);
+        }
+      }
+      return result;
     });
 
     // reset to main selected monster

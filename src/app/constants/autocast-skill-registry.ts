@@ -7,7 +7,7 @@ export interface AutocastSkillDef {
   element: ElementType;
   hit: number;
   totalHit: number;
-  formula: (params: { skillLevel: number; baseLevel: number }) => number;
+  formula: (params: { skillLevel: number; baseLevel: number; str?: number }) => number;
 }
 
 export const AUTOCAST_SKILL_REGISTRY: Record<string, AutocastSkillDef> = {
@@ -148,5 +148,23 @@ export const AUTOCAST_SKILL_REGISTRY: Record<string, AutocastSkillDef> = {
     hit: 1,
     totalHit: 1,
     formula: ({ skillLevel, baseLevel }) => skillLevel * 10 * (baseLevel / 100),
+  },
+  'Sonic Wave': {
+    name: 'Sonic Wave',
+    isMatk: false,
+    isMelee: false,
+    element: ElementType.Neutral,
+    hit: 1,
+    totalHit: 1,
+    formula: ({ skillLevel, baseLevel }) => (1050 + skillLevel * 150) * (baseLevel / 100),
+  },
+  'Runic Explosion': {
+    name: 'Runic Explosion',
+    isMatk: false,
+    isMelee: true,
+    element: ElementType.Neutral,
+    hit: 1,
+    totalHit: 1,
+    formula: ({ skillLevel, baseLevel, str }) => (skillLevel + (str || 0) / 8) * 140 * (baseLevel / 100),
   },
 };

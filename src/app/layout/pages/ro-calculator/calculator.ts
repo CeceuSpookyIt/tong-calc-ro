@@ -1006,12 +1006,14 @@ export class Calculator {
             const level = Number(parts[0]);
             const chance = Number(parts[1]);
             const trigger = parts[2].trim() as AutocastTrigger;
+            const useLearned = parts[3]?.trim() === 'learned';
             if (!Number.isNaN(level) && !Number.isNaN(chance)) {
               this.autocastEntries.push({
                 skillName,
                 skillLevel: level,
                 chancePercent: chance,
                 trigger,
+                useLearned,
                 sourceItemName: item.name,
               });
             }
@@ -1240,6 +1242,21 @@ export class Calculator {
 
     for (const [buffName, scripts] of Object.entries(this.buffEquipAtkBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
+        if (attr.startsWith('autocast__')) {
+          const skillName = attr.replace('autocast__', '');
+          const parts = String(value).split(',');
+          if (parts.length >= 3) {
+            this.autocastEntries.push({
+              skillName,
+              skillLevel: Number(parts[0]),
+              chancePercent: Number(parts[1]),
+              trigger: parts[2].trim() as AutocastTrigger,
+              useLearned: parts[3]?.trim() === 'learned',
+              sourceItemName: buffName,
+            });
+          }
+          continue;
+        }
         const val = Number(value);
         // if (attr === 'atk' || attr === 'matk') val = 0;
 
@@ -1374,9 +1391,15 @@ export class Calculator {
       const skillDef = AUTOCAST_SKILL_REGISTRY[entry.skillName];
       if (!skillDef) continue;
 
-      const skillValue = `${entry.skillName}==${entry.skillLevel}`;
+      let finalLevel = entry.skillLevel;
+      if (entry.useLearned) {
+        const learnedLevel = this.learnedSkillMap.get(entry.skillName) || 0;
+        finalLevel = Math.max(finalLevel, learnedLevel);
+      }
+
+      const skillValue = `${entry.skillName}==${finalLevel}`;
       const tempSkillData: AtkSkillModel = {
-        label: `${entry.skillName} Lv${entry.skillLevel}`,
+        label: `${entry.skillName} Lv${finalLevel}`,
         name: entry.skillName as any,
         value: skillValue,
         acd: 0,
@@ -1390,7 +1413,7 @@ export class Calculator {
         element: skillDef.element,
         isHit100: true,
         autoSpellChance: entry.chancePercent / 100,
-        formula: () => skillDef.formula({ skillLevel: entry.skillLevel, baseLevel: this.model.level || 1 }),
+        formula: () => skillDef.formula({ skillLevel: finalLevel, baseLevel: this.model.level || 1, str: this.model.str || 0 }),
       };
 
       const result = this.dmgCalculator

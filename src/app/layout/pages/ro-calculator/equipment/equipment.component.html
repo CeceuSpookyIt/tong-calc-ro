@@ -170,6 +170,7 @@
       </div>
       <div class="col-4" *ngIf="!isWeapon && totalExtraOption < 3" [hidden]="totalExtraOption < 1">
         <p-cascadeSelect
+          appendTo="body"
           [(ngModel)]="option1Value"
           [disabled]="!itemId"
           [options]="optionList"
@@ -185,6 +186,7 @@
       </div>
       <div class="col-4" *ngIf="!isWeapon && totalExtraOption < 3" [hidden]="totalExtraOption < 2">
         <p-cascadeSelect
+          appendTo="body"
           [(ngModel)]="option2Value"
           [disabled]="!itemId"
           [options]="optionList"
@@ -324,6 +326,7 @@
         <div class="grid grid-nogutter">
           <div class="col-4" [hidden]="totalExtraOption < 1">
             <p-cascadeSelect
+              appendTo="body"
               [(ngModel)]="option1Value"
               [disabled]="!itemId"
               [options]="optionList"
@@ -339,6 +342,7 @@
           </div>
           <div class="col-4" [hidden]="totalExtraOption < 2">
             <p-cascadeSelect
+              appendTo="body"
               [(ngModel)]="option2Value"
               [disabled]="!itemId"
               [options]="optionList"
@@ -354,6 +358,7 @@
           </div>
           <div class="col-4" [hidden]="totalExtraOption < 3">
             <p-cascadeSelect
+              appendTo="body"
               [(ngModel)]="option3Value"
               [disabled]="!itemId"
               [options]="optionList"
