@@ -496,4 +496,64 @@
       </div>
     </div>
   </div>
+
+  <!-- Autocast -->
+  <div class="col-12" [hidden]="!totalSummary?.autocast?.entries?.length">
+    <div class="grid grid-nogutter">
+      <div class="col-12 py-1 divider">
+        <p-divider></p-divider>
+      </div>
+      <div class="col-12 mb-1">
+        <span class="font-bold text-primary" style="font-size: 0.9rem; letter-spacing: 0.05em;">AUTOCAST</span>
+      </div>
+      <ng-container *ngFor="let ac of totalSummary?.autocast?.entries">
+        <div class="col-12">
+          <span class="summary_value font-semibold">{{ ac.skillName }}</span>
+          <span class="summary_highlight px-1">Lv{{ ac.skillLevel }}</span>
+          <span class="{{ 'property_' + ac.element }} px-1 font-semibold">{{ ac.element }}</span>
+          <span class="summary_monster_value px-1">({{ ac.chancePercent }}% {{ ac.trigger }})</span>
+        </div>
+        <div class="col-6">
+          <app-calc-value
+            label="Dmg:"
+            styleClass="summary_damage"
+            [min]="ac.minDamage"
+            [max]="ac.maxDamage"
+          ></app-calc-value>
+        </div>
+        <div class="col-6">
+          <app-calc-value
+            label="DPS:"
+            styleClass="summary_highlight"
+            [max]="ac.dps"
+          ></app-calc-value>
+        </div>
+      </ng-container>
+      <div class="col-12 py-1 divider">
+        <p-divider></p-divider>
+      </div>
+      <div class="col-12">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.autocast"
+          label="Autocast DPS:"
+          styleClass="summary_highlight"
+          styleClass2="summary_compare"
+          [showPercentDiff]="true"
+          [max]="totalSummary?.autocast?.totalDps"
+          [max2]="totalSummary2?.autocast?.totalDps || 0"
+        ></app-calc-value>
+      </div>
+      <div class="col-12">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.autocast"
+          label="DPS Total (Básico + Autocast):"
+          styleClass="summary_chance_hilight"
+          styleClass2="summary_compare"
+          [showPercentDiff]="true"
+          [max]="totalSummary?.autocast?.combinedBasicDps"
+          [max2]="totalSummary2?.autocast?.combinedBasicDps || totalSummary2?.dmg?.basicDps || 0"
+        ></app-calc-value>
+      </div>
+    </div>
+  </div>
 </div>

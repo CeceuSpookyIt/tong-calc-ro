@@ -10,8 +10,10 @@ import {
 } from 'src/app/constants';
 import { SKILL_NAME } from 'src/app/constants/skill-name';
 import { Monster, Weapon } from 'src/app/domain';
-import { CharacterBase } from 'src/app/jobs';
+import { AtkSkillModel, CharacterBase } from 'src/app/jobs';
 import { createRawTotalBonus, floor, isNumber, round } from 'src/app/utils';
+import { AutocastDamageSummary, AutocastEntry, AutocastTrigger } from '../../../models/autocast.model';
+import { AUTOCAST_SKILL_REGISTRY } from '../../../constants/autocast-skill-registry';
 import { ChanceModel } from '../../../models/chance-model';
 import { BasicAspdModel, BasicDamageSummaryModel, MiscModel, SkillAspdModel, SkillDamageSummaryModel } from '../../../models/damage-summary.model';
 import { EquipmentSummaryModel } from '../../../models/equipment-summary.model';
@@ -271,6 +273,9 @@ export class Calculator {
     vctSkill: 0,
   };
 
+  private autocastEntries: AutocastEntry[] = [];
+  private autocastSummaries: AutocastDamageSummary[] = [];
+  private autocastTotalDps = 0;
   private possiblyDamages: any[] = [];
 
   get chanceList() {
@@ -990,6 +995,31 @@ export class Calculator {
 
     // console.log({ itemRefine, script });
     for (const [attr, attrScripts] of Object.entries(item.script)) {
+      if (attr.startsWith('autocast__')) {
+        const skillName = attr.replace('autocast__', '');
+        for (const lineScript of attrScripts) {
+          const { isValid, restCondition } = this.validateCondition({ itemType, itemRefine, script: lineScript });
+          if (!isValid) continue;
+
+          const parts = restCondition.split(',');
+          if (parts.length >= 3) {
+            const level = Number(parts[0]);
+            const chance = Number(parts[1]);
+            const trigger = parts[2].trim() as AutocastTrigger;
+            if (!Number.isNaN(level) && !Number.isNaN(chance)) {
+              this.autocastEntries.push({
+                skillName,
+                skillLevel: level,
+                chancePercent: chance,
+                trigger,
+                sourceItemName: item.name,
+              });
+            }
+          }
+        }
+        continue;
+      }
+
       if (MainItemTypeSet.has(itemType)) {
         this.updateBaseEquipStat(attr, attrScripts[0]);
       }
@@ -1080,6 +1110,7 @@ export class Calculator {
     this.propertyWindmind = undefined;
     this._chanceList = [];
     this.equipCombo.clear();
+    this.autocastEntries = [];
 
     const updateTotalStatus = (attr: keyof EquipmentSummaryModel, value: number) => {
       if (this.totalEquipStatus[attr]) {
@@ -1311,7 +1342,100 @@ export class Calculator {
       this.recalcExtraBonus(skillValue);
     }
 
+    this.calculateAutocastDamages();
+
     return this;
+  }
+
+  private calculateAutocastDamages() {
+    this.autocastSummaries = [];
+    this.autocastTotalDps = 0;
+
+    if (this.autocastEntries.length === 0) return;
+
+    const merged = new Map<string, AutocastEntry>();
+    for (const entry of this.autocastEntries) {
+      const key = `${entry.skillName}__${entry.trigger}`;
+      const existing = merged.get(key);
+      if (existing) {
+        existing.chancePercent = Math.min(100, existing.chancePercent + entry.chancePercent);
+        if (entry.skillLevel > existing.skillLevel) {
+          existing.skillLevel = entry.skillLevel;
+        }
+        existing.sourceItemName += `, ${entry.sourceItemName}`;
+      } else {
+        merged.set(key, { ...entry });
+      }
+    }
+
+    const hitsPerSec = this.basicAspd.hitsPerSec;
+
+    for (const entry of merged.values()) {
+      const skillDef = AUTOCAST_SKILL_REGISTRY[entry.skillName];
+      if (!skillDef) continue;
+
+      const skillValue = `${entry.skillName}==${entry.skillLevel}`;
+      const tempSkillData: AtkSkillModel = {
+        label: `${entry.skillName} Lv${entry.skillLevel}`,
+        name: entry.skillName as any,
+        value: skillValue,
+        acd: 0,
+        fct: 0,
+        vct: 0,
+        cd: 0,
+        hit: skillDef.hit,
+        totalHit: skillDef.totalHit,
+        isMatk: skillDef.isMatk,
+        isMelee: skillDef.isMelee,
+        element: skillDef.element,
+        isHit100: true,
+        autoSpellChance: entry.chancePercent / 100,
+        formula: () => skillDef.formula({ skillLevel: entry.skillLevel, baseLevel: this.model.level || 1 }),
+      };
+
+      const result = this.dmgCalculator
+        .setExtraBonus([])
+        .calculateAllDamages({
+          skillValue,
+          propertyAtk: skillDef.element,
+          maxHp: this.maxHp,
+          maxSp: this.maxSp,
+          overrideSkillData: tempSkillData,
+        });
+
+      if (!result.skillDmg) continue;
+
+      const { skillMinDamage, skillMaxDamage } = result.skillDmg;
+      const avgDamage = floor((skillMinDamage + skillMaxDamage) / 2);
+      const totalHit = skillDef.totalHit;
+
+      let procsPerSec = 0;
+      if (entry.trigger === 'onhit') {
+        procsPerSec = hitsPerSec * (entry.chancePercent / 100);
+      } else if (entry.trigger === 'onskill') {
+        procsPerSec = (this.skillFrequency.totalHitPerSec || hitsPerSec) * (entry.chancePercent / 100);
+      } else if (entry.trigger === 'onhurt') {
+        procsPerSec = 1 * (entry.chancePercent / 100);
+      }
+
+      const dps = floor(avgDamage * totalHit * procsPerSec);
+
+      this.autocastSummaries.push({
+        skillName: entry.skillName,
+        skillLevel: entry.skillLevel,
+        chancePercent: entry.chancePercent,
+        trigger: entry.trigger,
+        sourceItemName: entry.sourceItemName,
+        minDamage: skillMinDamage,
+        maxDamage: skillMaxDamage,
+        avgDamage,
+        dps,
+        isMatk: skillDef.isMatk,
+        element: skillDef.element,
+      });
+
+      this.autocastTotalDps += dps;
+    }
   }
 
   setHpSpTable(hpSpTable: HpSpTable) {
@@ -1514,6 +1638,11 @@ export class Calculator {
       },
       dmg: {
         ...this.damageSummary,
+      },
+      autocast: {
+        entries: this.autocastSummaries,
+        totalDps: this.autocastTotalDps,
+        combinedBasicDps: (this.damageSummary.basicDps || 0) + this.autocastTotalDps,
       },
       equipments: [...this.equipItemNameSet.keys()],
     };
