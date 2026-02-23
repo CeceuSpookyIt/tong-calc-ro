@@ -22,68 +22,63 @@
   <app-elemental-table [monsterMap]="monsterDataMap" [groupMonsterList]="groupMonsterList" [allSelectedMonsterIds]="allSelectedMonsterIds"></app-elemental-table>
 </p-dialog>
 
-<div class="grid grid-nogutter" style="min-width: 1500px">
-  <!-- Left Side -->
-  <div class="p-fluid col-7">
-    <!-- Create Update Class -->
-    <div class="grid grid-nogutter">
-      <div class="col-4">
-        <div class="grid grid-nogutter">
-          <div class="col-12">
-            <div class="p-inputgroup">
-              <input #presetName [autocomplete]="false" type="text" pInputText placeholder="Nome" />
-              <button
-                type="button"
-                class="p-button-success"
-                pButton
-                label="Salvar"
-                [loading]="isInProcessingPreset"
-                [disabled]="!presetName.value || isInProcessingPreset"
-                (click)="updatePreset(presetName.value)"
-              ></button>
-              <button type="button" class="p-button-secondary" pButton icon="pi pi-cog" [disabled]="isInProcessingPreset" (click)="openPresetManagement()"></button>
-              <button type="button" class="p-button-info" pButton icon="pi pi-upload" pTooltip="Exportar Build" [disabled]="!model.class" (click)="exportBuild()"></button>
-              <button type="button" class="p-button-warning" pButton icon="pi pi-download" pTooltip="Importar Build" [disabled]="isInProcessingPreset" (click)="importBuild()"></button>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="p-inputgroup dropdown-joblist">
-              <p-dropdown
-                [autoDisplayFirst]="false"
-                [options]="preSets"
-                [filter]="true"
-                filterBy="label"
-                placeholder="Predefinições"
-                scrollHeight="350px"
-                [(ngModel)]="selectedPreset"
-              >
-                <ng-template let-job pTemplate="selectedItem">
-                  <div class="flex gap-2 py-0 align-items-center" *ngIf="model.class">
-                    <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
-                    <div class="text_ellips">{{ job.label }}</div>
-                  </div>
-                </ng-template>
-                <ng-template let-job pTemplate="item">
-                  <div class="flex gap-2 py-0">
-                    <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
-                    <div class="text_ellips">{{ job.label }}</div>
-                  </div>
-                </ng-template>
-              </p-dropdown>
-              <p-splitButton
-                styleClass="p-button-help"
-                icon="pi pi-download"
-                label="Carregar"
-                (onClick)="loadPreset()"
-                [disabled]="!selectedPreset || isInProcessingPreset"
-                [model]="loadBtnItems"
-              ></p-splitButton>
-            </div>
-          </div>
+<!-- ====== CONTEXT BAR ====== -->
+<div class="context-bar">
+  <div class="flex gap-2">
+    <!-- Card: Perfil -->
+    <div style="flex: 1; min-width: 0;">
+      <div class="context-card">
+        <div class="context-card-header"><i class="pi pi-save"></i> Perfil</div>
+        <div class="p-inputgroup mb-1">
+          <input #presetName [autocomplete]="false" type="text" pInputText placeholder="Nome" />
+          <button type="button" class="p-button-success" pButton label="Salvar" [loading]="isInProcessingPreset" [disabled]="!presetName.value || isInProcessingPreset" (click)="updatePreset(presetName.value)"></button>
+          <button type="button" class="p-button-secondary" pButton icon="pi pi-cog" pTooltip="Gerenciar" [disabled]="isInProcessingPreset" (click)="openPresetManagement()"></button>
+          <button type="button" class="p-button-info" pButton icon="pi pi-upload" pTooltip="Exportar" [disabled]="!model.class" (click)="exportBuild()"></button>
+          <button type="button" class="p-button-warning" pButton icon="pi pi-download" pTooltip="Importar" [disabled]="isInProcessingPreset" (click)="importBuild()"></button>
+        </div>
+        <div class="p-inputgroup dropdown-joblist">
+          <p-dropdown
+            [autoDisplayFirst]="false"
+            [options]="preSets"
+            [filter]="true"
+            filterBy="label"
+            placeholder="Predefinições"
+            scrollHeight="350px"
+            [(ngModel)]="selectedPreset"
+          >
+            <ng-template let-job pTemplate="selectedItem">
+              <div class="flex gap-2 py-0 align-items-center" *ngIf="model.class">
+                <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
+                <div class="text_ellips">{{ job.label }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-job pTemplate="item">
+              <div class="flex gap-2 py-0">
+                <img src="assets/demo/images/jobs/icon_jobs_{{ job.icon }}.png" alt="" class="job_img" />
+                <div class="text_ellips">{{ job.label }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+          <p-splitButton
+            styleClass="p-button-help"
+            icon="pi pi-download"
+            label="Carregar"
+            (onClick)="loadPreset()"
+            [disabled]="!selectedPreset || isInProcessingPreset"
+            [model]="loadBtnItems"
+          ></p-splitButton>
+        </div>
+      </div>
+    </div>
 
-          <div class="col-12">
+    <!-- Card: Personagem -->
+    <div style="flex: 2; min-width: 0;">
+      <div class="context-card">
+        <div class="context-card-header"><i class="pi pi-user"></i> Personagem</div>
+        <div class="grid grid-nogutter gap-1">
+          <div class="col">
             <div class="p-inputgroup dropdown-joblist">
-              <span class="p-inputgroup-addon" style="width: 80px">Classe</span>
+              <span class="p-inputgroup-addon" style="width: 70px">Classe</span>
               <p-dropdown
                 inputId="character"
                 [autoDisplayFirst]="false"
@@ -112,9 +107,22 @@
               </p-dropdown>
             </div>
           </div>
+          <div class="col-fixed" style="width: 140px">
+            <button
+              type="button"
+              class="p-button-warning w-full"
+              pButton
+              label="Up Class"
+              icon="pi pi-arrow-up"
+              [disabled]="!canPromote || isInProcessingPreset"
+              (click)="onJobPromotionClick()"
+            ></button>
+          </div>
+        </div>
+        <div class="grid grid-nogutter gap-1 mt-1">
           <div class="col">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 80px">Nível</span>
+              <span class="p-inputgroup-addon" style="width: 70px">Nível</span>
               <p-dropdown
                 inputId="level"
                 [autoDisplayFirst]="false"
@@ -128,19 +136,9 @@
               ></p-dropdown>
             </div>
           </div>
-          <div class="col-fixed">
-            <button
-              type="button"
-              class="p-button-warning"
-              pButton
-              label="Up Class"
-              [disabled]="!canPromote || isInProcessingPreset"
-              (click)="onJobPromotionClick()"
-            ></button>
-          </div>
-          <div class="col-12">
+          <div class="col">
             <div class="p-inputgroup">
-              <span class="p-inputgroup-addon" style="width: 80px">Job</span>
+              <span class="p-inputgroup-addon" style="width: 70px">Job</span>
               <p-dropdown
                 inputId="jobLevel"
                 [autoDisplayFirst]="false"
@@ -154,29 +152,35 @@
               ></p-dropdown>
             </div>
           </div>
-          <div class="col-12">
-            <span class="p-inputgroup-addon"
-              >Status:
-              <span [className]="availablePoints < 0 ? 'ml-2 summary_monster_value px-1 font-semibold' : 'ml-2'">
-                {{ availablePoints }}
-                <span [hidden]="!appropriateLevel">(Lv {{ appropriateLevel > 200 ? 'x' : appropriateLevel }})</span>
-              </span>
-
-              <span [hidden]="!isAllowTraitStat"
-                >, Trait:
-                <span [className]="availableTraitPoints < 0 ? ' summary_monster_value px-1 font-semibold' : ''">
-                  {{ availableTraitPoints }}
-                  <span [hidden]="!appropriateLevelForTrait">(Lv {{ appropriateLevelForTrait > 300 ? 'x' : appropriateLevelForTrait }})</span>
-                </span>
-              </span>
-            </span>
-          </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <!-- Status -->
-      <div class="col-8">
-        <div class="grid grid-nogutter">
+<!-- ====== MAIN TABS ====== -->
+<p-tabView [(activeIndex)]="activeMainTab">
+
+  <!-- ==================== TAB: BUILD ==================== -->
+  <p-tabPanel header="Build">
+    <div class="grid grid-nogutter gap-2 px-1">
+      <!-- Left: Stats + Summary + Compare -->
+      <div class="p-fluid col">
+        <!-- Stats Card -->
+        <div class="section-card">
+          <div class="section-header"><i class="pi pi-chart-bar"></i> Status</div>
+          <div class="stat-points-row">
+            <span>Pontos disponíveis:
+              <span [className]="availablePoints < 0 ? 'stat-points-negative' : 'stat-points-positive'">{{ availablePoints }}</span>
+              <span [hidden]="!appropriateLevel" class="stat-points-level">(Lv {{ appropriateLevel > 200 ? 'x' : appropriateLevel }})</span>
+            </span>
+            <span [hidden]="!isAllowTraitStat" class="ml-3">
+              Trait:
+              <span [className]="availableTraitPoints < 0 ? 'stat-points-negative' : 'stat-points-positive'">{{ availableTraitPoints }}</span>
+              <span [hidden]="!appropriateLevelForTrait" class="stat-points-level">(Lv {{ appropriateLevelForTrait > 300 ? 'x' : appropriateLevelForTrait }})</span>
+            </span>
+          </div>
+          <div class="grid grid-nogutter">
           <div class="col-5">
             <div class="grid grid-nogutter">
               <!-- STR -->
@@ -327,7 +331,7 @@
 
           <!-- Summary -->
           <div class="col-7">
-            <div class="grid grid-nogutter" style="position: relative">
+            <div class="grid grid-nogutter summary-grid" style="position: relative">
               <div class="loading_block" *ngIf="isCalculating">
                 <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
               </div>
@@ -443,1271 +447,11 @@
                       <div class="col-12 flex gap-1" [pTooltip]="statDeltaTooltips['maxHp']" [escape]="false" tooltipPosition="right">
                         HP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxHp || 0 | number }}</span>
-                        <!-- <p-cascadeSelect
-                          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.X_HP]"
-                          [options]="baseHpOptions"
-                          optionValue="value"
-                          optionGroupLabel="label"
-                          optionLabel="label"
-                          [optionGroupChildren]="['children']"
-                          placeholder="+BaseHP"
-                          [showClear]="true"
-                          (onChange)="onOptionChange()"
-                          (onClear)="onOptionChange()"
-                        ></p-cascadeSelect> -->
                       </div>
                       <div class="col-12 flex gap-1" [pTooltip]="statDeltaTooltips['maxSp']" [escape]="false" tooltipPosition="right">
                         SP:
                         <span class="font-semibold px-1 summary_stat_yellow">{{ totalSummary?.calc?.maxSp || 0 | number }}</span>
-                        <!-- <p-cascadeSelect
-                          [(ngModel)]="model.rawOptionTxts[itemOptionNumber.X_SP]"
-                          [options]="baseSpOptions"
-                          optionValue="value"
-                          optionGroupLabel="label"
-                          optionLabel="label"
-                          [optionGroupChildren]="['children']"
-                          placeholder="+BaseSP"
-                          [showClear]="true"
-                          (onChange)="onOptionChange()"
-                          (onClear)="onOptionChange()"
-                        ></p-cascadeSelect> -->
                       </div>
-                      <!-- <div [hidden]="model?.level < 176" class="summary_monster_value px-1" style="color: var(--red-500)">*** Lv > 175 não confere</div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 item_label_compare">
-                <p-multiSelect
-                  [options]="compareItemList"
-                  [(ngModel)]="compareItemNames"
-                  [showClear]="true"
-                  [showHeader]="false"
-                  [showToggleAll]="false"
-                  scrollHeight="400px"
-                  selectedItemsLabel="{0} slot selected"
-                  placeholder="Enable item slot to compare"
-                  [maxSelectedLabels]="6"
-                  (onChange)="onListItemComparingChange()"
-                  (onClear)="onListItemComparingChange(true)"
-                ></p-multiSelect>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Weapon + Ammo -->
-    <div class="grid grid-nogutter item_label_weapon_main">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'weapon'"
-          [placeholder]="'Weapon'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="weaponList"
-          [refineList]="refineList"
-          [cardList]="weaponCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.weapon"
-          [(itemRefine)]="model.weaponRefine"
-          [(card1Id)]="model.weaponCard1"
-          [(card2Id)]="model.weaponCard2"
-          [(card3Id)]="model.weaponCard3"
-          [(card4Id)]="model.weaponCard4"
-          [(itemGrade)]="model.weaponGrade"
-          [(enchant1Id)]="model.weaponEnchant0"
-          [(enchant2Id)]="model.weaponEnchant1"
-          [(enchant3Id)]="model.weaponEnchant2"
-          [(enchant4Id)]="model.weaponEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.W_Left_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.W_Left_2]"
-          [(option3Value)]="model.rawOptionTxts[itemOptionNumber.W_Left_3]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        >
-          <div class="col-6 item_label_element_converter" style="min-width: 100px">
-            <p-dropdown
-              [options]="propertyAtkList"
-              [(ngModel)]="model.propertyAtk"
-              [disabled]="!model.weapon"
-              [showClear]="true"
-              placeholder="Converter"
-              scrollHeight="300px"
-              (onChange)="onPropertyAtkChange()"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1" *ngIf="model.propertyAtk">
-                  <div class="flex gap-1 item_template">
-                    <img src="assets/demo/images/items/{{ item.img }}.png" alt="" class="item_img" />
-                    <div class="{{ 'property_' + item.element }}">{{ item.label }}</div>
-                  </div>
-                </div>
-              </ng-template>
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <div class="flex gap-1 item_template">
-                    <img src="assets/demo/images/items/{{ item.img }}.png" alt="" class="item_img" />
-                    <div class="{{ 'property_' + item.element }}">{{ item.label }}</div>
-                  </div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-          <div class="col-{{ isWeaponCanGrade ? 6 : 10 }}" [hidden]="hiddenMap.ammu">
-            <p-dropdown
-              inputId="ammo"
-              [autoDisplayFirst]="false"
-              [resetFilterOnHide]="true"
-              [options]="ammoList"
-              [showClear]="true"
-              [filter]="true"
-              filterBy="label"
-              scrollHeight="350px"
-              [(ngModel)]="model.ammo"
-              (onChange)="onSelectItem('ammo', $event.value)"
-              placeholder="Munição"
-              [disabled]="!model.weapon"
-            >
-              <ng-template let-item pTemplate="selectedItem">
-                <div class="flex gap-1 item_template" *ngIf="model.ammo">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                  <div class="{{ 'property_' + item.element }}">
-                    {{ item.label }}
-                  </div>
-                </div>
-              </ng-template>
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div class="{{ 'property_' + item.element }}">
-                    {{ item.label }}
-                  </div>
-                </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-        </app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_leftWeapon_main">
-      <div class="col-12" [hidden]="!model.weapon || !showLeftWeapon || !!model.shield">
-        <app-equipment
-          [itemType]="'leftWeapon'"
-          [placeholder]="'leftWeapon'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="leftWeaponList"
-          [refineList]="refineList"
-          [cardList]="weaponCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.leftWeapon"
-          [(itemRefine)]="model.leftWeaponRefine"
-          [(card1Id)]="model.leftWeaponCard1"
-          [(card2Id)]="model.leftWeaponCard2"
-          [(card3Id)]="model.leftWeaponCard3"
-          [(card4Id)]="model.leftWeaponCard4"
-          [(itemGrade)]="model.leftWeaponGrade"
-          [(enchant1Id)]="model.leftWeaponEnchant0"
-          [(enchant2Id)]="model.leftWeaponEnchant1"
-          [(enchant3Id)]="model.leftWeaponEnchant2"
-          [(enchant4Id)]="model.leftWeaponEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.W_Right_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.W_Right_2]"
-          [(option3Value)]="model.rawOptionTxts[itemOptionNumber.W_Right_3]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.weapon">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'weapon'"
-          [placeholder]="'Weapon'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="weaponList"
-          [refineList]="refineList"
-          [cardList]="weaponCardList"
-          [optionList]="optionList"
-          [(itemId)]="model2.weapon"
-          [(itemRefine)]="model2.weaponRefine"
-          [(card1Id)]="model2.weaponCard1"
-          [(card2Id)]="model2.weaponCard2"
-          [(card3Id)]="model2.weaponCard3"
-          [(card4Id)]="model2.weaponCard4"
-          [(itemGrade)]="model2.weaponGrade"
-          [(enchant1Id)]="model2.weaponEnchant0"
-          [(enchant2Id)]="model2.weaponEnchant1"
-          [(enchant3Id)]="model2.weaponEnchant2"
-          [(enchant4Id)]="model2.weaponEnchant3"
-          [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_1]"
-          [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_2]"
-          [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_3]"
-          (selectItemChange)="onCompareItemChange()"
-          (optionChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Shield -->
-    <div class="grid grid-nogutter item_label_shield_main">
-      <div class="col-12" [hidden]="!model.weapon || hiddenMap.shield || !!model.leftWeapon">
-        <app-equipment
-          [itemType]="'shield'"
-          [placeholder]="'Shield'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="shieldList"
-          [refineList]="refineList"
-          [cardList]="shieldCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.shield"
-          [(itemRefine)]="model.shieldRefine"
-          [(card1Id)]="model.shieldCard"
-          [(itemGrade)]="model.shieldGrade"
-          [(enchant2Id)]="model.shieldEnchant1"
-          [(enchant3Id)]="model.shieldEnchant2"
-          [(enchant4Id)]="model.shieldEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.Shield_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.Shield_2]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Head Upper -->
-    <div class="grid grid-nogutter item_label_head">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'headUpper'"
-          [placeholder]="'Upper'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="headUpperList"
-          [refineList]="refineList"
-          [cardList]="headCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.headUpper"
-          [(itemRefine)]="model.headUpperRefine"
-          [(card1Id)]="model.headUpperCard"
-          [(itemGrade)]="model.headUpperGrade"
-          [(enchant2Id)]="model.headUpperEnchant1"
-          [(enchant3Id)]="model.headUpperEnchant2"
-          [(enchant4Id)]="model.headUpperEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.H_Upper_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.H_Upper_2]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headUpper">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'headUpper'"
-          [placeholder]="'Upper'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="headUpperList"
-          [refineList]="refineList"
-          [cardList]="headCardList"
-          [optionList]="optionList"
-          [(itemId)]="model2.headUpper"
-          [(itemRefine)]="model2.headUpperRefine"
-          [(card1Id)]="model2.headUpperCard"
-          [(itemGrade)]="model2.headUpperGrade"
-          [(enchant2Id)]="model2.headUpperEnchant1"
-          [(enchant3Id)]="model2.headUpperEnchant2"
-          [(enchant4Id)]="model2.headUpperEnchant3"
-          [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.H_Upper_1]"
-          [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.H_Upper_2]"
-          (selectItemChange)="onCompareItemChange()"
-          (optionChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Head Middle -->
-    <div class="grid grid-nogutter item_label_head">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'headMiddle'"
-          [placeholder]="'Middle'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="headMiddleList"
-          [cardList]="headCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.headMiddle"
-          [(card1Id)]="model.headMiddleCard"
-          [(itemGrade)]="model.headMiddleGrade"
-          [(enchant2Id)]="model.headMiddleEnchant1"
-          [(enchant3Id)]="model.headMiddleEnchant2"
-          [(enchant4Id)]="model.headMiddleEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.H_Mid_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.H_Mid_2]"
-          [(option3Value)]="model.rawOptionTxts[itemOptionNumber.H_Mid_3]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headMiddle">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'headMiddle'"
-          [placeholder]="'Middle'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="headMiddleList"
-          [cardList]="headCardList"
-          [optionList]="optionList"
-          [(itemId)]="model2.headMiddle"
-          [(card1Id)]="model2.headMiddleCard"
-          [(itemGrade)]="model2.headMiddleGrade"
-          [(enchant2Id)]="model2.headMiddleEnchant1"
-          [(enchant3Id)]="model2.headMiddleEnchant2"
-          [(enchant4Id)]="model2.headMiddleEnchant3"
-          [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.H_Mid_1]"
-          [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.H_Mid_2]"
-          [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.H_Mid_3]"
-          (selectItemChange)="onCompareItemChange()"
-          (optionChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Head Lower -->
-    <div class="grid grid-nogutter item_label_head">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'headLower'"
-          [placeholder]="'Lower'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="headLowerList"
-          [cardList]="[]"
-          [(itemId)]="model.headLower"
-          [(itemGrade)]="model.headLowerGrade"
-          [(enchant2Id)]="model.headLowerEnchant1"
-          [(enchant3Id)]="model.headLowerEnchant2"
-          [(enchant4Id)]="model.headLowerEnchant3"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.headLower">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'headLower'"
-          [placeholder]="'Lower'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="headLowerList"
-          [cardList]="[]"
-          [(itemId)]="model2.headLower"
-          [(itemGrade)]="model2.headLowerGrade"
-          [(enchant2Id)]="model2.headLowerEnchant1"
-          [(enchant3Id)]="model2.headLowerEnchant2"
-          [(enchant4Id)]="model2.headLowerEnchant3"
-          (selectItemChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Armor -->
-    <div class="grid grid-nogutter item_label_def">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'armor'"
-          [placeholder]="'Armor'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="armorList"
-          [refineList]="refineList"
-          [cardList]="armorCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.armor"
-          [(itemRefine)]="model.armorRefine"
-          [(card1Id)]="model.armorCard"
-          [(itemGrade)]="model.armorGrade"
-          [(enchant2Id)]="model.armorEnchant1"
-          [(enchant3Id)]="model.armorEnchant2"
-          [(enchant4Id)]="model.armorEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.Armor_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.Armor_2]"
-          [(option3Value)]="model.rawOptionTxts[itemOptionNumber.Armor_3]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.armor">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'armor'"
-          [placeholder]="'Armor'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="armorList"
-          [refineList]="refineList"
-          [cardList]="armorCardList"
-          [optionList]="optionList"
-          [(itemId)]="model2.armor"
-          [(itemRefine)]="model2.armorRefine"
-          [(itemGrade)]="model2.armorGrade"
-          [(card1Id)]="model2.armorCard"
-          [(enchant2Id)]="model2.armorEnchant1"
-          [(enchant3Id)]="model2.armorEnchant2"
-          [(enchant4Id)]="model2.armorEnchant3"
-          [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_1]"
-          [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_2]"
-          [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_3]"
-          (selectItemChange)="onCompareItemChange()"
-          (optionChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Garment -->
-    <div class="grid grid-nogutter item_label_def">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'garment'"
-          [placeholder]="'Garment'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="garmentList"
-          [refineList]="refineList"
-          [cardList]="garmentCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.garment"
-          [(itemRefine)]="model.garmentRefine"
-          [(card1Id)]="model.garmentCard"
-          [(itemGrade)]="model.garmentGrade"
-          [(enchant2Id)]="model.garmentEnchant1"
-          [(enchant3Id)]="model.garmentEnchant2"
-          [(enchant4Id)]="model.garmentEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.Garment_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.Garment_2]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.garment">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'garment'"
-          [placeholder]="'Garment'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="garmentList"
-          [refineList]="refineList"
-          [cardList]="garmentCardList"
-          [optionList]="optionList"
-          [(itemId)]="model2.garment"
-          [(itemRefine)]="model2.garmentRefine"
-          [(card1Id)]="model2.garmentCard"
-          [(itemGrade)]="model2.garmentGrade"
-          [(enchant2Id)]="model2.garmentEnchant1"
-          [(enchant3Id)]="model2.garmentEnchant2"
-          [(enchant4Id)]="model2.garmentEnchant3"
-          [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.Garment_1]"
-          [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.Garment_2]"
-          (selectItemChange)="onCompareItemChange()"
-          (optionChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Boot -->
-    <div class="grid grid-nogutter item_label_def">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'boot'"
-          [placeholder]="'Boot'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="bootList"
-          [refineList]="refineList"
-          [cardList]="bootCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.boot"
-          [(itemRefine)]="model.bootRefine"
-          [(card1Id)]="model.bootCard"
-          [(itemGrade)]="model.bootGrade"
-          [(enchant2Id)]="model.bootEnchant1"
-          [(enchant3Id)]="model.bootEnchant2"
-          [(enchant4Id)]="model.bootEnchant3"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.boot">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'Boot'"
-          [placeholder]="'boot'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="bootList"
-          [refineList]="refineList"
-          [cardList]="bootCardList"
-          [optionList]="optionList"
-          [(itemId)]="model2.boot"
-          [(itemRefine)]="model2.bootRefine"
-          [(card1Id)]="model2.bootCard"
-          [(itemGrade)]="model2.bootGrade"
-          [(enchant2Id)]="model2.bootEnchant1"
-          [(enchant3Id)]="model2.bootEnchant2"
-          [(enchant4Id)]="model2.bootEnchant3"
-          (selectItemChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Acc Right -->
-    <div class="grid grid-nogutter item_label_acc">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'accRight'"
-          [placeholder]="'AccRight'"
-          [overlayLabel]="'Right'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="accRightList"
-          [cardList]="accRightCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.accRight"
-          [(itemRefine)]="model.accRightRefine"
-          [(card1Id)]="model.accRightCard"
-          [(itemGrade)]="model.accRightGrade"
-          [(enchant2Id)]="model.accRightEnchant1"
-          [(enchant3Id)]="model.accRightEnchant2"
-          [(enchant4Id)]="model.accRightEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.A_Right_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.A_Right_2]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-          [isEndWithSpace]="!showCompareItemMap.accRight"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accRight">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'accRight'"
-          [placeholder]="'AccRight'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="accRightList"
-          [cardList]="accRightCardList"
-          [optionList]="optionList"
-          [(itemId)]="model2.accRight"
-          [(itemRefine)]="model2.accRightRefine"
-          [(card1Id)]="model2.accRightCard"
-          [(itemGrade)]="model2.accRightGrade"
-          [(enchant2Id)]="model2.accRightEnchant1"
-          [(enchant3Id)]="model2.accRightEnchant2"
-          [(enchant4Id)]="model2.accRightEnchant3"
-          [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.A_Right_1]"
-          [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.A_Right_2]"
-          (selectItemChange)="onCompareItemChange()"
-          (optionChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-          [isEndWithSpace]="true"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Acc Left -->
-    <div class="grid grid-nogutter item_label_acc">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'accLeft'"
-          [placeholder]="'AccLeft'"
-          [overlayLabel]="'Left'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="accLeftList"
-          [cardList]="accLeftCardList"
-          [optionList]="optionList"
-          [(itemId)]="model.accLeft"
-          [(itemRefine)]="model.accLeftRefine"
-          [(card1Id)]="model.accLeftCard"
-          [(itemGrade)]="model.accLeftGrade"
-          [(enchant2Id)]="model.accLeftEnchant1"
-          [(enchant3Id)]="model.accLeftEnchant2"
-          [(enchant4Id)]="model.accLeftEnchant3"
-          [(option1Value)]="model.rawOptionTxts[itemOptionNumber.A_Left_1]"
-          [(option2Value)]="model.rawOptionTxts[itemOptionNumber.A_Left_2]"
-          (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-          (clearItemEvent)="onClearItem($event)"
-          (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
-          (optionChange)="onOptionChange()"
-        ></app-equipment>
-      </div>
-    </div>
-    <div class="grid grid-nogutter item_label_compare" *ngIf="showCompareItemMap.accLeft">
-      <div class="col-12">
-        <app-equipment
-          [itemType]="'accLeft'"
-          [placeholder]="'AccLeft'"
-          [items]="items"
-          [mapEnchant]="mapEnchant"
-          [itemList]="accLeftList"
-          [cardList]="accLeftCardList"
-          [optionList]="optionList"
-          [(itemId)]="model2.accLeft"
-          [(itemRefine)]="model2.accLeftRefine"
-          [(card1Id)]="model2.accLeftCard"
-          [(itemGrade)]="model2.accLeftGrade"
-          [(enchant2Id)]="model2.accLeftEnchant1"
-          [(enchant3Id)]="model2.accLeftEnchant2"
-          [(enchant4Id)]="model2.accLeftEnchant3"
-          [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.A_Left_1]"
-          [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.A_Left_2]"
-          (selectItemChange)="onCompareItemChange()"
-          (optionChange)="onCompareItemChange()"
-          (gradeChange)="onCompareItemChange()"
-        ></app-equipment>
-      </div>
-    </div>
-
-    <!-- Pet / Costume -->
-    <div class="grid grid-nogutter mt-3">
-      <!-- Upper -->
-      <div class="col-12 grid grid-nogutter item_label_costume">
-        <div class="col-3">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeUpper'"
-            [placeholder]="'Costume Upper'"
-            [itemList]="costumeUpperList"
-            [(itemId)]="model.costumeUpper"
-            (selectItemChange)="onSelectItem('costumeUpper', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-3">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantUpper'"
-            [placeholder]="'Upper Enchant'"
-            [itemList]="costumeEnhUpperList"
-            [(itemId)]="model.costumeEnchantUpper"
-            (selectItemChange)="onSelectItem('costumeEnchantUpper', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-
-        <div class="col-3 col-offset-3 item_label_pet">
-          <p-dropdown
-            inputId="pet"
-            [autoDisplayFirst]="false"
-            [resetFilterOnHide]="true"
-            [options]="petList"
-            [filter]="true"
-            filterBy="label"
-            scrollHeight="350px"
-            [(ngModel)]="model.pet"
-            [showClear]="true"
-            (onChange)="onSelectItem('pet', $event.value)"
-            placeholder="Mascote"
-          >
-            <ng-template let-item pTemplate="selectedItem">
-              <div class="flex gap-1 item_template" *ngIf="model.pet">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-            <ng-template let-item pTemplate="item">
-              <div class="flex gap-1">
-                <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                <div>{{ item.label }}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
-        </div>
-      </div>
-
-      <!-- Middle -->
-      <div class="col-9 grid grid-nogutter item_label_costume">
-        <div class="col-4">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeMiddle'"
-            [placeholder]="'Costume Middle'"
-            [itemList]="costumeMiddleList"
-            [(itemId)]="model.costumeMiddle"
-            (selectItemChange)="onSelectItem('costumeMiddle', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-4">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantMiddle'"
-            [placeholder]="'Middle Enchant'"
-            [itemList]="costumeEnhMiddleList"
-            [(itemId)]="model.costumeEnchantMiddle"
-            (selectItemChange)="onSelectItem('costumeEnchantMiddle', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-      </div>
-
-      <!-- Lower -->
-      <div class="col-9 grid grid-nogutter item_label_costume">
-        <div class="col-4">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeLower'"
-            [placeholder]="'Costume Lower'"
-            [itemList]="costumeLowerList"
-            [(itemId)]="model.costumeLower"
-            (selectItemChange)="onSelectItem('costumeLower', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-4">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantLower'"
-            [placeholder]="'Lower Enchant'"
-            [itemList]="costumeEnhLowerList"
-            [(itemId)]="model.costumeEnchantLower"
-            (selectItemChange)="onSelectItem('costumeEnchantLower', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-      </div>
-
-      <!-- Garment -->
-      <div class="col-12 grid grid-nogutter mt-2 item_label_costume">
-        <div class="col-3">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeGarment'"
-            [placeholder]="'Costume Garment'"
-            [itemList]="costumeGarmentList"
-            [(itemId)]="model.costumeGarment"
-            (selectItemChange)="onSelectItem('costumeGarment', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-3">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantGarment'"
-            [placeholder]="'Garment Enchant'"
-            [itemList]="costumeEnhGarmentList"
-            [(itemId)]="model.costumeEnchantGarment"
-            (selectItemChange)="onSelectItem('costumeEnchantGarment', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-3">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantGarment2'"
-            [placeholder]="'Garment Enchant 2'"
-            [itemList]="costumeEnhGarment2List"
-            [(itemId)]="model.costumeEnchantGarment2"
-            (selectItemChange)="onSelectItem('costumeEnchantGarment2', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-3">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantGarment4'"
-            [placeholder]="'Garment Enchant 4'"
-            [itemList]="costumeEnhGarment4List"
-            [(itemId)]="model.costumeEnchantGarment4"
-            (selectItemChange)="onSelectItem('costumeEnchantGarment4', $event.itemId)"
-          ></app-equipment-cos-enchant>
-        </div>
-      </div>
-
-      <div class="col-9 col-offset-3 grid grid-nogutter item_label_costume flex flex-column">
-        <div class="col-4 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantUpper">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantUpper'"
-            [placeholder]="'Upper Enchant'"
-            [itemList]="costumeEnhUpperList"
-            [(itemId)]="model2.costumeEnchantUpper"
-            (selectItemChange)="onCompareItemChange()"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-4 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantMiddle">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantMiddle'"
-            [placeholder]="'Middle Enchant'"
-            [itemList]="costumeEnhMiddleList"
-            [(itemId)]="model2.costumeEnchantMiddle"
-            (selectItemChange)="onCompareItemChange()"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-4 item_label_compare" *ngIf="showCompareItemMap.costumeEnchantLower">
-          <app-equipment-cos-enchant
-            [itemType]="'costumeEnchantLower'"
-            [placeholder]="'Lower Enchant'"
-            [itemList]="costumeEnhLowerList"
-            [(itemId)]="model2.costumeEnchantLower"
-            (selectItemChange)="onCompareItemChange()"
-          ></app-equipment-cos-enchant>
-        </div>
-        <div class="col-12 grid grid-nogutter item_label_compare">
-          <div class="col-4" *ngIf="showCompareItemMap.costumeEnchantGarment">
-            <app-equipment-cos-enchant
-              [itemType]="'costumeEnchantGarment'"
-              [placeholder]="'Garment Enchant'"
-              [itemList]="costumeEnhGarmentList"
-              [(itemId)]="model2.costumeEnchantGarment"
-              (selectItemChange)="onCompareItemChange()"
-            ></app-equipment-cos-enchant>
-          </div>
-          <div class="col-4" *ngIf="showCompareItemMap.costumeEnchantGarment2">
-            <app-equipment-cos-enchant
-              [itemType]="'costumeEnchantGarment2'"
-              [placeholder]="'Garment Enchant 2'"
-              [itemList]="costumeEnhGarment2List"
-              [(itemId)]="model2.costumeEnchantGarment2"
-              (selectItemChange)="onCompareItemChange()"
-            ></app-equipment-cos-enchant>
-          </div>
-          <div class="col-4" *ngIf="showCompareItemMap.costumeEnchantGarment4">
-            <app-equipment-cos-enchant
-              [itemType]="'costumeEnchantGarment4'"
-              [placeholder]="'Garment Enchant 4'"
-              [itemList]="costumeEnhGarment4List"
-              [(itemId)]="model2.costumeEnchantGarment4"
-              (selectItemChange)="onCompareItemChange()"
-            ></app-equipment-cos-enchant>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Shadow -->
-    <div class="grid grid-nogutter mt-3">
-      <div class="col-12 grid grid-nogutter align-content-start">
-        <!-- Shadow Weapon -->
-        <div class="col-12 item_label_shadow">
-          <app-equipment-shadow
-            [itemType]="'shadowWeapon'"
-            [placeholder]="'Shadow Weapon'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowWeaponList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model.shadowWeapon"
-            [(itemRefine)]="model.shadowWeaponRefine"
-            [(enchant3Id)]="model.shadowWeaponEnchant2"
-            [(enchant4Id)]="model.shadowWeaponEnchant3"
-            [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
-            (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-            (clearItemEvent)="onClearItem($event)"
-            (optionChange)="onOptionChange()"
-          ></app-equipment-shadow>
-        </div>
-
-        <!-- Shadow Shield -->
-        <div class="col-12 item_label_shadow">
-          <app-equipment-shadow
-            [itemType]="'shadowShield'"
-            [placeholder]="'Shadow Shield'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowShieldList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model.shadowShield"
-            [(itemRefine)]="model.shadowShieldRefine"
-            [(enchant3Id)]="model.shadowShieldEnchant2"
-            [(enchant4Id)]="model.shadowShieldEnchant3"
-            [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
-            (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-            (clearItemEvent)="onClearItem($event)"
-            (optionChange)="onOptionChange()"
-          ></app-equipment-shadow>
-        </div>
-
-        <!-- Shadow Armor -->
-        <div class="col-12 item_label_shadow">
-          <app-equipment-shadow
-            [itemType]="'shadowArmor'"
-            [placeholder]="'Shadow Armor'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowArmorList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model.shadowArmor"
-            [(itemRefine)]="model.shadowArmorRefine"
-            [(enchant3Id)]="model.shadowArmorEnchant2"
-            [(enchant4Id)]="model.shadowArmorEnchant3"
-            [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
-            (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-            (clearItemEvent)="onClearItem($event)"
-            (optionChange)="onOptionChange()"
-          ></app-equipment-shadow>
-        </div>
-
-        <!-- Shadow Boot -->
-        <div class="col-12 item_label_shadow">
-          <app-equipment-shadow
-            [itemType]="'shadowBoot'"
-            [placeholder]="'Shadow Boot'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowBootList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model.shadowBoot"
-            [(itemRefine)]="model.shadowBootRefine"
-            [(enchant3Id)]="model.shadowBootEnchant2"
-            [(enchant4Id)]="model.shadowBootEnchant3"
-            [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_B_1]"
-            (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-            (clearItemEvent)="onClearItem($event)"
-            (optionChange)="onOptionChange()"
-          ></app-equipment-shadow>
-        </div>
-
-        <!-- Shadow Earring -->
-        <div class="col-12 item_label_shadow">
-          <app-equipment-shadow
-            [itemType]="'shadowEarring'"
-            [placeholder]="'Shadow Earring'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowEarringList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model.shadowEarring"
-            [(itemRefine)]="model.shadowEarringRefine"
-            [(enchant3Id)]="model.shadowEarringEnchant2"
-            [(enchant4Id)]="model.shadowEarringEnchant3"
-            [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
-            (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-            (clearItemEvent)="onClearItem($event)"
-            (optionChange)="onOptionChange()"
-          ></app-equipment-shadow>
-        </div>
-
-        <!-- Shadow Pendant -->
-        <div class="col-12 item_label_shadow">
-          <app-equipment-shadow
-            [itemType]="'shadowPendant'"
-            [placeholder]="'Shadow Pendant'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowPendantList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model.shadowPendant"
-            [(itemRefine)]="model.shadowPendantRefine"
-            [(enchant3Id)]="model.shadowPendantEnchant2"
-            [(enchant4Id)]="model.shadowPendantEnchant3"
-            [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
-            (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
-            (clearItemEvent)="onClearItem($event)"
-            (optionChange)="onOptionChange()"
-          ></app-equipment-shadow>
-        </div>
-
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowWeapon">
-          <app-equipment-shadow
-            [itemType]="'shadowWeapon'"
-            [placeholder]="'Shadow Weapon'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowWeaponList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model2.shadowWeapon"
-            [(itemRefine)]="model2.shadowWeaponRefine"
-            [(enchant3Id)]="model2.shadowWeaponEnchant2"
-            [(enchant4Id)]="model2.shadowWeaponEnchant3"
-            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
-            (selectItemChange)="onCompareItemChange()"
-            (optionChange)="onCompareItemChange()"
-          ></app-equipment-shadow>
-        </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowShield">
-          <app-equipment-shadow
-            [itemType]="'shadowShield'"
-            [placeholder]="'Shadow Shield'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowShieldList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model2.shadowShield"
-            [(itemRefine)]="model2.shadowShieldRefine"
-            [(enchant3Id)]="model2.shadowShieldEnchant2"
-            [(enchant4Id)]="model2.shadowShieldEnchant3"
-            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
-            (selectItemChange)="onCompareItemChange()"
-            (optionChange)="onCompareItemChange()"
-          ></app-equipment-shadow>
-        </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowArmor">
-          <app-equipment-shadow
-            [itemType]="'shadowArmor'"
-            [placeholder]="'Shadow Armor'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowArmorList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model2.shadowArmor"
-            [(itemRefine)]="model2.shadowArmorRefine"
-            [(enchant3Id)]="model2.shadowArmorEnchant2"
-            [(enchant4Id)]="model2.shadowArmorEnchant3"
-            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
-            (selectItemChange)="onCompareItemChange()"
-            (optionChange)="onCompareItemChange()"
-          ></app-equipment-shadow>
-        </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowBoot">
-          <app-equipment-shadow
-            [itemType]="'shadowBoot'"
-            [placeholder]="'Shadow Boot'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowBootList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model2.shadowBoot"
-            [(itemRefine)]="model2.shadowBootRefine"
-            [(enchant3Id)]="model2.shadowBootEnchant2"
-            [(enchant4Id)]="model2.shadowBootEnchant3"
-            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_B_1]"
-            (selectItemChange)="onCompareItemChange()"
-            (optionChange)="onCompareItemChange()"
-          ></app-equipment-shadow>
-        </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowEarring">
-          <app-equipment-shadow
-            [itemType]="'shadowEarring'"
-            [placeholder]="'Shadow Earring'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowEarringList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model2.shadowEarring"
-            [(itemRefine)]="model2.shadowEarringRefine"
-            [(enchant3Id)]="model2.shadowEarringEnchant2"
-            [(enchant4Id)]="model2.shadowEarringEnchant3"
-            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
-            (selectItemChange)="onCompareItemChange()"
-            (optionChange)="onCompareItemChange()"
-          ></app-equipment-shadow>
-        </div>
-        <div class="col-12 item_label_compare" *ngIf="showCompareItemMap.shadowPendant">
-          <app-equipment-shadow
-            [itemType]="'shadowPendant'"
-            [placeholder]="'Shadow Pendant'"
-            [items]="items"
-            [mapEnchant]="mapEnchant"
-            [itemList]="shadowPendantList"
-            [refineList]="shadowRefineList"
-            [optionList]="basicOptions"
-            [(itemId)]="model2.shadowPendant"
-            [(itemRefine)]="model2.shadowPendantRefine"
-            [(enchant3Id)]="model2.shadowPendantEnchant2"
-            [(enchant4Id)]="model2.shadowPendantEnchant3"
-            [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
-            (selectItemChange)="onCompareItemChange()"
-            (optionChange)="onCompareItemChange()"
-          ></app-equipment-shadow>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Right Side -->
-  <div class="p-fluid col-5">
-    <p-accordion [multiple]="true" [activeIndex]="[2, 7]">
-      <p-accordionTab header="Consumíveis" class="consumable">
-        <div class="grid grid-nogutter">
-          <!-- Consumable -->
-          <div class="col-4">
-            <p-listbox [options]="consumableList" [(ngModel)]="model.consumables" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-2">
-                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                  <div class="text_ellips">{{ item.label }}</div>
-                </div>
-              </ng-template>
-            </p-listbox>
-          </div>
-
-          <div class="col-4">
-            <div class="grid grid-nogutter column_list">
-              <div *ngFor="let con of consumableList2; let i = index" class="col-12">
-                <p-listbox [options]="con" [(ngModel)]="model.consumables2[i]" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
-                  <ng-template let-item pTemplate="item">
-                    <div class="flex gap-2">
-                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                      <div class="text_ellips">{{ item.label }}</div>
-                    </div>
-                  </ng-template>
-                </p-listbox>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="grid grid-nogutter">
-              <div class="col-12">
-                <p-listbox [options]="aspdPotionList" [(ngModel)]="model.aspdPotion" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
-                  <ng-template let-item pTemplate="item">
-                    <div class="flex gap-2">
-                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                      <div class="text_ellips">{{ item.label }}</div>
-                    </div>
-                  </ng-template>
-                </p-listbox>
-              </div>
-              <div class="col-12">
-                <p-listbox [options]="aspdPotionList2" [(ngModel)]="model.aspdPotions" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
-                  <ng-template let-item pTemplate="item">
-                    <div class="flex gap-2">
-                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
-                      <div class="text_ellips">{{ item.label }}</div>
-                    </div>
-                  </ng-template>
-                </p-listbox>
-              </div>
-            </div>
-          </div>
-        </div>
-      </p-accordionTab>
-
-      <p-accordionTab header="Skills ***Upe as skills! Alguns itens precisam de skills upadas para ativar o bônus" class="select_skill">
-        <div class="grid grid-nogutter">
-          <!--  Buffs -->
-          <div class="col-4">
-            <p-tag severity="info" value="Buffs"></p-tag>
-            <span class="skill_debuff pl-2">Vermelho = Debuff monster</span>
-            <div class="grid grid-nogutter">
-              <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-12">
-                <div [ngSwitch]="bishopBuff.inputType">
-                  <div *ngSwitchCase="'dropdown'">
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
-                      <p-dropdown
-                        [autoDisplayFirst]="false"
-                        [resetFilterOnHide]="true"
-                        [options]="bishopBuff.dropdown"
-                        [(ngModel)]="model.skillBuffs[i]"
-                        (onChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                        scrollHeight="380px"
-                      ></p-dropdown>
-                    </div>
-                  </div>
-                  <div *ngSwitchDefault>
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
-                      <p-selectButton
-                        [options]="bishopBuff.dropdown"
-                        [(ngModel)]="model.skillBuffs[i]"
-                        (ngModelChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                      ></p-selectButton>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Learned Skills -->
-          <div class="col-4" [hidden]="passiveSkills.length === 0">
-            <p-tag severity="warning" value="Learn to get bonuses"></p-tag>
-            <div class="grid grid-nogutter">
-              <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-12">
-                <div [ngSwitch]="passiveSkill.inputType">
-                  <div *ngSwitchCase="'dropdown'">
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
-                      <p-dropdown
-                        [autoDisplayFirst]="false"
-                        [resetFilterOnHide]="true"
-                        [options]="passiveSkill.dropdown"
-                        [(ngModel)]="model.passiveSkills[i]"
-                        (onChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                        scrollHeight="380px"
-                      ></p-dropdown>
-                    </div>
-                  </div>
-                  <div *ngSwitchDefault>
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
-                      <p-selectButton
-                        [options]="passiveSkill.dropdown"
-                        [(ngModel)]="model.passiveSkills[i]"
-                        (ngModelChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                      ></p-selectButton>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Active SKills -->
-          <div class="col-4">
-            <p-tag severity="danger" value="Activating Skills/Effects"></p-tag>
-            <div class="grid grid-nogutter">
-              <div *ngFor="let activeSkill of activeSkills; let i = index" class="col-12">
-                <div [ngSwitch]="activeSkill.inputType">
-                  <div *ngSwitchCase="'dropdown'">
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
-                      <p-dropdown
-                        [autoDisplayFirst]="false"
-                        [resetFilterOnHide]="true"
-                        [options]="activeSkill.dropdown"
-                        [(ngModel)]="model.activeSkills[i]"
-                        (onChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                        scrollHeight="380px"
-                      ></p-dropdown>
-                    </div>
-                  </div>
-                  <div *ngSwitchDefault>
-                    <div class="p-inputgroup">
-                      <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
-                      <p-selectButton
-                        [options]="activeSkill.dropdown"
-                        [(ngModel)]="model.activeSkills[i]"
-                        (onChange)="onSkillClassChange()"
-                        styleClass="'width: 50%'"
-                      ></p-selectButton>
                     </div>
                   </div>
                 </div>
@@ -1715,9 +459,11 @@
             </div>
           </div>
         </div>
-      </p-accordionTab>
+        </div><!-- /section-card stats -->
 
-      <p-accordionTab header="Resumo de Batalha">
+        <!-- Simular (Battle) -->
+        <div class="section-card mt-2">
+        <div class="section-header"><i class="pi pi-bolt"></i> Simular</div>
         <div class="grid grid-nogutter battle_summary">
           <div class="col-12" [hidden]="!chanceList?.length">
             <p-fieldset legend="Has a chance" [toggleable]="true">
@@ -1760,17 +506,8 @@
                       </div>
                     </ng-template>
                   </p-dropdown>
-                  <!-- <button
-                    type="button"
-                    class="p-button-success"
-                    pButton
-                    label="Choose Monster"
-                    [loading]="isInProcessingPreset"
-                    (click)="onClickMonster()"
-                  ></button> -->
                 </div>
               </div>
-              <!-- <div class="col-12">{{ selectedMonsterName }}</div> -->
               <div class="col-5 flex align-items-center justify-content-center">
                 <div class="grid grid-nogutter" style="height: 100%; width: 100%">
                   <div class="col-12 flex align-items-center justify-content-center">
@@ -1839,7 +576,7 @@
           </div>
 
           <!-- Table -->
-          <div class="col-12 damage_table">
+          <div class="col-12 damage_table mt-3">
             <p-table
               styleClass="p-datatable-striped"
               filterValue="label"
@@ -1906,8 +643,1279 @@
             </p-table>
           </div>
         </div>
-      </p-accordionTab>
+        </div><!-- /section-card simular -->
 
+        <!-- Item Descriptions -->
+        <p-accordion class="mt-2 build-accordion">
+          <p-accordionTab header="Descrições de Itens">
+            <div class="grid grid-nogutter">
+              <div class="col-4">
+                <div class="item_label_compare" *ngIf="isEnableCompare && equipCompareItems?.length">
+                  <p-listbox
+                    [options]="equipCompareItems"
+                    [(ngModel)]="selectedCompareItemDesc"
+                    [metaKeySelection]="false"
+                    [listStyle]="{ 'max-height': '500px' }"
+                    (onChange)="onSelectItemDescription(true)"
+                  >
+                    <ng-template let-item pTemplate="item">
+                      <div class="flex gap-1 item_template">
+                        <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
+                        <div class="text_ellips">{{ item.label }}</div>
+                      </div>
+                    </ng-template>
+                  </p-listbox>
+                </div>
+                <p-listbox
+                  [options]="equipItems"
+                  [(ngModel)]="selectedItemDesc"
+                  [metaKeySelection]="false"
+                  [listStyle]="{ 'max-height': '500px' }"
+                  (onChange)="onSelectItemDescription()"
+                >
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1 item_template item_label_{{ item.value }}" style="background-color: var(--border-radius)">
+                      <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
+                      <div class="text_ellips">{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-listbox>
+              </div>
+              <div class="col-8">
+                <div class="grid grid-nogutter ml-2" style="max-height: 500px; overflow: auto">
+                  <div class="col-12 json_display">
+                    ItemID: {{ itemId }}
+                    <pre [innerHTML]="itemBonus | prettyjson: [true, 3]"></pre>
+                  </div>
+                  <div class="col-12 px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="itemDescription"></div>
+                </div>
+              </div>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+
+        <!-- Consumables -->
+        <p-accordion class="mt-1 consumable build-accordion">
+          <p-accordionTab header="Consumíveis">
+            <div class="grid grid-nogutter">
+              <div class="col-4">
+                <p-listbox [options]="consumableList" [(ngModel)]="model.consumables" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-2">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                      <div class="text_ellips">{{ item.label }}</div>
+                    </div>
+                  </ng-template>
+                </p-listbox>
+              </div>
+              <div class="col-4">
+                <div class="grid grid-nogutter column_list">
+                  <div *ngFor="let con of consumableList2; let i = index" class="col-12">
+                    <p-listbox [options]="con" [(ngModel)]="model.consumables2[i]" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
+                      <ng-template let-item pTemplate="item">
+                        <div class="flex gap-2">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                          <div class="text_ellips">{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                    </p-listbox>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="grid grid-nogutter">
+                  <div class="col-12">
+                    <p-listbox [options]="aspdPotionList" [(ngModel)]="model.aspdPotion" [multiple]="false" [metaKeySelection]="false" (onChange)="onConsumableChange()">
+                      <ng-template let-item pTemplate="item">
+                        <div class="flex gap-2">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                          <div class="text_ellips">{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                    </p-listbox>
+                  </div>
+                  <div class="col-12">
+                    <p-listbox [options]="aspdPotionList2" [(ngModel)]="model.aspdPotions" [multiple]="true" [metaKeySelection]="false" (onChange)="onConsumableChange()">
+                      <ng-template let-item pTemplate="item">
+                        <div class="flex gap-2">
+                          <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                          <div class="text_ellips">{{ item.label }}</div>
+                        </div>
+                      </ng-template>
+                    </p-listbox>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+
+        <!-- Skills / Buffs -->
+        <p-accordion class="mt-1 select_skill build-accordion">
+          <p-accordionTab header="Skills / Buffs">
+            <div class="grid grid-nogutter">
+              <div class="col-4">
+                <p-tag severity="info" value="Buffs"></p-tag>
+                <span class="skill_debuff pl-2">Vermelho = Debuff monster</span>
+                <div class="grid grid-nogutter">
+                  <div *ngFor="let bishopBuff of skillBuffs; let i = index" class="col-12">
+                    <div [ngSwitch]="bishopBuff.inputType">
+                      <div *ngSwitchCase="'dropdown'">
+                        <div class="p-inputgroup">
+                          <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
+                          <p-dropdown [autoDisplayFirst]="false" [resetFilterOnHide]="true" [options]="bishopBuff.dropdown" [(ngModel)]="model.skillBuffs[i]" (onChange)="onSkillClassChange()" styleClass="'width: 50%'" scrollHeight="380px"></p-dropdown>
+                        </div>
+                      </div>
+                      <div *ngSwitchDefault>
+                        <div class="p-inputgroup">
+                          <span class="p-inputgroup-addon text_group_ellips {{ bishopBuff.isDebuff ? 'skill_debuff' : '' }}">{{ bishopBuff.label }}</span>
+                          <p-selectButton [options]="bishopBuff.dropdown" [(ngModel)]="model.skillBuffs[i]" (ngModelChange)="onSkillClassChange()" styleClass="'width: 50%'"></p-selectButton>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4" [hidden]="passiveSkills.length === 0">
+                <p-tag severity="warning" value="Learn to get bonuses"></p-tag>
+                <div class="grid grid-nogutter">
+                  <div *ngFor="let passiveSkill of passiveSkills; let i = index" class="col-12">
+                    <div [ngSwitch]="passiveSkill.inputType">
+                      <div *ngSwitchCase="'dropdown'">
+                        <div class="p-inputgroup">
+                          <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
+                          <p-dropdown [autoDisplayFirst]="false" [resetFilterOnHide]="true" [options]="passiveSkill.dropdown" [(ngModel)]="model.passiveSkills[i]" (onChange)="onSkillClassChange()" styleClass="'width: 50%'" scrollHeight="380px"></p-dropdown>
+                        </div>
+                      </div>
+                      <div *ngSwitchDefault>
+                        <div class="p-inputgroup">
+                          <span class="p-inputgroup-addon text_group_ellips">{{ passiveSkill.label }}</span>
+                          <p-selectButton [options]="passiveSkill.dropdown" [(ngModel)]="model.passiveSkills[i]" (ngModelChange)="onSkillClassChange()" styleClass="'width: 50%'"></p-selectButton>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <p-tag severity="danger" value="Activating Skills/Effects"></p-tag>
+                <div class="grid grid-nogutter">
+                  <div *ngFor="let activeSkill of activeSkills; let i = index" class="col-12">
+                    <div [ngSwitch]="activeSkill.inputType">
+                      <div *ngSwitchCase="'dropdown'">
+                        <div class="p-inputgroup">
+                          <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
+                          <p-dropdown [autoDisplayFirst]="false" [resetFilterOnHide]="true" [options]="activeSkill.dropdown" [(ngModel)]="model.activeSkills[i]" (onChange)="onSkillClassChange()" styleClass="'width: 50%'" scrollHeight="380px"></p-dropdown>
+                        </div>
+                      </div>
+                      <div *ngSwitchDefault>
+                        <div class="p-inputgroup">
+                          <span class="p-inputgroup-addon text_group_ellips {{ activeSkill.isDebuff ? 'skill_debuff' : '' }}">{{ activeSkill.label }}</span>
+                          <p-selectButton [options]="activeSkill.dropdown" [(ngModel)]="model.activeSkills[i]" (onChange)="onSkillClassChange()" styleClass="'width: 50%'"></p-selectButton>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+      </div>
+
+      <!-- Right: Equipment + Consumables + Skills -->
+      <div class="p-fluid col">
+        <div class="equip-section">
+          <div class="section-header"><i class="pi pi-shield"></i> Equipamentos <a *ngIf="isEnableCompare" class="clear-compare-link" (click)="onListItemComparingChange(true)">limpar comparações</a></div>
+        <!-- Weapon + Ammo -->
+        <div class="grid grid-nogutter item_label_weapon_main equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('weapon')" (click)="toggleCompareSlot('weapon')" pTooltip="Comparar Arma" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'weapon'"
+              [placeholder]="'Weapon'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="weaponList"
+              [refineList]="refineList"
+              [cardList]="weaponCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.weapon"
+              [(itemRefine)]="model.weaponRefine"
+              [(card1Id)]="model.weaponCard1"
+              [(card2Id)]="model.weaponCard2"
+              [(card3Id)]="model.weaponCard3"
+              [(card4Id)]="model.weaponCard4"
+              [(itemGrade)]="model.weaponGrade"
+              [(enchant1Id)]="model.weaponEnchant0"
+              [(enchant2Id)]="model.weaponEnchant1"
+              [(enchant3Id)]="model.weaponEnchant2"
+              [(enchant4Id)]="model.weaponEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.W_Left_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.W_Left_2]"
+              [(option3Value)]="model.rawOptionTxts[itemOptionNumber.W_Left_3]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            >
+              <div class="col-6 item_label_element_converter" style="min-width: 100px">
+                <p-dropdown
+                  [options]="propertyAtkList"
+                  [(ngModel)]="model.propertyAtk"
+                  [disabled]="!model.weapon"
+                  [showClear]="true"
+                  placeholder="Converter"
+                  scrollHeight="300px"
+                  (onChange)="onPropertyAtkChange()"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1" *ngIf="model.propertyAtk">
+                      <div class="flex gap-1 item_template">
+                        <img src="assets/demo/images/items/{{ item.img }}.png" alt="" class="item_img" />
+                        <div class="{{ 'property_' + item.element }}">{{ item.label }}</div>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <div class="flex gap-1 item_template">
+                        <img src="assets/demo/images/items/{{ item.img }}.png" alt="" class="item_img" />
+                        <div class="{{ 'property_' + item.element }}">{{ item.label }}</div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+              <div class="col-{{ isWeaponCanGrade ? 6 : 10 }}" [hidden]="hiddenMap.ammu">
+                <p-dropdown
+                  inputId="ammo"
+                  [autoDisplayFirst]="false"
+                  [resetFilterOnHide]="true"
+                  [options]="ammoList"
+                  [showClear]="true"
+                  [filter]="true"
+                  filterBy="label"
+                  scrollHeight="350px"
+                  [(ngModel)]="model.ammo"
+                  (onChange)="onSelectItem('ammo', $event.value)"
+                  placeholder="Munição"
+                  [disabled]="!model.weapon"
+                >
+                  <ng-template let-item pTemplate="selectedItem">
+                    <div class="flex gap-1 item_template" *ngIf="model.ammo">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                      <div class="{{ 'property_' + item.element }}">
+                        {{ item.label }}
+                      </div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-item pTemplate="item">
+                    <div class="flex gap-1">
+                      <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                      <div class="{{ 'property_' + item.element }}">
+                        {{ item.label }}
+                      </div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+            </app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_leftWeapon_main">
+          <div class="col-12" [hidden]="!model.weapon || !showLeftWeapon || !!model.shield">
+            <app-equipment
+              [itemType]="'leftWeapon'"
+              [placeholder]="'leftWeapon'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="leftWeaponList"
+              [refineList]="refineList"
+              [cardList]="weaponCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.leftWeapon"
+              [(itemRefine)]="model.leftWeaponRefine"
+              [(card1Id)]="model.leftWeaponCard1"
+              [(card2Id)]="model.leftWeaponCard2"
+              [(card3Id)]="model.leftWeaponCard3"
+              [(card4Id)]="model.leftWeaponCard4"
+              [(itemGrade)]="model.leftWeaponGrade"
+              [(enchant1Id)]="model.leftWeaponEnchant0"
+              [(enchant2Id)]="model.leftWeaponEnchant1"
+              [(enchant3Id)]="model.leftWeaponEnchant2"
+              [(enchant4Id)]="model.leftWeaponEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.W_Right_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.W_Right_2]"
+              [(option3Value)]="model.rawOptionTxts[itemOptionNumber.W_Right_3]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.weapon">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'weapon'"
+              [placeholder]="'Weapon'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="weaponList"
+              [refineList]="refineList"
+              [cardList]="weaponCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.weapon"
+              [(itemRefine)]="model2.weaponRefine"
+              [(card1Id)]="model2.weaponCard1"
+              [(card2Id)]="model2.weaponCard2"
+              [(card3Id)]="model2.weaponCard3"
+              [(card4Id)]="model2.weaponCard4"
+              [(itemGrade)]="model2.weaponGrade"
+              [(enchant1Id)]="model2.weaponEnchant0"
+              [(enchant2Id)]="model2.weaponEnchant1"
+              [(enchant3Id)]="model2.weaponEnchant2"
+              [(enchant4Id)]="model2.weaponEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_2]"
+              [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_3]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Shield -->
+        <div class="grid grid-nogutter item_label_shield_main">
+          <div class="col-12" [hidden]="!model.weapon || hiddenMap.shield || !!model.leftWeapon">
+            <app-equipment
+              [itemType]="'shield'"
+              [placeholder]="'Shield'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="shieldList"
+              [refineList]="refineList"
+              [cardList]="shieldCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.shield"
+              [(itemRefine)]="model.shieldRefine"
+              [(card1Id)]="model.shieldCard"
+              [(itemGrade)]="model.shieldGrade"
+              [(enchant2Id)]="model.shieldEnchant1"
+              [(enchant3Id)]="model.shieldEnchant2"
+              [(enchant4Id)]="model.shieldEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.Shield_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.Shield_2]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Head Upper -->
+        <div class="grid grid-nogutter item_label_head equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('headUpper')" (click)="toggleCompareSlot('headUpper')" pTooltip="Comparar Eq. de Topo" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'headUpper'"
+              [placeholder]="'Upper'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="headUpperList"
+              [refineList]="refineList"
+              [cardList]="headCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.headUpper"
+              [(itemRefine)]="model.headUpperRefine"
+              [(card1Id)]="model.headUpperCard"
+              [(itemGrade)]="model.headUpperGrade"
+              [(enchant2Id)]="model.headUpperEnchant1"
+              [(enchant3Id)]="model.headUpperEnchant2"
+              [(enchant4Id)]="model.headUpperEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.H_Upper_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.H_Upper_2]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.headUpper">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'headUpper'"
+              [placeholder]="'Upper'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="headUpperList"
+              [refineList]="refineList"
+              [cardList]="headCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.headUpper"
+              [(itemRefine)]="model2.headUpperRefine"
+              [(card1Id)]="model2.headUpperCard"
+              [(itemGrade)]="model2.headUpperGrade"
+              [(enchant2Id)]="model2.headUpperEnchant1"
+              [(enchant3Id)]="model2.headUpperEnchant2"
+              [(enchant4Id)]="model2.headUpperEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.H_Upper_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.H_Upper_2]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Head Middle -->
+        <div class="grid grid-nogutter item_label_head equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('headMiddle')" (click)="toggleCompareSlot('headMiddle')" pTooltip="Comparar Eq. de Meio" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'headMiddle'"
+              [placeholder]="'Middle'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="headMiddleList"
+              [cardList]="headCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.headMiddle"
+              [(card1Id)]="model.headMiddleCard"
+              [(itemGrade)]="model.headMiddleGrade"
+              [(enchant2Id)]="model.headMiddleEnchant1"
+              [(enchant3Id)]="model.headMiddleEnchant2"
+              [(enchant4Id)]="model.headMiddleEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.H_Mid_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.H_Mid_2]"
+              [(option3Value)]="model.rawOptionTxts[itemOptionNumber.H_Mid_3]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.headMiddle">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'headMiddle'"
+              [placeholder]="'Middle'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="headMiddleList"
+              [cardList]="headCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.headMiddle"
+              [(card1Id)]="model2.headMiddleCard"
+              [(itemGrade)]="model2.headMiddleGrade"
+              [(enchant2Id)]="model2.headMiddleEnchant1"
+              [(enchant3Id)]="model2.headMiddleEnchant2"
+              [(enchant4Id)]="model2.headMiddleEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.H_Mid_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.H_Mid_2]"
+              [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.H_Mid_3]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Head Lower -->
+        <div class="grid grid-nogutter item_label_head equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('headLower')" (click)="toggleCompareSlot('headLower')" pTooltip="Comparar Eq. Inferior" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'headLower'"
+              [placeholder]="'Lower'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="headLowerList"
+              [cardList]="[]"
+              [(itemId)]="model.headLower"
+              [(itemGrade)]="model.headLowerGrade"
+              [(enchant2Id)]="model.headLowerEnchant1"
+              [(enchant3Id)]="model.headLowerEnchant2"
+              [(enchant4Id)]="model.headLowerEnchant3"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.headLower">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'headLower'"
+              [placeholder]="'Lower'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="headLowerList"
+              [cardList]="[]"
+              [(itemId)]="model2.headLower"
+              [(itemGrade)]="model2.headLowerGrade"
+              [(enchant2Id)]="model2.headLowerEnchant1"
+              [(enchant3Id)]="model2.headLowerEnchant2"
+              [(enchant4Id)]="model2.headLowerEnchant3"
+              (selectItemChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Armor -->
+        <div class="grid grid-nogutter item_label_def equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('armor')" (click)="toggleCompareSlot('armor')" pTooltip="Comparar Armadura" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'armor'"
+              [placeholder]="'Armor'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="armorList"
+              [refineList]="refineList"
+              [cardList]="armorCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.armor"
+              [(itemRefine)]="model.armorRefine"
+              [(card1Id)]="model.armorCard"
+              [(itemGrade)]="model.armorGrade"
+              [(enchant2Id)]="model.armorEnchant1"
+              [(enchant3Id)]="model.armorEnchant2"
+              [(enchant4Id)]="model.armorEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.Armor_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.Armor_2]"
+              [(option3Value)]="model.rawOptionTxts[itemOptionNumber.Armor_3]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.armor">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'armor'"
+              [placeholder]="'Armor'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="armorList"
+              [refineList]="refineList"
+              [cardList]="armorCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.armor"
+              [(itemRefine)]="model2.armorRefine"
+              [(itemGrade)]="model2.armorGrade"
+              [(card1Id)]="model2.armorCard"
+              [(enchant2Id)]="model2.armorEnchant1"
+              [(enchant3Id)]="model2.armorEnchant2"
+              [(enchant4Id)]="model2.armorEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_2]"
+              [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.Armor_3]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Garment -->
+        <div class="grid grid-nogutter item_label_def equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('garment')" (click)="toggleCompareSlot('garment')" pTooltip="Comparar Manto" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'garment'"
+              [placeholder]="'Garment'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="garmentList"
+              [refineList]="refineList"
+              [cardList]="garmentCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.garment"
+              [(itemRefine)]="model.garmentRefine"
+              [(card1Id)]="model.garmentCard"
+              [(itemGrade)]="model.garmentGrade"
+              [(enchant2Id)]="model.garmentEnchant1"
+              [(enchant3Id)]="model.garmentEnchant2"
+              [(enchant4Id)]="model.garmentEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.Garment_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.Garment_2]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.garment">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'garment'"
+              [placeholder]="'Garment'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="garmentList"
+              [refineList]="refineList"
+              [cardList]="garmentCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.garment"
+              [(itemRefine)]="model2.garmentRefine"
+              [(card1Id)]="model2.garmentCard"
+              [(itemGrade)]="model2.garmentGrade"
+              [(enchant2Id)]="model2.garmentEnchant1"
+              [(enchant3Id)]="model2.garmentEnchant2"
+              [(enchant4Id)]="model2.garmentEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.Garment_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.Garment_2]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Boot -->
+        <div class="grid grid-nogutter item_label_def equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('boot')" (click)="toggleCompareSlot('boot')" pTooltip="Comparar Bota" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'boot'"
+              [placeholder]="'Boot'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="bootList"
+              [refineList]="refineList"
+              [cardList]="bootCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.boot"
+              [(itemRefine)]="model.bootRefine"
+              [(card1Id)]="model.bootCard"
+              [(itemGrade)]="model.bootGrade"
+              [(enchant2Id)]="model.bootEnchant1"
+              [(enchant3Id)]="model.bootEnchant2"
+              [(enchant4Id)]="model.bootEnchant3"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.boot">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'Boot'"
+              [placeholder]="'boot'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="bootList"
+              [refineList]="refineList"
+              [cardList]="bootCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.boot"
+              [(itemRefine)]="model2.bootRefine"
+              [(card1Id)]="model2.bootCard"
+              [(itemGrade)]="model2.bootGrade"
+              [(enchant2Id)]="model2.bootEnchant1"
+              [(enchant3Id)]="model2.bootEnchant2"
+              [(enchant4Id)]="model2.bootEnchant3"
+              (selectItemChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Acc Right -->
+        <div class="grid grid-nogutter item_label_acc equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('accRight')" (click)="toggleCompareSlot('accRight')" pTooltip="Comparar Acessório Direito" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'accRight'"
+              [placeholder]="'AccRight'"
+              [overlayLabel]="'Right'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="accRightList"
+              [cardList]="accRightCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.accRight"
+              [(itemRefine)]="model.accRightRefine"
+              [(card1Id)]="model.accRightCard"
+              [(itemGrade)]="model.accRightGrade"
+              [(enchant2Id)]="model.accRightEnchant1"
+              [(enchant3Id)]="model.accRightEnchant2"
+              [(enchant4Id)]="model.accRightEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.A_Right_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.A_Right_2]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+              [isEndWithSpace]="!showCompareItemMap.accRight"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.accRight">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'accRight'"
+              [placeholder]="'AccRight'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="accRightList"
+              [cardList]="accRightCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.accRight"
+              [(itemRefine)]="model2.accRightRefine"
+              [(card1Id)]="model2.accRightCard"
+              [(itemGrade)]="model2.accRightGrade"
+              [(enchant2Id)]="model2.accRightEnchant1"
+              [(enchant3Id)]="model2.accRightEnchant2"
+              [(enchant4Id)]="model2.accRightEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.A_Right_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.A_Right_2]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+              [isEndWithSpace]="true"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Acc Left -->
+        <div class="grid grid-nogutter item_label_acc equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('accLeft')" (click)="toggleCompareSlot('accLeft')" pTooltip="Comparar Acessório Esquerdo" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'accLeft'"
+              [placeholder]="'AccLeft'"
+              [overlayLabel]="'Left'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="accLeftList"
+              [cardList]="accLeftCardList"
+              [optionList]="optionList"
+              [(itemId)]="model.accLeft"
+              [(itemRefine)]="model.accLeftRefine"
+              [(card1Id)]="model.accLeftCard"
+              [(itemGrade)]="model.accLeftGrade"
+              [(enchant2Id)]="model.accLeftEnchant1"
+              [(enchant3Id)]="model.accLeftEnchant2"
+              [(enchant4Id)]="model.accLeftEnchant3"
+              [(option1Value)]="model.rawOptionTxts[itemOptionNumber.A_Left_1]"
+              [(option2Value)]="model.rawOptionTxts[itemOptionNumber.A_Left_2]"
+              (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+              (clearItemEvent)="onClearItem($event)"
+              (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
+              (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.accLeft">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'accLeft'"
+              [placeholder]="'AccLeft'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="accLeftList"
+              [cardList]="accLeftCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.accLeft"
+              [(itemRefine)]="model2.accLeftRefine"
+              [(card1Id)]="model2.accLeftCard"
+              [(itemGrade)]="model2.accLeftGrade"
+              [(enchant2Id)]="model2.accLeftEnchant1"
+              [(enchant3Id)]="model2.accLeftEnchant2"
+              [(enchant4Id)]="model2.accLeftEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.A_Left_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.A_Left_2]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+
+        <!-- Pet -->
+        <div class="grid grid-nogutter mt-2">
+          <div class="col-6 item_label_pet">
+            <p-dropdown
+              inputId="pet"
+              [autoDisplayFirst]="false"
+              [resetFilterOnHide]="true"
+              [options]="petList"
+              [filter]="true"
+              filterBy="label"
+              scrollHeight="350px"
+              [(ngModel)]="model.pet"
+              [showClear]="true"
+              (onChange)="onSelectItem('pet', $event.value)"
+              placeholder="Mascote"
+            >
+              <ng-template let-item pTemplate="selectedItem">
+                <div class="flex gap-1 item_template" *ngIf="model.pet">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" class="item_img" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex gap-1">
+                  <img src="assets/demo/images/items/{{ item.value }}.png" alt="" style="width: 19px" />
+                  <div>{{ item.label }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+        </div><!-- /equip-section -->
+
+        <!-- Costumes (collapsible) -->
+        <p-accordion class="mt-2 build-accordion">
+          <p-accordionTab header="Costumes">
+            <div class="grid grid-nogutter">
+              <!-- Upper -->
+              <div class="col-12 grid grid-nogutter item_label_costume equip-slot-compare">
+                <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('costumeEnchantUpper')" (click)="toggleCompareSlot('costumeEnchantUpper')" pTooltip="Comparar Costume Topo" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeUpper'"
+                    [placeholder]="'Costume Upper'"
+                    [itemList]="costumeUpperList"
+                    [(itemId)]="model.costumeUpper"
+                    (selectItemChange)="onSelectItem('costumeUpper', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantUpper'"
+                    [placeholder]="'Upper Enchant'"
+                    [itemList]="costumeEnhUpperList"
+                    [(itemId)]="model.costumeEnchantUpper"
+                    (selectItemChange)="onSelectItem('costumeEnchantUpper', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+              </div>
+              <div class="col-12 grid grid-nogutter item_label_costume item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.costumeEnchantUpper">
+                <div class="col-6"></div>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantUpper'"
+                    [placeholder]="'Upper Enchant'"
+                    [itemList]="costumeEnhUpperList"
+                    [(itemId)]="model2.costumeEnchantUpper"
+                    (selectItemChange)="onCompareItemChange()"
+                  ></app-equipment-cos-enchant>
+                </div>
+              </div>
+
+              <!-- Middle -->
+              <div class="col-12 grid grid-nogutter item_label_costume equip-slot-compare">
+                <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('costumeEnchantMiddle')" (click)="toggleCompareSlot('costumeEnchantMiddle')" pTooltip="Comparar Costume Meio" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeMiddle'"
+                    [placeholder]="'Costume Middle'"
+                    [itemList]="costumeMiddleList"
+                    [(itemId)]="model.costumeMiddle"
+                    (selectItemChange)="onSelectItem('costumeMiddle', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantMiddle'"
+                    [placeholder]="'Middle Enchant'"
+                    [itemList]="costumeEnhMiddleList"
+                    [(itemId)]="model.costumeEnchantMiddle"
+                    (selectItemChange)="onSelectItem('costumeEnchantMiddle', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+              </div>
+              <div class="col-12 grid grid-nogutter item_label_costume item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.costumeEnchantMiddle">
+                <div class="col-6"></div>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantMiddle'"
+                    [placeholder]="'Middle Enchant'"
+                    [itemList]="costumeEnhMiddleList"
+                    [(itemId)]="model2.costumeEnchantMiddle"
+                    (selectItemChange)="onCompareItemChange()"
+                  ></app-equipment-cos-enchant>
+                </div>
+              </div>
+
+              <!-- Lower -->
+              <div class="col-12 grid grid-nogutter item_label_costume equip-slot-compare">
+                <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('costumeEnchantLower')" (click)="toggleCompareSlot('costumeEnchantLower')" pTooltip="Comparar Costume Inferior" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeLower'"
+                    [placeholder]="'Costume Lower'"
+                    [itemList]="costumeLowerList"
+                    [(itemId)]="model.costumeLower"
+                    (selectItemChange)="onSelectItem('costumeLower', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantLower'"
+                    [placeholder]="'Lower Enchant'"
+                    [itemList]="costumeEnhLowerList"
+                    [(itemId)]="model.costumeEnchantLower"
+                    (selectItemChange)="onSelectItem('costumeEnchantLower', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+              </div>
+              <div class="col-12 grid grid-nogutter item_label_costume item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.costumeEnchantLower">
+                <div class="col-6"></div>
+                <div class="col-6">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantLower'"
+                    [placeholder]="'Lower Enchant'"
+                    [itemList]="costumeEnhLowerList"
+                    [(itemId)]="model2.costumeEnchantLower"
+                    (selectItemChange)="onCompareItemChange()"
+                  ></app-equipment-cos-enchant>
+                </div>
+              </div>
+
+              <!-- Garment -->
+              <div class="col-12 grid grid-nogutter mt-2 item_label_costume equip-slot-compare">
+                <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('costumeEnchantGarment')" (click)="toggleCompareSlotGroup(['costumeEnchantGarment', 'costumeEnchantGarment2', 'costumeEnchantGarment4'])" pTooltip="Comparar Costume Manto" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                <div class="col-3">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeGarment'"
+                    [placeholder]="'Costume Garment'"
+                    [itemList]="costumeGarmentList"
+                    [(itemId)]="model.costumeGarment"
+                    (selectItemChange)="onSelectItem('costumeGarment', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+                <div class="col-3">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantGarment'"
+                    [placeholder]="'Garment Enchant'"
+                    [itemList]="costumeEnhGarmentList"
+                    [(itemId)]="model.costumeEnchantGarment"
+                    (selectItemChange)="onSelectItem('costumeEnchantGarment', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+                <div class="col-3">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantGarment2'"
+                    [placeholder]="'Garment Enchant 2'"
+                    [itemList]="costumeEnhGarment2List"
+                    [(itemId)]="model.costumeEnchantGarment2"
+                    (selectItemChange)="onSelectItem('costumeEnchantGarment2', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+                <div class="col-3">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantGarment4'"
+                    [placeholder]="'Garment Enchant 4'"
+                    [itemList]="costumeEnhGarment4List"
+                    [(itemId)]="model.costumeEnchantGarment4"
+                    (selectItemChange)="onSelectItem('costumeEnchantGarment4', $event.itemId)"
+                  ></app-equipment-cos-enchant>
+                </div>
+              </div>
+              <div class="col-12 grid grid-nogutter item_label_costume item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.costumeEnchantGarment || showCompareItemMap.costumeEnchantGarment2 || showCompareItemMap.costumeEnchantGarment4">
+                <div class="col-3"></div>
+                <div class="col-3" *ngIf="showCompareItemMap.costumeEnchantGarment">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantGarment'"
+                    [placeholder]="'Garment Enchant'"
+                    [itemList]="costumeEnhGarmentList"
+                    [(itemId)]="model2.costumeEnchantGarment"
+                    (selectItemChange)="onCompareItemChange()"
+                  ></app-equipment-cos-enchant>
+                </div>
+                <div class="col-3" *ngIf="showCompareItemMap.costumeEnchantGarment2">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantGarment2'"
+                    [placeholder]="'Garment Enchant 2'"
+                    [itemList]="costumeEnhGarment2List"
+                    [(itemId)]="model2.costumeEnchantGarment2"
+                    (selectItemChange)="onCompareItemChange()"
+                  ></app-equipment-cos-enchant>
+                </div>
+                <div class="col-3" *ngIf="showCompareItemMap.costumeEnchantGarment4">
+                  <app-equipment-cos-enchant
+                    [itemType]="'costumeEnchantGarment4'"
+                    [placeholder]="'Garment Enchant 4'"
+                    [itemList]="costumeEnhGarment4List"
+                    [(itemId)]="model2.costumeEnchantGarment4"
+                    (selectItemChange)="onCompareItemChange()"
+                  ></app-equipment-cos-enchant>
+                </div>
+              </div>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+
+        <!-- Shadow Equipment (collapsible) -->
+        <p-accordion class="mt-1 build-accordion">
+          <p-accordionTab header="Shadow Equipment">
+            <div class="grid grid-nogutter">
+              <div class="col-12 grid grid-nogutter align-content-start">
+                <!-- Shadow Weapon -->
+                <div class="col-12 item_label_shadow equip-slot-compare">
+                  <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('shadowWeapon')" (click)="toggleCompareSlot('shadowWeapon')" pTooltip="Comparar Shadow Arma" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                  <app-equipment-shadow
+                    [itemType]="'shadowWeapon'"
+                    [placeholder]="'Shadow Weapon'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowWeaponList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model.shadowWeapon"
+                    [(itemRefine)]="model.shadowWeaponRefine"
+                    [(enchant3Id)]="model.shadowWeaponEnchant2"
+                    [(enchant4Id)]="model.shadowWeaponEnchant3"
+                    [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
+                    (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+                    (clearItemEvent)="onClearItem($event)"
+                    (optionChange)="onOptionChange()"
+                  ></app-equipment-shadow>
+                </div>
+                <div class="col-12 item_label_shadow item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.shadowWeapon">
+                  <app-equipment-shadow
+                    [itemType]="'shadowWeapon'"
+                    [placeholder]="'Shadow Weapon'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowWeaponList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model2.shadowWeapon"
+                    [(itemRefine)]="model2.shadowWeaponRefine"
+                    [(enchant3Id)]="model2.shadowWeaponEnchant2"
+                    [(enchant4Id)]="model2.shadowWeaponEnchant3"
+                    [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Wp_1]"
+                    (selectItemChange)="onCompareItemChange()"
+                    (optionChange)="onCompareItemChange()"
+                  ></app-equipment-shadow>
+                </div>
+
+                <!-- Shadow Shield -->
+                <div class="col-12 item_label_shadow equip-slot-compare">
+                  <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('shadowShield')" (click)="toggleCompareSlot('shadowShield')" pTooltip="Comparar Shadow Escudo" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                  <app-equipment-shadow
+                    [itemType]="'shadowShield'"
+                    [placeholder]="'Shadow Shield'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowShieldList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model.shadowShield"
+                    [(itemRefine)]="model.shadowShieldRefine"
+                    [(enchant3Id)]="model.shadowShieldEnchant2"
+                    [(enchant4Id)]="model.shadowShieldEnchant3"
+                    [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
+                    (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+                    (clearItemEvent)="onClearItem($event)"
+                    (optionChange)="onOptionChange()"
+                  ></app-equipment-shadow>
+                </div>
+                <div class="col-12 item_label_shadow item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.shadowShield">
+                  <app-equipment-shadow
+                    [itemType]="'shadowShield'"
+                    [placeholder]="'Shadow Shield'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowShieldList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model2.shadowShield"
+                    [(itemRefine)]="model2.shadowShieldRefine"
+                    [(enchant3Id)]="model2.shadowShieldEnchant2"
+                    [(enchant4Id)]="model2.shadowShieldEnchant3"
+                    [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Sh_1]"
+                    (selectItemChange)="onCompareItemChange()"
+                    (optionChange)="onCompareItemChange()"
+                  ></app-equipment-shadow>
+                </div>
+
+                <!-- Shadow Armor -->
+                <div class="col-12 item_label_shadow equip-slot-compare">
+                  <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('shadowArmor')" (click)="toggleCompareSlot('shadowArmor')" pTooltip="Comparar Shadow Armadura" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                  <app-equipment-shadow
+                    [itemType]="'shadowArmor'"
+                    [placeholder]="'Shadow Armor'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowArmorList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model.shadowArmor"
+                    [(itemRefine)]="model.shadowArmorRefine"
+                    [(enchant3Id)]="model.shadowArmorEnchant2"
+                    [(enchant4Id)]="model.shadowArmorEnchant3"
+                    [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
+                    (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+                    (clearItemEvent)="onClearItem($event)"
+                    (optionChange)="onOptionChange()"
+                  ></app-equipment-shadow>
+                </div>
+                <div class="col-12 item_label_shadow item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.shadowArmor">
+                  <app-equipment-shadow
+                    [itemType]="'shadowArmor'"
+                    [placeholder]="'Shadow Armor'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowArmorList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model2.shadowArmor"
+                    [(itemRefine)]="model2.shadowArmorRefine"
+                    [(enchant3Id)]="model2.shadowArmorEnchant2"
+                    [(enchant4Id)]="model2.shadowArmorEnchant3"
+                    [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ar_1]"
+                    (selectItemChange)="onCompareItemChange()"
+                    (optionChange)="onCompareItemChange()"
+                  ></app-equipment-shadow>
+                </div>
+
+                <!-- Shadow Boot -->
+                <div class="col-12 item_label_shadow equip-slot-compare">
+                  <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('shadowBoot')" (click)="toggleCompareSlot('shadowBoot')" pTooltip="Comparar Shadow Bota" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                  <app-equipment-shadow
+                    [itemType]="'shadowBoot'"
+                    [placeholder]="'Shadow Boot'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowBootList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model.shadowBoot"
+                    [(itemRefine)]="model.shadowBootRefine"
+                    [(enchant3Id)]="model.shadowBootEnchant2"
+                    [(enchant4Id)]="model.shadowBootEnchant3"
+                    [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_B_1]"
+                    (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+                    (clearItemEvent)="onClearItem($event)"
+                    (optionChange)="onOptionChange()"
+                  ></app-equipment-shadow>
+                </div>
+                <div class="col-12 item_label_shadow item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.shadowBoot">
+                  <app-equipment-shadow
+                    [itemType]="'shadowBoot'"
+                    [placeholder]="'Shadow Boot'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowBootList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model2.shadowBoot"
+                    [(itemRefine)]="model2.shadowBootRefine"
+                    [(enchant3Id)]="model2.shadowBootEnchant2"
+                    [(enchant4Id)]="model2.shadowBootEnchant3"
+                    [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_B_1]"
+                    (selectItemChange)="onCompareItemChange()"
+                    (optionChange)="onCompareItemChange()"
+                  ></app-equipment-shadow>
+                </div>
+
+                <!-- Shadow Earring -->
+                <div class="col-12 item_label_shadow equip-slot-compare">
+                  <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('shadowEarring')" (click)="toggleCompareSlot('shadowEarring')" pTooltip="Comparar Shadow Brinco" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                  <app-equipment-shadow
+                    [itemType]="'shadowEarring'"
+                    [placeholder]="'Shadow Earring'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowEarringList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model.shadowEarring"
+                    [(itemRefine)]="model.shadowEarringRefine"
+                    [(enchant3Id)]="model.shadowEarringEnchant2"
+                    [(enchant4Id)]="model.shadowEarringEnchant3"
+                    [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
+                    (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+                    (clearItemEvent)="onClearItem($event)"
+                    (optionChange)="onOptionChange()"
+                  ></app-equipment-shadow>
+                </div>
+                <div class="col-12 item_label_shadow item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.shadowEarring">
+                  <app-equipment-shadow
+                    [itemType]="'shadowEarring'"
+                    [placeholder]="'Shadow Earring'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowEarringList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model2.shadowEarring"
+                    [(itemRefine)]="model2.shadowEarringRefine"
+                    [(enchant3Id)]="model2.shadowEarringEnchant2"
+                    [(enchant4Id)]="model2.shadowEarringEnchant3"
+                    [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Ear_1]"
+                    (selectItemChange)="onCompareItemChange()"
+                    (optionChange)="onCompareItemChange()"
+                  ></app-equipment-shadow>
+                </div>
+
+                <!-- Shadow Pendant -->
+                <div class="col-12 item_label_shadow equip-slot-compare">
+                  <button type="button" class="compare-slot-btn compare-slot-btn-sm" [class.active]="isSlotComparing('shadowPendant')" (click)="toggleCompareSlot('shadowPendant')" pTooltip="Comparar Shadow Pingente" tooltipPosition="left"><i class="pi pi-clone"></i></button>
+                  <app-equipment-shadow
+                    [itemType]="'shadowPendant'"
+                    [placeholder]="'Shadow Pendant'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowPendantList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model.shadowPendant"
+                    [(itemRefine)]="model.shadowPendantRefine"
+                    [(enchant3Id)]="model.shadowPendantEnchant2"
+                    [(enchant4Id)]="model.shadowPendantEnchant3"
+                    [(optionValue)]="model.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
+                    (selectItemChange)="onSelectItem($event.itemType, $event.itemId, $event.refine)"
+                    (clearItemEvent)="onClearItem($event)"
+                    (optionChange)="onOptionChange()"
+                  ></app-equipment-shadow>
+                </div>
+                <div class="col-12 item_label_shadow item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.shadowPendant">
+                  <app-equipment-shadow
+                    [itemType]="'shadowPendant'"
+                    [placeholder]="'Shadow Pendant'"
+                    [items]="items"
+                    [mapEnchant]="mapEnchant"
+                    [itemList]="shadowPendantList"
+                    [refineList]="shadowRefineList"
+                    [optionList]="basicOptions"
+                    [(itemId)]="model2.shadowPendant"
+                    [(itemRefine)]="model2.shadowPendantRefine"
+                    [(enchant3Id)]="model2.shadowPendantEnchant2"
+                    [(enchant4Id)]="model2.shadowPendantEnchant3"
+                    [(optionValue)]="model2.rawOptionTxts[itemOptionNumber.SD_Pan_1]"
+                    (selectItemChange)="onCompareItemChange()"
+                    (optionChange)="onCompareItemChange()"
+                  ></app-equipment-shadow>
+                </div>
+              </div>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+      </div>
+    </div>
+  </p-tabPanel>
+
+  <!-- ==================== TAB: DETALHES ==================== -->
+  <p-tabPanel header="Detalhes">
+    <p-accordion [multiple]="true" [activeIndex]="[0, 4]">
       <p-accordionTab header="Resumo de Bônus / Multiplicadores">
         <app-misc-detail
           [elementTable]="elementTable"
@@ -1922,18 +1930,6 @@
         <app-misc-detail [elementTable]="[]" [raceTable]="peneRaceTable" [sizeTable]="[]" [classTable]="peneClassTable" [skillMultiplierTable]="[]"></app-misc-detail>
       </p-accordionTab>
 
-      <p-accordionTab header="Resumo">
-        <div class="grid grid-nogutter" style="overflow: auto">
-          <div class="col-6 json_display">
-            <pre [innerHTML]="modelSummary | prettyjson: [true, 3]"></pre>
-            <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson: [true, 3]"></pre>
-          </div>
-          <div class="col-6 json_display">
-            <pre [innerHTML]="totalSummary | prettyjson: [true, 3]"></pre>
-          </div>
-        </div>
-      </p-accordionTab>
-
       <p-accordionTab header="Resumo de Equipamentos">
         <div class="grid grid-nogutter">
           <div class="col-6 json_display">
@@ -1945,55 +1941,17 @@
         </div>
       </p-accordionTab>
 
-      <p-accordionTab header="Descrições de Itens">
-        <div class="grid grid-nogutter">
-          <div class="col-4">
-            <div class="item_label_compare" *ngIf="isEnableCompare && equipCompareItems?.length">
-              <p-listbox
-                [options]="equipCompareItems"
-                [(ngModel)]="selectedCompareItemDesc"
-                [metaKeySelection]="false"
-                [listStyle]="{ 'max-height': '700px' }"
-                (onChange)="onSelectItemDescription(true)"
-              >
-                <ng-template let-item pTemplate="item">
-                  <div class="flex gap-1 item_template">
-                    <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
-                    <div class="text_ellips">
-                      {{ item.label }}
-                    </div>
-                  </div>
-                </ng-template>
-              </p-listbox>
-            </div>
-            <p-listbox
-              [options]="equipItems"
-              [(ngModel)]="selectedItemDesc"
-              [metaKeySelection]="false"
-              [listStyle]="{ 'max-height': '700px' }"
-              (onChange)="onSelectItemDescription()"
-            >
-              <ng-template let-item pTemplate="item">
-                <div class="flex gap-1 item_template item_label_{{ item.value }}" style="background-color: var(--border-radius)">
-                  <img src="assets/demo/images/items/{{ item.id }}.png" alt="" class="item_img" />
-                  <div class="text_ellips">
-                    {{ item.label }}
-                  </div>
-                </div>
-              </ng-template>
-            </p-listbox>
+      <p-accordionTab header="Resumo JSON">
+        <div class="grid grid-nogutter" style="overflow: auto">
+          <div class="col-6 json_display">
+            <pre [innerHTML]="modelSummary | prettyjson: [true, 3]"></pre>
+            <pre *ngIf="isEnableCompare" [innerHTML]="model2 | prettyjson: [true, 3]"></pre>
           </div>
-          <div class="col-8">
-            <div class="grid grid-nogutter ml-2" style="max-height: 700px; overflow: auto">
-              <div class="col-12 json_display">
-                ItemID: {{ itemId }}
-                <pre [innerHTML]="itemBonus | prettyjson: [true, 3]"></pre>
-              </div>
-              <div class="col-12 px-2 py-2" style="color: #000; background-color: #fff" [innerHTML]="itemDescription"></div>
-            </div>
+          <div class="col-6 json_display">
+            <pre [innerHTML]="totalSummary | prettyjson: [true, 3]"></pre>
           </div>
         </div>
       </p-accordionTab>
     </p-accordion>
-  </div>
-</div>
+  </p-tabPanel>
+</p-tabView>

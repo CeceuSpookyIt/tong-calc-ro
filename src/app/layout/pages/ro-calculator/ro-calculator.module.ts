@@ -28,6 +28,7 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { TooltipModule } from 'primeng/tooltip';
 import { BlockUIModule } from 'primeng/blockui';
 import { DataViewModule } from 'primeng/dataview';
+import { TabViewModule } from 'primeng/tabview';
 import { TreeSelectModule } from 'primeng/treeselect';
 
 import { RoCalculatorComponent } from './ro-calculator.component';
@@ -74,6 +75,7 @@ import { StatusInputComponent } from './status-input/status-input.component';
     SplitButtonModule,
     StyleClassModule,
     TableModule,
+    TabViewModule,
     TagModule,
     ToastModule,
     ToggleButtonModule,

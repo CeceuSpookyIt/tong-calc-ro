@@ -1,7 +1,7 @@
 <p-toast></p-toast>
 <p-confirmDialog [position]="'top'"></p-confirmDialog>
 
-<div class="layout-topbar" style="min-width: 1500px">
+<div class="layout-topbar">
   <!-- <a class="layout-topbar-logo" routerLink="">
         <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
         <span>SAKAI</span>
@@ -64,30 +64,26 @@
             <span>Settings</span>
         </button> -->
 
-    <a class="flex align-items-center gap-2 px-2 mx-2 my-1 youtube-link" target="_blank" href="{{ env.youtubeVideoUrl }}">
-      <i class="pi pi-youtube text-4xl text-red-500"></i>
-      <span class="text-xl text-white-alpha-90">Como usar</span>
-    </a>
     <a #survey [hidden]="true" href="{{ env.surveyUrl }}" target="_blank" rel="noreferrer noopener"> </a>
     <a #tracking [hidden]="true" href="{{ env.issueTrackingUrl }}" target="_blank" rel="noreferrer noopener"> </a>
-    <div class="flex align-items-center">
+    <div class="flex align-items-center gap-1">
       <button
-        class="font-bold p-button-danger p-button-rounded p-button-raised"
+        class="p-button-danger p-button-raised"
         icon="pi pi-exclamation-triangle"
+        label="Reportar"
         pButton
         pRipple
-        label="Solicitar / Reportar"
         (click)="survey.click()"
       ></button>
       <button
-        class="font-bold p-button-info p-button-rounded p-button-raised"
-        icon="pi pi-exclamation-triangle"
+        class="p-button-info p-button-raised"
+        icon="pi pi-list-check"
+        label="Acompanhar"
         pButton
         pRipple
-        label="Acompanhar Problemas"
         (click)="tracking.click()"
       ></button>
-      <button class="font-bold p-button-primary p-button-rounded p-button-raised" icon="pi pi-heart" pButton pRipple label="Apoiar" (click)="showDialog()"></button>
+      <button class="p-button-primary p-button-raised" icon="pi pi-heart" label="Apoiar" pButton pRipple (click)="showDialog()"></button>
     </div>
     <div *ngIf="!!username" class="ml-3 flex align-items-center">
       <p-chip label="{{ username }}" icon="pi pi-google" class="chip-profile" styleClass="text-xl"></p-chip>

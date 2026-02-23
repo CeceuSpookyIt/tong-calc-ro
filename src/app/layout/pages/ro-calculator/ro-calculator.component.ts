@@ -247,6 +247,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   monsterList: DropdownModel[] = [];
   selectedMonsterName = '';
   selectedMonster = Number(localStorage.getItem('monster')) || 21067;
+  activeMainTab = 0;
   isShowMonsterEle = false;
   allSelectedMonsterIds: number[];
 
@@ -2628,6 +2629,33 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.statDeltaTooltips = {};
 
     this.updateCompareEvent.next(1);
+  }
+
+  toggleCompareSlot(slot: any) {
+    const idx = this.compareItemNames.indexOf(slot);
+    if (idx >= 0) {
+      this.compareItemNames.splice(idx, 1);
+    } else {
+      this.compareItemNames.push(slot);
+    }
+    this.onListItemComparingChange();
+  }
+
+  isSlotComparing(slot: any): boolean {
+    return this.compareItemNames.includes(slot);
+  }
+
+  toggleCompareSlotGroup(slots: any[]) {
+    const allActive = slots.every((s: any) => this.compareItemNames.includes(s));
+    for (const slot of slots) {
+      const idx = this.compareItemNames.indexOf(slot);
+      if (allActive) {
+        if (idx >= 0) this.compareItemNames.splice(idx, 1);
+      } else {
+        if (idx < 0) this.compareItemNames.push(slot);
+      }
+    }
+    this.onListItemComparingChange();
   }
 
   onCompareItemChange() {
