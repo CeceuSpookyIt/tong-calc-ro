@@ -362,24 +362,27 @@
   <!-- Basic Damage -->
   <div class="col-12" [hidden]="hideBasicAtk">
     <div class="grid grid-nogutter">
-      <div class="col-12">
+      <div class="col-12 mb-1">
+        <span class="font-bold text-primary" style="font-size: 0.9rem; letter-spacing: 0.05em;">ATQ BÁSICO</span>
+        <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500); font-size: 0.75rem;" [hidden]="!showLeftWeapon || !model.leftWeapon">***ATK mão esquerda não calculado</span>
+      </div>
+      <div class="col-6">
         Element:
         <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{ totalSummary?.propertyAtk }}</span
         ><span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.propertyMultiplier }})</span>
-        <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500)" [hidden]="!showLeftWeapon || !model.leftWeapon">***ATK mão esquerda não calculado</span>
       </div>
-      <div class="col-6" [hidden]="totalSummary?.dmg?.totalPene === totalSummary?.dmg?.skillTotalPene">
+      <div class="col-6">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="Penetração:"
-          unit="%"
+          label="SizePenalty:"
+          unit=" %"
           styleClass="summary_highlight"
           styleClass2="summary_compare"
-          [max]="totalSummary?.dmg?.totalPene"
-          [max2]="totalSummary2?.dmg?.totalPene"
+          [max]="totalSummary?.dmg?.sizePenalty"
+          [max2]="totalSummary2?.dmg?.sizePenalty"
         ></app-calc-value>
       </div>
-      <div class="col-6" [hidden]="totalSummary?.dmg?.accuracy === totalSummary?.dmg?.skillAccuracy">
+      <div class="col-6">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
           label="Precisão:"
@@ -390,19 +393,38 @@
           [max2]="totalSummary2?.dmg?.accuracy"
         ></app-calc-value>
       </div>
-      <div class="col-12">
+      <div class="col-6">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="Basic:"
-          styleClass="summary_damage"
+          label="Penetração:"
+          unit="%"
+          styleClass="summary_highlight"
           styleClass2="summary_compare"
-          [min]="totalSummary?.dmg?.basicMinDamage"
-          [max]="totalSummary?.dmg?.basicMaxDamage"
-          [min2]="totalSummary2?.dmg?.basicMinDamage"
-          [max2]="totalSummary2?.dmg?.basicMaxDamage"
+          [max]="totalSummary?.dmg?.totalPene"
+          [max2]="totalSummary2?.dmg?.totalPene"
         ></app-calc-value>
       </div>
-      <div class="col-12">
+      <div class="col-6">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.calc"
+          label="ASPD:"
+          styleClass="summary_highlight"
+          styleClass2="summary_compare"
+          [max]="totalSummary?.calc?.totalAspd"
+          [max2]="totalSummary2?.calc?.totalAspd"
+        ></app-calc-value>
+      </div>
+      <div class="col-6">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.calc"
+          label="Hits/s:"
+          styleClass="summary_highlight"
+          styleClass2="summary_compare"
+          [max]="totalSummary?.calc?.hitPerSecs"
+          [max2]="totalSummary2?.calc?.hitPerSecs"
+        ></app-calc-value>
+      </div>
+      <div class="col-6">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
           label="CriRate:"
@@ -413,16 +435,29 @@
           [max2]="totalSummary2?.dmg?.criRateToMonster"
         ></app-calc-value>
       </div>
-      <div class="col-12">
+      <div class="col-6">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="DmgCri:"
+          label="CriDmg:"
           styleClass="summary_damage"
           styleClass2="summary_compare"
           [min]="totalSummary?.dmg?.criMinDamage"
           [max]="totalSummary?.dmg?.criMaxDamage"
           [min2]="totalSummary2?.dmg?.criMinDamage"
           [max2]="totalSummary2?.dmg?.criMaxDamage"
+        ></app-calc-value>
+      </div>
+      <div class="col-12">
+        <app-calc-value
+          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+          label="Basic:"
+          styleClass="summary_damage"
+          styleClass2="summary_compare"
+          [showPercentDiff]="true"
+          [min]="totalSummary?.dmg?.basicMinDamage"
+          [max]="totalSummary?.dmg?.basicMaxDamage"
+          [min2]="totalSummary2?.dmg?.basicMinDamage"
+          [max2]="totalSummary2?.dmg?.basicMaxDamage"
         ></app-calc-value>
       </div>
       <div class="col-12">
@@ -439,7 +474,7 @@
       <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="Triggered DmgCri:"
+          label="Triggered CriDmg:"
           styleClass="summary_chance"
           styleClass2="summary_compare"
           [min]="totalSummary?.dmg?.effectedBasicCriDamageMin"
@@ -448,17 +483,6 @@
           [max2]="totalSummary2?.dmg?.effectedBasicCriDamageMax || totalSummary2?.dmg?.criMaxDamage"
         ></app-calc-value>
       </div>
-      <!-- <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
-          <app-calc-value
-            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-            label="ASPD:"
-            unit="Hits/s"
-            styleClass="summary_chance"
-            styleClass2="summary_compare"
-            [max]="totalSummary?.dmg?.effectedBasicHitsPerSec"
-            [max2]="totalSummary2?.dmg?.effectedBasicHitsPerSec"
-          ></app-calc-value>
-        </div> -->
       <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
