@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/api-services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -8,28 +7,11 @@ import { AuthService } from 'src/app/api-services';
   styleUrls: ['./auth.component.css'],
 })
 export class AuthComponent implements OnInit {
-  constructor(
-    private readonly route: ActivatedRoute,
-    private readonly authService: AuthService,
-    private readonly router: Router,
-  ) {}
+  constructor(private readonly router: Router) {}
 
   ngOnInit() {
-    const authCode = this.route.snapshot.queryParamMap.get('auth_code');
-    if (authCode) {
-      this.login(authCode);
-    }
-  }
-
-  login(authCode: string) {
-    this.authService.login(authCode).subscribe({
-      next: () => {
-        this.router.navigate(['..'], { relativeTo: this.route });
-      },
-      error: (err) => {
-        console.error(err);
-        this.router.navigate(['..'], { relativeTo: this.route });
-      },
-    });
+    // Supabase handles the OAuth callback automatically via onAuthStateChange.
+    // Just redirect to home.
+    this.router.navigate(['/']);
   }
 }

@@ -1083,6 +1083,10 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
     this.obs.push(o);
   }
 
+  login() {
+    this.authService.signInWithGoogle();
+  }
+
   logout() {
     this.waitConfirm('Logout ?').then((isConfirm) => {
       if (!isConfirm) return;

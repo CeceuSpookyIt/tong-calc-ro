@@ -1,4 +1,5 @@
 export * from './auth.service';
+export * from './supabase.service';
 export * from './models';
 export * from './api-service.module';
 export * from './preset.service';

@@ -94,7 +94,7 @@
         <i class="pi pi-sign-out text-xl"></i>
       </button>
     </div>
-    <a *ngIf="!username" class="font-bold p-button-secondary" icon="pi pi-google" pButton pRipple label="Entrar" href="{{ env.roBackendUrl + '/auth/google' }}"></a>
+    <button *ngIf="!username" class="font-bold p-button-secondary" icon="pi pi-google" pButton pRipple label="Entrar" (click)="login()"></button>
   </div>
   <p-dialog header="Apoiar" [draggable]="false" [resizable]="false" [modal]="true" [(visible)]="visible" [style]="{ 'min-width': '380px' }">
     <div class="mb-3 p-3" style="background-color: var(--surface-ground); border-radius: 6px;">
