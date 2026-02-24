@@ -1060,6 +1060,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const m2 = JSON.parse(JSON.stringify(this.model2));
       const calc2 = this.prepare(this.calculator2, m2);
       this.totalSummary2 = calc2.getTotalSummary();
+      if (this.isRedAura) {
+        this.applyRedAuraDivisor(this.totalSummary2);
+      }
       this.compareItemSummaryModel = calc2.getItemSummary();
       this.buildPerSlotDeltas();
     } else {
