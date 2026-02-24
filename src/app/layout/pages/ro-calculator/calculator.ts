@@ -1431,7 +1431,7 @@ export class Calculator {
         element: skillDef.element,
         isHit100: true,
         autoSpellChance: entry.chancePercent / 100,
-        formula: () => skillDef.formula({ skillLevel: finalLevel, baseLevel: this.model.level || 1, str: this.model.str || 0 }),
+        formula: () => skillDef.formula({ skillLevel: finalLevel, baseLevel: this.model.level || 1, str: this.model.str || 0, int: this.model.int || 0 }),
       };
 
       const result = this.dmgCalculator
