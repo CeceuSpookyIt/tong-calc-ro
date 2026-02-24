@@ -348,6 +348,16 @@ export const JobBuffs: ActiveSkillModel[] = [
     ],
   },
   {
+    name: 'Oratio',
+    label: 'Oratio 10',
+    inputType: 'selectButton',
+    isDebuff: true,
+    dropdown: [
+      { label: 'Yes', value: 10, isUse: true, bonus: { p_element_holy: 20, m_element_holy: 20 } },
+      { label: 'No', value: 0, isUse: false },
+    ],
+  },
+  {
     name: 'Oleum Sanctum',
     label: 'Oleum Sanctum 5',
     inputType: 'selectButton',
