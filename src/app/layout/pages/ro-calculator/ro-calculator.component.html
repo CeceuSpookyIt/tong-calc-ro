@@ -463,14 +463,8 @@
 
         <!-- Simular (Battle) -->
         <div class="section-card mt-2">
-        <div class="section-header"><i class="pi pi-bolt"></i> Simular</div>
-        <div class="grid grid-nogutter battle_summary">
-          <div class="col-12">
-            <div class="field-checkbox my-2">
-              <p-checkbox [(ngModel)]="isRedAura" [binary]="true" inputId="redAura" (ngModelChange)="onSkillClassChange()"></p-checkbox>
-              <label for="redAura" class="font-semibold ml-2">Aura Vermelha (÷1000)</label>
-            </div>
-          </div>
+        <div class="section-header"><i class="pi pi-bolt"></i> Simular <a class="red-aura-link" [class.active]="isRedAura" (click)="isRedAura = !isRedAura; onSkillClassChange()">Aura Vermelha (÷1000)</a></div>
+        <div class="grid grid-nogutter battle_summary" [class.red-aura-bg]="isRedAura">
           <div class="col-12" [hidden]="!chanceList?.length">
             <p-fieldset legend="Has a chance" [toggleable]="true">
               <div *ngFor="let category of chanceList" class="field-checkbox my-2">

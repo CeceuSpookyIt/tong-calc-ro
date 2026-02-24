@@ -136,6 +136,31 @@
   text-decoration: underline;
 }
 
+.red-aura-link {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--red-400);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.red-aura-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.red-aura-link.active {
+  opacity: 1;
+  color: var(--red-300);
+  text-decoration: underline;
+}
+
+.red-aura-bg {
+  background: rgba(180, 40, 40, 0.08);
+  border-radius: var(--md-radius-sm);
+  transition: background 0.3s ease;
+}
+
 .stat-points-row {
   display: flex;
   align-items: center;
