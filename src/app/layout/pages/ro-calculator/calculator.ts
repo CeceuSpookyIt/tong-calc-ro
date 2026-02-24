@@ -159,6 +159,7 @@ export class Calculator {
   private aspdPotion: number = undefined;
 
   private skillName: SKILL_NAME = '' as any;
+  private offensiveSkillLevel = 0;
   private allStatus = createRawTotalBonus();
   private totalEquipStatus = createRawTotalBonus();
   private equipStatus: Partial<Record<ItemTypeEnum, EquipmentSummaryModel>> = {
@@ -414,8 +415,9 @@ export class Calculator {
   }
 
   setOffensiveSkill(skillValue: string) {
-    const [, _skillName] = skillValue?.match(/(.+)==(\d+)/) ?? [];
+    const [, _skillName, _skillLevel] = skillValue?.match(/(.+)==(\d+)/) ?? [];
     this.skillName = _skillName as SKILL_NAME;
+    this.offensiveSkillLevel = Number(_skillLevel) || 0;
 
     return this;
   }
@@ -1394,7 +1396,8 @@ export class Calculator {
       let finalLevel = entry.skillLevel;
       if (entry.useLearned) {
         const learnedLevel = this.learnedSkillMap.get(entry.skillName) || 0;
-        finalLevel = Math.max(finalLevel, learnedLevel);
+        const offensiveLevel = entry.skillName === this.skillName ? this.offensiveSkillLevel : 0;
+        finalLevel = Math.max(finalLevel, learnedLevel, offensiveLevel);
       }
 
       const skillValue = `${entry.skillName}==${finalLevel}`;
@@ -1445,7 +1448,7 @@ export class Calculator {
 
       this.autocastSummaries.push({
         skillName: entry.skillName,
-        skillLevel: entry.skillLevel,
+        skillLevel: finalLevel,
         chancePercent: entry.chancePercent,
         trigger: entry.trigger,
         sourceItemName: entry.sourceItemName,
