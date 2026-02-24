@@ -1195,6 +1195,21 @@ export class Calculator {
 
     for (const [skillName, scripts] of Object.entries(this.equipAtkSkillBonus)) {
       for (const [attr, value] of Object.entries(scripts)) {
+        if (attr.startsWith('autocast__')) {
+          const autocastSkillName = attr.replace('autocast__', '');
+          const parts = String(value).split(',');
+          if (parts.length >= 3) {
+            this.autocastEntries.push({
+              skillName: autocastSkillName,
+              skillLevel: Number(parts[0]),
+              chancePercent: Number(parts[1]),
+              trigger: parts[2].trim() as AutocastTrigger,
+              useLearned: parts[3]?.trim() === 'learned',
+              sourceItemName: skillName,
+            });
+          }
+          continue;
+        }
         if (attr === 'propertyAtk') {
           this.propertyWindmind = value as any;
           continue;
