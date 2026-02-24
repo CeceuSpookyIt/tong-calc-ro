@@ -27,7 +27,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npx ng build --base-href /tong-calc-ro/
+      - run: npx ng build --base-href /rolatam-calc/
         env:
           NODE_OPTIONS: --openssl-legacy-provider
 
