@@ -13,11 +13,9 @@ import { EquipmentInDetailComponent } from './equipment-in-detail/equipment-in-d
 import { PaginatorModule } from 'primeng/paginator';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ToastModule } from 'primeng/toast';
-import { AccordionModule } from 'primeng/accordion';
-import { RoCalculatorModule } from '../ro-calculator/ro-calculator.module';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TooltipModule } from 'primeng/tooltip';
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
-import { CascadeSelectModule } from 'primeng/cascadeselect';
 
 @NgModule({
   imports: [
@@ -31,11 +29,9 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
     PaginatorModule,
     InputSwitchModule,
     ToastModule,
-    AccordionModule,
     SharedPresetRoutingModule,
     ConfirmDialogModule,
-    CascadeSelectModule,
-    RoCalculatorModule,
+    TooltipModule,
   ],
   declarations: [SharedPresetComponent, EquipmentUiComponent, EquipmentInDetailComponent, SkillDetailComponent],
 })
