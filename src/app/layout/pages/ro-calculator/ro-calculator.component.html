@@ -33,8 +33,7 @@
           <input #presetName [autocomplete]="false" type="text" pInputText placeholder="Nome" />
           <button type="button" class="p-button-success" pButton label="Salvar" [loading]="isInProcessingPreset" [disabled]="!presetName.value || isInProcessingPreset" (click)="updatePreset(presetName.value)"></button>
           <button type="button" class="p-button-secondary" pButton icon="pi pi-cog" pTooltip="Gerenciar" [disabled]="isInProcessingPreset" (click)="openPresetManagement()"></button>
-          <button type="button" class="p-button-info" pButton icon="pi pi-upload" pTooltip="Exportar" [disabled]="!model.class" (click)="exportBuild()"></button>
-          <button type="button" class="p-button-warning" pButton icon="pi pi-download" pTooltip="Importar" [disabled]="isInProcessingPreset" (click)="importBuild()"></button>
+          <button type="button" class="p-button-info" pButton icon="pi pi-share-alt" pTooltip="Compartilhar" [disabled]="!model.class" (click)="shareBuild()"></button>
         </div>
         <div class="p-inputgroup dropdown-joblist">
           <p-dropdown
@@ -1955,3 +1954,38 @@
     </p-accordion>
   </p-tabPanel>
 </p-tabView>
+
+<!-- Share Build Dialog -->
+<p-dialog header="Compartilhar Build" [(visible)]="isShareDialogVisible" [modal]="true" [style]="{ width: '500px' }">
+  <div class="grid grid-nogutter gap-3">
+    <div class="col-12">
+      <label class="font-semibold">Nome da Build</label>
+      <input type="text" pInputText [(ngModel)]="shareBuildName" class="w-full mt-1" placeholder="Ex: RK Ignition PvM" />
+    </div>
+    <div class="col-12">
+      <label class="font-semibold">Monstro Alvo</label>
+      <div class="mt-1">{{ shareMonsterName || 'Nenhum selecionado' }}</div>
+    </div>
+    <div class="col-12">
+      <label class="font-semibold">Skill Principal</label>
+      <div class="mt-1">{{ model.selectedAtkSkill || '-' }}</div>
+    </div>
+    <div class="col-12" *ngIf="shareMetricsPreview">
+      <label class="font-semibold">Métricas</label>
+      <div class="grid grid-nogutter mt-1">
+        <div class="col-4">DPS: <span class="text-primary font-semibold">{{ shareMetricsPreview.dps | number }}</span></div>
+        <div class="col-4">Dano Max: <span class="text-primary font-semibold">{{ shareMetricsPreview.maxDamage | number }}</span></div>
+        <div class="col-4">ASPD: <span class="text-primary font-semibold">{{ shareMetricsPreview.aspd }}</span></div>
+      </div>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="flex gap-2 justify-content-between w-full" *ngIf="importedSharedBuildId && importedSharedBuildUserId === currentUserId">
+      <button pButton label="Atualizar Existente" icon="pi pi-refresh" class="p-button-warning" [loading]="isShareProcessing" (click)="updateExistingSharedBuild()"></button>
+      <button pButton label="Criar Nova" icon="pi pi-plus" class="p-button-success" [loading]="isShareProcessing" [disabled]="!shareBuildName" (click)="createNewSharedBuild()"></button>
+    </div>
+    <div *ngIf="!importedSharedBuildId || importedSharedBuildUserId !== currentUserId">
+      <button pButton label="Publicar" icon="pi pi-send" class="p-button-success" [loading]="isShareProcessing" [disabled]="!shareBuildName" (click)="createNewSharedBuild()"></button>
+    </div>
+  </ng-template>
+</p-dialog>

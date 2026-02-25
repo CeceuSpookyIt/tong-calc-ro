@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ConfirmationService, MenuItem, MessageService, PrimeIcons, SelectItemGroup } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Observable, Subject, Subscription, catchError, debounceTime, filter, finalize, forkJoin, mergeMap, of, switchMap, take, tap, throwError } from 'rxjs';
-import { AuthService, PresetModel, PresetService } from 'src/app/api-services';
+import { AuthService, PresetModel, PresetService, SharedBuildMetrics, SharedBuildService } from 'src/app/api-services';
 import { RoService } from 'src/app/api-services/ro.service';
 import { AllowedCompareItemTypes } from 'src/app/app-config';
 import { ToErrorDetail } from 'src/app/app-errors';
@@ -331,6 +331,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   isLoggedIn = false;
 
+  // Share build
+  isShareDialogVisible = false;
+  shareBuildName = '';
+  shareMonsterName = '';
+  shareMetricsPreview: SharedBuildMetrics | null = null;
+  isShareProcessing = false;
+  importedSharedBuildId: string | null = null;
+  importedSharedBuildUserId: string | null = null;
+  currentUserId: string | null = null;
+
   constructor(
     private roService: RoService,
     private messageService: MessageService,
@@ -339,6 +349,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     private readonly layoutService: LayoutService,
     private readonly authService: AuthService,
     private readonly presetService: PresetService,
+    private readonly sharedBuildService: SharedBuildService,
   ) { }
 
   ngOnInit() {
@@ -2975,44 +2986,86 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.isShowMonsterEle = true;
   }
 
-  exportBuild() {
-    const data = toUpsertPresetModel(this.model, this.selectedCharacter);
-    const json = JSON.stringify(data, null, 2);
-    const blob = new Blob([json], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    const className = ClassID[this.model.class] || 'build';
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-    a.download = `build-${className}-${timestamp}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
+  shareBuild() {
+    if (!this.isLoggedIn) {
+      this.messageService.add({ severity: 'warn', summary: 'Login necessário', detail: 'Faça login para compartilhar builds.' });
+      return;
+    }
+
+    const className = ClassID[this.model.class] || '';
+    const skillName = this.model.selectedAtkSkill || '';
+    this.shareBuildName = `${className} - ${skillName}`.trim().replace(/ - $/, '');
+    this.shareMonsterName = this.monsterDataMap[this.selectedMonster]?.name || '';
+    this.shareMetricsPreview = this.buildMetricsSnapshot();
+    this.currentUserId = this.authService.getProfile()?.id || null;
+    this.isShareDialogVisible = true;
   }
 
-  importBuild() {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.json';
-    input.onchange = () => {
-      const file = input.files?.[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = () => {
-        try {
-          const parsed = JSON.parse(reader.result as string);
-          if (!parsed.class) {
-            this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Arquivo inválido: campo "class" não encontrado.' });
-            return;
-          }
-          this.loadItemSet(parsed).subscribe(() => {
-            this.messageService.add({ severity: 'success', summary: 'Importado', detail: 'Build carregada com sucesso.' });
-          });
-        } catch (e) {
-          this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Falha ao ler o arquivo JSON.' });
-        }
-      };
-      reader.readAsText(file);
+  private buildMetricsSnapshot(): SharedBuildMetrics {
+    const s = this.totalSummary;
+    return {
+      dps: s?.dmg?.skillDps || 0,
+      maxDamage: s?.dmg?.skillMaxDamage || 0,
+      minDamage: s?.dmg?.skillMinDamage || 0,
+      aspd: s?.calc?.totalAspd || 0,
+      hitPerSecs: s?.calc?.hitPerSecs || 0,
+      totalHit: s?.calc?.totalHit || 0,
+      criRate: s?.calc?.totalCri || 0,
+      criDmg: s?.criDmg || 0,
+      vct: s?.vct || 0,
+      fct: s?.fct || 0,
+      acd: s?.acd || 0,
+      hp: s?.hp || 0,
+      sp: s?.sp || 0,
     };
-    input.click();
+  }
+
+  createNewSharedBuild() {
+    this.isShareProcessing = true;
+    const data = toUpsertPresetModel(this.model, this.selectedCharacter) as unknown as PresetModel;
+    this.sharedBuildService.createSharedBuild({
+      name: this.shareBuildName,
+      model: data,
+      monsterId: this.selectedMonster,
+      monsterName: this.shareMonsterName,
+      skillName: this.model.selectedAtkSkill,
+      metrics: this.shareMetricsPreview,
+    }).pipe(
+      finalize(() => { this.isShareProcessing = false; }),
+    ).subscribe({
+      next: (build) => {
+        this.importedSharedBuildId = build.id;
+        this.importedSharedBuildUserId = build.userId;
+        this.isShareDialogVisible = false;
+        this.messageService.add({ severity: 'success', summary: 'Build compartilhada!' });
+      },
+      error: (err) => {
+        this.messageService.add({ severity: 'error', summary: 'Erro', detail: err?.message || 'Falha ao compartilhar.' });
+      },
+    });
+  }
+
+  updateExistingSharedBuild() {
+    if (!this.importedSharedBuildId) return;
+    this.isShareProcessing = true;
+    const data = toUpsertPresetModel(this.model, this.selectedCharacter) as unknown as PresetModel;
+    this.sharedBuildService.updateSharedBuild(this.importedSharedBuildId, {
+      name: this.shareBuildName,
+      model: data,
+      monsterId: this.selectedMonster,
+      monsterName: this.shareMonsterName,
+      skillName: this.model.selectedAtkSkill,
+      metrics: this.shareMetricsPreview,
+    }).pipe(
+      finalize(() => { this.isShareProcessing = false; }),
+    ).subscribe({
+      next: () => {
+        this.isShareDialogVisible = false;
+        this.messageService.add({ severity: 'success', summary: 'Build atualizada!' });
+      },
+      error: (err) => {
+        this.messageService.add({ severity: 'error', summary: 'Erro', detail: err?.message || 'Falha ao atualizar.' });
+      },
+    });
   }
 }
