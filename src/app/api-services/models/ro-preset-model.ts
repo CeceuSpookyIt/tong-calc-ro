@@ -8,7 +8,4 @@ export interface RoPresetModel {
   classId: number;
   createdAt: string;
   updatedAt: string;
-  publishName: string;
-  isPublished: boolean;
-  publishedAt: string;
 }

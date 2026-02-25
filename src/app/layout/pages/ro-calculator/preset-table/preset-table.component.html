@@ -86,7 +86,6 @@
         >
           <ng-template let-item pTemplate="item">
             <div class="flex align-items-center gap-1">
-              <i *ngIf="item.isPublished" class="pi pi-send"></i>
               <img src="assets/demo/images/jobs/icon_jobs_{{ item.icon }}.png" alt="" class="job_img" />
               {{ item.label }}
             </div>
@@ -148,78 +147,6 @@
       <div class="col-3 text-lg font-semibold">
         Updated at: <span class="text-primary-300"> {{ presetInfo?.updatedAt | date : 'dd-MM-yyyy HH:mm' }} </span>
       </div>
-      <div class="col-3 text-lg font-semibold" *ngIf="isSharedPreset">
-        Shared at: <span class="text-primary-300"> {{ presetInfo?.publishedAt | date : 'dd-MM-yyyy HH:mm' }} </span
-        ><br />
-      </div>
-      <div class="col-3 text-lg font-medium" *ngIf="isSharedPreset">
-        Like: <span class="text-primary-400"> {{ presetInfo?.tags[0]?.totalLike }} </span><br />
-      </div>
-      <div class="col-6" *ngIf="!isSharedPreset">
-        <div class="p-inputgroup">
-          <input
-            #sharedName
-            [autocomplete]="false"
-            autocomplete="off"
-            type="text"
-            pInputText
-            placeholder="Nome compartilhado"
-          />
-          <button
-            type="button"
-            class="p-button-info"
-            pButton
-            icon="pi pi-send"
-            label="Compartilhar"
-            [disabled]="!selectedCloudPreset || !sharedName.value || isSharedPreset"
-            (click)="sharePreset(sharedName.value); sharedName.value = ''"
-          ></button>
-        </div>
-      </div>
-      <div class="col-12 text-lg font-semibold" *ngIf="isSharedPreset">
-        Shared name: <span class="text-primary-300"> {{ presetInfo?.publishName }} </span>
-        <button type="button" class="p-button-warning" pButton label="Cancelar" (click)="unsharePreset()"></button>
-      </div>
-      <!-- <div class="col-12">
-        <div class="grid p-fluid grid-nogutter" *ngIf="isSharedPreset">
-          <div class="col">
-            <p-multiSelect
-              [options]="availableTags"
-              [(ngModel)]="selectedTags"
-              [showClear]="true"
-              [showHeader]="false"
-              [showToggleAll]="false"
-              selectedItemsLabel="{0} tags selected"
-              placeholder="Tags disponíveis"
-              [maxSelectedLabels]="10"
-            >
-              <ng-template let-tags pTemplate="selectedItems">
-                <div *ngIf="!tags || tags.length === 0">Select Tags</div>
-                <div>
-                  <div class="inline-flex align-items-center gap-2 px-1" *ngFor="let tag of tags">
-                    <p-tag
-                      value="{{ tagSeverityMap[tag]?.label }}"
-                      severity="{{ tagSeverityMap[tag]?.severity }}"
-                      styleClass="text-base py-0"
-                    ></p-tag>
-                  </div>
-                </div>
-              </ng-template>
-            </p-multiSelect>
-          </div>
-          <div class="col-fixed">
-            <button
-              type="button"
-              class="p-button-warning"
-              pButton
-              icon="pi pi-tags"
-              label="Tag"
-              [disabled]="!selectedCloudPreset"
-              (click)="addTags()"
-            ></button>
-          </div>
-        </div>
-      </div> -->
     </div>
 
     <div class="grid my-2">

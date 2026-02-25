@@ -5,7 +5,6 @@ import { ClassID, ClassIcon } from '../../../../jobs/_class-name';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AuthService, EntirePresetWithTagsModel, PresetService } from 'src/app/api-services';
 import { Observable, Subscription, catchError, finalize, of, switchMap, tap } from 'rxjs';
-import { availableTags, tagSeverityMap } from '../../../../constants/available-tags';
 import { ToErrorDetail } from 'src/app/app-errors';
 import { getClassDropdownList } from '../../../../jobs/_class-list';
 
@@ -69,13 +68,6 @@ export class PresetTableComponent implements OnInit, OnDestroy {
 
   presetInfo = {} as EntirePresetWithTagsModel;
   selectedCloudPreset = undefined;
-  isSharedPreset = false;
-  availableTags = availableTags.map((a) => {
-    return { ...a };
-  });
-  selectedTags = [] as string[];
-  currentTags = [] as { tag: string; severity: string }[];
-  tagSeverityMap = tagSeverityMap;
 
   constructor(
     private messageService: MessageService,
@@ -191,14 +183,9 @@ export class PresetTableComponent implements OnInit, OnDestroy {
     if (isLocal) {
       this.selectedCloudPreset = undefined;
       this.model = this.presets.find((a) => a.value === this.selectedPreset)?.model || {};
-      this.selectedTags = [];
     } else {
       this.selectedPreset = undefined;
       this.presetInfo = this.cloudPresets.find((a) => a.id === this.selectedCloudPreset);
-      this.isSharedPreset = this.presetInfo?.isPublished ?? false;
-      this.currentTags = this.presetInfo?.tags?.map((a, i) => ({ tag: a.tag, severity: this.getTagSeverity(a.tag, i) })) || [];
-
-      this.selectedTags = this.presetInfo?.tags?.map((a) => a.tag);
       this.model = this.presetInfo?.model || {};
     }
 
@@ -328,90 +315,6 @@ export class PresetTableComponent implements OnInit, OnDestroy {
         this.removePreset(targetPreset);
       },
     });
-  }
-
-  sharePreset(publishName: string) {
-    const preset = this.cloudPresets.find((a) => a.id === this.selectedCloudPreset);
-    if (!preset || !publishName) return;
-
-    this.waitConfirm(`Shared preset cannot be update, want to share "${preset.label}" ?`).then((isConfirm) => {
-      if (!isConfirm) return;
-
-      const ob = this.presetService
-        .sharePreset(preset.id, {
-          publishName: publishName.substring(0, 200),
-        })
-        .pipe(
-          tap((sharedPreset) => {
-            preset.publishName = sharedPreset.publishName;
-            preset.isPublished = sharedPreset.isPublished;
-            preset.publishedAt = sharedPreset.publishedAt;
-            this.isSharedPreset = true;
-          }),
-        );
-
-      this.calAPIWithLoading(ob, `"${preset.label}" was share`);
-    });
-  }
-
-  unsharePreset() {
-    const preset = this.cloudPresets.find((a) => a.id === this.selectedCloudPreset);
-    if (!preset || !preset.isPublished) return;
-
-    this.waitConfirm(`Cancel sharing "${preset.label}" ?`).then((isConfirm) => {
-      if (!isConfirm) return;
-
-      const ob = this.presetService.unsharePreset(preset.id).pipe(
-        tap((sharedPreset) => {
-          preset.publishName = sharedPreset.publishName;
-          preset.isPublished = sharedPreset.isPublished;
-          preset.publishedAt = sharedPreset.publishedAt;
-          this.isSharedPreset = false;
-        }),
-      );
-
-      this.calAPIWithLoading(ob, `Sharing "${preset.label}" was cancel`);
-    });
-  }
-
-  addTags() {
-    const preset = this.cloudPresets.find((a) => a.id === this.selectedCloudPreset);
-    if (!preset) return;
-
-    const selectedTags = this.selectedTags || [];
-
-    this.waitConfirm(`Update tags ?`).then((isConfirm) => {
-      if (!isConfirm) return;
-
-      const ob = this.presetService
-        .addPresetTags(preset.id, {
-          createTags: this.selectedTags,
-          deleteTags: preset.tags.filter((t) => !selectedTags.includes(t.tag)).map((a) => a.tag),
-        })
-        .pipe(
-          tap((presetTag) => {
-            preset.tags = presetTag.tags;
-          }),
-        );
-
-      this.calAPIWithLoading(ob, `Tag was update`);
-    });
-  }
-
-  getTagSeverity(tagName: string, no: number) {
-    const x = no % 4;
-    switch (x) {
-      case 0:
-        return 'success';
-      case 1:
-        return 'info';
-      case 2:
-        return 'warning';
-      case 3:
-        return 'danger';
-      default:
-        return '';
-    }
   }
 
   showMoveToCloudSuccess() {

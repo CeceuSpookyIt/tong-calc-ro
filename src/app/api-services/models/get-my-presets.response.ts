@@ -1,3 +1,3 @@
-import { PresetWithTagsModel } from './preset-with-tags-model';
+import { RoPresetModel } from './ro-preset-model';
 
-export type GetMyPresetsResponse = PresetWithTagsModel[];
+export type GetMyPresetsResponse = Omit<RoPresetModel, 'model' | 'userId'>[];
