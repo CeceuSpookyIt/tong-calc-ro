@@ -9,10 +9,10 @@ export class SupabaseService {
   constructor() {
     this.supabase = createClient(environment.supabaseUrl, environment.supabaseAnonKey, {
       auth: {
-        flowType: 'pkce',
-        detectSessionInUrl: true,
+        // Use implicit flow (tokens in hash fragment).
+        // Hash tokens are intercepted in main.ts BEFORE Angular's HashLocationStrategy destroys them.
+        detectSessionInUrl: false,
         // Bypass navigator.locks API to avoid Zone.js "Unhandled Promise rejection" errors
-        // that break auth initialization in Angular
         lock: async (_name: string, _acquireTimeout: number, fn: () => Promise<any>) => {
           return await fn();
         },

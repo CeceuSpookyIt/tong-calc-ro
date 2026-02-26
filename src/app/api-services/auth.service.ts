@@ -42,18 +42,24 @@ export class AuthService {
   }
 
   private async initSession() {
-    // PKCE flow: explicitly exchange the authorization code if present in URL
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
-    if (code) {
-      const { error } = await this.supabaseService.auth.exchangeCodeForSession(code);
-      if (error) {
-        console.error('PKCE code exchange error:', error);
+    // Check for OAuth callback tokens saved by main.ts (intercepted before Angular routing)
+    const callbackData = sessionStorage.getItem('supabase-auth-callback');
+    if (callbackData) {
+      sessionStorage.removeItem('supabase-auth-callback');
+      try {
+        const tokens = JSON.parse(callbackData);
+        if (tokens.access_token && tokens.refresh_token) {
+          const { error } = await this.supabaseService.auth.setSession({
+            access_token: tokens.access_token,
+            refresh_token: tokens.refresh_token,
+          });
+          if (error) {
+            console.error('OAuth session restore error:', error);
+          }
+        }
+      } catch (e) {
+        console.error('OAuth callback parse error:', e);
       }
-      // Clean up the URL to remove ?code= parameter
-      const url = new URL(window.location.href);
-      url.searchParams.delete('code');
-      window.history.replaceState({}, '', url.pathname + url.hash);
     }
 
     const { data: { session } } = await this.supabaseService.auth.getSession();
