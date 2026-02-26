@@ -2,7 +2,7 @@ import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const DemonBane: PassiveSkillModel = {
   inputType: 'dropdown',
-  label: 'Demon Bane',
+  label: 'Perdição Demoníaca',
   name: 'Demon Bane',
   isMasteryAtk: true,
   dropdown: [

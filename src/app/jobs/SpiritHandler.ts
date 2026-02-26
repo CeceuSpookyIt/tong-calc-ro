@@ -163,7 +163,7 @@ export class SpiritHandler extends Doram {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Chulho Sonic Claw',
-      label: '[V2] Chulho Sonic Claw Lv7',
+      label: '[V2] Garra Sônica Chulho Lv7',
       value: 'Chulho Sonic Claw==7',
       acd: 0.5,
       fct: 0,
@@ -187,7 +187,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'Howling of Chulho',
-      label: '[V2] Howling of Chulho Lv7',
+      label: '[V2] Uivo de Chulho Lv7',
       value: 'Howling of Chulho==7',
       acd: 0,
       fct: 1,
@@ -207,7 +207,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'Hogogong Strike',
-      label: '[V2] Hogogong Strike Lv7',
+      label: '[V2] Golpe Hogogong Lv7',
       value: 'Hogogong Strike==7',
       acd: 0,
       fct: 1,
@@ -231,7 +231,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'Hyunrok Breeze',
-      label: '[V2] Hyunrok Breeze Lv7',
+      label: '[V2] Brisa Hyunrok Lv7',
       value: 'Hyunrok Breeze==7',
       acd: 0.5,
       fct: 1.5,
@@ -253,7 +253,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'Hyunrok Cannon',
-      label: '[V2] Hyunrok Cannon Lv7',
+      label: '[V2] Canhão Hyunrok Lv7',
       value: 'Hyunrok Cannon==7',
       acd: 0,
       fct: 1.5,
@@ -276,7 +276,7 @@ export class SpiritHandler extends Doram {
   ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
-      label: 'Colors of Hynrok',
+      label: 'Cores de Hyunrok',
       name: 'Colors of Hynrok',
       inputType: 'dropdown',
       dropdown: [
@@ -294,7 +294,7 @@ export class SpiritHandler extends Doram {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Commune with Chulho',
-      label: 'Commune Chulho',
+      label: 'Comunhão Chulho',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -303,7 +303,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'Commune with Hyunrok',
-      label: 'Commune Hyunrok',
+      label: 'Comunhão Hyunrok',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -312,7 +312,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'Mystical Creature Mastery',
-      label: 'Mystical Cre Mastery',
+      label: 'Maestria Criatura Mística',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({ pAtk: floor(lv * 1.5), sMatk: floor(lv * 1.5) }))
     },

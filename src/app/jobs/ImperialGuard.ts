@@ -165,7 +165,7 @@ export class ImperialGuard extends RoyalGuard {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Overslash',
-      label: '[V3] Overslash Lv10 (1 hit)',
+      label: '[V3] Sobre-Talho Lv10 (1 hit)',
       value: 'Overslash==10',
       acd: 0.5,
       fct: 0.5,
@@ -183,7 +183,7 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'Shield Shooting',
-      label: '[V3] Shield Shooting Lv5',
+      label: '[V3] Tiro de Escudo Lv5',
       value: 'Shield Shooting==5',
       acd: 0.5,
       fct: 0.5,
@@ -203,7 +203,7 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'Cross Rain',
-      label: '[V3] Cross Rain Lv10',
+      label: '[V3] Chuva de Cruz Lv10',
       value: 'Cross Rain==10',
       acd: 0.15,
       fct: 1.5,
@@ -229,7 +229,7 @@ export class ImperialGuard extends RoyalGuard {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Attack Stance',
-      label: 'Attack Stance',
+      label: 'Postura de Ataque',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -242,7 +242,7 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'Holy Shield',
-      label: 'Holy Shield',
+      label: 'Escudo Sagrado',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -255,7 +255,7 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'Grand Judgement',
-      label: 'Grand Judgement',
+      label: 'Grande Julgamento',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 10, isUse: true },
@@ -264,7 +264,7 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'Shield Shooting',
-      label: 'Shield Shooting',
+      label: 'Tiro de Escudo',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true },
@@ -275,7 +275,7 @@ export class ImperialGuard extends RoyalGuard {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Spear & Sword Mastery',
-      label: 'Spear & Sword Mastery',
+      label: 'Domínio de Lança e Espada',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -293,7 +293,7 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'Shield Mastery',
-      label: 'Shield Mastery',
+      label: 'Domínio de Escudo',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },

@@ -86,7 +86,7 @@ export class RoyalGuard extends Paladin {
   protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Banishing Point',
-      label: 'Banishing Point Lv10',
+      label: 'Ponto de Banimento Lv10',
       value: 'Banishing Point==10',
       values: ['[Improved] Banishing Point==10'],
       acd: 0,
@@ -107,7 +107,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'Genesis Ray',
-      label: 'Genesis Ray Lv10',
+      label: 'Raio Gênesis Lv10',
       value: 'Genesis Ray==10',
       values: ['[Improved] Genesis Ray==10'],
       acd: 1,
@@ -134,7 +134,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'Over Brand',
-      label: 'Over Brand Lv5',
+      label: 'Marca Suprema Lv5',
       value: 'Over Brand==5',
       values: ['[Improved] Over Brand==5'],
       acd: 1,
@@ -154,7 +154,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'Shield Press',
-      label: 'Shield Press Lv10',
+      label: 'Pressão do Escudo Lv10',
       value: 'Shield Press==10',
       acd: 0,
       fct: 0,
@@ -179,7 +179,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'Cannon Spear',
-      label: 'Cannon Spear Lv5',
+      label: 'Lança Canhão Lv5',
       value: 'Cannon Spear==5',
       acd: 0,
       fct: 0,
@@ -201,7 +201,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'Cannon Spear',
-      label: '[Improved] Cannon Spear Lv5',
+      label: '[Improved] Lança Canhão Lv5',
       value: '[Improved] Cannon Spear==5',
       acd: 0,
       fct: 0,
@@ -222,7 +222,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'Earth Drive',
-      label: 'Earth Drive Lv5',
+      label: 'Impulso Terrestre Lv5',
       value: 'Earth Drive==5',
       values: ['[Improved] Earth Drive==5'],
       acd: 1,
@@ -246,7 +246,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'Moon Slasher',
-      label: 'Moon Slasher Lv5',
+      label: 'Talho Lunar Lv5',
       value: 'Moon Slasher==5',
       acd: 1,
       fct: 0,
@@ -267,7 +267,7 @@ export class RoyalGuard extends Paladin {
   protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     ShieldSpellFn(),
     {
-      label: 'Earth Drive',
+      label: 'Impulso Terrestre',
       name: 'Earth Drive',
       inputType: 'selectButton',
       isMasteryAtk: true,
@@ -277,7 +277,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Ride Peco',
+      label: 'Montar Peco',
       name: 'Ride Peco',
       inputType: 'selectButton',
       dropdown: [
@@ -286,7 +286,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Inspiration 5',
+      label: 'Inspiração 5',
       name: 'Inspiration',
       inputType: 'selectButton',
       isEquipAtk: true,
@@ -302,7 +302,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Moon Slasher',
+      label: 'Talho Lunar',
       name: 'Moon Slasher',
       inputType: 'selectButton',
       isMasteryAtk: true,
@@ -315,7 +315,7 @@ export class RoyalGuard extends Paladin {
 
   protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Shield Press',
+      label: 'Pressão do Escudo',
       name: 'Shield Press',
       inputType: 'dropdown',
       dropdown: [
@@ -333,7 +333,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Over Brand',
+      label: 'Marca Suprema',
       name: 'Over Brand',
       inputType: 'dropdown',
       dropdown: [
@@ -346,7 +346,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Inspiration',
+      label: 'Inspiração',
       name: 'Inspiration',
       inputType: 'dropdown',
       dropdown: [
@@ -359,7 +359,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Piety',
+      label: 'Piedade',
       name: 'Piety',
       inputType: 'dropdown',
       dropdown: [
@@ -372,7 +372,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Moon Slasher',
+      label: 'Talho Lunar',
       name: 'Moon Slasher',
       inputType: 'dropdown',
       dropdown: [

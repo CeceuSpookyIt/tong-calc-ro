@@ -85,7 +85,7 @@ export class Ranger extends Sniper {
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Arrow Storm',
-      label: 'Arrow Storm Lv10',
+      label: 'Tempestade de Flechas Lv10',
       value: 'Arrow Storm==10',
       values: ['[Improved] Arrow Storm==10'],
       acd: 0,
@@ -103,7 +103,7 @@ export class Ranger extends Sniper {
     },
     {
       name: 'Aimed Bolt',
-      label: 'Aimed Bolt Lv10',
+      label: 'Tiro Certeiro Lv10',
       value: 'Aimed Bolt==10',
       values: ['Aimed Bolt==10'],
       acd: 2,
@@ -126,7 +126,7 @@ export class Ranger extends Sniper {
   ];
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
-      label: 'Fear Breeze 5',
+      label: 'Brisa do Medo 5',
       name: 'Fear Breeze',
       inputType: 'selectButton',
       isMasteryAtk: true,
@@ -142,7 +142,7 @@ export class Ranger extends Sniper {
     {
       isMasteryAtk: true,
       inputType: 'dropdown',
-      label: 'Main Ranger',
+      label: 'Ranger Principal',
       name: 'Main Ranger',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -219,7 +219,7 @@ export class Ranger extends Sniper {
       ],
     },
     {
-      label: 'Trap Research',
+      label: 'Pesquisa de Armadilhas',
       name: 'Trap Research',
       inputType: 'dropdown',
       isEquipAtk: true,
@@ -238,7 +238,7 @@ export class Ranger extends Sniper {
       ],
     },
     {
-      label: 'Wug Strike',
+      label: 'Ataque do Wug',
       name: 'Wug Strike',
       inputType: 'dropdown',
       dropdown: [
@@ -251,7 +251,7 @@ export class Ranger extends Sniper {
       ],
     },
     {
-      label: 'Fear Breeze',
+      label: 'Brisa do Medo',
       name: 'Fear Breeze',
       inputType: 'dropdown',
       dropdown: [
@@ -264,7 +264,7 @@ export class Ranger extends Sniper {
       ],
     },
     {
-      label: 'Camouflage',
+      label: 'Camuflagem',
       name: 'Camouflage',
       inputType: 'dropdown',
       dropdown: [
@@ -277,7 +277,7 @@ export class Ranger extends Sniper {
       ],
     },
     {
-      label: 'Wug Rider',
+      label: 'Montaria Wug',
       name: 'Wug Rider',
       inputType: 'dropdown',
       dropdown: [

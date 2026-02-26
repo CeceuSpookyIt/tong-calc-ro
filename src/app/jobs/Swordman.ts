@@ -156,7 +156,7 @@ export class Swordman extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      label: 'Magnum Break 10',
+      label: 'Ruptura Magnum 10',
       name: 'Magnum Break',
       inputType: 'selectButton',
       dropdown: [
@@ -167,7 +167,7 @@ export class Swordman extends CharacterBase {
   ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Sword Mastery',
+      label: 'Domínio de Espada',
       name: 'Sword Mastery',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -186,7 +186,7 @@ export class Swordman extends CharacterBase {
       ],
     },
     {
-      label: 'Two-Hand Mastery',
+      label: 'Domínio de Duas Mãos',
       name: 'Two-Handed Sword Mastery',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -205,7 +205,7 @@ export class Swordman extends CharacterBase {
       ],
     },
     {
-      label: 'Bash',
+      label: 'Golpe',
       name: 'Bash',
       inputType: 'dropdown',
       dropdown: [
@@ -223,7 +223,7 @@ export class Swordman extends CharacterBase {
       ],
     },
     {
-      label: 'Increase HP Recovery',
+      label: 'Aumento de Rec. HP',
       name: 'Increase HP Recovery',
       inputType: 'dropdown',
       dropdown: [

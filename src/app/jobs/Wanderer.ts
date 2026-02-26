@@ -98,7 +98,7 @@ export class Wanderer extends Bard {
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Arrow Vulcan',
-      label: 'Arrow Vulcan Lv10',
+      label: 'Flechar de Vulcano Lv10',
       value: 'Arrow Vulcan==10',
       acd: 0.5,
       fct: 0.5,
@@ -114,7 +114,7 @@ export class Wanderer extends Bard {
     },
     {
       name: 'Metalic Sound',
-      label: 'Metalic Sound Lv10',
+      label: 'Som Metálico Lv10',
       value: 'Metalic Sound==10',
       acd: 0.5,
       fct: 0,
@@ -136,7 +136,7 @@ export class Wanderer extends Bard {
     },
     {
       name: 'Severe Rainstorm',
-      label: 'Severe Rainstorm',
+      label: 'Tempestade Severa',
       value: 'Severe Rainstorm==5',
       values: [
         '[Improved] Severe Rainstorm==1',
@@ -151,11 +151,11 @@ export class Wanderer extends Bard {
       cd: (lv) => 4.5 + lv * 0.5,
       totalHit: 12,
       levelList: [
-        { label: 'Severe Rainstorm Lv1', value: 'Severe Rainstorm==1' },
-        { label: 'Severe Rainstorm Lv2', value: 'Severe Rainstorm==2' },
-        { label: 'Severe Rainstorm Lv3', value: 'Severe Rainstorm==3' },
-        { label: 'Severe Rainstorm Lv4', value: 'Severe Rainstorm==4' },
-        { label: 'Severe Rainstorm Lv5', value: 'Severe Rainstorm==5' },
+        { label: 'Tempestade Severa Lv1', value: 'Severe Rainstorm==1' },
+        { label: 'Tempestade Severa Lv2', value: 'Severe Rainstorm==2' },
+        { label: 'Tempestade Severa Lv3', value: 'Severe Rainstorm==3' },
+        { label: 'Tempestade Severa Lv4', value: 'Severe Rainstorm==4' },
+        { label: 'Tempestade Severa Lv5', value: 'Severe Rainstorm==5' },
       ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { weapon, status, skillLevel, model } = input;
@@ -174,7 +174,7 @@ export class Wanderer extends Bard {
     },
     {
       name: 'Reverberation',
-      label: 'Reverberation Lv5',
+      label: 'Reverberação Lv5',
       value: 'Reverberation==5',
       values: ['[Improved] Reverberation==5'],
       acd: 0.5,
@@ -196,7 +196,7 @@ export class Wanderer extends Bard {
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     SevereRainstormFn(),
     {
-      label: 'Dancing Lesson',
+      label: 'Lição de Dança',
       name: 'Dancing Lesson',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -216,7 +216,7 @@ export class Wanderer extends Bard {
     },
     Lesson,
     {
-      label: 'Dart Arrow',
+      label: 'Flecha Dardo',
       name: 'Dart Arrow',
       inputType: 'dropdown',
       dropdown: [

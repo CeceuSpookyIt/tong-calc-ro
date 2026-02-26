@@ -86,7 +86,7 @@ export class ArchBishop extends HighPriest {
   protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Holy Light',
-      label: 'Holy Light',
+      label: 'Luz Sagrada',
       value: 'Holy Light==1',
       acd: 0,
       cd: 0,
@@ -160,7 +160,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       name: 'Adoramus',
-      label: 'Adoramus Lv10 (In Ancilla)',
+      label: 'Adoramus Lv10 (com Ancilla)',
       value: '[Improved] Adoramus Ancilla==10',
       fct: 0.5,
       vct: 2,
@@ -178,7 +178,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       name: 'Hell Inferno',
-      label: 'Hell Inferno Lv5',
+      label: 'Inferno Lv5',
       value: 'Hell Inferno==5',
       fct: 1,
       vct: 3,
@@ -193,7 +193,7 @@ export class ArchBishop extends HighPriest {
         return skillLevel * 400 * (baseLevel / 100);
       },
       part2: {
-        label: 'Shadow Dmg',
+        label: 'Dano Sombrio',
         isIncludeMain: true,
         element: ElementType.Dark,
         isMatk: true,
@@ -224,7 +224,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Offertorium',
+      label: 'Ofertório',
       name: 'Offertorium',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -233,7 +233,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Basilica',
+      label: 'Basílica',
       name: 'Basilica',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -249,7 +249,7 @@ export class ArchBishop extends HighPriest {
   protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Mace Mastery',
+      label: 'Maestria em Maça',
       name: 'Mace Mastery',
       isEquipAtk: true,
       dropdown: [
@@ -268,7 +268,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Meditation',
+      label: 'Meditação',
       name: 'Meditation',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -286,7 +286,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Kyrie',
+      label: 'Kyrie Eleison',
       name: 'Kyrie Eleison',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -317,7 +317,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Clementia',
+      label: 'Clemência',
       name: 'Clementia',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -328,7 +328,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Laudaagnus',
+      label: 'Lauda Agnus',
       name: 'Laudaagnus',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -340,7 +340,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Expiatio',
+      label: 'Expiação',
       name: 'Expiatio',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -353,7 +353,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Impositio Manus',
+      label: 'Imposição de Mãos',
       name: 'Impositio Manus',
       dropdown: [
         { label: '-', value: 0, isUse: false },

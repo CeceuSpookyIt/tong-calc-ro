@@ -85,7 +85,7 @@ export class Creator extends Merchant {
   protected readonly activeSkillListHi: ActiveSkillModel[] = [];
   protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     {
-      label: 'Learn Potion',
+      label: 'Aprender Poção',
       name: 'Learning Potion',
       inputType: 'dropdown',
       dropdown: [
@@ -103,7 +103,7 @@ export class Creator extends Merchant {
       ],
     },
     {
-      label: 'Axe Mastery',
+      label: 'Maestria em Machado',
       name: 'Axe Mastery',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -113,7 +113,7 @@ export class Creator extends Merchant {
       ],
     },
     {
-      label: 'Potion Pitcher',
+      label: 'Lançador de Poção',
       name: 'Potion Pitcher',
       inputType: 'dropdown',
       dropdown: [
@@ -126,7 +126,7 @@ export class Creator extends Merchant {
       ],
     },
     {
-      label: 'Acid Bomb',
+      label: 'Bomba Ácida',
       name: 'Acid Demonstration',
       inputType: 'dropdown',
       dropdown: [
@@ -144,7 +144,7 @@ export class Creator extends Merchant {
       ],
     },
     {
-      label: 'Bio Cannibalize',
+      label: 'Biocanibalize',
       name: 'Bio Cannibalize',
       inputType: 'dropdown',
       dropdown: [

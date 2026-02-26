@@ -163,7 +163,7 @@ export class DragonKnight extends RuneKnight {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Servant Weapon',
-      label: '[V3] Servant Weapon Lv5',
+      label: '[V3] Arma Servente Lv5',
       value: 'Servant Weapon==5',
       acd: 0,
       fct: 0,
@@ -184,7 +184,7 @@ export class DragonKnight extends RuneKnight {
     },
     {
       name: 'Hack and Slasher',
-      label: '[V3] Hack and Slasher Lv10',
+      label: '[V3] Cortar e Retalhar Lv10',
       value: 'Hack and Slasher==10',
       acd: 0.25,
       fct: 0,
@@ -210,7 +210,7 @@ export class DragonKnight extends RuneKnight {
     },
     {
       name: 'Storm Slash',
-      label: '[V3] Storm Slash Lv5',
+      label: '[V3] Talho Tempestuoso Lv5',
       value: 'Storm Slash==5',
       acd: 0.5,
       fct: 0,
@@ -237,7 +237,7 @@ export class DragonKnight extends RuneKnight {
     },
     {
       name: 'Madness Crusher',
-      label: '[V3] Madness Crusher Lv5',
+      label: '[V3] Esmagador Insano Lv5',
       value: 'Madness Crusher==5',
       acd: 0.5,
       fct: 0.5,
@@ -260,7 +260,7 @@ export class DragonKnight extends RuneKnight {
     },
     {
       name: 'Dragonic Breath',
-      label: '[V3] Dragonic Breath Lv10',
+      label: '[V3] Sopro Dracônico Lv10',
       value: 'Dragonic Breath==10',
       acd: 0.15,
       fct: 0.5,
@@ -283,7 +283,7 @@ export class DragonKnight extends RuneKnight {
   ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
-      label: 'Dragonic Aura 10',
+      label: 'Aura Dracônica 10',
       name: 'Dragonic Aura',
       inputType: 'selectButton',
       dropdown: [
@@ -294,7 +294,7 @@ export class DragonKnight extends RuneKnight {
   ];
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
-      label: 'Dragonic Aura',
+      label: 'Aura Dracônica',
       name: 'Dragonic Aura',
       inputType: 'dropdown',
       dropdown: [

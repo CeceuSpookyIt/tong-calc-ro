@@ -3,7 +3,7 @@ import { ActiveSkillModel } from '../../jobs/_character-base.abstract';
 export const NoLimitFn = (): ActiveSkillModel => ({
   isEquipAtk: true,
   inputType: 'dropdown',
-  label: 'No Limits',
+  label: 'Sem Limites',
   name: 'No Limits',
   dropdown: [
     { label: '-', value: 0, isUse: false },

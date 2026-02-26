@@ -84,7 +84,7 @@ export class Warlock extends HighWizard {
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Comet',
-      label: 'Comet Lv5',
+      label: 'Cometa Lv5',
       value: 'Comet==5',
       acd: 1.5,
       fct: 2,
@@ -102,7 +102,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'Crimson Rock',
-      label: 'Crimson Rock Lv5',
+      label: 'Rocha Carmesim Lv5',
       value: 'Crimson Rock==5',
       fct: 1,
       vct: 5,
@@ -156,7 +156,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'Soul Expansion',
-      label: 'Soul Expansion Lv5',
+      label: 'Expansão Espiritual Lv5',
       value: 'Soul Expansion==5',
       acd: 0.5,
       fct: 0,
@@ -174,7 +174,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'Chain Lightning',
-      label: 'Chain Lightning Lv5',
+      label: 'Corrente Elétrica Lv5',
       value: 'Chain Lightning==5',
       acd: 3,
       fct: 1,
@@ -192,7 +192,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'Earth Strain',
-      label: 'Earth Strain Lv5',
+      label: 'Tensão Terrestre Lv5',
       value: 'Earth Strain==5',
       acd: 1,
       fct: 1,
@@ -210,7 +210,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'Frost Misty',
-      label: 'Frost Misty Lv5',
+      label: 'Névoa Congelante Lv5',
       value: 'Frost Misty==5',
       acd: 1,
       fct: 0.5,
@@ -228,7 +228,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'Hell Inferno',
-      label: 'Hell Inferno Lv5',
+      label: 'Inferno Lv5',
       value: 'Hell Inferno==5',
       fct: 1,
       vct: 3,
@@ -243,7 +243,7 @@ export class Warlock extends HighWizard {
         return skillLevel * 400 * (baseLevel / 100);
       },
       part2: {
-        label: 'Shadow Dmg',
+        label: 'Dano Sombrio',
         isIncludeMain: true,
         element: ElementType.Dark,
         isMatk: true,
@@ -259,7 +259,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'Drain Life',
-      label: 'Drain Life Lv5',
+      label: 'Drenar Vida Lv5',
       value: 'Drain Life==5',
       acd: 0,
       fct: 1,
@@ -298,7 +298,7 @@ export class Warlock extends HighWizard {
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       inputType: 'selectButton',
-      label: 'Recogn Spell',
+      label: 'Feitiço Reconhecido',
       name: 'Recognized Spell',
       dropdown: [
         { label: 'Yes', isUse: true, value: 1, bonus: { spell_maximize: 1 } },
@@ -307,7 +307,7 @@ export class Warlock extends HighWizard {
     },
     {
       inputType: 'selectButton',
-      label: 'Comet Amp',
+      label: 'Amp Cometa',
       name: 'Comet Amp',
       isDebuff: true,
       dropdown: [
@@ -317,7 +317,7 @@ export class Warlock extends HighWizard {
     },
     {
       inputType: 'dropdown',
-      label: 'Intensification',
+      label: 'Intensificação',
       name: 'Intensification',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -329,7 +329,7 @@ export class Warlock extends HighWizard {
       ],
     },
     {
-      label: 'Released',
+      label: 'Liberado',
       name: 'Released',
       inputType: 'selectButton',
       dropdown: [
@@ -341,7 +341,7 @@ export class Warlock extends HighWizard {
   protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Freezing Spell',
+      label: 'Feitiço Congelante',
       name: 'Freezing Spell',
       isEquipAtk: true,
       dropdown: [
@@ -371,7 +371,7 @@ export class Warlock extends HighWizard {
     },
     {
       inputType: 'dropdown',
-      label: 'Recognized Spell',
+      label: 'Feitiço Reconhecido',
       name: 'Recognized Spell',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -384,7 +384,7 @@ export class Warlock extends HighWizard {
     },
     {
       inputType: 'dropdown',
-      label: 'Soul Expansion',
+      label: 'Expansão Espiritual',
       name: 'Soul Expansion',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -397,7 +397,7 @@ export class Warlock extends HighWizard {
     },
     {
       inputType: 'dropdown',
-      label: 'Comet',
+      label: 'Cometa',
       name: 'Comet',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -410,7 +410,7 @@ export class Warlock extends HighWizard {
     },
     {
       inputType: 'dropdown',
-      label: 'Chain Lightning',
+      label: 'Corrente Elétrica',
       name: 'Chain Lightning',
       dropdown: [
         { label: '-', isUse: false, value: 0 },

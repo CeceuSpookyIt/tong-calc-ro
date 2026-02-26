@@ -86,7 +86,7 @@ export class Mechanic extends Whitesmith {
   protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Axe Tornado',
-      label: 'Axe Tornado Lv5',
+      label: 'Tornado de Machado Lv5',
       value: 'Axe Tornado==5',
       values: ['[Improved] Axe Tornado==5'],
       acd: 0.5,
@@ -110,7 +110,7 @@ export class Mechanic extends Whitesmith {
     },
     {
       name: 'Knuckle Boost',
-      label: 'Knuckle Boost Lv5',
+      label: 'Impulso de Punho Lv5',
       value: 'Knuckle Boost==5',
       acd: 0,
       fct: 0,
@@ -128,7 +128,7 @@ export class Mechanic extends Whitesmith {
     },
     {
       name: 'Vulcan Arm',
-      label: 'Vulcan Arm Lv3',
+      label: 'Braço de Vulcão Lv3',
       value: 'Vulcan Arm==3',
       acd: 0.1,
       fct: 0,
@@ -146,7 +146,7 @@ export class Mechanic extends Whitesmith {
     },
     {
       name: 'Axe Boomerang',
-      label: 'Axe Boomerang Lv5',
+      label: 'Bumerangue de Machado Lv5',
       value: 'Axe Boomerang==5',
       acd: 0,
       fct: 0,
@@ -171,7 +171,7 @@ export class Mechanic extends Whitesmith {
     },
     {
       name: 'Arm Cannon',
-      label: 'Arm Cannon Lv5',
+      label: 'Canhão de Braço Lv5',
       value: 'Arm Cannon==5',
       values: ['[Improved] Arm Cannon==5', 'Arm Cannon==1', 'Arm Cannon==2', 'Arm Cannon==3', 'Arm Cannon==4'],
       acd: 1,
@@ -191,7 +191,7 @@ export class Mechanic extends Whitesmith {
     },
     {
       name: 'Power Swing',
-      label: 'Power Swing Lv10',
+      label: 'Balanço Poderoso Lv10',
       value: 'Power Swing==1',
       values: ['[Improved] Power Swing==10'],
       acd: 1,
@@ -215,7 +215,7 @@ export class Mechanic extends Whitesmith {
   ];
   protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
-      label: 'On Magogear',
+      label: 'No Magogear',
       name: 'On Magogear',
       inputType: 'selectButton',
       dropdown: [
@@ -227,7 +227,7 @@ export class Mechanic extends Whitesmith {
 
   protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Axe Mastery',
+      label: 'Maestria em Machado',
       name: 'Axe Mastery',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -246,7 +246,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Fire Earth Research',
+      label: 'Pesquisa de Fogo e Terra',
       name: 'Fire Earth Research',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -260,7 +260,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Axe Boomerang',
+      label: 'Bumerangue de Machado',
       name: 'Axe Boomerang',
       inputType: 'dropdown',
       dropdown: [
@@ -273,7 +273,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Lava Flow',
+      label: 'Fluxo de Lava',
       name: 'Lava Flow',
       inputType: 'dropdown',
       dropdown: [
@@ -286,7 +286,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Power Swing',
+      label: 'Balanço Poderoso',
       name: 'Power Swing',
       inputType: 'dropdown',
       dropdown: [
@@ -304,7 +304,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Madogear License',
+      label: 'Licença de Madogear',
       name: 'Madogear License',
       inputType: 'dropdown',
       dropdown: [
@@ -317,7 +317,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Arm Cannon',
+      label: 'Canhão de Braço',
       name: 'Arm Cannon',
       inputType: 'dropdown',
       dropdown: [
@@ -330,7 +330,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Neutral Barrier',
+      label: 'Barreira Neutra',
       name: 'Neutral Barrier',
       inputType: 'dropdown',
       dropdown: [
@@ -341,7 +341,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Pile Bunker',
+      label: 'Estaca Fortifica',
       name: 'Pile Bunker',
       inputType: 'dropdown',
       dropdown: [

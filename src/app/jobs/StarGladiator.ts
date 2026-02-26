@@ -99,7 +99,7 @@ export class StarGladiator extends Taekwondo {
       ],
     },
     {
-      label: 'Wrath of',
+      label: 'Ira de',
       name: 'Wrath of',
       inputType: 'selectButton',
       dropdown: [
@@ -123,7 +123,7 @@ export class StarGladiator extends Taekwondo {
       ],
     },
     {
-      label: 'Knowledge of Sun',
+      label: 'Conhecimento do Sol',
       name: 'Knowledge of Sun, Moon and Star',
       inputType: 'dropdown',
       dropdown: [

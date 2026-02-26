@@ -95,7 +95,7 @@ export class Doram extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       name: 'Silvervine Stem Spear',
-      label: 'Silvervine Stem Spear',
+      label: 'Lança de Cipó Prateado',
       value: 'Silvervine Stem Spear==1',
       acd: 1,
       fct: 0.5,
@@ -113,18 +113,18 @@ export class Doram extends CharacterBase {
         return map[skillValue];
       },
       levelList: [
-        { label: 'Silvervine Stem Spear Lv1 (Earth)', value: 'Silvervine Stem Spear==1' },
-        { label: 'Silvervine Stem Spear Lv2 (Fire)', value: 'Silvervine Stem Spear==2' },
-        { label: 'Silvervine Stem Spear Lv3 (Wind)', value: 'Silvervine Stem Spear==3' },
-        { label: 'Silvervine Stem Spear Lv4 (Water)', value: 'Silvervine Stem Spear==4' },
-        { label: 'Silvervine Stem Spear Lv5 (Ghost)', value: 'Silvervine Stem Spear==5' },
+        { label: 'Lança de Cipó Prateado Lv1 (Earth)', value: 'Silvervine Stem Spear==1' },
+        { label: 'Lança de Cipó Prateado Lv2 (Fire)', value: 'Silvervine Stem Spear==2' },
+        { label: 'Lança de Cipó Prateado Lv3 (Wind)', value: 'Silvervine Stem Spear==3' },
+        { label: 'Lança de Cipó Prateado Lv4 (Water)', value: 'Silvervine Stem Spear==4' },
+        { label: 'Lança de Cipó Prateado Lv5 (Ghost)', value: 'Silvervine Stem Spear==5' },
       ],
       formula: (_input: AtkSkillFormulaInput): number => {
         return 700;
       },
     },
     {
-      label: 'Catnip Meteor Lv5',
+      label: 'Meteoro de Erva-do-Gato Lv5',
       name: 'Catnip Meteor',
       value: 'Catnip Meteor==5',
       acd: 1,
@@ -143,7 +143,7 @@ export class Doram extends CharacterBase {
       },
     },
     {
-      label: 'Picky Peck Lv5',
+      label: 'Bicada Lv5',
       name: 'Picky Peck',
       value: 'Picky Peck==5',
       acd: 1,
@@ -159,7 +159,7 @@ export class Doram extends CharacterBase {
       },
     },
     {
-      label: 'Lunatic Carrot Beat Lv5',
+      label: 'Pancada de Cenoura Lv5',
       name: 'Lunatic Carrot Beat',
       value: 'Lunatic Carrot Beat==5',
       acd: 1,
@@ -181,7 +181,7 @@ export class Doram extends CharacterBase {
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      label: 'Arclouse Dash',
+      label: 'Corrida Arclouse',
       name: 'Arclouse Dash',
       inputType: 'dropdown',
       isEquipAtk: true,
@@ -195,7 +195,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Bunch of Shrimp 5',
+      label: 'Porção de Camarão 5',
       name: 'Bunch of Shrimp',
       inputType: 'selectButton',
       dropdown: [
@@ -207,7 +207,7 @@ export class Doram extends CharacterBase {
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Power of Sea',
+      label: 'Poder do Mar',
       name: 'Power of Sea',
       inputType: 'dropdown',
       dropdown: [
@@ -217,7 +217,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Power of Land',
+      label: 'Poder da Terra',
       name: 'Power of Land',
       inputType: 'dropdown',
       dropdown: [
@@ -227,7 +227,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Power of Life',
+      label: 'Poder da Vida',
       name: 'Power of Life',
       inputType: 'dropdown',
       dropdown: [
@@ -237,7 +237,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Nyang Grass',
+      label: 'Grama Nyang',
       name: 'Nyang Grass',
       inputType: 'dropdown',
       dropdown: [
@@ -263,7 +263,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Chattering',
+      label: 'Tagarelice',
       name: 'Chattering',
       inputType: 'dropdown',
       dropdown: [
@@ -276,7 +276,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Scratch',
+      label: 'Arranhão',
       name: 'Scratch',
       inputType: 'dropdown',
       dropdown: [
@@ -287,7 +287,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Hiss',
+      label: 'Silvos',
       name: 'Hiss',
       inputType: 'dropdown',
       dropdown: [
@@ -300,7 +300,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Power of Flock',
+      label: 'Poder do Bando',
       name: 'Power of Flock',
       inputType: 'dropdown',
       dropdown: [
@@ -313,7 +313,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Spirit of Savage',
+      label: 'Espírito do Selvagem',
       name: 'Spirit of Savage',
       inputType: 'dropdown',
       dropdown: [
@@ -326,7 +326,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Silvervine Root Twist',
+      label: 'Torção de Raiz Prateada',
       name: 'Silvervine Root Twist',
       inputType: 'dropdown',
       dropdown: [
@@ -339,7 +339,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Sprit Of Life',
+      label: 'Espírito da Vida',
       name: 'Sprit Of Life',
       inputType: 'selectButton',
       dropdown: [
@@ -348,7 +348,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Picky Peck',
+      label: 'Bicada',
       name: 'Picky Peck',
       inputType: 'dropdown',
       dropdown: [
@@ -361,7 +361,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Silvervine Stem Spear',
+      label: 'Lança de Cipó Prateado',
       name: 'Silvervine Stem Spear',
       inputType: 'dropdown',
       dropdown: [
@@ -374,7 +374,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Frash Shrimp',
+      label: 'Camarão Fresco',
       name: 'Frash Shrimp',
       inputType: 'dropdown',
       dropdown: [
@@ -387,7 +387,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Arclouse Dash',
+      label: 'Corrida Arclouse',
       name: 'Arclouse Dash',
       inputType: 'dropdown',
       dropdown: [

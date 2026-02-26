@@ -84,7 +84,7 @@ export class Rebellion extends Gunslinger {
   private readonly classNames2nd = [ClassName.Rebellion];
   private readonly atkSkillList2nd: AtkSkillModel[] = [
     {
-      label: 'Round Trip Lv10',
+      label: 'Viagem de Ida e Volta Lv10',
       name: 'Round Trip',
       value: 'Round Trip==10',
       acd: 1,
@@ -99,7 +99,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: 'Fire Dance Lv10',
+      label: 'Dança de Fogo Lv10',
       name: 'Fire Dance',
       value: 'Fire Dance==10',
       acd: 0.5,
@@ -115,7 +115,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: 'Vanishing Buster Lv10',
+      label: 'Tiro Evanescente Lv10',
       name: 'Vanishing Buster',
       value: 'Vanishing Buster==10',
       acd: 0.4,
@@ -130,7 +130,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: 'Dragon Tail Lv10',
+      label: 'Cauda de Dragão Lv10',
       name: 'Dragon Tail',
       value: 'Dragon Tail==10',
       acd: 1,
@@ -147,7 +147,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: "God's Hammer Lv10 (0 coin)",
+      label: "Martelo de Deus Lv10 (0 moedas)",
       name: "God's Hammer",
       value: "God's Hammer_0==10",
       acd: 0.5,
@@ -163,7 +163,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: "God's Hammer Lv10 (10 coins)",
+      label: "Martelo de Deus Lv10 (10 moedas)",
       name: "God's Hammer",
       value: "God's Hammer==10",
       acd: 0.5,
@@ -179,7 +179,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: 'Shatter Storm Lv5',
+      label: 'Tempestade Destruidora Lv5',
       name: 'Shatter Storm',
       value: 'Shatter Storm==5',
       acd: 0,
@@ -198,7 +198,7 @@ export class Rebellion extends Gunslinger {
     {
       isEquipAtk: true,
       inputType: 'selectButton',
-      label: 'Platinum Altar 10',
+      label: 'Altar de Platina 10',
       name: 'Platinum Altar',
       dropdown: [
         { label: 'Yes', value: 1, isUse: true, bonus: { atk: 150 } },
@@ -207,7 +207,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       inputType: 'selectButton',
-      label: 'Hot Barrel 5',
+      label: 'Cano Quente 5',
       name: 'Hot Barrel',
       isEquipAtk: true,
       dropdown: [
@@ -218,7 +218,7 @@ export class Rebellion extends Gunslinger {
     {
       isMasteryAtk: true,
       inputType: 'selectButton',
-      label: "Rich's Coin",
+      label: "Moeda do Rich",
       name: "Rich's Coin",
       dropdown: [
         { label: 'Yes', value: 1, isUse: true, bonus: { atk: 30 } },
@@ -226,7 +226,7 @@ export class Rebellion extends Gunslinger {
       ],
     },
     {
-      label: 'Shatter Storm',
+      label: 'Tempestade Destruidora',
       name: 'Shatter Storm',
       inputType: 'selectButton',
       dropdown: [
@@ -235,7 +235,7 @@ export class Rebellion extends Gunslinger {
       ],
     },
     {
-      label: 'Crimson Marker',
+      label: 'Marca Carmesim',
       name: 'Crimson Marker',
       inputType: 'selectButton',
       dropdown: [
@@ -266,7 +266,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       inputType: 'dropdown',
-      label: 'Gunslinger Mine',
+      label: 'Mina do Atirador',
       name: 'Gunslinger Mine',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -284,7 +284,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       inputType: 'dropdown',
-      label: 'Wounding Shot',
+      label: 'Tiro Feridor',
       name: 'Wounding Shot',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -298,7 +298,7 @@ export class Rebellion extends Gunslinger {
     {
       isEquipAtk: true,
       inputType: 'dropdown',
-      label: 'Snake Eyes',
+      label: 'Olhos de Cobra',
       name: 'Snake Eyes',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -317,7 +317,7 @@ export class Rebellion extends Gunslinger {
     {
       isEquipAtk: true,
       inputType: 'dropdown',
-      label: 'Single Action',
+      label: 'Ação Simples',
       name: 'Single Action',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -334,7 +334,7 @@ export class Rebellion extends Gunslinger {
       ],
     },
     {
-      label: 'Chain Action',
+      label: 'Ação em Cadeia',
       name: 'Chain Action',
       inputType: 'dropdown',
       dropdown: [
@@ -353,7 +353,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       name: 'Platinum Altar',
-      label: 'Platinum Altar',
+      label: 'Altar de Platina',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -366,7 +366,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       name: 'Hot Barrel',
-      label: 'Hot Barrel',
+      label: 'Cano Quente',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -379,7 +379,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       name: 'Fire Rain',
-      label: 'Fire Rain',
+      label: 'Chuva de Fogo',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },

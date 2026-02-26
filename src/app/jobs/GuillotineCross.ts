@@ -84,7 +84,7 @@ export class GuillotineCross extends AssassinCross {
   private readonly classNames3rd = [ClassName.Only_3rd, ClassName.GuillotineCross];
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
-      label: 'Soul Destroyer',
+      label: 'Destruidor de Almas',
       name: 'Soul Destroyer',
       value: 'Soul Destroyer==10',
       values: ['[Improved 1st] Soul Destroyer==10', '[Improved 2nd] Soul Destroyer==10'],
@@ -105,7 +105,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Rolling Cutter',
-      label: 'Rolling Cutter Lv5',
+      label: 'Corte Giratório Lv5',
       value: 'Rolling Cutter==5',
       values: ['[Improved] Rolling Cutter==5'],
       acd: 0.2,
@@ -122,7 +122,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Cross Impact',
-      label: 'Cross Impact Lv5',
+      label: 'Impacto Cruzado Lv5',
       value: 'Cross Impact==5',
       values: ['[Improved 1st] Cross Impact==5', '[Improved 2rd] Cross Impact==5'],
       acd: 0.5,
@@ -142,7 +142,7 @@ export class GuillotineCross extends AssassinCross {
       },
     },
     {
-      label: 'Counter Slash Lv10',
+      label: 'Contra-Golpe Lv10',
       name: 'Counter Slash',
       value: 'Counter Slash==10',
       acd: 1,
@@ -161,7 +161,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Cross Ripper Slasher',
-      label: 'Cross Ripper Slasher Lv5',
+      label: 'Corte Cruzado Lv5',
       value: 'Cross Ripper Slasher==5',
       values: ['[Improved] Cross Ripper Slasher==5'],
       acd: 0.3,
@@ -183,7 +183,7 @@ export class GuillotineCross extends AssassinCross {
     DarkClawFn(),
     {
       name: 'Spin Count',
-      label: 'Spin Count',
+      label: 'Contagem de Giro',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -201,7 +201,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Poisonous Weapon',
-      label: 'Poisoning',
+      label: 'Envenenamento',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -211,7 +211,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Cloaking Exceed',
-      label: 'Cloaking Exceed 5',
+      label: 'Ocultação Aprimorada 5',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', isUse: true, value: 5 },
@@ -223,7 +223,7 @@ export class GuillotineCross extends AssassinCross {
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       name: 'New Poison Research',
-      label: 'New Poison Research',
+      label: 'Nova Pesquisa de Veneno',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -241,7 +241,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Dark Illusion',
-      label: 'Dark Illusion',
+      label: 'Ilusão Sombria',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -254,7 +254,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Cross Ripper Slasher',
-      label: 'Cross Ripper Slasher',
+      label: 'Corte Cruzado',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -267,7 +267,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Cross Impact',
-      label: 'Cross Impact',
+      label: 'Impacto Cruzado',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -280,7 +280,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Weapon Blocking',
-      label: 'Weapon Blocking',
+      label: 'Bloqueio de Arma',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -293,7 +293,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'Cloaking Exceed',
-      label: 'Cloaking Exceed',
+      label: 'Ocultação Aprimorada',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },

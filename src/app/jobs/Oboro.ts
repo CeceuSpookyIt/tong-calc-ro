@@ -90,7 +90,7 @@ export class Oboro extends Ninja {
 
   private readonly atkSkillList2nd: AtkSkillModel[] = [
     {
-      label: 'Flaming Petals Lv10',
+      label: 'Pétalas Flamejantes Lv10',
       name: 'Flaming Petals',
       value: 'Flaming Petals==10',
       acd: 0,
@@ -105,7 +105,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'Freezing Spear Lv10',
+      label: 'Lança Congelante Lv10',
       name: 'Freezing Spear',
       value: 'Freezing Spear==10',
       acd: 0,
@@ -120,7 +120,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'Freezing Spear Lv10 (in Watery Evasion)',
+      label: 'Lança Congelante Lv10 (em Evasão Aquática)',
       name: 'Freezing Spear',
       value: 'Freezing Spear Water==10',
       acd: 0,
@@ -137,7 +137,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'Wind Blade Lv10',
+      label: 'Lâmina de Vento Lv10',
       name: 'Wind Blade',
       value: 'Wind Blade==10',
       acd: 0,
@@ -152,7 +152,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'Exploding Dragon Lv5',
+      label: 'Dragão Explosivo Lv5',
       name: 'Exploding Dragon',
       value: 'Exploding Dragon==5',
       acd: 0.5,
@@ -169,7 +169,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'Snow Flake Draft Lv5',
+      label: 'Rajada de Flocos Lv5',
       name: 'Snow Flake Draft',
       value: 'Snow Flake Draft==5',
       acd: 0.5,
@@ -186,7 +186,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'First Wind Lv5',
+      label: 'Primeiro Vento Lv5',
       name: 'First Wind',
       value: 'First Wind==5',
       acd: 0,
@@ -203,7 +203,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'Cross Slash Lv10',
+      label: 'Corte Cruzado Lv10',
       name: 'Cross Slash',
       value: 'Cross Slash==10',
       acd: 0,
@@ -226,7 +226,7 @@ export class Oboro extends Ninja {
     S16thNight,
     DistortedCrescent,
     {
-      label: '[Debuf] Cross Wound',
+      label: '[Debuf] Ferida Cruzada',
       name: 'Cross Wound',
       inputType: 'selectButton',
       dropdown: [
@@ -238,7 +238,7 @@ export class Oboro extends Ninja {
 
   private readonly passiveSkillList2nd: PassiveSkillModel[] = [
     {
-      label: 'Flaming Petals',
+      label: 'Pétalas Flamejantes',
       name: 'Flaming Petals',
       inputType: 'dropdown',
       dropdown: [
@@ -256,7 +256,7 @@ export class Oboro extends Ninja {
       ],
     },
     {
-      label: 'Freezing Spear',
+      label: 'Lança Congelante',
       name: 'Freezing Spear',
       inputType: 'dropdown',
       dropdown: [
@@ -274,7 +274,7 @@ export class Oboro extends Ninja {
       ],
     },
     {
-      label: 'Wind Blade',
+      label: 'Lâmina de Vento',
       name: 'Wind Blade',
       inputType: 'dropdown',
       dropdown: [
@@ -292,7 +292,7 @@ export class Oboro extends Ninja {
       ],
     },
     {
-      label: 'Illusion - Bewitch',
+      label: 'Ilusão - Feitiço',
       name: 'Illusion - Bewitch',
       inputType: 'dropdown',
       dropdown: [
@@ -305,7 +305,7 @@ export class Oboro extends Ninja {
       ],
     },
     {
-      label: 'Illusion - Death',
+      label: 'Ilusão - Morte',
       name: 'Illusion - Death',
       inputType: 'dropdown',
       dropdown: [
@@ -319,7 +319,7 @@ export class Oboro extends Ninja {
     },
     IllusionShockFn(),
     {
-      label: 'Moonlight Fantasy',
+      label: 'Fantasia ao Luar',
       name: 'Moonlight Fantasy',
       inputType: 'dropdown',
       dropdown: [

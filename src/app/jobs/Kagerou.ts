@@ -88,7 +88,7 @@ export class Kagerou extends Ninja {
   private readonly classNames2nd = [ClassName.Kagerou];
   private readonly atkSkillList2nd: AtkSkillModel[] = [
     {
-      label: 'Cross Slash Lv10',
+      label: 'Corte Cruzado Lv10',
       name: 'Cross Slash',
       value: 'Cross Slash==10',
       acd: 0,
@@ -105,7 +105,7 @@ export class Kagerou extends Ninja {
       },
     },
     {
-      label: 'Kunai Explosion Lv5',
+      label: 'Explosão Kunai Lv5',
       name: 'Kunai Explosion',
       value: 'Kunai Explosion==5',
       acd: 1,
@@ -143,7 +143,7 @@ export class Kagerou extends Ninja {
       },
     },
     {
-      label: 'Swirling Petal Lv10',
+      label: 'Pétala Giratória Lv10',
       name: 'Swirling Petal',
       value: 'Swirling Petal==10',
       acd: 0.5,
@@ -165,7 +165,7 @@ export class Kagerou extends Ninja {
   private readonly activeSkillList2nd: ActiveSkillModel[] = [
     ShadowWarrior,
     {
-      label: '[Debuf] Cross Wound',
+      label: '[Debuf] Ferida Cruzada',
       name: 'Cross Wound',
       inputType: 'selectButton',
       dropdown: [
@@ -179,7 +179,7 @@ export class Kagerou extends Ninja {
 
   private readonly passiveSkillList2nd: PassiveSkillModel[] = [
     {
-      label: 'Soul Cutter',
+      label: 'Cortador de Almas',
       name: 'Soul Cutter',
       inputType: 'dropdown',
       dropdown: [
@@ -192,7 +192,7 @@ export class Kagerou extends Ninja {
       ],
     },
     {
-      label: 'Illusion - Shadow',
+      label: 'Ilusão - Sombra',
       name: 'Illusion - Shadow',
       inputType: 'dropdown',
       dropdown: [
@@ -209,7 +209,7 @@ export class Kagerou extends Ninja {
     PureSoulFn(),
     S16thNightFn(),
     {
-      label: 'Empty Shadow',
+      label: 'Sombra Vazia',
       name: 'Empty Shadow',
       inputType: 'dropdown',
       dropdown: [

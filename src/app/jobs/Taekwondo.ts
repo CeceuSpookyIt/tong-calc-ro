@@ -84,7 +84,7 @@ export class Taekwondo extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      label: 'Seven Wind',
+      label: 'Sete Ventos',
       name: 'Seven Wind',
       inputType: 'dropdown',
       dropdown: [
@@ -102,7 +102,7 @@ export class Taekwondo extends CharacterBase {
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Run',
+      label: 'Correr',
       name: 'Run',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -120,7 +120,7 @@ export class Taekwondo extends CharacterBase {
     },
     {
       inputType: 'dropdown',
-      label: 'Happy Break',
+      label: 'Intervalo Feliz',
       name: 'Happy Break',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -138,7 +138,7 @@ export class Taekwondo extends CharacterBase {
     },
     {
       inputType: 'dropdown',
-      label: 'Peaceful Break',
+      label: 'Intervalo Pacífico',
       name: 'Peaceful Break',
       dropdown: [
         { label: '-', value: 0, isUse: false },

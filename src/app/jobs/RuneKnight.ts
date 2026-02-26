@@ -127,7 +127,7 @@ export class RuneKnight extends LordKnight {
     // },
     {
       name: 'Sonic Wave',
-      label: 'Sonic Wave Lv10',
+      label: 'Onda Sônica Lv10',
       value: 'Sonic Wave==10',
       values: ['[Improved 2nd] Sonic Wave==10'],
       acd: 0.5,
@@ -146,7 +146,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Wind Cutter',
-      label: 'Wind Cutter Lv5',
+      label: 'Corte de Vento Lv5',
       value: 'Wind Cutter==5',
       values: ['Wind Cutter==10', '[Improved 2nd] Wind Cutter==5', '[Improved 2nd] Wind Cutter==10'],
       acd: 0.5,
@@ -173,7 +173,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Ignition Break',
-      label: 'Ignition Break Lv5',
+      label: 'Ruptura de Ignição Lv5',
       value: 'Ignition Break==5',
       values: ['[Improved 2nd] Ignition Break==5'],
       acd: 0,
@@ -192,7 +192,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Hundred Spears',
-      label: 'Hundred Spears Lv10',
+      label: 'Cem Lanças Lv10',
       value: 'Hundred Spears==10',
       values: ['[Improved] Hundred Spears==10'],
       acd: 0.5,
@@ -214,7 +214,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Dragon Breath',
-      label: 'Dragon Breath Lv10',
+      label: 'Sopro do Dragão Lv10',
       value: 'Dragon Breath==10',
       values: ['[Improved 2nd] Dragon Breath==10'],
       acd: 2,
@@ -241,7 +241,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Dragon Breath - WATER',
-      label: 'Dragon Breath - WATER Lv10',
+      label: 'Sopro do Dragão - ÁGUA Lv10',
       value: 'Dragon Breath - WATER==10',
       values: ['[Improved 2nd] Dragon Breath - WATER==10'],
       acd: 2,
@@ -271,7 +271,7 @@ export class RuneKnight extends LordKnight {
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       name: 'Enchant Blade',
-      label: 'Enchant Blade 10',
+      label: 'Encantar Lâmina 10',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 10, isUse: true },
@@ -280,7 +280,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Ride Dragon',
-      label: 'Ride Dragon',
+      label: 'Montar Dragão',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true },
@@ -289,7 +289,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Current HP',
-      label: 'Current HP',
+      label: 'HP Atual',
       inputType: 'dropdown',
       dropdown: [
         { label: '100 %', value: 0, isUse: false },
@@ -304,7 +304,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Turisus Runestone',
-      label: 'Rune: Turisus',
+      label: 'Runa: Turisus',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 1, isUse: true, bonus: { flatBasicDmg: 250, str: 30, melee: 15 } },
@@ -313,7 +313,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Lux Anima Runestone',
-      label: 'Rune: Lux Anima',
+      label: 'Runa: Lux Anima',
       inputType: 'selectButton',
       dropdown: [
         {
@@ -327,7 +327,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Asir Runestone',
-      label: 'Rune: Asir',
+      label: 'Runa: Asir',
       inputType: 'selectButton',
       isMasteryAtk: true,
       dropdown: [
@@ -337,7 +337,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'Concentration',
-      label: 'Concentration 5',
+      label: 'Concentração 5',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true, bonus: { atkPercent: 25 } },
@@ -348,7 +348,7 @@ export class RuneKnight extends LordKnight {
 
   protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Ignition Break',
+      label: 'Ruptura de Ignição',
       name: 'Ignition Break',
       inputType: 'dropdown',
       dropdown: [
@@ -361,7 +361,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Dragon Training',
+      label: 'Treinamento de Dragão',
       name: 'Dragon Training',
       inputType: 'dropdown',
       dropdown: [
@@ -374,7 +374,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Dragon Breath',
+      label: 'Sopro do Dragão',
       name: 'Dragon Breath',
       inputType: 'dropdown',
       dropdown: [
@@ -392,7 +392,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Breath - WATER',
+      label: 'Sopro - ÁGUA',
       name: 'Dragon Breath - WATER',
       inputType: 'dropdown',
       dropdown: [
@@ -410,7 +410,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Rune Mastery',
+      label: 'Domínio de Runas',
       name: 'Rune Mastery',
       inputType: 'dropdown',
       dropdown: [
@@ -428,7 +428,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Enchant Blade',
+      label: 'Encantar Lâmina',
       name: 'Enchant Blade',
       inputType: 'dropdown',
       dropdown: [
@@ -446,7 +446,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Sonic Wave',
+      label: 'Onda Sônica',
       name: 'Sonic Wave',
       inputType: 'dropdown',
       dropdown: [
@@ -464,7 +464,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Death Bound',
+      label: 'Limite Mortal',
       name: 'Death Bound',
       inputType: 'dropdown',
       dropdown: [
@@ -482,7 +482,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Dragon Howling',
+      label: 'Uivo do Dragão',
       name: 'Dragon Howling',
       inputType: 'dropdown',
       dropdown: [

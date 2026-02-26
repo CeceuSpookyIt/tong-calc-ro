@@ -85,7 +85,7 @@ export class Scholar extends Mage {
   protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       inputType: 'selectButton',
-      label: 'Foresight',
+      label: 'Presciência',
       name: 'Foresight',
       dropdown: [
         { label: 'Yes', isUse: true, value: 1 },
@@ -107,7 +107,7 @@ export class Scholar extends Mage {
     // },
     {
       inputType: 'dropdown',
-      label: 'Lightning Loader',
+      label: 'Carregador Relâmpago',
       name: 'Lightning Loader',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -120,7 +120,7 @@ export class Scholar extends Mage {
     },
     {
       inputType: 'dropdown',
-      label: 'Frost Weapon',
+      label: 'Arma Congelante',
       name: 'Frost Weapon',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -134,7 +134,7 @@ export class Scholar extends Mage {
 
     {
       inputType: 'dropdown',
-      label: 'Seismic Weapon',
+      label: 'Arma Sísmica',
       name: 'Seismic Weapon',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -149,7 +149,7 @@ export class Scholar extends Mage {
   protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Adv Book',
+      label: 'Livro Avançado',
       name: 'Advanced Book',
       isMasteryAtk: true,
       dropdown: [
@@ -168,7 +168,7 @@ export class Scholar extends Mage {
     },
     {
       inputType: 'dropdown',
-      label: 'Dragonology',
+      label: 'Dragonologia',
       name: 'Dragonology',
       isMasteryAtk: true,
       dropdown: [
@@ -207,7 +207,7 @@ export class Scholar extends Mage {
     },
     {
       inputType: 'dropdown',
-      label: 'Indulge',
+      label: 'Indulgência',
       name: 'Indulge',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -220,7 +220,7 @@ export class Scholar extends Mage {
     },
     {
       inputType: 'dropdown',
-      label: 'Auto Spell',
+      label: 'Feitiço Automático',
       name: 'Auto Spell',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -251,7 +251,7 @@ export class Scholar extends Mage {
     // },
     {
       inputType: 'dropdown',
-      label: 'Lightning Loader',
+      label: 'Carregador Relâmpago',
       name: 'Lightning Loader',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -264,7 +264,7 @@ export class Scholar extends Mage {
     },
     {
       inputType: 'dropdown',
-      label: 'Frost Weapon',
+      label: 'Arma Congelante',
       name: 'Frost Weapon',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -277,7 +277,7 @@ export class Scholar extends Mage {
     },
     {
       inputType: 'dropdown',
-      label: 'Seismic Weapon',
+      label: 'Arma Sísmica',
       name: 'Seismic Weapon',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -291,7 +291,7 @@ export class Scholar extends Mage {
 
     {
       inputType: 'dropdown',
-      label: 'Land Protector',
+      label: 'Protetor de Terreno',
       name: 'Land Protector',
       dropdown: [
         { label: '-', isUse: false, value: 0 },

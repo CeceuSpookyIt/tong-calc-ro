@@ -87,7 +87,7 @@ export class SuperNovice extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       name: 'Fire Bolt',
-      label: 'Fire Bolt Lv10',
+      label: 'Raio de Fogo Lv10',
       value: 'Fire Bolt==10',
       acd: 2.8,
       fct: 1.2,
@@ -102,7 +102,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Cold Bolt',
-      label: 'Cold Bolt Lv10',
+      label: 'Raio de Gelo Lv10',
       value: 'Cold Bolt==10',
       acd: 2.8,
       fct: 1.2,
@@ -117,7 +117,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Lightening Bolt',
-      label: 'Lightening Bolt Lv10',
+      label: 'Raio de Relâmpago Lv10',
       value: 'Lightening Bolt==10',
       acd: 2.8,
       fct: 1.2,
@@ -131,7 +131,7 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
-      label: "Heaven's Drive Lv5",
+      label: "Condução Celeste Lv5",
       name: "Heaven's Drive",
       value: "Heaven's Drive==5",
       fct: 0.8,
@@ -147,7 +147,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Lord of Vermilion',
-      label: 'Lord of Vermilion Lv10',
+      label: 'Senhor de Vermilion Lv10',
       value: 'Lord of Vermilion==10',
       acd: 5,
       fct: 1.68,
@@ -164,7 +164,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Gravitational Field',
-      label: 'Gravitational Field Lv5',
+      label: 'Campo Gravitacional Lv5',
       value: 'Gravitational Field==5',
       acd: 1,
       fct: 1,
@@ -186,7 +186,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Fatal Manace',
-      label: 'Fatal Manace',
+      label: 'Ameaça Fatal',
       value: 'Fatal Manace==10',
       values: ['Fatal Manace Lv7', '[Improved] Fatal Manace==7', '[Improved] Fatal Manace==10'],
       acd: 0.5,
@@ -195,8 +195,8 @@ export class SuperNovice extends CharacterBase {
       cd: 0,
       isMelee: true,
       levelList: [
-        { label: 'Fatal Manace Lv7', value: 'Fatal Manace==7' },
-        { label: 'Fatal Manace Lv10', value: 'Fatal Manace==10' },
+        { label: 'Ameaça Fatal Lv7', value: 'Fatal Manace==7' },
+        { label: 'Ameaça Fatal Lv10', value: 'Fatal Manace==10' },
       ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -208,7 +208,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Psychic Wave',
-      label: 'Psychic Wave',
+      label: 'Onda Psíquica',
       value: 'Psychic Wave==5',
       fct: (lv) => 1.1 - lv * 0.1,
       vct: (lv) => 7 + lv,
@@ -217,11 +217,11 @@ export class SuperNovice extends CharacterBase {
       totalHit: ({ skillLevel: lv }) => 2 + lv,
       isMatk: true,
       levelList: [
-        { label: 'Psychic Wave Lv1', value: 'Psychic Wave==1' },
-        { label: 'Psychic Wave Lv2', value: 'Psychic Wave==2' },
-        { label: 'Psychic Wave Lv3', value: 'Psychic Wave==3' },
-        { label: 'Psychic Wave Lv4', value: 'Psychic Wave==4' },
-        { label: 'Psychic Wave Lv5', value: 'Psychic Wave==5' },
+        { label: 'Onda Psíquica Lv1', value: 'Psychic Wave==1' },
+        { label: 'Onda Psíquica Lv2', value: 'Psychic Wave==2' },
+        { label: 'Onda Psíquica Lv3', value: 'Psychic Wave==3' },
+        { label: 'Onda Psíquica Lv4', value: 'Psychic Wave==4' },
+        { label: 'Onda Psíquica Lv5', value: 'Psychic Wave==5' },
       ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -241,7 +241,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Shield Chain',
-      label: 'Shield Chain Lv5',
+      label: 'Corrente de Escudo Lv5',
       value: 'Shield Chain==5',
       fct: 0.2,
       vct: 0.8,
@@ -259,7 +259,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Bowling Bash',
-      label: 'Bowling Bash Lv10',
+      label: 'Golpe Devastador Lv10',
       value: 'Bowling Bash==10',
       fct: 0.35,
       vct: 0,
@@ -274,7 +274,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Ignition Break',
-      label: 'Ignition Break Lv5',
+      label: 'Ruptura de Ignição Lv5',
       value: 'Ignition Break==5',
       acd: 0,
       fct: 0,
@@ -292,7 +292,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Tiger Cannon',
-      label: 'Tiger Cannon Lv10',
+      label: 'Canhão Tigre Lv10',
       value: 'Tiger Cannon==10',
       fct: 0,
       vct: 2,
@@ -322,7 +322,7 @@ export class SuperNovice extends CharacterBase {
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
       name: 'Improve Concentration',
-      label: 'Improve Con',
+      label: 'Concentração',
       inputType: 'dropdown',
       isEquipAtk: true,
       dropdown: [
@@ -341,7 +341,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'Cart Boost',
-      label: 'Cart Boost',
+      label: 'Impulso do Carrinho',
       inputType: 'selectButton',
       isMasteryAtk: true,
       dropdown: [
@@ -362,7 +362,7 @@ export class SuperNovice extends CharacterBase {
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Break Through',
+      label: 'Romper Limites',
       name: 'Break Through',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -376,7 +376,7 @@ export class SuperNovice extends CharacterBase {
       ],
     },
     {
-      label: 'Transcendence',
+      label: 'Transcendência',
       name: 'Transcendence',
       inputType: 'dropdown',
       isEquipAtk: true,
@@ -392,7 +392,7 @@ export class SuperNovice extends CharacterBase {
     ImproveDodgeFn(),
     SnatcherFn(),
     {
-      label: 'Sword Mastery',
+      label: 'Maestria de Espada',
       name: 'Sword Mastery',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -413,7 +413,7 @@ export class SuperNovice extends CharacterBase {
     DemonBane,
     {
       name: "Owl's Eye",
-      label: "Owl's Eye",
+      label: "Olho de Coruja",
       inputType: 'dropdown',
       isEquipAtk: true,
       dropdown: [
@@ -433,7 +433,7 @@ export class SuperNovice extends CharacterBase {
     FaithFn(),
     BeastBaneFn(),
     {
-      label: 'Axe Mastery',
+      label: 'Maestria de Machado',
       name: 'Axe Mastery',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -453,7 +453,7 @@ export class SuperNovice extends CharacterBase {
     },
     HiltBindingFn(),
     {
-      label: 'Weaponry Research',
+      label: 'Pesquisa de Armas',
       name: 'Weaponry Research',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -474,7 +474,7 @@ export class SuperNovice extends CharacterBase {
     IncreaseSPRecoveryFn(),
     DoubleAttackFn(),
     {
-      label: 'Gravitational',
+      label: 'Gravitacional',
       name: 'Gravitational Field',
       inputType: 'dropdown',
       dropdown: [

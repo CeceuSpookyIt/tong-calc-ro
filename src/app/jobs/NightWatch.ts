@@ -165,7 +165,7 @@ export class NightWatch extends Rebellion {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'The Vigilante at Night',
-      label: '[V2] The Vigilante at Night Lv5',
+      label: '[V2] O Vigilante da Noite Lv5',
       value: 'The Vigilante at Night==5',
       acd: 1,
       fct: 1.5,
@@ -195,7 +195,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Only One Bullet',
-      label: '[V2] Only One Bullet Lv5',
+      label: '[V2] Apenas Uma Bala Lv5',
       value: 'Only One Bullet==5',
       acd: 0.5,
       fct: 1,
@@ -226,7 +226,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Spiral Shooting',
-      label: '[V2] Spiral Shooting Lv5',
+      label: '[V2] Tiro em Espiral Lv5',
       value: 'Spiral Shooting==5',
       acd: 1,
       fct: 1.5,
@@ -257,7 +257,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Magazine for One',
-      label: '[V2] Magazine for One Lv5',
+      label: '[V2] Carregamento Único Lv5',
       value: 'Magazine for One==5',
       acd: 1,
       fct: 1,
@@ -287,7 +287,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Wild Fire',
-      label: '[V2] Wild Fire Lv5',
+      label: '[V2] Fogo Selvagem Lv5',
       value: 'Wild Fire==5',
       acd: 1,
       fct: 1,
@@ -315,7 +315,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Basic Grenade',
-      label: '[V2] Basic Grenade Lv5',
+      label: '[V2] Granada Básica Lv5',
       value: 'Basic Grenade==5',
       acd: 0,
       fct: 1,
@@ -334,7 +334,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Hasty Fire in the Hole',
-      label: '[V2] Hasty Fire in the Hole Lv5',
+      label: '[V2] Granada Rápida Lv5',
       value: 'Hasty Fire in the Hole==5',
       acd: 0,
       fct: 1,
@@ -480,13 +480,13 @@ export class NightWatch extends Rebellion {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Hidden Card',
-      label: 'Hidden Card',
+      label: 'Carta Escondida',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({ range: lv * 10, pAtk: lv * 3 }))
     },
     {
       name: 'Intensive Aim',
-      label: 'Intensive Aim',
+      label: 'Mira Intensiva',
       inputType: 'selectButton',
       isEquipAtk: true,
       dropdown: [
@@ -496,7 +496,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Grenade Fragment',
-      label: 'Grenade Fragment',
+      label: 'Fragmento de Granada',
       inputType: 'dropdown',
       dropdown: genSkillListWithLabel(6
         , lv => `${['-', 'Water', 'Wind', 'Earth', 'Fire', 'Dark', 'Holy'][lv]}`
@@ -505,7 +505,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: '_NightWatch_Aiming Count',
-      label: 'Aiming Count',
+      label: 'Contagem de Mira',
       inputType: 'dropdown',
       dropdown: genSkillListWithLabel(10, lv => (`${lv}`))
     },
@@ -519,7 +519,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'Grenade Mastery',
-      label: 'Grenade Mastery',
+      label: 'Maestria em Granadas',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({ con: lv }))
     },

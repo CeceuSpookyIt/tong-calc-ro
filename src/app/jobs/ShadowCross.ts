@@ -165,7 +165,7 @@ export class ShadowCross extends GuillotineCross {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Shadow Stab',
-      label: '[V3] Shadow Stab Lv5',
+      label: '[V3] Facada Sombria Lv5',
       value: 'Shadow Stab==5',
       acd: 0,
       fct: 0,
@@ -194,7 +194,7 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Dancing Knife',
-      label: '[V3] Dancing Knife Lv5',
+      label: '[V3] Faca Dançante Lv5',
       value: 'Dancing Knife==5',
       acd: 1,
       fct: 1,
@@ -218,7 +218,7 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Eternal Slash',
-      label: '[V3] Eternal Slash Lv5 (1 hit)',
+      label: '[V3] Golpe Eterno Lv5 (1 hit)',
       value: 'Eternal Slash==5',
       acd: 0.5,
       fct: 0,
@@ -247,7 +247,7 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Savage Impact',
-      label: '[V3] Savage Impact Lv5',
+      label: '[V3] Impacto Selvagem Lv5',
       value: 'Savage Impact==5',
       acd: 0.3,
       fct: 0,
@@ -282,7 +282,7 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Impact Crater',
-      label: '[V3] Impact Crater Lv5',
+      label: '[V3] Cratera de Impacto Lv5',
       value: 'Impact Crater==5',
       acd: 0.5,
       fct: 0,
@@ -311,7 +311,7 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Fatal Shadow Claw',
-      label: '[V3] Fatal Shadow Claw Lv10',
+      label: '[V3] Garra Sombria Fatal Lv10',
       value: 'Fatal Shadow Claw==10',
       acd: 0.5,
       fct: 1.5,
@@ -332,7 +332,7 @@ export class ShadowCross extends GuillotineCross {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Shadow Wound',
-      label: 'Shadow Wound',
+      label: 'Ferida Sombria',
       isDebuff: true,
       inputType: 'dropdown',
       dropdown: genSkillListWithLabel(
@@ -343,13 +343,13 @@ export class ShadowCross extends GuillotineCross {
     },
     {
       name: 'Potent Venom',
-      label: 'Potent Venom',
+      label: 'Veneno Potente',
       inputType: 'dropdown',
       dropdown: genSkillList(10, (lv) => ({ pene_res: lv * 3 })),
     },
     {
       name: 'Shadow Exceed',
-      label: 'Shadow Exceed 10',
+      label: 'Excesso Sombrio 10',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 10, isUse: true },
@@ -360,7 +360,7 @@ export class ShadowCross extends GuillotineCross {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Shadow Sense',
-      label: 'Shadow Sense',
+      label: 'Sentido Sombrio',
       inputType: 'dropdown',
       dropdown: genSkillList(10, (lv) => ({ flee: lv * 10 })),
     },

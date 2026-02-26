@@ -86,7 +86,7 @@ export class Paladin extends Swordman {
   protected readonly classNamesHi = [ClassName.Crusader, ClassName.HiClass, ClassName.Paladin];
   protected readonly atkSkillListHi: AtkSkillModel[] = [
     {
-      label: 'Gloria Domini Lv5',
+      label: 'Glória Domini Lv5',
       name: 'Gloria Domini',
       value: 'Gloria Domini==5',
       acd: 1,
@@ -104,7 +104,7 @@ export class Paladin extends Swordman {
     },
     {
       name: 'Shield Chain',
-      label: 'Shield Chain Lv5',
+      label: 'Corrente do Escudo Lv5',
       value: 'Shield Chain==5',
       fct: 0.2,
       vct: 0.8,
@@ -127,7 +127,7 @@ export class Paladin extends Swordman {
   ];
   protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
-      label: 'Spear Quick 10',
+      label: 'Rapidez de Lança 10',
       name: 'Spear Quicken',
       inputType: 'selectButton',
       isMasteryAtk: true,
@@ -144,7 +144,7 @@ export class Paladin extends Swordman {
     SpearMastery,
     CavalierMastery,
     {
-      label: 'Spear Quicken',
+      label: 'Rapidez de Lança',
       name: 'Spear Quicken',
       inputType: 'dropdown',
       dropdown: [
@@ -162,7 +162,7 @@ export class Paladin extends Swordman {
       ],
     },
     {
-      label: 'Auto Guard',
+      label: 'Guarda Automática',
       name: 'Auto Guard',
       inputType: 'dropdown',
       dropdown: [
@@ -180,7 +180,7 @@ export class Paladin extends Swordman {
       ],
     },
     {
-      label: 'Grand Cross',
+      label: 'Grande Cruz',
       name: 'Grand Cross',
       inputType: 'dropdown',
       dropdown: [

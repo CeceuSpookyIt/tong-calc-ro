@@ -164,7 +164,7 @@ export class Windhawk extends Ranger {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Crescive Bolt',
-      label: '[V3] Crescive Bolt Lv10',
+      label: '[V3] Flecha Crescente Lv10',
       value: 'Crescive Bolt==10',
       acd: 0.3,
       fct: 1,
@@ -185,7 +185,7 @@ export class Windhawk extends Ranger {
     },
     {
       name: 'Gale Storm',
-      label: '[V3] Gale Storm Lv10',
+      label: '[V3] Tempestade Vendaval Lv10',
       value: 'Gale Storm==10',
       acd: 0.15,
       fct: 0.5,
@@ -202,7 +202,7 @@ export class Windhawk extends Ranger {
     },
     {
       name: 'Hawk Rush',
-      label: '[V3] Hawk Rush Lv5',
+      label: '[V3] Investida do Falcão Lv5',
       value: 'Hawk Rush==5',
       acd: 0,
       fct: 0,
@@ -229,7 +229,7 @@ export class Windhawk extends Ranger {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Calamity Gale',
-      label: 'Calamity Gale',
+      label: 'Vendaval Calamitoso',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 1, isUse: true, bonus: { range: 350 } },
@@ -240,7 +240,7 @@ export class Windhawk extends Ranger {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Nature Friendly',
-      label: 'Nature Friendly',
+      label: 'Amigo da Natureza',
       inputType: 'dropdown',
       dropdown: [
         { label: 'Lv 1', value: 1, isUse: true },

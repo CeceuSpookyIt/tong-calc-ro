@@ -84,7 +84,7 @@ export class Ninja extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [];
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      label: 'Ninja Aura 5',
+      label: 'Aura Ninja 5',
       name: 'Ninja Aura',
       inputType: 'selectButton',
       dropdown: [
@@ -96,7 +96,7 @@ export class Ninja extends CharacterBase {
   ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Ninja Mastery',
+      label: 'Maestria Ninja',
       name: 'Ninja Mastery',
       inputType: 'dropdown',
       dropdown: [
@@ -114,7 +114,7 @@ export class Ninja extends CharacterBase {
       ],
     },
     {
-      label: 'Dagger Practice',
+      label: 'Prática de Adaga',
       name: 'Dagger Throwing Practice',
       inputType: 'dropdown',
       dropdown: [
@@ -132,7 +132,7 @@ export class Ninja extends CharacterBase {
       ],
     },
     {
-      label: 'Throw Huuma',
+      label: 'Lançar Huuma',
       name: 'Throw Huuma Shuriken',
       inputType: 'dropdown',
       dropdown: [

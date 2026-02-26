@@ -93,12 +93,12 @@ export class Sorcerer extends Scholar {
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Fist Spell',
-      label: 'Fist Spell Lv10',
+      label: 'Punho Mágico Lv10',
       value: 'Fist Spell==10',
       levelList: [
-        { label: 'Fist Spell Lv10 (Fire Bolt Lv10)', value: 'Fist Spell Fire Bolt==10' },
-        { label: 'Fist Spell Lv10 (Cold Bolt Lv10)', value: 'Fist Spell Cold Bolt==10' },
-        { label: 'Fist Spell Lv10 (Lightening Bolt Lv10)', value: 'Fist Spell Lightening Bolt==10' },
+        { label: 'Punho Mágico Lv10 (Seta de Fogo Lv10)', value: 'Fist Spell Fire Bolt==10' },
+        { label: 'Punho Mágico Lv10 (Seta de Gelo Lv10)', value: 'Fist Spell Cold Bolt==10' },
+        { label: 'Punho Mágico Lv10 (Seta Elétrica Lv10)', value: 'Fist Spell Lightening Bolt==10' },
       ],
       fct: 0,
       vct: 0,
@@ -134,7 +134,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'Diamond Dust',
-      label: 'Diamond Dust Lv 5',
+      label: 'Poeira de Diamante Lv 5',
       value: 'Diamond Dust==5',
       fct: 0,
       vct: 7,
@@ -155,7 +155,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'Earth Grave',
-      label: 'Earth Grave Lv 5',
+      label: 'Sepultura Terrestre Lv 5',
       value: 'Earth Grave==5',
       fct: 1,
       vct: 3,
@@ -175,7 +175,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'Psychic Wave',
-      label: 'Psychic Wave Lv5',
+      label: 'Onda Psíquica Lv5',
       value: 'Psychic Wave==5',
       fct: 0.6,
       vct: 12,
@@ -216,7 +216,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'Varetyr Spear',
-      label: 'Varetyr Spear Lv10',
+      label: 'Lança de Varetyr Lv10',
       value: 'Varetyr Spear==10',
       fct: 1,
       vct: 4,
@@ -238,7 +238,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'Poison Burst',
-      label: 'Poison Burst Lv5',
+      label: 'Explosão Venenosa Lv5',
       value: 'Poison Burst==5',
       fct: 0,
       vct: 6,
@@ -259,7 +259,7 @@ export class Sorcerer extends Scholar {
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
       name: '_Sorcerer_Elemental_Spirit',
-      label: 'Elemental Spirit',
+      label: 'Espírito Elemental',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -286,7 +286,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'Diamond Dust',
-      label: 'Diamond Dust',
+      label: 'Poeira de Diamante',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -299,7 +299,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'Earth Grave',
-      label: 'Earth Grave',
+      label: 'Sepultura Terrestre',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
