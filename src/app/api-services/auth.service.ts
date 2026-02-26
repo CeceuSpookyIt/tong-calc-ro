@@ -42,6 +42,20 @@ export class AuthService {
   }
 
   private async initSession() {
+    // PKCE flow: explicitly exchange the authorization code if present in URL
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    if (code) {
+      const { error } = await this.supabaseService.auth.exchangeCodeForSession(code);
+      if (error) {
+        console.error('PKCE code exchange error:', error);
+      }
+      // Clean up the URL to remove ?code= parameter
+      const url = new URL(window.location.href);
+      url.searchParams.delete('code');
+      window.history.replaceState({}, '', url.pathname + url.hash);
+    }
+
     const { data: { session } } = await this.supabaseService.auth.getSession();
     if (session?.user) {
       const user = session.user;
