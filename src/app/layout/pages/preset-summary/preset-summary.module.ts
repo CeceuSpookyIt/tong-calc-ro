@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
-import { PresetSummaryRoutingModule } from './preset-summary-routing.module';
 import { CommonModule } from '@angular/common';
-import { ButtonModule } from 'primeng/button';
-import { ListboxModule } from 'primeng/listbox';
-import { PresetSummaryComponent } from './preset-summary.component';
 import { FormsModule } from '@angular/forms';
-import { CheckboxModule } from 'primeng/checkbox';
+import { ListboxModule } from 'primeng/listbox';
+import { ButtonModule } from 'primeng/button';
+import { PresetSummaryRoutingModule } from './preset-summary-routing.module';
+import { PresetSummaryComponent } from './preset-summary.component';
+import { SlotRankingCardComponent } from './slot-ranking-card/slot-ranking-card.component';
 
 @NgModule({
-  declarations: [PresetSummaryComponent],
-  imports: [PresetSummaryRoutingModule, ListboxModule, ButtonModule, CommonModule, FormsModule, CheckboxModule],
-  exports: [],
+  declarations: [PresetSummaryComponent, SlotRankingCardComponent],
+  imports: [CommonModule, FormsModule, ListboxModule, ButtonModule, PresetSummaryRoutingModule],
 })
 export class PresetSummaryModule {}

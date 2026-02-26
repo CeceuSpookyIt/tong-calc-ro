@@ -1,25 +1,48 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { getClassDropdownList } from '../../../jobs/_class-list';
 import { SummaryService } from 'src/app/api-services/summary.service';
-import { Subject, Subscription, debounceTime, forkJoin, tap } from 'rxjs';
 import { RoService } from 'src/app/api-services/ro.service';
 import { ItemModel } from '../../../models/item.model';
-import { EquipmentPosition, EquipmentRankingModel, ItemRankingModel, JobSkillSummary, JobSummary, TotalSummaryModel } from './model';
+import { SkillRankingEntry } from './model/skill-ranking.model';
+import { SlotRankingEntry, SlotRankingGroup } from './model/slot-ranking.model';
 import { prettyItemDesc } from 'src/app/utils';
 
-const getEmptyRanking = () => {
-  return Object.values(EquipmentPosition).reduce((pre, item) => {
-    pre[item] = [];
-    return pre;
-  }, {}) as Record<EquipmentPosition, ItemRankingModel[]>;
-};
+interface SlotConfig {
+  slot: string;
+  label: string;
+  category: 'equipment' | 'shadow' | 'costume';
+}
 
-const getInitShowIEnchant = (b: boolean) => {
-  return Object.values(EquipmentPosition).reduce((pre, item) => {
-    pre[item] = b;
+const SLOT_CONFIG: SlotConfig[] = [
+  { slot: 'weapon', label: 'Arma', category: 'equipment' },
+  { slot: 'leftWeapon', label: 'Arma Esquerda', category: 'equipment' },
+  { slot: 'shield', label: 'Escudo', category: 'equipment' },
+  { slot: 'headUpper', label: 'Topo', category: 'equipment' },
+  { slot: 'headMiddle', label: 'Meio', category: 'equipment' },
+  { slot: 'headLower', label: 'Baixo', category: 'equipment' },
+  { slot: 'armor', label: 'Armadura', category: 'equipment' },
+  { slot: 'garment', label: 'Capa', category: 'equipment' },
+  { slot: 'boot', label: 'Sapato', category: 'equipment' },
+  { slot: 'accLeft', label: 'Acessório Esq.', category: 'equipment' },
+  { slot: 'accRight', label: 'Acessório Dir.', category: 'equipment' },
+  { slot: 'ammo', label: 'Munição', category: 'equipment' },
+  { slot: 'pet', label: 'Pet', category: 'equipment' },
+  { slot: 'shadowWeapon', label: 'Shadow Arma', category: 'shadow' },
+  { slot: 'shadowArmor', label: 'Shadow Armadura', category: 'shadow' },
+  { slot: 'shadowShield', label: 'Shadow Escudo', category: 'shadow' },
+  { slot: 'shadowBoot', label: 'Shadow Sapato', category: 'shadow' },
+  { slot: 'shadowEarring', label: 'Shadow Brinco', category: 'shadow' },
+  { slot: 'shadowPendant', label: 'Shadow Colar', category: 'shadow' },
+  { slot: 'costumeEnchantUpper', label: 'Costume Topo', category: 'costume' },
+  { slot: 'costumeEnchantMiddle', label: 'Costume Meio', category: 'costume' },
+  { slot: 'costumeEnchantLower', label: 'Costume Baixo', category: 'costume' },
+  { slot: 'costumeEnchantGarment', label: 'Costume Capa', category: 'costume' },
+];
 
-    return pre;
-  }, {});
+const CATEGORY_LABELS: Record<string, string> = {
+  equipment: 'Equipamento',
+  shadow: 'Shadow',
+  costume: 'Costume',
 };
 
 @Component({
@@ -27,361 +50,131 @@ const getInitShowIEnchant = (b: boolean) => {
   templateUrl: './preset-summary.component.html',
   styleUrls: ['./preset-summary.component.css'],
 })
-export class PresetSummaryComponent implements OnInit, OnDestroy {
-  private jobChangeSource = new Subject();
-  private jobChangeEvent$ = this.jobChangeSource.asObservable();
+export class PresetSummaryComponent implements OnInit {
+  allClasses = getClassDropdownList();
+  selectedJobId: number;
+  selectedSkillName: string;
+  selectedItemId: number;
+  displaySelectedItem: { id: number; name: string; desc: string } | null = null;
 
-  private skillChangeSource = new Subject();
-  private skillChangeEvent$ = this.skillChangeSource.asObservable();
+  skillRankings: SkillRankingEntry[] = [];
+  slotGroups: SlotRankingGroup[] = [];
+  totalBuilds = 0;
 
-  private itemChangeSource = new Subject();
-  private itemChangeEvent$ = this.itemChangeSource.asObservable();
-
-  private toggleShowEnchantSource = new Subject<string>();
-  private toggleShowEnchantEvent$ = this.toggleShowEnchantSource.asObservable();
-
-  private subscribtions = [] as Subscription[];
-
+  itemMap: Record<string, ItemModel> = {};
   isLoading = false;
 
-  allItemPositions = Object.values(EquipmentPosition);
-  allClasses = getClassDropdownList();
-  allClasseMap = new Map(this.allClasses.map((a) => [a.value, a.label]));
-  selectedJobId = this.allClasses[0].value as number;
-  selectedJobName = this.allClasses[0].label;
-  selectedSkillName = '';
+  categories = ['equipment', 'shadow', 'costume'];
+  categoryLabels = CATEGORY_LABELS;
 
-  displaySelectedItems: { id: number; name: string; desc: string }[];
-  selectedItemId: number | string;
+  constructor(
+    private readonly summaryService: SummaryService,
+    private readonly roService: RoService,
+  ) {}
 
-  private itemMap = {} as Record<number, ItemModel>;
-  jobSkillSummary = {} as JobSkillSummary;
-  presetSummary = {} as JobSkillSummary;
-  jobSummary = {} as JobSummary;
-  totalSummary = {} as TotalSummaryModel;
-  totalPresets = 0;
-  totalCurrentJobPresets = 0;
-  isShowEnchant = getInitShowIEnchant(false);
-  isItemHasEnchant = getInitShowIEnchant(false);
-
-  skillRankingList = [] as { value: string; label: string; total: number; totalPresets: number }[];
-  rankingMap = getEmptyRanking();
-
-  constructor(private readonly summaryService: SummaryService, private readonly roService: RoService) {}
-
-  ngOnInit() {
-    this.loadData();
-    this.subscribeEvent();
-  }
-
-  ngOnDestroy(): void {
-    for (const s of this.subscribtions) {
-      s.unsubscribe();
-    }
-  }
-
-  private loadData() {
-    forkJoin([
-      this.summaryService.getJobSkillSummary<JobSkillSummary>(),
-      this.summaryService.getJobPresetSummary<JobSkillSummary>(),
-      this.summaryService.getJobSummary<JobSummary>(),
-      this.summaryService.getTotalSummary<TotalSummaryModel>(),
-      this.roService.getItems<Record<number, ItemModel>>(),
-    ]).subscribe(([jobSkillSummary, presetSummary, jobSummary, totalSummary, itemMap]) => {
-      this.jobSkillSummary = jobSkillSummary;
-      this.presetSummary = presetSummary;
-      this.jobSummary = jobSummary;
-      this.totalSummary = totalSummary;
-      this.itemMap = itemMap;
-
-      this.totalPresets = Object.values(presetSummary).reduce((total, cur) => total + Object.values(cur).reduce((t, c) => t + c, 0), 0);
-
-      this.setSkillRanking();
-      this.setItemRanking();
-
-      // const all = {};
-      // for (const job of this.allClasses) {
-      //   const allRankingMap = this.setItemRanking2(job.value as any);
-      //   all[job.value] = allRankingMap;
-      // }
-      // console.log(all);
+  ngOnInit(): void {
+    this.selectedJobId = this.allClasses[0]?.value as number;
+    this.roService.getItems<Record<string, ItemModel>>().subscribe((items) => {
+      this.itemMap = items;
+      this.loadSkillRanking();
     });
   }
 
-  private subscribeEvent() {
-    const e1 = this.jobChangeEvent$
-      .pipe(
-        tap(() => (this.isLoading = true)),
-        debounceTime(50),
-      )
-      .subscribe(() => {
-        this.setSkillRanking();
-        this.setItemRanking();
-        this.selectedJobName = this.allClasseMap.get(this.selectedJobId) || '';
+  onJobChange(): void {
+    this.skillRankings = [];
+    this.slotGroups = [];
+    this.selectedSkillName = null;
+    this.loadSkillRanking();
+  }
 
+  onSkillChange(): void {
+    this.slotGroups = [];
+    if (this.selectedSkillName) {
+      this.loadItemRanking();
+    }
+  }
+
+  onItemClick(itemId: number): void {
+    this.selectedItemId = itemId;
+    const item = this.itemMap[itemId];
+    if (item) {
+      this.displaySelectedItem = {
+        id: itemId,
+        name: item.name,
+        desc: prettyItemDesc(item.description),
+      };
+    }
+  }
+
+  getGroupsByCategory(category: string): SlotRankingGroup[] {
+    return this.slotGroups.filter((g) => g.category === category);
+  }
+
+  private loadSkillRanking(): void {
+    if (!this.selectedJobId) return;
+    this.isLoading = true;
+    this.summaryService.getSkillRanking(this.selectedJobId).subscribe({
+      next: (data) => {
+        this.skillRankings = data;
         this.isLoading = false;
-      });
-
-    const e2 = this.skillChangeEvent$
-      .pipe(
-        tap(() => (this.isLoading = true)),
-        debounceTime(50),
-      )
-      .subscribe(() => {
-        this.setItemRanking();
+        if (data.length > 0) {
+          this.selectedSkillName = data[0].skill_name;
+          this.loadItemRanking();
+        }
+      },
+      error: () => {
         this.isLoading = false;
-      });
+      },
+    });
+  }
 
-    const e3 = this.itemChangeEvent$.pipe(debounceTime(50)).subscribe(() => {
-      const itemIds = `${this.selectedItemId}`.split('-').map(Number).filter(Boolean);
-      this.displaySelectedItems = [...new Set(itemIds)].map((id) => {
-        const item = this.itemMap[id] || ({} as ItemModel);
+  private loadItemRanking(): void {
+    if (!this.selectedJobId || !this.selectedSkillName) return;
+    this.isLoading = true;
 
+    const skillEntry = this.skillRankings.find((s) => s.skill_name === this.selectedSkillName);
+    this.totalBuilds = skillEntry?.build_count ?? 0;
+
+    this.summaryService.getItemRanking(this.selectedJobId, this.selectedSkillName).subscribe({
+      next: (entries) => {
+        this.slotGroups = this.buildSlotGroups(entries);
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+      },
+    });
+  }
+
+  private buildSlotGroups(entries: SlotRankingEntry[]): SlotRankingGroup[] {
+    for (const entry of entries) {
+      const item = this.itemMap[entry.item_id];
+      entry.itemName = item?.name ?? `Item #${entry.item_id}`;
+    }
+
+    const bySlot: Record<string, { items: SlotRankingEntry[]; cards: SlotRankingEntry[] }> = {};
+    for (const entry of entries) {
+      if (!bySlot[entry.slot]) bySlot[entry.slot] = { items: [], cards: [] };
+      if (entry.type === 'item') {
+        bySlot[entry.slot].items.push(entry);
+      } else {
+        bySlot[entry.slot].cards.push(entry);
+      }
+    }
+
+    return SLOT_CONFIG
+      .map((cfg) => {
+        const data = bySlot[cfg.slot];
+        if (!data || (data.items.length === 0 && data.cards.length === 0)) return null;
         return {
-          id,
-          desc: prettyItemDesc(item.description),
-          name: item.name,
-        };
-      });
-    });
-
-    const e4 = this.toggleShowEnchantEvent$.pipe(debounceTime(50)).subscribe((position) => {
-      this.setItemRanking(position);
-    });
-
-    this.subscribtions.push(e1, e2, e3, e4);
-  }
-
-  private get itemRankingList(): EquipmentRankingModel {
-    if (!this.selectedJobId || !this.selectedSkillName) return getEmptyRanking();
-
-    return this.totalSummary[this.selectedJobId][this.selectedSkillName];
-  }
-
-  get totalAccounts(): number {
-    return this.jobSummary[this.selectedJobId] || 0;
-  }
-
-  private setSkillRanking(): void {
-    const data = this.jobSkillSummary[this.selectedJobId] || {};
-    const skillRankingList = [] as typeof this.skillRankingList;
-    for (const [skillName, total] of Object.entries(data)) {
-      skillRankingList.push({
-        value: skillName,
-        label: skillName,
-        total: Number(total),
-        totalPresets: this.presetSummary[this.selectedJobId]?.[skillName] || 0,
-      });
-    }
-    this.skillRankingList = skillRankingList.sort((a, b) => b.total - a.total);
-    this.selectedSkillName = skillRankingList[0]?.value;
-    this.totalCurrentJobPresets = Object.values(this.presetSummary[this.selectedJobId]).reduce<number>((total, cur: number) => total + cur, 0);
-  }
-
-  private setItemRanking(hideEnchantPosition?: string) {
-    for (const position of this.allItemPositions) {
-      if (hideEnchantPosition && position !== hideEnchantPosition) continue;
-
-      const rankingMap = [] as ItemRankingModel[];
-      let isPositionHaveEnchant = false;
-
-      for (const a of this.itemRankingList[position]) {
-        const percentage = Math.ceil((a.UsingRate * 100) / this.jobSkillSummary[this.selectedJobId][this.selectedSkillName]);
-        rankingMap.push({
-          ...a,
-          Percentage: percentage,
-          ItemName: this.itemMap[a.ItemId]?.name,
-          ColorStyle: this.getItemBarColorStyle(position),
-          IsEnchant: false,
-          EnchantInfos: [],
-        });
-
-        const enchants = Object.entries(a.Enchants);
-        if (!isPositionHaveEnchant) {
-          if (enchants.length === 0) {
-            isPositionHaveEnchant = false;
-          } else if (enchants.length === 1 && enchants[0][0] === '0-0-0') {
-            isPositionHaveEnchant = false;
-          } else {
-            isPositionHaveEnchant = true;
-          }
-        }
-
-        if (this.isShowEnchant[position] !== true) continue;
-
-        const sortedEnchants = enchants.sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1).filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
-        for (const [key, value] of sortedEnchants) {
-          const percentage = Math.floor((value * 100) / (a.TotalEnchant || 1));
-          if (percentage <= 0) continue;
-
-          const [id1, id2, id3] = key.split('-').map(Number);
-          if (!!id1 || !!id2 || !!id3) {
-            const ids = [id1, id2, id3].filter(Number);
-
-            rankingMap.push({
-              ItemId: key,
-              Enchants: {},
-              UsingRate: 0,
-              ItemName: '',
-              TotalAccount: 0,
-              TotalEnchant: 0,
-              TotalPreset: 0,
-              IsEnchant: true,
-              Percentage: percentage,
-              ColorStyle: this.getItemBarColorStyle(position),
-              EnchantInfos: ids.map((id) => {
-                return {
-                  id,
-                  name: this.itemMap[id]?.name,
-                };
-              }),
-            });
-          }
-        }
-      }
-
-      this.isItemHasEnchant[position] = isPositionHaveEnchant;
-      this.rankingMap[position] = rankingMap;
-    }
-  }
-
-  private setItemRanking2(selectedJobId: number) {
-    const data = this.jobSkillSummary[selectedJobId] || {};
-    const allRankingMap = {};
-
-    for (const [selectedSkillName] of Object.entries(data)) {
-      if (!allRankingMap[selectedSkillName]) allRankingMap[selectedSkillName] = {};
-
-      const itemRankingList = this.totalSummary[selectedJobId][selectedSkillName] as EquipmentRankingModel;
-      for (const position of this.allItemPositions) {
-        const rankingMap = [] as ItemRankingModel[];
-        let isPositionHaveEnchant = false;
-
-        for (const a of itemRankingList[position]) {
-          const percentage = Math.ceil((a.UsingRate * 100) / this.jobSkillSummary[selectedJobId][selectedSkillName]);
-          rankingMap.push({
-            ...a,
-            Percentage: percentage,
-            ItemName: this.itemMap[a.ItemId]?.name,
-            ColorStyle: this.getItemBarColorStyle(position),
-            IsEnchant: false,
-            EnchantInfos: [],
-          });
-
-          const enchants = Object.entries(a.Enchants);
-          if (!isPositionHaveEnchant) {
-            if (enchants.length === 0) {
-              isPositionHaveEnchant = false;
-            } else if (enchants.length === 1 && enchants[0][0] === '0-0-0') {
-              isPositionHaveEnchant = false;
-            } else {
-              isPositionHaveEnchant = true;
-            }
-          }
-
-          if (this.isShowEnchant[position] === false) continue;
-
-          const sortedEnchants = enchants.sort(([_, usingRate1], [__, usingRate2]) => usingRate2 - usingRate1).filter(([_, usingRate], i) => i <= 4 && usingRate >= 0.5);
-          for (const [key, value] of sortedEnchants) {
-            const percentage = Math.floor((value * 100) / (a.TotalEnchant || 1));
-            if (percentage <= 0) continue;
-
-            const [id1, id2, id3] = key.split('-').map(Number);
-            if (!!id1 || !!id2 || !!id3) {
-              const ids = [id1, id2, id3].filter(Number);
-
-              rankingMap.push({
-                ItemId: key,
-                Enchants: {},
-                UsingRate: 0,
-                ItemName: '',
-                TotalAccount: 0,
-                TotalEnchant: 0,
-                TotalPreset: 0,
-                IsEnchant: true,
-                Percentage: percentage,
-                ColorStyle: this.getItemBarColorStyle(position),
-                EnchantInfos: ids.map((id) => {
-                  return {
-                    id,
-                    name: this.itemMap[id]?.name,
-                  };
-                }),
-              });
-            }
-          }
-        }
-
-        allRankingMap[selectedSkillName][position] = rankingMap;
-      }
-    }
-
-    return allRankingMap;
-  }
-
-  private getItemBarColorStyle(position: EquipmentPosition) {
-    switch (position) {
-      case EquipmentPosition.Weapon:
-      case EquipmentPosition.WeaponCard:
-        return 'orange-500';
-      case EquipmentPosition.LeftWeapon:
-      case EquipmentPosition.LeftWeaponCard:
-        return 'orange-500';
-      case EquipmentPosition.Shield:
-      case EquipmentPosition.ShieldCard:
-        return 'pink-400';
-
-      case EquipmentPosition.HeadUpper:
-      case EquipmentPosition.HeadUpperCard:
-      case EquipmentPosition.HeadMiddle:
-      case EquipmentPosition.HeadMiddleCard:
-      case EquipmentPosition.HeadLower:
-        return 'blue-400';
-
-      case EquipmentPosition.Armor:
-      case EquipmentPosition.ArmorCard:
-      case EquipmentPosition.Garment:
-      case EquipmentPosition.GarmentCard:
-      case EquipmentPosition.Boot:
-      case EquipmentPosition.BootCard:
-        return 'red-500';
-      case EquipmentPosition.AccLeft:
-      case EquipmentPosition.AccLeftCard:
-      case EquipmentPosition.AccRight:
-      case EquipmentPosition.AccRightCard:
-        return 'teal-400';
-
-      case EquipmentPosition.CostumeEnchantUpper:
-      case EquipmentPosition.CostumeEnchantMiddle:
-      case EquipmentPosition.CostumeEnchantLower:
-      case EquipmentPosition.CostumeEnchantGarment:
-        return 'yellow-500';
-
-      case EquipmentPosition.ShadowWeapon:
-      case EquipmentPosition.ShadowShield:
-      case EquipmentPosition.ShadowArmor:
-      case EquipmentPosition.ShadowBoot:
-      case EquipmentPosition.ShadowEarring:
-      case EquipmentPosition.ShadowPendant:
-        return 'green-500';
-      default:
-        return 'orange-500';
-    }
-  }
-
-  onJobChange() {
-    this.jobChangeSource.next(1);
-  }
-
-  onSkillChange() {
-    this.skillChangeSource.next(1);
-  }
-
-  onItemChange() {
-    this.itemChangeSource.next(1);
-  }
-
-  onToggleShowEnchantClick(position: string) {
-    this.toggleShowEnchantSource.next(position);
+          slot: cfg.slot,
+          slotLabel: cfg.label,
+          category: cfg.category,
+          items: data.items,
+          cards: data.cards,
+          totalBuilds: this.totalBuilds,
+        } as SlotRankingGroup;
+      })
+      .filter(Boolean) as SlotRankingGroup[];
   }
 }
