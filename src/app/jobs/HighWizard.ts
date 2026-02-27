@@ -122,7 +122,7 @@ export class HighWizard extends Mage {
     },
     {
       name: 'Lord of Vermilion',
-      label: 'Senhor de Vermillion Lv10',
+      label: 'Lord of Vermilion Lv10',
       value: 'Lord of Vermilion==10',
       acd: 5,
       fct: 1.68,
@@ -139,7 +139,7 @@ export class HighWizard extends Mage {
       },
     },
     {
-      label: 'Impulso Celestial Lv5',
+      label: "Heaven's Drive Lv5",
       name: "Heaven's Drive",
       value: "Heaven's Drive==5",
       fct: 0.8,
@@ -155,7 +155,7 @@ export class HighWizard extends Mage {
     },
     {
       name: 'Meteor Storm',
-      label: 'Tempestade de Meteoros Lv10',
+      label: 'Meteor Storm Lv10',
       value: 'Meteor Storm==10',
       acd: 5,
       fct: 1.5,
@@ -172,7 +172,7 @@ export class HighWizard extends Mage {
     },
     {
       name: 'Gravitational Field',
-      label: 'Campo Gravitacional Lv5',
+      label: 'Gravitational Field Lv5',
       value: 'Gravitational Field==5',
       acd: 1,
       fct: 1,
@@ -196,7 +196,7 @@ export class HighWizard extends Mage {
   protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       inputType: 'selectButton',
-      label: 'Amplificação Mística 10',
+      label: 'Mystical Amp 10',
       name: 'Mystical Amplification',
       isEquipAtk: true,
       dropdown: [
@@ -207,7 +207,7 @@ export class HighWizard extends Mage {
   ];
   protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     {
-      label: 'Drenar Alma',
+      label: 'Soul Drain',
       name: 'Soul Drain',
       inputType: 'dropdown',
       dropdown: [
@@ -225,7 +225,7 @@ export class HighWizard extends Mage {
       ],
     },
     {
-      label: 'Campo Gravitacional',
+      label: 'Gravitational',
       name: 'Gravitational Field',
       inputType: 'dropdown',
       dropdown: [
@@ -238,7 +238,7 @@ export class HighWizard extends Mage {
       ],
     },
     {
-      label: 'Amplificação Mística',
+      label: 'Mystical Amp',
       name: 'Mystical Amplification',
       inputType: 'dropdown',
       dropdown: [

@@ -85,7 +85,7 @@ export class Whitesmith extends Merchant {
   protected readonly atkSkillListHi: AtkSkillModel[] = [];
   protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
-      label: 'Adrenalina Lv5',
+      label: 'Adrenaline Lv5',
       name: 'Adrenaline Rush',
       inputType: 'selectButton',
       dropdown: [
@@ -112,7 +112,7 @@ export class Whitesmith extends Merchant {
       ],
     },
     {
-      label: 'Impulso de Força Lv5',
+      label: 'Power Thrust Lv5',
       name: 'Power Thrust',
       inputType: 'selectButton',
       dropdown: [
@@ -121,7 +121,7 @@ export class Whitesmith extends Merchant {
       ],
     },
     {
-      label: 'Arma Perfeita Lv5',
+      label: 'Weapon Perfect Lv5',
       name: 'Weapon Perfection',
       inputType: 'selectButton',
       dropdown: [
@@ -130,7 +130,7 @@ export class Whitesmith extends Merchant {
       ],
     },
     {
-      label: 'Maximizar Poder Lv5',
+      label: 'P.Maximize Lv5',
       name: 'Power Maximize',
       inputType: 'selectButton',
       dropdown: [
@@ -142,7 +142,7 @@ export class Whitesmith extends Merchant {
   protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     HiltBindingFn(),
     {
-      label: 'Têmpera de Pele',
+      label: 'Skin Tempering',
       name: 'Skin Tempering',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -156,7 +156,7 @@ export class Whitesmith extends Merchant {
       ],
     },
     {
-      label: 'Pesquisa de Armamento',
+      label: 'Weaponry Research',
       name: 'Weaponry Research',
       inputType: 'dropdown',
       isMasteryAtk: true,

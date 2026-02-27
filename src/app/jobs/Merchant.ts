@@ -158,7 +158,7 @@ export class Merchant extends CharacterBase {
 
   protected readonly _activeSkillList: ActiveSkillModel[] = [
     {
-      label: 'Grito Louco',
+      label: 'Crazy Uproar',
       name: 'Crazy Uproar',
       inputType: 'selectButton',
       isMasteryAtk: true,

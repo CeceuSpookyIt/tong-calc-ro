@@ -163,7 +163,7 @@ export class HyperNovice extends SuperNovice {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Double Bowling Bash',
-      label: '[V2] Golpe Devastador Duplo Lv10',
+      label: '[V2] Double Bowling Bash Lv10',
       value: 'Double Bowling Bash==10',
       acd: 1,
       fct: 0,
@@ -182,7 +182,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'Mega Sonic Blow',
-      label: '[V2] Mega Golpe Sônico Lv10',
+      label: '[V2] Mega Sonic Blow Lv10',
       value: 'Mega Sonic Blow==10',
       acd: 0.5,
       fct: 0,
@@ -204,7 +204,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'Shield Chain Rush',
-      label: '[V2] Investida de Corrente de Escudo Lv10',
+      label: '[V2] Shield Chain Rush Lv10',
       value: 'Shield Chain Rush==10',
       acd: 0.5,
       fct: 0.3,
@@ -223,7 +223,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'Spiral Pierce Max',
-      label: '[V2] Perfuração Espiral Max Lv10',
+      label: '[V2] Spiral Pierce Max Lv10',
       value: 'Spiral Pierce Max==10',
       acd: 0.5,
       fct: 0.3,
@@ -248,7 +248,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'Napalm Vulcan Strike',
-      label: '[V2] Golpe Napalm Vulcan Lv10',
+      label: '[V2] Napalm Vulcan Strike Lv10',
       value: 'Napalm Vulcan Strike==10',
       acd: 0.5,
       fct: 1,
@@ -268,7 +268,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'Jupitel Thunderstorm',
-      label: '[V2] Tempestade de Jupitel Lv10',
+      label: '[V2] Jupitel Thunderstorm Lv10',
       value: 'Jupitel Thunderstorm==10',
       acd: 0.5,
       fct: 1,
@@ -288,7 +288,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: "Hell's Drive",
-      label: "[V2] Condução Infernal Lv10",
+      label: "[V2] Hell's Drive Lv10",
       value: "Hell's Drive==10",
       acd: 1,
       fct: 1,
@@ -311,7 +311,7 @@ export class HyperNovice extends SuperNovice {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Self Study Tactics',
-      label: 'Autoestudo de Táticas',
+      label: 'Self Study Tactics',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({
         pAtk: lv,
@@ -323,7 +323,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'Self Study Sorcery',
-      label: 'Autoestudo de Feitiçaria',
+      label: 'Self Study Sorcery',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({
         sMatk: lv,

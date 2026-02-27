@@ -117,7 +117,7 @@ export class SoulReaper extends SoulLinker {
       },
     },
     {
-      label: 'Explosão Maldita Lv10',
+      label: 'Curse Explosion Lv10',
       name: 'Curse Explosion',
       value: 'Curse Explosion==10',
       acd: 0,
@@ -150,7 +150,7 @@ export class SoulReaper extends SoulLinker {
     // },
     {
       inputType: 'dropdown',
-      label: 'Alma Total',
+      label: 'Total Soul',
       name: 'Total Soul',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -199,7 +199,7 @@ export class SoulReaper extends SoulLinker {
       ],
     },
     {
-      label: 'Maldição da Alma Maligna',
+      label: 'Evil Soul Curse',
       name: 'Evil Soul Curse',
       inputType: 'dropdown',
       dropdown: [

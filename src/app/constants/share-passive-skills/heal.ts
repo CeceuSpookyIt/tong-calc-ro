@@ -2,7 +2,7 @@ import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const Heal: PassiveSkillModel = {
   inputType: 'dropdown',
-  label: 'Curar',
+  label: 'Heal',
   name: 'Heal',
   dropdown: [
     { label: '-', value: 0, isUse: false },

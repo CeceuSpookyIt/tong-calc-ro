@@ -86,7 +86,7 @@ export class Sura extends Champion {
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Dragon Combo',
-      label: 'Combo de Dragão Lv10',
+      label: 'Dragon Combo Lv10',
       value: 'Dragon Combo==10',
       fct: 0,
       vct: 0,
@@ -103,7 +103,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Fallen Empire',
-      label: 'Império Caído Lv10',
+      label: 'Fallen Empire Lv10',
       value: 'Fallen Empire==10',
       fct: 0,
       vct: 0,
@@ -144,7 +144,7 @@ export class Sura extends Champion {
     // },
     {
       name: 'Lion Howling',
-      label: 'Rugido do Leão Lv5',
+      label: 'Lion Howling Lv5',
       value: 'Lion Howling==5',
       fct: 0,
       vct: 0,
@@ -160,7 +160,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Sky Blow',
-      label: 'Golpe Celestial Lv5',
+      label: 'Sky Blow Lv5',
       value: 'Sky Blow==5',
       values: ['[Improved] Sky Blow==5'],
       fct: 0,
@@ -178,7 +178,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Earth Shaker',
-      label: 'Tremor de Terra Lv5',
+      label: 'Earth Shaker Lv5',
       value: 'Earth Shaker==5',
       fct: 0,
       vct: 0,
@@ -194,7 +194,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Rampage Blast',
-      label: 'Explosão Devastadora Lv5',
+      label: 'Rampage Blast Lv5',
       value: 'Rampage Blast==5',
       fct: 0,
       vct: 0,
@@ -217,7 +217,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Tiger Cannon',
-      label: 'Canhão de Tigre Lv10',
+      label: 'Tiger Cannon Lv10',
       value: 'Tiger Cannon==10',
       fct: 0,
       vct: 2,
@@ -245,7 +245,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Tiger Cannon',
-      label: 'Canhão de Tigre Lv10 (Combo)',
+      label: 'Tiger Cannon Lv10 (Combo)',
       value: 'Tiger Cannon Combo==10',
       fct: 0,
       vct: 2,
@@ -273,7 +273,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Knuckle Arrow',
-      label: 'Flecha de Punho Lv10',
+      label: 'Knuckle Arrow Lv10',
       value: 'Knuckle Arrow==10',
       fct: 0,
       vct: 0,
@@ -294,7 +294,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Lightning Ride',
-      label: 'Cavalgada Relâmpago Lv5',
+      label: 'Lightning Ride Lv5',
       value: 'Lightning Ride==5',
       fct: 0,
       vct: 1,
@@ -319,7 +319,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Hell Gate',
-      label: 'Portão do Inferno',
+      label: 'Hell Gate',
       value: 'Hell Gate==10',
       fct: 0,
       vct: (lv) => 0.8 + lv * 0.2,
@@ -328,16 +328,16 @@ export class Sura extends Champion {
       isHit100: true,
       hit: 7,
       levelList: [
-        { label: 'Portão do Inferno Lv1', value: 'Hell Gate==1' },
-        { label: 'Portão do Inferno Lv2', value: 'Hell Gate==2' },
-        { label: 'Portão do Inferno Lv3', value: 'Hell Gate==3' },
-        { label: 'Portão do Inferno Lv4', value: 'Hell Gate==4' },
-        { label: 'Portão do Inferno Lv5', value: 'Hell Gate==5' },
-        { label: 'Portão do Inferno Lv6', value: 'Hell Gate==6' },
-        { label: 'Portão do Inferno Lv7', value: 'Hell Gate==7' },
-        { label: 'Portão do Inferno Lv8', value: 'Hell Gate==8' },
-        { label: 'Portão do Inferno Lv9', value: 'Hell Gate==9' },
-        { label: 'Portão do Inferno Lv10', value: 'Hell Gate==10' },
+        { label: 'Hell Gate Lv1', value: 'Hell Gate==1' },
+        { label: 'Hell Gate Lv2', value: 'Hell Gate==2' },
+        { label: 'Hell Gate Lv3', value: 'Hell Gate==3' },
+        { label: 'Hell Gate Lv4', value: 'Hell Gate==4' },
+        { label: 'Hell Gate Lv5', value: 'Hell Gate==5' },
+        { label: 'Hell Gate Lv6', value: 'Hell Gate==6' },
+        { label: 'Hell Gate Lv7', value: 'Hell Gate==7' },
+        { label: 'Hell Gate Lv8', value: 'Hell Gate==8' },
+        { label: 'Hell Gate Lv9', value: 'Hell Gate==9' },
+        { label: 'Hell Gate Lv10', value: 'Hell Gate==10' },
       ],
       currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
       currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
@@ -359,7 +359,7 @@ export class Sura extends Champion {
     },
     {
       name: 'Hell Gate',
-      label: 'Portão do Inferno (Combo)',
+      label: 'Hell Gate (Combo)',
       value: 'Hell Gate (Combo)==10',
       fct: 0,
       vct: (lv) => 0.8 + lv * 0.2,
@@ -368,16 +368,16 @@ export class Sura extends Champion {
       isHit100: true,
       hit: 7,
       levelList: [
-        { label: 'Portão do Inferno (Combo) Lv1', value: 'Hell Gate (Combo)==1' },
-        { label: 'Portão do Inferno (Combo) Lv2', value: 'Hell Gate (Combo)==2' },
-        { label: 'Portão do Inferno (Combo) Lv3', value: 'Hell Gate (Combo)==3' },
-        { label: 'Portão do Inferno (Combo) Lv4', value: 'Hell Gate (Combo)==4' },
-        { label: 'Portão do Inferno (Combo) Lv5', value: 'Hell Gate (Combo)==5' },
-        { label: 'Portão do Inferno (Combo) Lv6', value: 'Hell Gate (Combo)==6' },
-        { label: 'Portão do Inferno (Combo) Lv7', value: 'Hell Gate (Combo)==7' },
-        { label: 'Portão do Inferno (Combo) Lv8', value: 'Hell Gate (Combo)==8' },
-        { label: 'Portão do Inferno (Combo) Lv9', value: 'Hell Gate (Combo)==9' },
-        { label: 'Portão do Inferno (Combo) Lv10', value: 'Hell Gate (Combo)==10' },
+        { label: 'Hell Gate (Combo) Lv1', value: 'Hell Gate (Combo)==1' },
+        { label: 'Hell Gate (Combo) Lv2', value: 'Hell Gate (Combo)==2' },
+        { label: 'Hell Gate (Combo) Lv3', value: 'Hell Gate (Combo)==3' },
+        { label: 'Hell Gate (Combo) Lv4', value: 'Hell Gate (Combo)==4' },
+        { label: 'Hell Gate (Combo) Lv5', value: 'Hell Gate (Combo)==5' },
+        { label: 'Hell Gate (Combo) Lv6', value: 'Hell Gate (Combo)==6' },
+        { label: 'Hell Gate (Combo) Lv7', value: 'Hell Gate (Combo)==7' },
+        { label: 'Hell Gate (Combo) Lv8', value: 'Hell Gate (Combo)==8' },
+        { label: 'Hell Gate (Combo) Lv9', value: 'Hell Gate (Combo)==9' },
+        { label: 'Hell Gate (Combo) Lv10', value: 'Hell Gate (Combo)==10' },
       ],
       currentHpFn: (maxHp) => this.getCurrentHP(maxHp),
       currentSpFn: (maxSp) => this.getCurrentSP(maxSp),
@@ -401,7 +401,7 @@ export class Sura extends Champion {
 
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
-      label: 'Dragão Ascendente',
+      label: 'Rising Dragon',
       name: 'Rising Dragon',
       inputType: 'dropdown',
       dropdown: [
@@ -419,7 +419,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'TG - Oposto',
+      label: 'GT - Opposite',
       name: 'Gentle Touch - Opposite',
       inputType: 'dropdown',
       dropdown: [
@@ -457,7 +457,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'TG - Vivacidade',
+      label: 'GT - Alive',
       name: 'Gentle Touch - Alive',
       inputType: 'dropdown',
       dropdown: [
@@ -470,7 +470,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Tremor de Terra',
+      label: 'Earth Shaker',
       name: 'Earth Shaker',
       isDebuff: true,
       inputType: 'selectButton',
@@ -480,7 +480,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Espírito Total',
+      label: 'Total Spirit',
       name: 'Total Spirit',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -496,7 +496,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Combo Relâmpago',
+      label: 'Flash Combo',
       name: 'Flash Combo',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -510,7 +510,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'HP Atual',
+      label: 'Current HP',
       name: 'Current HP',
       inputType: 'dropdown',
       dropdown: [
@@ -527,7 +527,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'SP Atual',
+      label: 'Current SP',
       name: 'Current SP',
       inputType: 'dropdown',
       dropdown: [
@@ -546,7 +546,7 @@ export class Sura extends Champion {
 
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Proteção Divina',
+      label: 'Divine Protection',
       name: 'Divine Protection',
       inputType: 'dropdown',
       dropdown: [
@@ -564,7 +564,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Punho de Ferro',
+      label: 'Iron Hand',
       name: 'Iron Hand',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -583,7 +583,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Esquiva',
+      label: 'Dodge',
       name: 'Dodge',
       inputType: 'dropdown',
       dropdown: [
@@ -601,7 +601,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Explosão de Vigor',
+      label: 'Vigor Explosion',
       name: 'Vigor Explosion',
       inputType: 'dropdown',
       dropdown: [
@@ -614,7 +614,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Dragão Ascendente',
+      label: 'Rising Dragon',
       name: 'Rising Dragon',
       inputType: 'dropdown',
       dropdown: [
@@ -632,7 +632,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'TG - Vivacidade',
+      label: 'GT - Alive',
       name: 'Gentle Touch - Alive',
       inputType: 'dropdown',
       dropdown: [
@@ -645,7 +645,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'TG - Oposto',
+      label: 'GT - Opposite',
       name: 'Gentle Touch - Opposite',
       inputType: 'dropdown',
       dropdown: [
@@ -658,7 +658,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Explosão Devastadora',
+      label: 'Rampage Blast',
       name: 'Rampage Blast',
       inputType: 'dropdown',
       dropdown: [
@@ -667,7 +667,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Cavalgada Relâmpago',
+      label: 'Lightning Ride',
       name: 'Lightning Ride',
       inputType: 'dropdown',
       dropdown: [
@@ -676,7 +676,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Condensação de Vigor',
+      label: 'Vigor condensation',
       name: 'Vigor condensation',
       inputType: 'dropdown',
       dropdown: [
@@ -689,7 +689,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Corrente de Golpes',
+      label: 'Chain Combo',
       name: 'Chain Combo',
       inputType: 'dropdown',
       dropdown: [

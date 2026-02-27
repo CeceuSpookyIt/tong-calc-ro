@@ -85,7 +85,7 @@ export class StarEmperor extends StarGladiator {
   private readonly classNames3rd = [ClassName.StarEmperor];
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
-      label: 'Chute da Lua Nova Lv7',
+      label: 'New Moon Kick Lv7',
       name: 'New Moon Kick',
       value: 'New Moon Kick==7',
       acd: 0,
@@ -101,7 +101,7 @@ export class StarEmperor extends StarGladiator {
       },
     },
     {
-      label: 'Chute da Lua Cheia Lv10',
+      label: 'Full Moon Kick Lv10',
       name: 'Full Moon Kick',
       value: 'Full Moon Kick==10',
       acd: 0,
@@ -119,7 +119,7 @@ export class StarEmperor extends StarGladiator {
       },
     },
     {
-      label: 'Chute Flamejante Lv7',
+      label: 'Blaze Kick Lv7',
       name: 'Blaze Kick',
       value: 'Blaze Kick==7',
       acd: 0,
@@ -135,7 +135,7 @@ export class StarEmperor extends StarGladiator {
       },
     },
     {
-      label: 'Explosão Solar Lv10',
+      label: 'Solar Explosion Lv10',
       name: 'Solar Explosion',
       value: 'Solar Explosion==10',
       acd: 0.5,
@@ -154,7 +154,7 @@ export class StarEmperor extends StarGladiator {
     },
     {
       name: 'Falling Stars',
-      label: 'Estrelas Cadentes Lv10',
+      label: 'Falling Stars Lv10',
       value: 'Falling Stars==10',
       acd: 0,
       fct: 0,
@@ -177,7 +177,7 @@ export class StarEmperor extends StarGladiator {
 
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
-      label: 'Luminância Lunar',
+      label: 'Lunar Luminance',
       name: 'Lunar Luminance',
       inputType: 'dropdown',
       dropdown: [
@@ -186,7 +186,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Postura Solar',
+      label: 'Solar Stance',
       name: 'Solar Stance',
       inputType: 'dropdown',
       dropdown: [
@@ -195,7 +195,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Luminância Solar',
+      label: 'Solar Luminance',
       name: 'Solar Luminance',
       inputType: 'dropdown',
       dropdown: [
@@ -204,7 +204,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Fusão Sol, Lua e Estrela',
+      label: 'Levitar',
       name: 'Fusion of Sun, Moon and Star',
       inputType: 'selectButton',
       dropdown: [
@@ -213,7 +213,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Postura Estelar',
+      label: 'Stellar Stance',
       name: 'Stellar Stance',
       inputType: 'dropdown',
       dropdown: [
@@ -222,7 +222,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Luminância Estelar',
+      label: 'Stellar Luminance',
       name: 'Stellar Luminance',
       inputType: 'dropdown',
       dropdown: [
@@ -234,7 +234,7 @@ export class StarEmperor extends StarGladiator {
 
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Bênção do Sol',
+      label: 'Blessing of Sun',
       name: 'Blessing of Sun',
       inputType: 'dropdown',
       dropdown: [
@@ -247,7 +247,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Bênção da Lua',
+      label: 'Blessing of Moon',
       name: 'Blessing of Moon',
       inputType: 'dropdown',
       dropdown: [
@@ -260,7 +260,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Bênção da Estrela',
+      label: 'Blessing of Star',
       name: 'Blessing of Star',
       inputType: 'dropdown',
       dropdown: [

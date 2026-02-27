@@ -1,7 +1,7 @@
 import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const CavalierMastery: PassiveSkillModel = {
-  label: 'Domínio de Montaria',
+  label: 'Cavalier Mastery',
   name: 'Cavalier Mastery',
   inputType: 'dropdown',
   dropdown: [

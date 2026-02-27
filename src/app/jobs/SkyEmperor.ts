@@ -175,7 +175,7 @@ export class SkyEmperor extends StarEmperor {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Noon Blast',
-      label: '[V2] Explosão do Meio-dia Lv5',
+      label: '[V2] Noon Blast Lv5',
       value: 'Noon Blast==5',
       acd: 0.5,
       fct: 0,
@@ -197,7 +197,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'Sunset Blast',
-      label: '[V2] Explosão do Pôr do Sol Lv5',
+      label: '[V2] Sunset Blast Lv5',
       value: 'Sunset Blast==5',
       acd: 0.5,
       fct: 0,
@@ -219,7 +219,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'Midnight Kick',
-      label: '[V2] Chute da Meia-noite Lv5',
+      label: '[V2] Midnight Kick Lv5',
       value: 'Midnight Kick==5',
       acd: 0,
       fct: 0.5,
@@ -243,7 +243,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'Dawn Break',
-      label: '[V2] Quebra da Alvorada Lv5',
+      label: '[V2] Dawn Break Lv5',
       value: 'Dawn Break==5',
       acd: 0,
       fct: 0.5,
@@ -267,7 +267,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'Star Cannon',
-      label: '[V2] Canhão Estelar Lv5 (1 hit)',
+      label: '[V2] Star Cannon Lv5 (1 hit)',
       value: 'Star Cannon==5',
       acd: 0,
       fct: 0.5,
@@ -288,7 +288,7 @@ export class SkyEmperor extends StarEmperor {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: '_SkyEmperor_Rising_Sun',
-      label: 'Sol Nascente',
+      label: 'Rising Sun',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -299,7 +299,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: '_SkyEmperor_Rising_Moon',
-      label: 'Lua Nascente',
+      label: 'Rising Moon',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -312,13 +312,13 @@ export class SkyEmperor extends StarEmperor {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Sky Mastery',
-      label: 'Maestria do Céu',
+      label: 'Sky Mastery',
       inputType: 'dropdown',
       dropdown: genSkillList(10)
     },
     {
       name: 'War Book Mastery',
-      label: 'Maestria de Livro de Guerra',
+      label: 'War Book Mastery',
       inputType: 'dropdown',
       dropdown: genSkillList(10)
     },

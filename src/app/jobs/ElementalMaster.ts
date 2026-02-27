@@ -174,7 +174,7 @@ export class ElementalMaster extends Sorcerer {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Diamond Storm',
-      label: '[V3] Tempestade de Diamante Lv5',
+      label: '[V3] Diamond Storm Lv5',
       value: 'Diamond Storm==5',
       acd: 0.5,
       fct: 1.5,
@@ -197,7 +197,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Conflagration',
-      label: '[V3] Conflagração Lv5',
+      label: '[V3] Conflagration Lv5',
       value: 'Conflagration==5',
       acd: 0.5,
       fct: 1.5,
@@ -220,7 +220,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Lightning Land',
-      label: '[V3] Terra dos Raios Lv5',
+      label: '[V3] Lightning Land Lv5',
       value: 'Lightning Land==5',
       acd: 0.5,
       fct: 1.5,
@@ -243,7 +243,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Terra Drive',
-      label: '[V3] Impulso Terrestre Lv5',
+      label: '[V3] Terra Drive Lv5',
       value: 'Terra Drive==5',
       acd: 0.5,
       fct: 1.5,
@@ -266,7 +266,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Venom Swamp',
-      label: '[V3] Pântano Venenoso Lv5',
+      label: '[V3] Venom Swamp Lv5',
       value: 'Venom Swamp==5',
       acd: 0.5,
       fct: 1.5,
@@ -289,7 +289,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'Elemental Buster',
-      label: '[V3] Destruidor Elemental Lv10',
+      label: '[V3] Elemental Buster Lv10',
       value: 'Elemental Buster==10',
       acd: 0.5,
       fct: 1.5,
@@ -315,7 +315,7 @@ export class ElementalMaster extends Sorcerer {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: '_ElementalMaster_spirit',
-      label: 'Espírito Mestre',
+      label: 'Master spirit',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -330,7 +330,7 @@ export class ElementalMaster extends Sorcerer {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Magic Book Mastery',
-      label: 'Maestria em Livro Mágico',
+      label: 'Magic Book Mastery',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

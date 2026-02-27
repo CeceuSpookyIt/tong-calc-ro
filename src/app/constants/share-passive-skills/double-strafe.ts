@@ -1,7 +1,7 @@
 import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const DoubleStrafeFn = (): PassiveSkillModel => ({
-  label: 'Ataque Duplo',
+  label: 'Double Strafe',
   name: 'Double Strafe',
   inputType: 'dropdown',
   isEquipAtk: true,

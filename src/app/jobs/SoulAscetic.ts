@@ -172,7 +172,7 @@ export class SoulAscetic extends SoulReaper {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Exorcism of Malicious Soul',
-      label: '[V2] Exorcismo da Alma Maligna Lv5',
+      label: '[V2] Exorcism of Malicious Soul Lv5',
       value: 'Exorcism of Malicious Soul==5',
       acd: 0,
       fct: 1.5,
@@ -197,7 +197,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'Talisman of Blue Dragon',
-      label: '[V2] Talismã do Dragão Azul Lv5',
+      label: '[V2] Talisman of Blue Dragon Lv5',
       value: 'Talisman of Blue Dragon==5',
       acd: 0,
       fct: 1.5,
@@ -220,7 +220,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'Talisman of White Tiger',
-      label: '[V2] Talismã do Tigre Branco Lv5',
+      label: '[V2] Talisman of White Tiger Lv5',
       value: 'Talisman of White Tiger==5',
       acd: 0,
       fct: 1.5,
@@ -244,7 +244,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'Talisman of Red Phoenix',
-      label: '[V2] Talismã da Fênix Vermelha Lv5',
+      label: '[V2] Talisman of Red Phoenix Lv5',
       value: 'Talisman of Red Phoenix==5',
       acd: 0,
       fct: 1.5,
@@ -268,7 +268,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'Talisman of Black Tortoise',
-      label: '[V2] Talismã da Tartaruga Negra Lv5',
+      label: '[V2] Talisman of Black Tortoise Lv5',
       value: 'Talisman of Black Tortoise==5',
       acd: 0,
       fct: 1.5,
@@ -292,7 +292,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'Talisman of Four Bearing God',
-      label: '[V2] Talismã dos Quatro Deuses Lv5',
+      label: '[V2] Talisman of Four Bearing God Lv5',
       value: 'Talisman of Four Bearing God==5',
       acd: 0,
       fct: 1.5,
@@ -324,7 +324,7 @@ export class SoulAscetic extends SoulReaper {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Talisman of Five Elements',
-      label: 'Cinco Elementos',
+      label: 'Five Elements',
       inputType: 'dropdown',
       dropdown: genSkillList(5, lv => ({
         p_element_water: lv * 4,
@@ -341,20 +341,20 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: '_SoulAscetic_Blessing',
-      label: 'Benção de',
+      label: 'Blessing of',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
-        { label: 'Leste', value: BlessingValue.East, isUse: true },
-        { label: 'Sul', value: BlessingValue.South, isUse: true },
-        { label: 'Oeste', value: BlessingValue.West, isUse: true },
-        { label: 'Norte', value: BlessingValue.North, isUse: true },
-        { label: 'Quatro Direções', value: BlessingValue.Four_Directions, isUse: true },
+        { label: 'East', value: BlessingValue.East, isUse: true },
+        { label: 'South', value: BlessingValue.South, isUse: true },
+        { label: 'West', value: BlessingValue.West, isUse: true },
+        { label: 'North', value: BlessingValue.North, isUse: true },
+        { label: 'Four Directions', value: BlessingValue.Four_Directions, isUse: true },
       ],
     },
     {
       name: 'Totem of Tutelary',
-      label: 'Totem Tutelar',
+      label: 'Totem of Tutelary',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -365,13 +365,13 @@ export class SoulAscetic extends SoulReaper {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Talisman Mastery',
-      label: 'Maestria em Talismã',
+      label: 'Talisman Mastery',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({ sMatk: lv })),
     },
     {
       name: 'Soul Mastery',
-      label: 'Maestria em Alma',
+      label: 'Soul Mastery',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({ spl: lv })),
     },

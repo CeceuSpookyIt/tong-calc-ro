@@ -170,7 +170,7 @@ export class Inquisitor extends Sura {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'First Brand',
-      label: '[V3] Primeira Marca Lv5',
+      label: '[V3] First Brand Lv5',
       value: 'First Brand==5',
       acd: 0,
       fct: 0,
@@ -187,7 +187,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Second Faith',
-      label: '[V3] Segunda Fé Lv5',
+      label: '[V3] Second Faith Lv5',
       value: 'Second Faith==5',
       acd: 0,
       fct: 0,
@@ -205,7 +205,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Third Punish',
-      label: '[V3] Terceira Punição Lv5',
+      label: '[V3] Third Punish Lv5',
       value: 'Third Punish==5',
       acd: 0,
       fct: 0,
@@ -226,7 +226,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Second Judgement',
-      label: '[V3] Segundo Julgamento Lv5',
+      label: '[V3] Second Judgement Lv5',
       value: 'Second Judgement==5',
       acd: 0,
       fct: 0,
@@ -244,7 +244,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Third Consecration',
-      label: '[V3] Terceira Consagração Lv5',
+      label: '[V3] Third Consecration Lv5',
       value: 'Third Consecration==5',
       acd: 0,
       fct: 0,
@@ -262,7 +262,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Second Flame',
-      label: '[V3] Segunda Chama Lv5',
+      label: '[V3] Second Flame Lv5',
       value: 'Second Flame==5',
       acd: 0,
       fct: 0,
@@ -279,7 +279,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Third Flame Bomb',
-      label: '[V3] Terceira Bomba de Chamas Lv5',
+      label: '[V3] Third Flame Bomb Lv5',
       value: 'Third Flame Bomb==5',
       acd: 0,
       fct: 0,
@@ -297,7 +297,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Explosion Blaster',
-      label: '[V3] Explosão Destruidora Lv5',
+      label: '[V3] Explosion Blaster Lv5',
       value: 'Explosion Blaster==5',
       acd: 0,
       fct: 0,
@@ -320,7 +320,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Massive Flame Blaster',
-      label: '[V3] Destruidor de Chamas Massivo Lv10',
+      label: '[V3] Massive Flame Blaster Lv10',
       value: 'Massive Flame Blaster==10',
       acd: 1,
       fct: 0,
@@ -342,7 +342,7 @@ export class Inquisitor extends Sura {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: '_3Faith',
-      label: 'Fé 5',
+      label: 'Faith 5',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -353,7 +353,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'Oleum Sanctum',
-      label: 'Óleo Sagrado 5',
+      label: 'Oleum Sanctum 5',
       isDebuff: true,
       inputType: 'selectButton',
       dropdown: [
@@ -369,7 +369,7 @@ export class Inquisitor extends Sura {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Will of Faith',
-      label: 'Vontade da Fé',
+      label: 'Will of Faith',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

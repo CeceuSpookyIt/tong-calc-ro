@@ -160,7 +160,7 @@ export class Thief extends CharacterBase {
     ImproveDodgeFn(),
     {
       name: 'Hiding',
-      label: 'Esconder',
+      label: 'Hiding',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },

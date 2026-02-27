@@ -164,7 +164,7 @@ export class Meister extends Mechanic {
   private atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Axe Stomp',
-      label: '[V3] Pisão de Machado Lv5',
+      label: '[V3] Axe Stomp Lv5',
       value: 'Axe Stomp==5',
       acd: 0.25,
       fct: 0,
@@ -200,7 +200,7 @@ export class Meister extends Mechanic {
     // },
     {
       name: 'Spark Blaster',
-      label: '[V3] Rajada de Faísca Lv10',
+      label: '[V3] Spark Blaster Lv10',
       value: 'Spark Blaster==10',
       acd: 0.25,
       fct: 0.5,
@@ -219,7 +219,7 @@ export class Meister extends Mechanic {
     },
     {
       name: 'Triple Laser',
-      label: '[V3] Laser Triplo Lv5',
+      label: '[V3] Triple Laser Lv5',
       value: 'Triple Laser==5',
       acd: 0.25,
       fct: 0.5,
@@ -239,7 +239,7 @@ export class Meister extends Mechanic {
     },
     {
       name: 'Mighty Smash',
-      label: '[V3] Golpe Poderoso Lv10',
+      label: '[V3] Mighty Smash Lv10',
       value: 'Mighty Smash==10',
       acd: 0,
       fct: 0,
@@ -265,7 +265,7 @@ export class Meister extends Mechanic {
   private activeSkillList4th: ActiveSkillModel[] = [
     {
       name: '_Meister_Rush',
-      label: 'Investida 10',
+      label: 'Rush 10',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 10, isUse: true, bonus: { range: 10 * 5, melee: 10 * 5 } },
@@ -274,13 +274,13 @@ export class Meister extends Mechanic {
     },
     {
       name: '_Meister_ABR_List',
-      label: 'Invocação ABR',
+      label: 'ABR Summon',
       inputType: 'dropdown',
       dropdown: genMeisterMonsterSkillList(),
     },
     {
       name: 'Axe Stomp',
-      label: 'Pisão de Machado',
+      label: 'Axe Stomp',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true },
@@ -291,7 +291,7 @@ export class Meister extends Mechanic {
   private passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Two Hand Defending',
-      label: 'Defesa com Duas Mãos',
+      label: 'Two Hand Defending',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

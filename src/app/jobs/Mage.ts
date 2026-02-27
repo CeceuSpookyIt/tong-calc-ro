@@ -156,7 +156,7 @@ export class Mage extends CharacterBase {
   protected readonly classNames = [ClassName.Mage];
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
-      label: 'Seta de Fogo Lv10',
+      label: 'Fire Bolt Lv10',
       name: 'Fire Bolt',
       value: 'Fire Bolt==10',
       acd: 2.8,
@@ -171,7 +171,7 @@ export class Mage extends CharacterBase {
       },
     },
     {
-      label: 'Seta de Gelo Lv10',
+      label: 'Cold Bolt Lv10',
       name: 'Cold Bolt',
       value: 'Cold Bolt==10',
       acd: 2.8,
@@ -186,7 +186,7 @@ export class Mage extends CharacterBase {
       },
     },
     {
-      label: 'Seta Elétrica Lv10',
+      label: 'Lightening Bolt Lv10',
       name: 'Lightening Bolt',
       value: 'Lightening Bolt==10',
       acd: 2.8,
@@ -205,7 +205,7 @@ export class Mage extends CharacterBase {
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Muralha de Segurança',
+      label: 'Safety Wall',
       name: 'Safety Wall',
       dropdown: [
         { label: '-', isUse: false, value: 0 },

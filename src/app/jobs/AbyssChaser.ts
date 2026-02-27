@@ -165,7 +165,7 @@ export class AbyssChaser extends ShadowChaser {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Abyss Dagger',
-      label: '[V3] Adaga do Abismo Lv5',
+      label: '[V3] Abyss Dagger Lv5',
       value: 'Abyss Dagger==5',
       acd: 0.5,
       fct: 0,
@@ -189,7 +189,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Unlucky Rush',
-      label: '[V3] Corrida Azarada Lv5',
+      label: '[V3] Unlucky Rush Lv5',
       value: 'Unlucky Rush==5',
       acd: 0.5,
       fct: 0,
@@ -206,7 +206,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Deft Stab',
-      label: '[V3] Punhalada Hábil Lv10',
+      label: '[V3] Deft Stab Lv10',
       value: 'Deft Stab==10',
       acd: 0.5,
       fct: 0,
@@ -224,7 +224,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Chain Reaction Shot',
-      label: '[V3] Tiro em Cadeia Lv5',
+      label: '[V3] Chain Reaction Shot Lv5',
       value: 'Chain Reaction Shot==5',
       acd: 0,
       fct: 1,
@@ -249,7 +249,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Frenzy Shot',
-      label: '[V3] Tiro Frenético Lv10 (1 hit)',
+      label: '[V3] Frenzy Shot Lv10 (1 hit)',
       value: 'Frenzy Shot==10',
       acd: 0.5,
       fct: 0,
@@ -274,7 +274,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'From the Abyss',
-      label: '[V3] Do Abismo Lv5',
+      label: '[V3] From the Abyss Lv5',
       value: 'From the Abyss==5',
       acd: 0,
       fct: 0,
@@ -293,7 +293,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Abyss Square',
-      label: '[V3] Quadrado do Abismo Lv5 (fora da área da skill)',
+      label: '[V3] Abyss Square Lv5 (fora da área da skill)',
       value: 'Abyss Square==5',
       acd: 0.5,
       fct: 1.5,
@@ -313,7 +313,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Omega Abyss Strike',
-      label: '[V3] Golpe Ômega do Abismo Lv10',
+      label: '[V3] Omega Abyss Strike Lv10',
       value: 'Omega Abyss Strike==10',
       acd: 0.5,
       fct: 1.5,
@@ -334,7 +334,7 @@ export class AbyssChaser extends ShadowChaser {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'Strip Shadow',
-      label: 'Despir Sombra',
+      label: 'Strip Shadow',
       isDebuff: true,
       inputType: 'selectButton',
       dropdown: [
@@ -344,13 +344,13 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'Abyss Slayer',
-      label: 'Matador do Abismo',
+      label: 'Abyss Slayer',
       inputType: 'dropdown',
       dropdown: genSkillList(10, (lv) => ({ pAtk: 10 + lv * 2, sMatk: 10 + lv * 2, hit: 100 + lv * 20 })),
     },
     {
       name: 'Abyss Dagger',
-      label: 'Adaga do Abismo',
+      label: 'Abyss Dagger',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true },
@@ -361,13 +361,13 @@ export class AbyssChaser extends ShadowChaser {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Dagger & Bow Mastery',
-      label: 'Maestria em Adaga e Arco',
+      label: 'Dagger & Bow Mastery',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'Magic Sword Mastery',
-      label: 'Maestria em Espada Mágica',
+      label: 'Magic Sword Mastery',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

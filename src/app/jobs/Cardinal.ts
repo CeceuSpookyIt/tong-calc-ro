@@ -241,7 +241,7 @@ export class Cardinal extends ArchBishop {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Mace & Book Mastery',
-      label: 'Maestria em Maça & Livro',
+      label: 'Mace & Book Mastery',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -259,7 +259,7 @@ export class Cardinal extends ArchBishop {
     },
     {
       name: 'Fidus Animus',
-      label: 'Ânimo Fiel',
+      label: 'Fidus Animus',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },

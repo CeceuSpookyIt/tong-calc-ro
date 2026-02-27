@@ -166,7 +166,7 @@ export class Troubadour extends Minstrel {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Rhythm Shooting',
-      label: '[V3] Tiro Rítmico Lv5',
+      label: '[V3] Rhythm Shooting Lv5',
       value: 'Rhythm Shooting==5',
       acd: 0.15,
       fct: 0,
@@ -191,7 +191,7 @@ export class Troubadour extends Minstrel {
     },
     {
       name: 'Rose Blossom',
-      label: '[V3] Florescer da Rosa Lv5',
+      label: '[V3] Rose Blossom Lv5',
       value: 'Rose Blossom==5',
       acd: 0.15,
       fct: 0.5,

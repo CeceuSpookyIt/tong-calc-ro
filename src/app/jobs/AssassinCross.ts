@@ -84,7 +84,7 @@ export class AssassinCross extends Thief {
   protected readonly atkSkillListHi: AtkSkillModel[] = [
     {
       name: 'Meteor Assault',
-      label: 'Assalto Meteórico Lv10',
+      label: 'Meteor Assault Lv10',
       value: 'Meteor Assault==10',
       fct: 0.3,
       vct: 0.25,
@@ -103,7 +103,7 @@ export class AssassinCross extends Thief {
   protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Impressão Venenosa',
+      label: 'Venom Imp',
       name: 'Venom Impression',
       isEquipAtk: true,
       dropdown: [
@@ -117,7 +117,7 @@ export class AssassinCross extends Thief {
     },
     {
       inputType: 'selectButton',
-      label: 'Envenenar Arma Mortal',
+      label: 'EDP',
       name: 'Enchant Deadly Poison',
       dropdown: [
         { label: 'Yes', value: 1, isUse: true, bonus: { edp: 1 } },
@@ -128,7 +128,7 @@ export class AssassinCross extends Thief {
   protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Maestria em Katar',
+      label: 'Katar Mastery',
       name: 'Katar Mastery',
       isMasteryAtk: true,
       dropdown: [
@@ -147,7 +147,7 @@ export class AssassinCross extends Thief {
     },
     {
       inputType: 'dropdown',
-      label: 'Katar Avançada',
+      label: 'Adv Katar',
       name: 'Advanced Katar Mastery',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -160,7 +160,7 @@ export class AssassinCross extends Thief {
     },
     {
       inputType: 'dropdown',
-      label: 'Maestria Mão Esquerda',
+      label: 'Lefthand Mastery',
       name: 'Lefthand Mastery',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -173,7 +173,7 @@ export class AssassinCross extends Thief {
     },
     {
       inputType: 'dropdown',
-      label: 'Destruidor de Almas',
+      label: 'Soul Destroyer',
       name: 'Soul Destroyer',
       isMasteryAtk: true,
       dropdown: [

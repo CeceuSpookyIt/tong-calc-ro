@@ -87,7 +87,7 @@ export class Genetic extends Creator {
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'Acid Bomb',
-      label: 'Bomba Ácida Lv10',
+      label: 'Acid Bomb Lv10',
       value: 'Acid Bomb==10',
       values: ['[Improved] Acid Bomb==10'],
       acd: 1,
@@ -105,7 +105,7 @@ export class Genetic extends Creator {
     },
     {
       name: 'Cart Cannon',
-      label: 'Canhão de Carrinho Lv5',
+      label: 'Cart Cannon Lv5',
       value: 'Cart Cannon==5',
       values: ['[Improved 1nd] Cart Cannon==5', '[Improved 2nd] Cart Cannon==5'],
       acd: 0.5,
@@ -131,7 +131,7 @@ export class Genetic extends Creator {
     },
     {
       name: 'Cart Tornado',
-      label: 'Tornado de Carrinho Lv10',
+      label: 'Cart Tornado Attack Lv10',
       value: 'Cart Tornado==10',
       values: ['[Improved] Cart Tornado==10'],
       acd: 1,
@@ -157,7 +157,7 @@ export class Genetic extends Creator {
     },
     {
       name: 'Spore Explosion',
-      label: 'Explosão de Esporo Lv10',
+      label: 'Spore Explosion Lv10',
       value: 'Spore Explosion==10',
       values: ['[Improved 2nd] Spore Explosion==10'],
       acd: 0.5,
@@ -182,7 +182,7 @@ export class Genetic extends Creator {
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     CartBoost,
     {
-      label: 'Peso do Carrinho',
+      label: 'Cart Weight',
       name: 'Cart Weight',
       inputType: 'dropdown',
       dropdown: [
@@ -201,7 +201,7 @@ export class Genetic extends Creator {
       ],
     },
     {
-      label: 'Piroclástico 10',
+      label: 'Pyroclastic 10',
       name: 'Pyroclastic',
       inputType: 'dropdown',
       isEquipAtk: true,
@@ -224,7 +224,7 @@ export class Genetic extends Creator {
 
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Maestria em Espada',
+      label: 'Sword Mastery',
       name: 'Sword Mastery',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -263,7 +263,7 @@ export class Genetic extends Creator {
       ],
     },
     {
-      label: 'Remodelagem de Carrinho',
+      label: 'Cart Remodeling',
       name: 'Cart Remodeling',
       inputType: 'dropdown',
       dropdown: [
@@ -289,7 +289,7 @@ export class Genetic extends Creator {
       ],
     },
     {
-      label: 'Canhão de Carrinho',
+      label: 'Cart Cannon',
       name: 'Cart Cannon',
       inputType: 'dropdown',
       dropdown: [

@@ -85,7 +85,7 @@ export class Sniper extends Archer {
   private readonly atkSkillListHi: AtkSkillModel[] = [
     {
       name: 'Focused Arrow Strike',
-      label: 'Flecha Focada Lv5',
+      label: 'Focused Arrow Lv5',
       value: 'Focused Arrow Strike==5',
       values: ['[Improved] Focused Arrow Strike==5'],
       acd: 0.5,
@@ -107,7 +107,7 @@ export class Sniper extends Archer {
     {
       isEquipAtk: true,
       inputType: 'selectButton',
-      label: 'Caminhar do Vento 5',
+      label: 'Wind Walk 5',
       name: 'Wind Walk',
       dropdown: [
         { label: 'Yes', value: 5, skillLv: 5, isUse: true, bonus: { flee: 5 } },
@@ -117,7 +117,7 @@ export class Sniper extends Archer {
     {
       isEquipAtk: true,
       inputType: 'selectButton',
-      label: 'Olhos de Falcão 10',
+      label: 'Falcon Eyes 10',
       name: 'Falcon Eyes',
       dropdown: [
         { label: 'Yes', value: 10, skillLv: 10, isUse: true, bonus: { flatDmg: 20, hit: 30, cri: 10, allStatus: 5 } },
@@ -128,7 +128,7 @@ export class Sniper extends Archer {
   private passiveSkillListHi: PassiveSkillModel[] = [
     BeastBaneFn(),
     {
-      label: 'Corvo de Aço',
+      label: 'Steel Crow',
       name: 'Steel Crow',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -148,7 +148,7 @@ export class Sniper extends Archer {
     },
     {
       inputType: 'dropdown',
-      label: 'Olhos de Falcão',
+      label: 'Falcon Eyes',
       name: 'Falcon Eyes',
       dropdown: [
         { label: '-', value: 0, isUse: false },

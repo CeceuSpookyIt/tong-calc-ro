@@ -163,7 +163,7 @@ export class Shinkiro extends Kagerou {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Shadow Hunting',
-      label: '[V2] Caça das Sombras Lv10',
+      label: '[V2] Shadow Hunting Lv10',
       value: 'Shadow Hunting==10',
       acd: 0.15,
       fct: 0,
@@ -181,7 +181,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Shadow Dance',
-      label: '[V2] Dança das Sombras Lv10',
+      label: '[V2] Shadow Dance Lv10',
       value: 'Shadow Dance==10',
       acd: 0.25,
       fct: 1,
@@ -200,7 +200,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Shadow Flash',
-      label: '[V2] Flash das Sombras Lv10',
+      label: '[V2] Shadow Flash Lv10',
       value: 'Shadow Flash==10',
       acd: 0.25,
       fct: 0,
@@ -218,7 +218,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Huuma Shuriken - Grasp',
-      label: '[V2] Huuma Shuriken - Aperto Lv10',
+      label: '[V2] Huuma Shuriken - Grasp Lv10',
       value: 'Huuma Shuriken - Grasp==10',
       acd: 0,
       fct: 1,
@@ -236,7 +236,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Huuma Shuriken - Construct',
-      label: '[V2] Huuma Shuriken - Construto Lv10',
+      label: '[V2] Huuma Shuriken - Construct Lv10',
       value: 'Huuma Shuriken - Construct==10',
       acd: 0,
       fct: 1,
@@ -256,7 +256,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Kunai - Distortion',
-      label: '[V2] Kunai - Distorção Lv10',
+      label: '[V2] Kunai - Distortion Lv10',
       value: 'Kunai - Distortion==10',
       acd: 0,
       fct: 0,
@@ -274,7 +274,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Kunai - Rotation',
-      label: '[V2] Kunai - Rotação Lv5',
+      label: '[V2] Kunai - Rotation Lv5',
       value: 'Kunai - Rotation==5',
       acd: 0.5,
       fct: 0,
@@ -292,7 +292,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Kunai - Refraction',
-      label: '[V2] Kunai - Refração Lv10',
+      label: '[V2] Kunai - Refraction Lv10',
       value: 'Kunai - Refraction==10',
       acd: 0.5,
       fct: 0.5,
@@ -310,7 +310,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Red Flame Cannon',
-      label: '[V2] Canhão de Chama Vermelha Lv10',
+      label: '[V2] Red Flame Cannon Lv10',
       value: 'Red Flame Cannon==10',
       acd: 0,
       fct: 1,
@@ -330,7 +330,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Cold Blooded Cannon',
-      label: '[V2] Canhão de Sangue Frio Lv10',
+      label: '[V2] Cold Blooded Cannon Lv10',
       value: 'Cold Blooded Cannon==10',
       acd: 0,
       fct: 1,
@@ -350,7 +350,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Thundering Cannon',
-      label: '[V2] Canhão Trovejante Lv10',
+      label: '[V2] Thundering Cannon Lv10',
       value: 'Thundering Cannon==10',
       acd: 0,
       fct: 1,
@@ -370,7 +370,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Golden Dragon Cannon',
-      label: '[V2] Canhão Dragão Dourado Lv10',
+      label: '[V2] Golden Dragon Cannon Lv10',
       value: 'Golden Dragon Cannon==10',
       acd: 0,
       fct: 1,
@@ -389,7 +389,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'Darkening Cannon',
-      label: '[V2] Canhão Sombrio Lv10',
+      label: '[V2] Darkening Cannon Lv10',
       value: 'Darkening Cannon==10',
       acd: 0,
       fct: 1,
@@ -411,55 +411,55 @@ export class Shinkiro extends Kagerou {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'Shadow Hunting',
-      label: 'Caça das Sombras',
+      label: 'Shadow Hunting',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'Shadow Dance',
-      label: 'Dança das Sombras',
+      label: 'Shadow Dance',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'Shadow Flash',
-      label: 'Flash das Sombras',
+      label: 'Shadow Flash',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'Huuma Shuriken - Construct',
-      label: 'Huuma - Construto',
+      label: 'Huuma - Construct',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'Huuma Shuriken - Grasp',
-      label: 'Huuma - Aperto',
+      label: 'Huuma - Grasp',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'Kunai - Distortion',
-      label: 'Kunai - Distorção',
+      label: 'Kunai - Distortion',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'Kunai - Rotation',
-      label: 'Kunai - Rotação',
+      label: 'Kunai - Rotation',
       inputType: 'dropdown',
       dropdown: genSkillList(5),
     },
     {
       name: 'Kunai - Refraction',
-      label: 'Kunai - Refração',
+      label: 'Kunai - Refraction',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'Darkening Cannon',
-      label: 'Canhão Sombrio',
+      label: 'Darkening Cannon',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

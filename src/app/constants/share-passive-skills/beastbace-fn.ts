@@ -1,7 +1,7 @@
 import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const BeastBaneFn = (): PassiveSkillModel => ({
-  label: 'Perdição Bestial',
+  label: 'Beast Bane',
   name: 'Beast Bane',
   inputType: 'dropdown',
   isMasteryAtk: true,

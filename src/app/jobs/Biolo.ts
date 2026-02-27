@@ -162,7 +162,7 @@ export class Biolo extends Genetic {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'Explosive Powder',
-      label: '[V3] Pólvora Explosiva Lv5',
+      label: '[V3] Explosive Powder Lv5',
       value: 'Explosive Powder==5',
       acd: 0.25,
       fct: 0,
@@ -183,7 +183,7 @@ export class Biolo extends Genetic {
     },
     {
       name: 'Mayhemic Thorns',
-      label: '[V3] Espinhos Caóticos Lv10',
+      label: '[V3] Mayhemic Thorns Lv10',
       value: 'Mayhemic Thorns==10',
       acd: 0.25,
       fct: 0.5,
@@ -208,13 +208,13 @@ export class Biolo extends Genetic {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: '_Biolo_Monster_List',
-      label: 'Madeira',
+      label: 'Wooden',
       inputType: 'dropdown',
       dropdown: genBioloMonsterSkillList(),
     },
     {
       name: 'Research Report',
-      label: 'Relatório de Pesquisa',
+      label: 'Research Report',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 1, isUse: true },
