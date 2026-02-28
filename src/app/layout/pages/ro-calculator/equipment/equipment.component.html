@@ -243,7 +243,7 @@
               scrollHeight="350px"
               [(ngModel)]="enchant2Id"
               [showClear]="true"
-              [disabled]="enchant2List.length === 0 || !itemId"
+              [disabled]="enchant2List.length === 0 || !itemId || (isAutoEquipment && !enchant1Id)"
               (onChange)="onSelectItem('enchant2Id', $event.value)"
               placeholder="Encant. 2"
             >
@@ -272,7 +272,7 @@
               scrollHeight="350px"
               [(ngModel)]="enchant3Id"
               [showClear]="true"
-              [disabled]="enchant3List.length === 0 || !itemId"
+              [disabled]="enchant3List.length === 0 || !itemId || (isAutoEquipment && !enchant2Id)"
               (onChange)="onSelectItem('enchant3Id', $event.value)"
               placeholder="Encant. 3"
             >
