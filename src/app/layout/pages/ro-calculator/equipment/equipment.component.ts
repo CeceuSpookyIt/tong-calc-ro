@@ -217,8 +217,11 @@ export class EquipmentComponent implements OnChanges, OnInit {
   }
 
   /**
-   * For automatic equipment: filter enchant slot 2/3 based on already-selected modules
+   * For automatic equipment: filter enchant slots based on already-selected modules
    * and their max enchant limits. Enforces progressive slot unlocking.
+   *
+   * Note: enchant table format is [null, slot1, slot2, slot3], so the actual
+   * module slots map to enchant2List/enchant3List/enchant4List (enchant1List is always empty).
    */
   private filterAutoEnchantLists() {
     const getAegis = (itemId: number | undefined): string | undefined => {
@@ -226,14 +229,12 @@ export class EquipmentComponent implements OnChanges, OnInit {
       return this.items?.[itemId]?.aegisName;
     };
 
-    const enchant1Aegis = getAegis(this.enchant1Id);
     const enchant2Aegis = getAegis(this.enchant2Id);
+    const enchant3Aegis = getAegis(this.enchant3Id);
 
-    const countSelected = (upToSlot: number): Record<string, number> => {
+    const countSelected = (...aegises: (string | undefined)[]): Record<string, number> => {
       const counts: Record<string, number> = {};
-      const slots = [enchant1Aegis, enchant2Aegis];
-      for (let i = 0; i < upToSlot; i++) {
-        const aegis = slots[i];
+      for (const aegis of aegises) {
         if (aegis) {
           counts[aegis] = (counts[aegis] || 0) + 1;
         }
@@ -251,20 +252,22 @@ export class EquipmentComponent implements OnChanges, OnInit {
       });
     };
 
-    // Slot 2: filter based on slot 1 selection, empty if no slot 1
-    if (this.enchant1Id) {
-      const counts1 = countSelected(1);
-      this.enchant2List = filterByMax(this.enchant2List, counts1);
-    } else {
-      this.enchant2List = [];
-    }
+    // enchant2List (first real slot) — always available, no filtering needed
 
-    // Slot 3: filter based on slot 1+2 selections, empty if no slot 2
-    if (this.enchant1Id && this.enchant2Id) {
-      const counts2 = countSelected(2);
-      this.enchant3List = filterByMax(this.enchant3List, counts2);
+    // enchant3List (second slot): filter based on enchant2 selection, empty if no enchant2
+    if (this.enchant2Id) {
+      const counts1 = countSelected(enchant2Aegis);
+      this.enchant3List = filterByMax(this.enchant3List, counts1);
     } else {
       this.enchant3List = [];
+    }
+
+    // enchant4List (third slot): filter based on enchant2+3, empty if no enchant3
+    if (this.enchant2Id && this.enchant3Id) {
+      const counts2 = countSelected(enchant2Aegis, enchant3Aegis);
+      this.enchant4List = filterByMax(this.enchant4List, counts2);
+    } else {
+      this.enchant4List = [];
     }
   }
 
@@ -326,10 +329,11 @@ export class EquipmentComponent implements OnChanges, OnInit {
     }
 
     // Re-filter automatic equipment enchant slots on selection change
-    if (this.isAutoEquipment && (itemType === 'enchant1Id' || itemType === 'enchant2Id')) {
+    // Note: auto equipment uses enchant2/3/4 (enchant1 is always null/empty)
+    if (this.isAutoEquipment && (itemType === 'enchant2Id' || itemType === 'enchant3Id')) {
       const { aegisName, name } = this.getItem();
       const enchants = getEnchants(aegisName) ?? getEnchants(name);
-      const [e1, e2, e3] = Array.isArray(enchants) ? enchants : [];
+      const [_e1, _e2, e3, e4] = Array.isArray(enchants) ? enchants : [];
 
       const mapToDropdown = (list: string[]) =>
         (list ?? [])
@@ -338,31 +342,31 @@ export class EquipmentComponent implements OnChanges, OnInit {
           .map((a: any) => ({ label: a.name, value: a.id, aegisName: a.aegisName }));
 
       // Rebuild base lists for downstream slots
-      if (itemType === 'enchant1Id') {
-        this.enchant2List = mapToDropdown(e2);
+      if (itemType === 'enchant2Id') {
         this.enchant3List = mapToDropdown(e3);
-      } else if (itemType === 'enchant2Id') {
-        this.enchant3List = mapToDropdown(e3);
+        this.enchant4List = mapToDropdown(e4);
+      } else if (itemType === 'enchant3Id') {
+        this.enchant4List = mapToDropdown(e4);
       }
 
       this.filterAutoEnchantLists();
 
       // Clear downstream slots if now invalid
-      if (itemType === 'enchant1Id') {
-        if (!this.enchant1Id) {
-          if (this.enchant2Id) { this.enchant2Id = undefined; this.onSelectItem('enchant2Id'); }
-          if (this.enchant3Id) { this.enchant3Id = undefined; this.onSelectItem('enchant3Id'); }
-        } else if (this.enchant2Id && !this.enchant2List.find(a => a.value === this.enchant2Id)) {
-          this.enchant2Id = undefined;
-          this.onSelectItem('enchant2Id');
-        }
-      }
       if (itemType === 'enchant2Id') {
         if (!this.enchant2Id) {
           if (this.enchant3Id) { this.enchant3Id = undefined; this.onSelectItem('enchant3Id'); }
+          if (this.enchant4Id) { this.enchant4Id = undefined; this.onSelectItem('enchant4Id'); }
         } else if (this.enchant3Id && !this.enchant3List.find(a => a.value === this.enchant3Id)) {
           this.enchant3Id = undefined;
           this.onSelectItem('enchant3Id');
+        }
+      }
+      if (itemType === 'enchant3Id') {
+        if (!this.enchant3Id) {
+          if (this.enchant4Id) { this.enchant4Id = undefined; this.onSelectItem('enchant4Id'); }
+        } else if (this.enchant4Id && !this.enchant4List.find(a => a.value === this.enchant4Id)) {
+          this.enchant4Id = undefined;
+          this.onSelectItem('enchant4Id');
         }
       }
     }
