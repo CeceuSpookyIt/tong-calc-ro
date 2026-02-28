@@ -697,7 +697,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     const { consumables, consumables2, aspdPotion, aspdPotions } = this.model;
     const usedSupBattlePill = consumables.includes(12792);
     const usedHpL = consumables.includes(12424);
-    const consumeData = [...consumables, ...consumables2, ...aspdPotions]
+    const consumeData = [...consumables, ...consumables2, aspdPotion, ...aspdPotions]
       .filter(Boolean)
       .filter((id) => !usedSupBattlePill || (usedSupBattlePill && id !== 12791))
       .map((id) => this.items[id].script);
