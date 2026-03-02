@@ -4,11 +4,12 @@
 
 ## Overview
 
-Three improvements to the EP17.2 Automatic equipment system:
+Four improvements to the EP17.2 Automatic equipment system:
 
 1. **Bug fix** — Set combo bonuses not activating (EQUIP[] name mismatch)
 2. **Data fix** — Missing Rare/Unique/Legendary modules for Leg equipment
-3. **UX feature** — Module dropdowns grouped by rarity, with Epic sub-grouped by class
+3. **Bug fix** — Epic (skill-specific) modules incorrectly shown in Engine Wing slots
+4. **UX feature** — Module dropdowns grouped by rarity, with Epic sub-grouped by class
 
 ---
 
@@ -67,6 +68,34 @@ Update 10 `EQUIP[...]` strings in `src/assets/demo/data/item.json`:
    - Add max enchant entries: B8/B9/B16 = 2, C14/L1–L6 = 1
 
 **Files:** `src/assets/demo/data/item.json`, `src/app/constants/enchant_item/automatic.ts`
+
+---
+
+## Bug 3: Epic Modules in Engine Wing Slots
+
+### Symptom
+
+Skill-specific (Epic) modules appear as options in the Engine Wing A/B module dropdowns. They should only be available for Armor A/B.
+
+### Expected
+
+- `Auto_Engine_A/B` → `autoEngineModules` (DEF, MDEF, Caster, Critical, Powerful — no epic)
+- `Auto_Armor_A/B` → `autoArmorModules` (includes `...autoModEpic`)
+
+### Root Cause (to confirm at runtime)
+
+Static analysis shows `_enchant_table.ts` and `autoEngineModules` are correct. The bug likely manifests via one of:
+- `isAutoEquipment` flag carrying over state from a previously selected Armor item
+- `this.itemId` not being the current item when `setEnchantList()` runs during item switch
+- `mapToDropdown` returning unexpected items when module list is being rebuilt in `onSelectItem`
+
+### Fix
+
+Add a console.log in dev mode to `setEnchantList()` logging `aegisName` and the resulting `enchant2List` length when `isAutoEquipment` is true. Trace the call and identify where the epic modules enter the engine wing's list. Fix the root cause once confirmed.
+
+If the root cause is `autoEngineModules` receiving stale data from a prior armor selection, add an explicit reset of `enchant2List/3List/4List` to `[]` at the start of `setEnchantList()` before rebuilding.
+
+**Files:** `equipment.component.ts`
 
 ---
 
