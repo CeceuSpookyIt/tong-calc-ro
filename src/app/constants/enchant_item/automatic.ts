@@ -195,11 +195,14 @@ export const moduleRarityMap: Record<string, ModuleRarity> = {
   'Auto_Module_A6': 'Normal',
   'Auto_Module_A7': 'Normal',
   'Auto_Module_A8': 'Normal',
+  // 'Auto_Module_A9': 'Normal',   // TBD: HP Recovery (Acc R) — add to item.json first
+  // 'Auto_Module_A10': 'Normal',  // TBD: SP Recovery (Acc L) — add to item.json first
   // Rare — Accessories
   'Auto_Module_B3': 'Rare',
   'Auto_Module_B4': 'Rare',
   'Auto_Module_B5': 'Rare',
   'Auto_Module_B6': 'Rare',
+  // 'Auto_Module_B7': 'Rare',     // TBD: Fast (Engine) — add to item.json first
   // Rare — Leg
   'Auto_Module_B8': 'Rare',
   'Auto_Module_B9': 'Rare',
@@ -216,17 +219,25 @@ export const moduleRarityMap: Record<string, ModuleRarity> = {
   'Auto_Module_C2': 'Unique',
   'Auto_Module_C3': 'Unique',
   'Auto_Module_C4': 'Unique',
+  // 'Auto_Module_C5': 'Unique',   // TBD: Recovery Force (Armor) — add to item.json first
   'Auto_Module_C6': 'Unique',
   'Auto_Module_C8': 'Unique',
   // Unique — Engine
   'Auto_Module_C9': 'Unique',
+  // 'Auto_Module_C11': 'Unique',  // TBD: Mirror Counter (Armor) — add to item.json first
+  // 'Auto_Module_C12': 'Unique',  // TBD: Above All (Engine) — add to item.json first
+  // 'Auto_Module_C13': 'Unique',  // TBD: Reflection Reject (Engine) — add to item.json first
   // Unique — Leg
   'Auto_Module_C7': 'Unique',
   'Auto_Module_C14': 'Unique',
   // Unique — Accessories
   'Auto_Module_C10': 'Unique',
+  // 'Auto_Module_C15': 'Unique',  // TBD: Drain Life (Acc R) — add to item.json first
+  // 'Auto_Module_C16': 'Unique',  // TBD: Magic Healing (Acc R) — add to item.json first
+  // 'Auto_Module_C17': 'Unique',  // TBD: Drain Soul (Acc L) — add to item.json first
+  // 'Auto_Module_C18': 'Unique',  // TBD: Magic Soul (Acc L) — add to item.json first
   // Epic — spread from autoModEpic
-  ...Object.fromEntries(autoModEpic.map(a => [a, 'Epic' as ModuleRarity])),
+  ...Object.fromEntries(autoModEpic.map(aegis => [aegis, 'Epic' as ModuleRarity])),
   // Legendary
   'Auto_Module_L1': 'Legendary',
   'Auto_Module_L2': 'Legendary',
