@@ -439,36 +439,36 @@ export class EquipmentComponent implements OnChanges, OnInit {
 
     if (byRarity.Epic.length) {
       const epicItems = byRarity.Epic;
-      const classSubGroups: any[] = [];
       const usedItems = new Set<any>();
 
+      // Active class first
       if (activeClassName) {
         const activeItems = epicItems.filter(
           item => moduleClassMap[item.aegisName]?.includes(activeClassName)
         );
         if (activeItems.length) {
-          classSubGroups.push({ label: activeClassName, children: activeItems });
+          groups.push({ label: activeClassName, children: activeItems });
           activeItems.forEach(i => usedItems.add(i));
         }
       }
 
+      // Remaining classes in order
       for (const className of moduleClassOrder) {
         if (className === activeClassName) continue;
         const classItems = epicItems.filter(
           item => !usedItems.has(item) && moduleClassMap[item.aegisName]?.includes(className)
         );
         if (classItems.length) {
-          classSubGroups.push({ label: className, children: classItems });
+          groups.push({ label: className, children: classItems });
           classItems.forEach(i => usedItems.add(i));
         }
       }
 
+      // Unmapped epic items
       const unmapped = epicItems.filter(item => !usedItems.has(item));
       if (unmapped.length) {
-        classSubGroups.push({ label: 'Other', children: unmapped });
+        groups.push({ label: 'Other', children: unmapped });
       }
-
-      groups.push({ label: 'Epic', children: classSubGroups });
     }
 
     if (byRarity.Legendary.length) {

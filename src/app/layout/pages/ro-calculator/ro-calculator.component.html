@@ -1391,6 +1391,7 @@
               (clearItemEvent)="onClearItem($event)"
               (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
               (optionChange)="onOptionChange()"
+              [activeClassName]="selectedCharacter.className"
               [isEndWithSpace]="!showCompareItemMap.accRight"
             ></app-equipment>
           </div>
@@ -1417,6 +1418,7 @@
               (selectItemChange)="onCompareItemChange()"
               (optionChange)="onCompareItemChange()"
               (gradeChange)="onCompareItemChange()"
+              [activeClassName]="selectedCharacter.className"
               [isEndWithSpace]="true"
             ></app-equipment>
           </div>
@@ -1448,6 +1450,7 @@
               (clearItemEvent)="onClearItem($event)"
               (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
               (optionChange)="onOptionChange()"
+              [activeClassName]="selectedCharacter.className"
             ></app-equipment>
           </div>
         </div>
@@ -1473,6 +1476,7 @@
               (selectItemChange)="onCompareItemChange()"
               (optionChange)="onCompareItemChange()"
               (gradeChange)="onCompareItemChange()"
+              [activeClassName]="selectedCharacter.className"
             ></app-equipment>
           </div>
         </div>
