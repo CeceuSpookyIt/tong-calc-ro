@@ -178,6 +178,13 @@ export class EquipmentComponent implements OnChanges, OnInit {
   }
 
   private setEnchantList() {
+    // Reset all lists before rebuilding to prevent stale state from prior item
+    this.enchant1List = [];
+    this.enchant2List = [];
+    this.enchant3List = [];
+    this.enchant4List = [];
+    this.isAutoEquipment = false;
+
     const { aegisName, name, canGrade } = this.getItem();
     const enchants = getEnchants(aegisName) ?? getEnchants(name);
 
