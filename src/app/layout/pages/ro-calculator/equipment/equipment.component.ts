@@ -5,7 +5,8 @@ import { ItemTypeEnum, OptionableItemTypeSet } from '../../../../constants/item-
 import { ExtraOptionTable } from '../../../../constants/extra-option-table';
 import { createNumberDropdownList, getGradeList } from '../../../../utils';
 import { getEnchants } from 'src/app/constants/enchant_item';
-import { getModuleMaxEnchant } from 'src/app/constants/enchant_item/automatic';
+import { getModuleMaxEnchant, ModuleRarity, moduleRarityMap, moduleClassMap, moduleClassOrder } from 'src/app/constants/enchant_item/automatic';
+import { ClassName } from 'src/app/jobs/_class-name';
 
 interface EventEmitterResultModel {
   itemType: string;
@@ -87,6 +88,11 @@ export class EquipmentComponent implements OnChanges, OnInit {
   totalExtraOption = 0;
   gradeList: DropdownModel[] = [];
   isAutoEquipment = false;
+  @Input() activeClassName?: ClassName;
+
+  enchant2GroupedList: any[] = [];
+  enchant3GroupedList: any[] = [];
+  enchant4GroupedList: any[] = [];
 
   private itemTypeMap = {};
   private readonly requireSet = new Set(['items', 'itemList', 'mapEnchant',])
@@ -276,6 +282,8 @@ export class EquipmentComponent implements OnChanges, OnInit {
     } else {
       this.enchant4List = [];
     }
+
+    this.refreshGroupedLists();
   }
 
   onSelectItem(itemType: string, itemId = 0, refine = 0, isEmitItemChange = true) {
@@ -401,5 +409,73 @@ export class EquipmentComponent implements OnChanges, OnInit {
     }
 
     this.optionChange.emit(optionValue);
+  }
+
+  private toGroupedModuleList(flat: any[], activeClassName?: ClassName): any[] {
+    if (!flat.length) return [];
+
+    const byRarity: Record<ModuleRarity, any[]> = {
+      Normal: [], Rare: [], Unique: [], Epic: [], Legendary: [],
+    };
+
+    for (const item of flat) {
+      const rarity = moduleRarityMap[item.aegisName] ?? 'Epic';
+      byRarity[rarity].push(item);
+    }
+
+    const groups: any[] = [];
+
+    for (const rarity of ['Normal', 'Rare', 'Unique'] as ModuleRarity[]) {
+      if (byRarity[rarity].length) {
+        groups.push({ label: rarity, children: byRarity[rarity] });
+      }
+    }
+
+    if (byRarity.Epic.length) {
+      const epicItems = byRarity.Epic;
+      const classSubGroups: any[] = [];
+      const usedItems = new Set<any>();
+
+      if (activeClassName) {
+        const activeItems = epicItems.filter(
+          item => moduleClassMap[item.aegisName]?.includes(activeClassName)
+        );
+        if (activeItems.length) {
+          classSubGroups.push({ label: activeClassName, children: activeItems });
+          activeItems.forEach(i => usedItems.add(i));
+        }
+      }
+
+      for (const className of moduleClassOrder) {
+        if (className === activeClassName) continue;
+        const classItems = epicItems.filter(
+          item => !usedItems.has(item) && moduleClassMap[item.aegisName]?.includes(className)
+        );
+        if (classItems.length) {
+          classSubGroups.push({ label: className, children: classItems });
+          classItems.forEach(i => usedItems.add(i));
+        }
+      }
+
+      const unmapped = epicItems.filter(item => !usedItems.has(item));
+      if (unmapped.length) {
+        classSubGroups.push({ label: 'Other', children: unmapped });
+      }
+
+      groups.push({ label: 'Epic', children: classSubGroups });
+    }
+
+    if (byRarity.Legendary.length) {
+      groups.push({ label: 'Legendary', children: byRarity.Legendary });
+    }
+
+    return groups;
+  }
+
+  private refreshGroupedLists(): void {
+    if (!this.isAutoEquipment) return;
+    this.enchant2GroupedList = this.toGroupedModuleList(this.enchant2List, this.activeClassName);
+    this.enchant3GroupedList = this.toGroupedModuleList(this.enchant3List, this.activeClassName);
+    this.enchant4GroupedList = this.toGroupedModuleList(this.enchant4List, this.activeClassName);
   }
 }
