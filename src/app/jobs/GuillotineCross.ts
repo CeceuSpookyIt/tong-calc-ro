@@ -2,7 +2,7 @@ import { ClassName } from './_class-name';
 import { AssassinCross } from './AssassinCross';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
 import { InfoForClass } from '../models/info-for-class.model';
-import { DarkClawFn } from '../constants/share-active-skills';
+
 
 const jobBonusTable: Record<number, [number, number, number, number, number, number]> = {
   1: [0, 1, 0, 0, 0, 0],
@@ -180,7 +180,6 @@ export class GuillotineCross extends AssassinCross {
   ];
 
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
-    DarkClawFn(),
     {
       name: 'Spin Count',
       label: 'Spin Count',

@@ -1,6 +1,6 @@
 import { ClassName } from './_class-name';
 import { ActiveSkillModel, AtkSkillFormulaInput, AtkSkillModel, PassiveSkillModel } from './_character-base.abstract';
-import { DarkClawFn, NoLimitFn, ShieldSpellFn } from '../constants/share-active-skills';
+import { NoLimitFn, ShieldSpellFn } from '../constants/share-active-skills';
 import { InfoForClass } from '../models/info-for-class.model';
 import { ElementType } from '../constants/element-type.const';
 import { DoubleStrafeFn, SnatcherFn, VulturesEyeFn } from '../constants/share-passive-skills';
@@ -359,7 +359,6 @@ export class ShadowChaser extends Stalker {
       ],
     },
     ShieldSpellFn(),
-    DarkClawFn(),
     NoLimitFn(),
     {
       inputType: 'selectButton',
