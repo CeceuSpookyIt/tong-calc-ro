@@ -215,7 +215,7 @@
   </div>
 
   <!-- Skill Damage -->
-  <div class="col-6" [hidden]="!totalSummary?.dmg?.skillCanCri">
+  <div class="col-6" [hidden]="!totalSummary?.dmg?.skillCanCri" style="display:flex;align-items:center;">
     <app-calc-value
       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
       label="CriRate:"
@@ -223,7 +223,9 @@
       styleClass2="summary_compare"
       [max]="totalSummary?.dmg?.skillCriRateToMonster"
       [max2]="totalSummary2?.dmg?.skillCriRateToMonster"
+      style="flex:1;"
     ></app-calc-value>
+    <i class="pi pi-info-circle" style="cursor:pointer;color:#60a5fa;font-size:0.75rem;margin-left:2px;" (click)="criBreakdownClick.emit('skill')"></i>
   </div>
   <div class="col-6" [hidden]="!totalSummary?.dmg?.skillCanCri">
     <app-calc-value
@@ -431,7 +433,7 @@
           [max2]="totalSummary2?.calc?.hitPerSecs"
         ></app-calc-value>
       </div>
-      <div class="col-6">
+      <div class="col-6" style="display:flex;align-items:center;">
         <app-calc-value
           [enableCompare]="isEnableCompare && totalSummary2?.dmg"
           label="CriRate:"
@@ -439,7 +441,9 @@
           styleClass2="summary_compare"
           [max]="totalSummary?.dmg?.criRateToMonster"
           [max2]="totalSummary2?.dmg?.criRateToMonster"
+          style="flex:1;"
         ></app-calc-value>
+        <i class="pi pi-info-circle" style="cursor:pointer;color:#60a5fa;font-size:0.75rem;margin-left:2px;" (click)="criBreakdownClick.emit('basic')"></i>
       </div>
       <div class="col-6">
         <app-calc-value

@@ -22,6 +22,7 @@ import { AdditionalBonusInput } from '../../../models/info-for-class.model';
 import { ItemModel } from '../../../models/item.model';
 import { MainModel } from '../../../models/main.model';
 import { MonsterModel } from '../../../models/monster.model';
+import { CriBreakdown, CriBreakdownEntry, CriBreakdownContext, LukBreakdownEntry } from './cri-breakdown.model';
 import { DamageCalculator } from './damage-calculator';
 import { HpSpCalculator } from './hp-sp-calculator';
 
@@ -222,6 +223,88 @@ export class Calculator {
     accRightEnchant2: { ...this.allStatus },
     accRightEnchant3: { ...this.allStatus },
   };
+
+  private static readonly SLOT_LABELS: Record<string, string> = {
+    weapon: 'Arma',
+    weaponCard1: 'Arma Carta 1',
+    weaponCard2: 'Arma Carta 2',
+    weaponCard3: 'Arma Carta 3',
+    weaponCard4: 'Arma Carta 4',
+    weaponEnchant0: 'Arma Enc. 0',
+    weaponEnchant1: 'Arma Enc. 1',
+    weaponEnchant2: 'Arma Enc. 2',
+    weaponEnchant3: 'Arma Enc. 3',
+    headUpper: 'Topo',
+    headUpperCard: 'Topo Carta',
+    headUpperEnchant1: 'Topo Enc. 1',
+    headUpperEnchant2: 'Topo Enc. 2',
+    headUpperEnchant3: 'Topo Enc. 3',
+    headMiddle: 'Meio',
+    headMiddleCard: 'Meio Carta',
+    headMiddleEnchant1: 'Meio Enc. 1',
+    headMiddleEnchant2: 'Meio Enc. 2',
+    headMiddleEnchant3: 'Meio Enc. 3',
+    headLower: 'Baixo',
+    headLowerEnchant1: 'Baixo Enc. 1',
+    headLowerEnchant2: 'Baixo Enc. 2',
+    headLowerEnchant3: 'Baixo Enc. 3',
+    armor: 'Armadura',
+    armorCard: 'Armadura Carta',
+    armorEnchant1: 'Armadura Enc. 1',
+    armorEnchant2: 'Armadura Enc. 2',
+    armorEnchant3: 'Armadura Enc. 3',
+    shield: 'Escudo',
+    shieldCard: 'Escudo Carta',
+    shieldEnchant1: 'Escudo Enc. 1',
+    shieldEnchant2: 'Escudo Enc. 2',
+    shieldEnchant3: 'Escudo Enc. 3',
+    garment: 'Manto',
+    garmentCard: 'Manto Carta',
+    garmentEnchant1: 'Manto Enc. 1',
+    garmentEnchant2: 'Manto Enc. 2',
+    garmentEnchant3: 'Manto Enc. 3',
+    boot: 'Sapato',
+    bootCard: 'Sapato Carta',
+    bootEnchant1: 'Sapato Enc. 1',
+    bootEnchant2: 'Sapato Enc. 2',
+    bootEnchant3: 'Sapato Enc. 3',
+    accLeft: 'Acessório E',
+    accLeftCard: 'Acessório E Carta',
+    accLeftEnchant1: 'Acessório E Enc. 1',
+    accLeftEnchant2: 'Acessório E Enc. 2',
+    accLeftEnchant3: 'Acessório E Enc. 3',
+    accRight: 'Acessório D',
+    accRightCard: 'Acessório D Carta',
+    accRightEnchant1: 'Acessório D Enc. 1',
+    accRightEnchant2: 'Acessório D Enc. 2',
+    accRightEnchant3: 'Acessório D Enc. 3',
+    shadowWeapon: 'Shadow Arma',
+    shadowWeaponEnchant2: 'Shadow Arma Enc. 2',
+    shadowWeaponEnchant3: 'Shadow Arma Enc. 3',
+    shadowArmor: 'Shadow Armadura',
+    shadowArmorEnchant2: 'Shadow Armadura Enc. 2',
+    shadowArmorEnchant3: 'Shadow Armadura Enc. 3',
+    shadowShield: 'Shadow Escudo',
+    shadowShieldEnchant2: 'Shadow Escudo Enc. 2',
+    shadowShieldEnchant3: 'Shadow Escudo Enc. 3',
+    shadowBoot: 'Shadow Sapato',
+    shadowBootEnchant2: 'Shadow Sapato Enc. 2',
+    shadowBootEnchant3: 'Shadow Sapato Enc. 3',
+    shadowEarring: 'Shadow Brinco',
+    shadowEarringEnchant2: 'Shadow Brinco Enc. 2',
+    shadowEarringEnchant3: 'Shadow Brinco Enc. 3',
+    shadowPendant: 'Shadow Colar',
+    shadowPendantEnchant2: 'Shadow Colar Enc. 2',
+    shadowPendantEnchant3: 'Shadow Colar Enc. 3',
+    costumeEnchantUpper: 'Costume Enc. Topo',
+    costumeEnchantMiddle: 'Costume Enc. Meio',
+    costumeEnchantLower: 'Costume Enc. Baixo',
+    costumeEnchantGarment: 'Costume Enc. Manto',
+    costumeEnchantGarment2: 'Costume Enc. Manto 2',
+    costumeEnchantGarment4: 'Costume Enc. Manto 4',
+    extra: 'Random Options',
+  };
+
   private extraOptions: Record<string, number>[] = [];
   private weaponData = new Weapon();
   private leftWeaponData = new Weapon();
@@ -1712,5 +1795,120 @@ export class Calculator {
 
   getPossiblyDamages() {
     return this.possiblyDamages;
+  }
+
+  getCriBreakdown(context: CriBreakdownContext, damageSummary: any): CriBreakdown {
+    // 1. Collect equip cri entries from equipStatus
+    const equipEntries: CriBreakdownEntry[] = [];
+    const itemSummaryFull = this.getItemSummary();
+
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const criVal = (stats as any)?.cri;
+      if (criVal && criVal !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const source = itemData?.name || slot;
+        equipEntries.push({
+          source,
+          slot: Calculator.SLOT_LABELS[slot] || slot,
+          value: criVal,
+        });
+      }
+    }
+
+    // Add class additional bonus cri (e.g., Two Hand Quicken)
+    const additionalCri = (this.totalEquipStatus.cri || 0) - equipEntries.reduce((sum, e) => sum + e.value, 0);
+    if (additionalCri > 0) {
+      equipEntries.push({
+        source: 'Skill/Class Bonus',
+        slot: 'Skill',
+        value: additionalCri,
+      });
+    }
+
+    // Sort by value descending
+    equipEntries.sort((a, b) => b.value - a.value);
+
+    const equipTotal = equipEntries.reduce((sum, e) => sum + e.value, 0);
+
+    // 2. LUK breakdown
+    const { luk, jobLuk } = this.model;
+    const equipLukDirect = this.totalEquipStatus.luk ?? 0;
+    const allStatusVal = this.totalEquipStatus.allStatus ?? 0;
+    const totalLuk = luk + (jobLuk ?? 0) + equipLukDirect;
+
+    const lukEntries: LukBreakdownEntry[] = [];
+
+    // Per-item luk and allStatus entries
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const s = stats as any;
+      if (s?.allStatus && s.allStatus !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        lukEntries.push({
+          source: itemData?.name || slot,
+          value: s.allStatus,
+          detail: 'allStatus',
+        });
+      }
+      if (s?.luk && s.luk !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        lukEntries.push({
+          source: itemData?.name || slot,
+          value: s.luk,
+        });
+      }
+    }
+
+    const isActual = context !== 'status';
+    const criFromLuk = isActual ? floor(totalLuk * 0.3) : floor(totalLuk / 3);
+    const formulaStr = isActual ? `floor(${totalLuk} × 0.3) = ${criFromLuk}` : `floor(${totalLuk} / 3) = ${criFromLuk}`;
+
+    // 3. Skill-specific data
+    const skillBaseCri = damageSummary?.baseSkillCri ?? 0;
+    const skillBaseCriPercentage = damageSummary?.baseCriPercentage ?? 1;
+
+    // 4. Extra cri vs monster and criShield
+    const extraCriToMonster = damageSummary?.extraCriToMonster ?? 0;
+    const criShield = damageSummary?.criShield ?? 0;
+
+    // 5. Compute total
+    const isKatar = this.weaponData.data?.typeName === 'katar';
+    let total: number;
+    if (context === 'status') {
+      const base = 1 + equipTotal + criFromLuk;
+      total = isKatar ? base * 2 : base;
+    } else if (context === 'basic') {
+      const base = 1 + equipTotal + criFromLuk;
+      total = Math.max(0, (isKatar ? base * 2 : base) + extraCriToMonster - criShield);
+    } else {
+      // skill
+      const base = 1 + equipTotal + criFromLuk + skillBaseCri;
+      const adjusted = isKatar
+        ? Math.max(0, floor(base - criShield) * skillBaseCriPercentage)
+        : Math.max(0, floor(base * skillBaseCriPercentage) - criShield);
+      total = floor(adjusted);
+    }
+
+    return {
+      base: 1,
+      equipEntries,
+      equipTotal,
+      lukBreakdown: {
+        baseLuk: luk,
+        jobLuk: jobLuk ?? 0,
+        entries: lukEntries,
+        totalLuk,
+        criFromLuk,
+        formula: formulaStr,
+      },
+      extraCriToMonster,
+      skillBaseCri: context === 'skill' ? skillBaseCri : 0,
+      skillBaseCriPercentage: context === 'skill' ? skillBaseCriPercentage : 1,
+      criShield,
+      total,
+      isKatar,
+      context,
+    };
   }
 }

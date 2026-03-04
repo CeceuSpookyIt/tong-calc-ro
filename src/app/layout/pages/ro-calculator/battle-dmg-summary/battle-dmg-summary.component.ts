@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { formatBattleTime } from '../../../../utils/format-battle-time';
+import { CriBreakdownContext } from '../cri-breakdown.model';
 
 @Component({
   selector: 'app-battle-dmg-summary',
@@ -18,6 +19,7 @@ export class BattleDmgSummaryComponent {
   @Input({ required: true }) showLeftWeapon: boolean;
 
   @Output() showElementTableClick = new EventEmitter<any>();
+  @Output() criBreakdownClick = new EventEmitter<CriBreakdownContext>();
 
   formatTime = formatBattleTime;
 

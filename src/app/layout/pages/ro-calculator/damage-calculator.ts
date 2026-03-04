@@ -1196,6 +1196,8 @@ export class DamageCalculator {
       pAtk,
       sMatk,
       cRate,
+      extraCriToMonster: this.getExtraCriRateToMonster(),
+      criShield: this.monster?.data?.criShield ?? 0,
     };
 
     const [, _skillName, skillLevelStr] = skillValue?.match(/(.+)==(\d+)/) ?? [];
@@ -1427,6 +1429,10 @@ export class DamageCalculator {
       currentHp,
       currentSp,
       skillBonusFromEquipment: this.getSkillBonus(skillName),
+      baseSkillCri: baseSkillCri,
+      baseCriPercentage: baseCriPercentage,
+      extraCriToMonster: this.getExtraCriRateToMonster(),
+      criShield: criShield,
     };
 
     return { basicDmg, misc, skillDmg, skillAspd, basicAspd };

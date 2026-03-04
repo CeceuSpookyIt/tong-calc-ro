@@ -18,6 +18,8 @@ export interface BasicDamageSummaryModel {
   sMatk: number;
   cRate: number;
   requireTxt?: string;
+  extraCriToMonster?: number;
+  criShield?: number;
 }
 
 export enum SkillType {
@@ -79,6 +81,10 @@ export interface SkillDamageSummaryModel {
   effectedSkillDamageMax?: number;
   effectedSkillHitsPerSec?: number;
   effectedSkillDps?: number;
+  baseSkillCri?: number;
+  baseCriPercentage?: number;
+  extraCriToMonster?: number;
+  criShield?: number;
 }
 
 export interface SkillAspdModel {

@@ -1,0 +1,94 @@
+<div *ngIf="data">
+  <!-- Equipment Section -->
+  <div class="cri-section-header">
+    Equipamentos ({{ data.equipTotal }})
+  </div>
+  <div *ngFor="let entry of data.equipEntries" class="cri-row">
+    <span class="cri-row-source">{{ entry.source }}</span>
+    <span class="cri-row-slot">{{ entry.slot }}</span>
+    <span class="cri-row-value">+{{ entry.value }}</span>
+  </div>
+  <div *ngIf="data.equipEntries.length === 0" class="cri-row" style="color: #aaa;">
+    Nenhum equipamento com CRI
+  </div>
+
+  <!-- LUK Section -->
+  <div class="cri-section-header">
+    LUK → Cri ({{ data.lukBreakdown.criFromLuk }})
+  </div>
+  <div class="cri-row">
+    <span class="cri-row-source">Base LUK</span>
+    <span class="cri-row-slot"></span>
+    <span class="cri-row-value" style="color: #fff;">{{ data.lukBreakdown.baseLuk }}</span>
+  </div>
+  <div *ngFor="let entry of data.lukBreakdown.entries" class="cri-row">
+    <span class="cri-row-source">
+      {{ entry.source }}
+      <span *ngIf="entry.detail" class="cri-formula">({{ entry.detail }})</span>
+    </span>
+    <span class="cri-row-slot"></span>
+    <span class="cri-row-value">+{{ entry.value }}</span>
+  </div>
+  <div *ngIf="data.lukBreakdown.jobLuk > 0" class="cri-row">
+    <span class="cri-row-source">Job Bonus</span>
+    <span class="cri-row-slot"></span>
+    <span class="cri-row-value">+{{ data.lukBreakdown.jobLuk }}</span>
+  </div>
+  <div class="cri-row cri-luk-total">
+    <span class="cri-row-source">Total LUK</span>
+    <span class="cri-row-slot"></span>
+    <span class="cri-row-value" style="color: #fff;">{{ data.lukBreakdown.totalLuk }}</span>
+  </div>
+  <div class="cri-row">
+    <span class="cri-row-source cri-formula">{{ data.lukBreakdown.formula }}</span>
+    <span class="cri-row-slot"></span>
+    <span class="cri-row-value">{{ data.lukBreakdown.criFromLuk }}</span>
+  </div>
+
+  <!-- Katar doubling note -->
+  <div *ngIf="data.isKatar" class="cri-row" style="color: #facc15; margin-top: 4px;">
+    <span class="cri-row-source">Katar ×2</span>
+    <span class="cri-row-slot"></span>
+    <span class="cri-row-value" style="color: #facc15;">×2</span>
+  </div>
+
+  <!-- Skill Section (only for skill context) -->
+  <ng-container *ngIf="data.context === 'skill' && data.skillBaseCri > 0">
+    <div class="cri-section-header">
+      Skill Cri
+    </div>
+    <div class="cri-row">
+      <span class="cri-row-source">Base Skill Cri</span>
+      <span class="cri-row-slot"></span>
+      <span class="cri-row-value">+{{ data.skillBaseCri }}</span>
+    </div>
+    <div *ngIf="data.skillBaseCriPercentage !== 1" class="cri-row">
+      <span class="cri-row-source">baseCriPercentage</span>
+      <span class="cri-row-slot"></span>
+      <span class="cri-row-value" style="color: #facc15;">×{{ data.skillBaseCriPercentage }}</span>
+    </div>
+  </ng-container>
+
+  <!-- Extra cri vs monster (basic/skill only) -->
+  <ng-container *ngIf="data.context !== 'status' && (data.extraCriToMonster > 0 || data.criShield > 0)">
+    <div class="cri-section-header">
+      vs Monstro
+    </div>
+    <div *ngIf="data.extraCriToMonster > 0" class="cri-row">
+      <span class="cri-row-source">Cri vs Race/Element/Size</span>
+      <span class="cri-row-slot"></span>
+      <span class="cri-row-value">+{{ data.extraCriToMonster }}</span>
+    </div>
+    <div *ngIf="data.criShield > 0" class="cri-row">
+      <span class="cri-row-source">Monster CriShield</span>
+      <span class="cri-row-slot"></span>
+      <span class="cri-row-value" style="color: #f87171;">-{{ data.criShield }}</span>
+    </div>
+  </ng-container>
+
+  <!-- Total -->
+  <div class="cri-total-row">
+    <span>CriRate ({{ contextLabel }})</span>
+    <span style="color: #4ade80;">{{ data.total }}</span>
+  </div>
+</div>

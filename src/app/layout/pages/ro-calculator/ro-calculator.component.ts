@@ -62,6 +62,8 @@ import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
 import { PresetTableComponent } from './preset-table/preset-table.component';
+import { CriBreakdownDialogComponent } from './cri-breakdown-dialog/cri-breakdown-dialog.component';
+import { CriBreakdownContext } from './cri-breakdown.model';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -1654,6 +1656,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
 
   removePresetFromList(presetId: string) {
     this.preSets = this.preSets.filter((a) => a.value !== presetId);
+  }
+
+  openCriBreakdown(context: CriBreakdownContext) {
+    const breakdown = this.calculator.getCriBreakdown(context, this.totalSummary?.dmg);
+    this.dialogService.open(CriBreakdownDialogComponent, {
+      header: 'CriRate Breakdown',
+      width: '420px',
+      contentStyle: { overflow: 'auto', 'max-height': '80vh' },
+      baseZIndex: 10000,
+      dismissableMask: true,
+      data: breakdown,
+    });
   }
 
   openPresetManagement() {
