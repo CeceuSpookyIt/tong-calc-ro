@@ -73,7 +73,7 @@ export class DamageCalculator {
     skillHit: 0,
     skillAccuracy: 0,
     skillDps: 0,
-    skillHitKill: 0,
+    skillBattleTime: 0,
     skillCriRateToMonster: 0,
     skillCriDmgToMonster: 0,
     skillPart2Label: '',
@@ -1192,6 +1192,7 @@ export class DamageCalculator {
       totalPene: this.isActiveInfilltration ? 100 : this.getTotalPhysicalPene(),
       accuracy: misc.accuracy,
       basicDps,
+      basicBattleTime: basicDps > 0 ? Math.round((this.monster.data.hp / basicDps) * 10) / 10 : 0,
       pAtk,
       sMatk,
       cRate,
@@ -1380,7 +1381,7 @@ export class DamageCalculator {
         accRate: skillAccRate,
       });
     const skillDps = floor(totalHit * oneHitDps * autoSpellChance);
-    const hitKill = Math.ceil(this.monster.data.hp / minDamage);
+    const skillBattleTime = skillDps > 0 ? Math.round((this.monster.data.hp / skillDps) * 10) / 10 : 0;
 
     const totalPene = isMatk ? this.getTotalMagicalPene() : basicDmg.totalPene;
     const isMelee = _isMelee != null && typeof _isMelee === 'function' ? _isMelee(this.weaponData.data.typeName) : !!_isMelee;
@@ -1409,7 +1410,7 @@ export class DamageCalculator {
       skillHit: skillData?.hit || 1,
       skillAccuracy: skillAccRate,
       skillDps,
-      skillHitKill: hitKill,
+      skillBattleTime,
       skillCriRateToMonster: actualCri,
       skillCriDmgToMonster: calculated.criDmgToMonster,
       skillPart2Label,

@@ -658,7 +658,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       { field: 'skillMinDamage', header: 'SkillMin', default: true },
       { field: 'skillMaxDamage', header: 'SkillMax', default: true },
       { field: 'skillDps', header: 'DPS', default: true },
-      { field: 'skillHitKill', header: 'HitKill', default: true },
+      { field: 'skillBattleTime', header: 'Tempo(s)', default: true },
       { field: 'skillCriRateToMonster', header: 'Cri%' },
       { field: 'skillAccuracy', header: 'Precisão' },
       { field: 'skillTotalPene', header: 'Penetração' },

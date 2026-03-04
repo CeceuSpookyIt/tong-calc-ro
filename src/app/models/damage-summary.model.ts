@@ -13,6 +13,7 @@ export interface BasicDamageSummaryModel {
   totalPene: number;
   accuracy: number;
   basicDps: number;
+  basicBattleTime: number;
   pAtk: number;
   sMatk: number;
   cRate: number;
@@ -47,7 +48,7 @@ export interface SkillDamageSummaryModel {
   skillHit: number;
   skillAccuracy: number;
   skillDps: number;
-  skillHitKill: number;
+  skillBattleTime: number;
   skillCriRateToMonster: number;
   skillCriDmgToMonster: number;
   skillPart2Label: string;
