@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { formatBattleTime } from '../../../../utils/format-battle-time';
 
 @Component({
   selector: 'app-battle-dmg-summary',
@@ -17,6 +18,8 @@ export class BattleDmgSummaryComponent {
   @Input({ required: true }) showLeftWeapon: boolean;
 
   @Output() showElementTableClick = new EventEmitter<any>();
+
+  formatTime = formatBattleTime;
 
   constructor() {}
 

@@ -318,6 +318,14 @@
       [max2]="totalSummary2?.dmg?.skillDps"
     ></app-calc-value>
   </div>
+  <div class="col-12" [hidden]="totalSummary?.dmg?.isAutoSpell || !!totalSummary?.dmg?.requireTxt">
+    <span>Tempo: </span>
+    <span class="text-lg font-medium px-1 summary_highlight">{{ formatTime(totalSummary?.dmg?.skillBattleTime) }}</span>
+    <span *ngIf="isEnableCompare && totalSummary2?.dmg" [hidden]="totalSummary?.dmg?.skillBattleTime === totalSummary2?.dmg?.skillBattleTime">
+      <i class="pi pi-arrow-right vs_sign px-1"></i>
+      <span class="text-lg font-medium px-1 summary_compare">{{ formatTime(totalSummary2?.dmg?.skillBattleTime) }}</span>
+    </span>
+  </div>
   <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
     <app-calc-value
       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
@@ -468,6 +476,14 @@
           [max]="totalSummary?.dmg?.basicDps"
           [max2]="totalSummary2?.dmg?.basicDps"
         ></app-calc-value>
+      </div>
+      <div class="col-12">
+        <span>Tempo: </span>
+        <span class="text-lg font-medium px-1 summary_highlight">{{ formatTime(totalSummary?.dmg?.basicBattleTime) }}</span>
+        <span *ngIf="isEnableCompare && totalSummary2?.dmg" [hidden]="totalSummary?.dmg?.basicBattleTime === totalSummary2?.dmg?.basicBattleTime">
+          <i class="pi pi-arrow-right vs_sign px-1"></i>
+          <span class="text-lg font-medium px-1 summary_compare">{{ formatTime(totalSummary2?.dmg?.basicBattleTime) }}</span>
+        </span>
       </div>
       <div class="col-12" [hidden]="totalSummary?.dmg?.effectedBasicDamageMin <= 0 || !selectedChances?.length">
         <app-calc-value
