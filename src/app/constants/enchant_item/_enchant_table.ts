@@ -727,6 +727,8 @@ export const EnchantTable: EntTable[] = [
   { name: 'Heart_Card_In_Mouth', enchants: [null, BaseState._1_3, BaseState._1_3, infityEnt4] },
 
   { name: 'Fallen Angel Wing [1]', enchants: [null, eaFsSp15, eaFsSp15, eaFsSp15] },
+  { name: 'LATAM_2589', enchants: [null, eaFsSp15, eaFsSp15, eaFsSp15] },
+  { name: 'LATAM_20835', enchants: [null, eaFsSp15, eaFsSp15, eaFsSp15] },
 
   { name: 'Excelion_Suit', enchants: [null, excelionSuit, excelionSuit, excelionSuit] },
   { name: 'Excelion_Wing', enchants: [null, excelion, excelion, excelion] },
