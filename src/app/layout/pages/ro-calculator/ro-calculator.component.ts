@@ -871,6 +871,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           d[key] = Math.floor(d[key] / 1000);
         }
       }
+      // Recalculate battle time based on reduced DPS
+      for (const [dpsKey, btKey] of [['skillDps', 'skillBattleTime'], ['basicDps', 'basicBattleTime']] as const) {
+        if (typeof d[dpsKey] === 'number' && d[dpsKey] > 0) {
+          d[btKey] = Math.round((this.monsterDataMap[this.selectedMonster]?.stats?.health / d[dpsKey]) * 10) / 10;
+        }
+      }
     }
     const ac = summary.autocast;
     if (ac) {
@@ -1290,6 +1296,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
           'skillMinDamage', 'skillMaxDamage', 'skillCriMinDamage', 'skillCriMaxDamage',
           'basicDps', 'skillDps']) {
           if (typeof result[key] === 'number') result[key] = Math.floor(result[key] / 1000);
+        }
+        for (const [dpsKey, btKey] of [['skillDps', 'skillBattleTime'], ['basicDps', 'basicBattleTime']]) {
+          if (typeof result[dpsKey] === 'number' && result[dpsKey] > 0) {
+            result[btKey] = Math.round((health / result[dpsKey]) * 10) / 10;
+          }
         }
       }
       return result;
