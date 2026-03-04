@@ -438,19 +438,19 @@ const sarahAcc3 = [...critical24, ...fatal13, ...ea13, ...matk13, ...aspd13, ...
 
 const edda4 = [EA._1, EA._2, EA._3, FS._4, FS._5, FS._6, Sharp._1, Sharp._2, Sharp._3, Spell._1, Spell._2, Spell._3, Fatal._1, Fatal._2, Fatal._3];
 const edda3 = [
-  'Seyren_Memory',
-  'Harword_Memory',
+  'Seyrens_Memory',
+  'Howards_Memory',
   'Eremes_Memory',
-  'Katrinn_Memory',
-  'Magaleta_Memory',
-  'Shecil_Memory',
-  'Randel_Memory',
-  'Flamel_Memory',
-  'Gertie_Memory',
-  'Celia_Memory',
-  'Chen_Memory',
-  'Tren_Memory',
-  'Alpho_Memory',
+  'Kathrynes_Memory',
+  'Margarethas_Memory',
+  'Cecils_Memory',
+  'Randels_Memory',
+  'Flamels_Memory',
+  'Gerties_Memory',
+  'Celias_Memory',
+  'Chens_Memory',
+  'Trentinis_Memory',
+  'Alphoccios_Memory',
 ];
 
 const allRunes = [
