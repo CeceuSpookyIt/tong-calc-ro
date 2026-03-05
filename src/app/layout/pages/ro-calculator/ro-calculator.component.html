@@ -924,7 +924,8 @@
             </app-equipment>
           </div>
         </div>
-        <div class="grid grid-nogutter item_label_leftWeapon_main">
+        <div class="grid grid-nogutter item_label_leftWeapon_main equip-slot-compare">
+          <button type="button" class="compare-slot-btn" [class.active]="isSlotComparing('leftWeapon')" (click)="toggleCompareSlot('leftWeapon')" pTooltip="Comparar Arma Esquerda" tooltipPosition="left"><i class="pi pi-clone"></i></button>
           <div class="col-12" [hidden]="!model.weapon || !showLeftWeapon || !!model.shield">
             <app-equipment
               [itemType]="'leftWeapon'"
@@ -953,6 +954,37 @@
               (clearItemEvent)="onClearItem($event)"
               (gradeChange)="onSelectGrade($event.itemType, $event.itemId, $event.grade)"
               (optionChange)="onOptionChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.leftWeapon">
+          <div class="col-12" [hidden]="!model.weapon || !showLeftWeapon || !!model.shield">
+            <app-equipment
+              [itemType]="'leftWeapon'"
+              [placeholder]="'leftWeapon'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="leftWeaponList"
+              [refineList]="refineList"
+              [cardList]="weaponCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.leftWeapon"
+              [(itemRefine)]="model2.leftWeaponRefine"
+              [(card1Id)]="model2.leftWeaponCard1"
+              [(card2Id)]="model2.leftWeaponCard2"
+              [(card3Id)]="model2.leftWeaponCard3"
+              [(card4Id)]="model2.leftWeaponCard4"
+              [(itemGrade)]="model2.leftWeaponGrade"
+              [(enchant1Id)]="model2.leftWeaponEnchant0"
+              [(enchant2Id)]="model2.leftWeaponEnchant1"
+              [(enchant3Id)]="model2.leftWeaponEnchant2"
+              [(enchant4Id)]="model2.leftWeaponEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_2]"
+              [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_3]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
             ></app-equipment>
           </div>
         </div>
