@@ -28,58 +28,43 @@
       </div>
     </div>
 
-    <!-- Ranking Geral -->
-    <div class="surface-card p-3 border-round shadow-1 mb-4">
-      <h3 class="mt-0 mb-3" style="color: var(--primary-color)">Overall Ranking</h3>
-      <p-table [value]="ranking" [paginator]="ranking.length > 20" [rows]="20" styleClass="p-datatable-sm">
-        <ng-template pTemplate="header">
-          <tr>
-            <th>#</th>
-            <th>Item</th>
-            <th pSortableColumn="quantity">Qty <p-sortIcon field="quantity"></p-sortIcon></th>
-            <th pSortableColumn="percentage">% <p-sortIcon field="percentage"></p-sortIcon></th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-row let-i="rowIndex">
-          <tr>
-            <td>{{ i + 1 }}</td>
-            <td>{{ row.item }}</td>
-            <td>{{ row.quantity }}</td>
-            <td>{{ row.percentage | number:'1.1-1' }}%</td>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="emptymessage">
-          <tr><td colspan="4" class="text-center text-color-secondary">No data yet.</td></tr>
-        </ng-template>
-      </p-table>
-    </div>
+    <div class="grid">
+      <!-- Ranking Geral -->
+      <div class="col-12 md:col-7">
+        <div class="surface-card p-3 border-round shadow-1 h-full">
+          <h3 class="mt-0 mb-3" style="color: var(--primary-color)">Overall Ranking</h3>
+          <p-table [value]="ranking" [paginator]="ranking.length > 20" [rows]="20" styleClass="p-datatable-sm">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>#</th>
+                <th>Item</th>
+                <th pSortableColumn="quantity">Qty <p-sortIcon field="quantity"></p-sortIcon></th>
+                <th pSortableColumn="percentage">% <p-sortIcon field="percentage"></p-sortIcon></th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-row let-i="rowIndex">
+              <tr>
+                <td>{{ i + 1 }}</td>
+                <td>{{ row.item }}</td>
+                <td>{{ row.quantity }}</td>
+                <td>{{ row.percentage | number:'1.1-1' }}%</td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+              <tr><td colspan="4" class="text-center text-color-secondary">No data yet.</td></tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
 
-    <!-- Tendencia Diaria -->
-    <div class="surface-card p-3 border-round shadow-1">
-      <h3 class="mt-0 mb-3" style="color: var(--primary-color)">Daily Breakdown</h3>
-      <p-table [value]="dailyData" styleClass="p-datatable-sm">
-        <ng-template pTemplate="header">
-          <tr>
-            <th>Date</th>
-            <th>Spins</th>
-            <th>Prizes</th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-row>
-          <tr>
-            <td>{{ row.date }}</td>
-            <td>{{ row.totalSpins }}</td>
-            <td>
-              <span *ngFor="let entry of row.items | keyvalue" class="mr-2">
-                <strong>{{ entry.value }}x</strong> {{ entry.key }}
-              </span>
-            </td>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="emptymessage">
-          <tr><td colspan="3" class="text-center text-color-secondary">No data yet.</td></tr>
-        </ng-template>
-      </p-table>
+      <!-- Pie Chart -->
+      <div class="col-12 md:col-5">
+        <div class="surface-card p-3 border-round shadow-1">
+          <h3 class="mt-0 mb-3" style="color: var(--primary-color)">Prize Distribution</h3>
+          <p-chart type="pie" [data]="pieData" [options]="pieOptions" *ngIf="ranking.length > 0" width="100%" height="400px"></p-chart>
+          <p *ngIf="ranking.length === 0" class="text-center text-color-secondary">No data yet.</p>
+        </div>
+      </div>
     </div>
   </ng-container>
 </div>

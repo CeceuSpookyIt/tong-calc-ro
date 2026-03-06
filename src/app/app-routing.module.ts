@@ -26,7 +26,7 @@ import { AppLayoutComponent } from './layout/app.layout.component';
                 import('./layout/pages/preset-summary/preset-summary.module').then((m) => m.PresetSummaryModule),
             },
             {
-              path: 'oval',
+              path: 'roulette',
               loadChildren: () =>
                 import('./layout/pages/oval/oval.module').then((m) => m.OvalModule),
             },

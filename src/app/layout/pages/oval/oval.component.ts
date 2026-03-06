@@ -7,12 +7,6 @@ interface PrizeRanking {
   percentage: number;
 }
 
-interface DailyPrize {
-  date: string;
-  items: Record<string, number>;
-  totalSpins: number;
-}
-
 @Component({
   selector: 'app-oval',
   templateUrl: './oval.component.html',
@@ -20,10 +14,11 @@ interface DailyPrize {
 })
 export class OvalComponent implements OnInit {
   ranking: PrizeRanking[] = [];
-  dailyData: DailyPrize[] = [];
   totalSpins = 0;
   totalSubmissions = 0;
   isLoading = true;
+  pieData: any;
+  pieOptions: any;
 
   constructor(private rouletteService: RouletteService) {}
 
@@ -42,26 +37,15 @@ export class OvalComponent implements OnInit {
 
   private processData(rows: RoulettePrizeRow[]): void {
     const totals: Record<string, number> = {};
-    const dailyMap: Record<string, { items: Record<string, number>; totalSpins: number }> = {};
     let totalQty = 0;
 
     for (const row of rows) {
       this.totalSpins += row.spins;
-
-      if (!dailyMap[row.date]) {
-        dailyMap[row.date] = { items: {}, totalSpins: 0 };
-      }
-      dailyMap[row.date].totalSpins += row.spins;
-
       for (const prize of row.prizes) {
-        const m = prize.match(/^(\d+)\s*x\s*(.+)$/i);
-        if (m) {
-          const qty = parseInt(m[1]);
-          const item = m[2].trim();
-          totals[item] = (totals[item] || 0) + qty;
-          dailyMap[row.date].items[item] = (dailyMap[row.date].items[item] || 0) + qty;
-          totalQty += qty;
-        }
+        const item = prize.trim().replace(/\w\S*/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase());
+        if (!item) continue;
+        totals[item] = (totals[item] || 0) + 1;
+        totalQty += 1;
       }
     }
 
@@ -73,8 +57,26 @@ export class OvalComponent implements OnInit {
       }))
       .sort((a, b) => b.quantity - a.quantity);
 
-    this.dailyData = Object.entries(dailyMap)
-      .map(([date, data]) => ({ date, ...data }))
-      .sort((a, b) => a.date.localeCompare(b.date));
+    const colors = [
+      '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+      '#FF9F40', '#C9CBCF', '#7BC8A4', '#E7E9ED', '#F7464A',
+      '#46BFBD', '#FDB45C', '#949FB1', '#4D5360', '#AC64AD',
+    ];
+
+    this.pieData = {
+      labels: this.ranking.map(r => r.item),
+      datasets: [{
+        data: this.ranking.map(r => r.quantity),
+        backgroundColor: this.ranking.map((_, i) => colors[i % colors.length]),
+      }],
+    };
+
+    this.pieOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'right', labels: { color: '#ccc', boxWidth: 10, padding: 6, font: { size: 11 } } },
+      },
+    };
   }
 }
