@@ -36,24 +36,22 @@ export class OvalComponent implements OnInit {
   }
 
   private processData(rows: RouletteHistoryRow[]): void {
-    const totals: Record<string, number> = {};
-    let totalQty = 0;
+    const counts: Record<string, number> = {};
 
     this.totalSpins = rows.length;
     this.totalAccounts = new Set(rows.map(r => r.account_hash)).size;
     this.totalDays = new Set(rows.map(r => r.prize_date)).size;
 
     for (const row of rows) {
-      // Item vem com prefixo "Nx " (ex: "5x Dark Refining Hammer")
-      const match = row.item.match(/^(\d+)\s*x\s+(.+)$/i);
-      const itemName = match ? match[2].trim() : row.item.trim();
-      const itemQty = match ? parseInt(match[1]) * (row.qty || 1) : (row.qty || 1);
-      if (!itemName) continue;
-      totals[itemName] = (totals[itemName] || 0) + itemQty;
-      totalQty += itemQty;
+      // Mantém item original (ex: "5x Dark Refining Hammer") e conta ocorrências
+      const item = row.item.trim();
+      if (!item) continue;
+      counts[item] = (counts[item] || 0) + 1;
     }
 
-    this.ranking = Object.entries(totals)
+    const totalQty = Object.values(counts).reduce((s, v) => s + v, 0);
+
+    this.ranking = Object.entries(counts)
       .map(([item, quantity]) => ({
         item,
         quantity,
