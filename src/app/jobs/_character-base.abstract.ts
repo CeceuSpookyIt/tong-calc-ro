@@ -26,6 +26,21 @@ export interface DefForCalcModel {
   finalSoftDef: number;
 }
 
+export interface PrecastStep {
+  name: string;
+  label: string;
+  fct: number;
+  vct: number;
+  acd: number;
+  cd: number;
+  repeat?: number;
+  userRepeat?: {
+    defaultRepeat: number;
+    maxRepeat: number;
+    label: string;
+  };
+}
+
 export interface AtkSkillModel {
   label: string;
   name: typeof OFFENSIVE_SKILL_NAMES[number];
@@ -91,6 +106,7 @@ export interface AtkSkillModel {
    * undefined = 1, 0.2 = 20 %
    */
   autoSpellChance?: number;
+  precastSequence?: PrecastStep[];
   element?: ElementType;
   getElement?: (skillValue: string) => ElementType;
   secondaryDmgInput?: Omit<AtkSkillModel, 'secondaryDmg' | 'part2' | 'acd' | 'vct' | 'cd' | 'fct' | 'name' | 'value'> & { isIncludeMain: boolean; };
