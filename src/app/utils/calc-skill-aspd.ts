@@ -1,4 +1,4 @@
-import { AtkSkillModel } from '../jobs/_character-base.abstract';
+import { AtkSkillModel, PrecastStep } from '../jobs/_character-base.abstract';
 import { SkillAspdModel } from '../models/damage-summary.model';
 import { EquipmentSummaryModel } from '../models/equipment-summary.model';
 import { StatusSummary } from '../models/status-summary.model';
@@ -7,13 +7,45 @@ import { round, roundUp } from './round';
 
 export const MAX_SKILL_CASTS_PER_SEC = 7;
 
+const calcPrecastStepTime = (
+  step: PrecastStep,
+  repeat: number,
+  totalEquipStatus: EquipmentSummaryModel,
+  vctByStat: number,
+  precision: number,
+) => {
+  const { acd: globalAcd = 0, vct: globalVct = 0, vct_inc = 0, fct: globalFct = 0, fctPercent: globalFctPercent = 0 } = totalEquipStatus;
+
+  const reduceSkillVct = totalEquipStatus[`vct__${step.name}`] || 0;
+  const reduceSkillVctFix = totalEquipStatus[`fix_vct__${step.name}`] || 0;
+  const reduceSkillFct = totalEquipStatus[`fct__${step.name}`] || 0;
+  const reduceSkillFctPercent = totalEquipStatus[`fctPercent__${step.name}`] || 0;
+  const reduceSkillAcd = totalEquipStatus[`acd__${step.name}`] || 0;
+  const reduceSkillCd = totalEquipStatus[`cd__${step.name}`] || 0;
+
+  const vctGlobal = Math.max(0, 1 - (globalVct - vct_inc) / 100);
+  const vctSkill = Math.max(0, 1 - reduceSkillVct / 100);
+
+  const reducedVct = Math.max(0, roundUp((step.vct - reduceSkillVctFix) * vctByStat * vctGlobal * vctSkill, precision));
+  const reducedFct = Math.max(0, roundUp((step.fct - reduceSkillFct - globalFct) * (1 - globalFctPercent * 0.01) * (1 - reduceSkillFctPercent * 0.01), precision));
+  const reducedAcd = Math.max(0, round((step.acd - reduceSkillAcd) * (1 - globalAcd * 0.01), precision));
+  const reducedCd = Math.max(0, round(step.cd - reduceSkillCd, precision));
+
+  const oneStepTime = reducedVct + reducedFct + Math.max(reducedCd, reducedAcd);
+  const stepTime = round(oneStepTime * repeat, precision);
+
+  return { label: step.label, repeat, reducedVct, reducedFct, reducedAcd, reducedCd, stepTime };
+};
+
 export const calcSkillAspd = (params: {
   skillData: AtkSkillModel;
   totalEquipStatus: EquipmentSummaryModel;
   status: StatusSummary;
   skillLevel: number;
+  basicHitsPerSec?: number;
+  precastRepeats?: Record<string, number>;
 }): SkillAspdModel => {
-  const { skillData, totalEquipStatus, status, skillLevel } = params;
+  const { skillData, totalEquipStatus, status, skillLevel, basicHitsPerSec, precastRepeats } = params;
   const { name, acd: baseSkillAcd, hitEveryNSec } = skillData;
   const { cd: baseSkillCd, fct: baseSkillFct, vct: baseSkillVct } = skillData;
 
@@ -56,7 +88,34 @@ export const calcSkillAspd = (params: {
   const blockPeriod = hitEveryNSec > 0 ? 0 : Math.max(reducedCd, reducedAcd);
   const castPeriod = hitEveryNSec > 0 ? round(hitEveryNSec, 2) : roundUp(reducedVct + reducedFct, precision);
   const hitPeriod = round(blockPeriod + castPeriod, 5);
-  // console.log({ vctByStat, reducedVct, reducedCd, reducedAcd, hitPeriod });
+
+  // Precast sequence handling
+  const { precastSequence } = skillData;
+  let precastResult: any = {};
+
+  if (precastSequence?.length > 0 && basicHitsPerSec > 0) {
+    const precastSteps = precastSequence.map((step) => {
+      const repeat = precastRepeats?.[step.name]
+        ?? step.repeat
+        ?? step.userRepeat?.defaultRepeat
+        ?? 1;
+      return calcPrecastStepTime(step, repeat, totalEquipStatus, vctByStat, precision);
+    });
+
+    const precastTotalTime = round(precastSteps.reduce((sum, s) => sum + s.stepTime, 0), precision);
+    const totalReleases = precastSteps.reduce((sum, s) => sum + s.repeat, 0);
+    const releaseTime = round(totalReleases / basicHitsPerSec, precision);
+    const cycleTotalTime = round(precastTotalTime + releaseTime, precision);
+
+    precastResult = { precastSteps, precastTotalTime, releaseTime, cycleTotalTime };
+  }
+
+  const effectiveHitPerSec = precastResult.cycleTotalTime > 0
+    ? Math.min(
+        floor(precastResult.precastSteps.reduce((sum, s) => sum + s.repeat, 0) / precastResult.cycleTotalTime, 1),
+        MAX_SKILL_CASTS_PER_SEC,
+      )
+    : Math.min(floor(1 / hitPeriod, 1), MAX_SKILL_CASTS_PER_SEC);
 
   return {
     cd: skillCd,
@@ -70,8 +129,9 @@ export const calcSkillAspd = (params: {
     reducedFct,
     acd: skillAcd,
     reducedAcd,
-    castPeriod: castPeriod,
-    hitPeriod, // raw value for UI display; use totalHitPerSec for DPS calculations
-    totalHitPerSec: Math.min(floor(1 / hitPeriod, 1), MAX_SKILL_CASTS_PER_SEC),
+    castPeriod,
+    hitPeriod,
+    totalHitPerSec: effectiveHitPerSec,
+    ...precastResult,
   };
 };
