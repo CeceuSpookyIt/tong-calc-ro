@@ -47,4 +47,5 @@ export interface MainModel extends Partial<EquipmentModel> {
   consumables2: number[];
   aspdPotion?: number;
   aspdPotions: number[];
+  precastRepeats?: Record<string, number>;
 }

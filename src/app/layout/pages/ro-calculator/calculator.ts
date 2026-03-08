@@ -1444,6 +1444,7 @@ export class Calculator {
   calculateAllDamages(skillValue: string) {
     const { basicDmg, misc, skillDmg, skillAspd, basicAspd } = this.dmgCalculator
       .setExtraBonus([])
+      .setPrecastRepeats(this.model.precastRepeats || {})
       .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp: this.maxHp, maxSp: this.maxSp });
 
     this.damageSummary = {
@@ -1595,6 +1596,7 @@ export class Calculator {
       .getTotalSummary();
 
     const { basicDmg, skillDmg, basicAspd, skillAspd } = calc
+      .setPrecastRepeats(this.model.precastRepeats || {})
       .calculateAllDamages({ skillValue, propertyAtk: this.propertyBasicAtk, maxHp, maxSp });
     // console.log(skillDmg);
 
