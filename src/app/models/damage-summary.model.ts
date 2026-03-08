@@ -102,6 +102,18 @@ export interface SkillAspdModel {
   castPeriod: number;
   hitPeriod: number;
   totalHitPerSec: number;
+  precastSteps?: {
+    label: string;
+    repeat: number;
+    reducedVct: number;
+    reducedFct: number;
+    reducedAcd: number;
+    reducedCd: number;
+    stepTime: number;
+  }[];
+  precastTotalTime?: number;
+  releaseTime?: number;
+  cycleTotalTime?: number;
 }
 
 export interface BasicAspdModel {
