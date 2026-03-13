@@ -380,6 +380,9 @@ export class EquipmentComponent implements OnChanges, OnInit {
         } else if (this.enchant3Id && !this.enchant3List.find(a => a.value === this.enchant3Id)) {
           this.enchant3Id = undefined;
           this.onSelectItem('enchant3Id');
+        } else if (this.enchant4Id && !this.enchant4List.find(a => a.value === this.enchant4Id)) {
+          this.enchant4Id = undefined;
+          this.onSelectItem('enchant4Id');
         }
       }
       if (itemType === 'enchant3Id') {
