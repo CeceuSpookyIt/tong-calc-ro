@@ -62,6 +62,8 @@ import { BaseStateCalculator } from './base-state-calculator';
 import { Calculator } from './calculator';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
 import { PresetTableComponent } from './preset-table/preset-table.component';
+import { DamageBreakdownDialogComponent } from './damage-breakdown-dialog/damage-breakdown-dialog.component';
+import { DamageBreakdown } from './damage-breakdown.model';
 import { StatBreakdownDialogComponent } from './stat-breakdown-dialog/stat-breakdown-dialog.component';
 import { BreakdownContext, StatBreakdown } from './stat-breakdown.model';
 
@@ -1684,6 +1686,24 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   }
 
   openBreakdown(stat: string, context: BreakdownContext = 'status') {
+    const dmgBreakdowns: Record<string, () => DamageBreakdown | null> = {
+      basicDmg: () => this.calculator.getBasicDamageBreakdown(),
+    };
+
+    if (dmgBreakdowns[stat]) {
+      const dmgBreakdown = dmgBreakdowns[stat]();
+      if (!dmgBreakdown) return;
+      this.dialogService.open(DamageBreakdownDialogComponent, {
+        header: dmgBreakdown.title,
+        width: '480px',
+        contentStyle: { overflow: 'auto', 'max-height': '80vh' },
+        baseZIndex: 10000,
+        dismissableMask: true,
+        data: dmgBreakdown,
+      });
+      return;
+    }
+
     let breakdown: StatBreakdown | null = null;
 
     switch (stat) {

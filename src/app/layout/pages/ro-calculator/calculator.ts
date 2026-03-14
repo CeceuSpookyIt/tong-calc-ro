@@ -23,6 +23,7 @@ import { ItemModel } from '../../../models/item.model';
 import { MainModel } from '../../../models/main.model';
 import { MonsterModel } from '../../../models/monster.model';
 import { BreakdownContext, BreakdownEntry, BreakdownSection, StatBreakdown } from './stat-breakdown.model';
+import { DamageBreakdown, DamageStep } from './damage-breakdown.model';
 import { DamageCalculator } from './damage-calculator';
 import { HpSpCalculator } from './hp-sp-calculator';
 
@@ -3470,6 +3471,61 @@ export class Calculator {
       sections,
       totalLabel: 'Size Penalty',
       totalValue: `${penalty}%`,
+    };
+  }
+
+  getBasicDamageBreakdown(): DamageBreakdown | null {
+    const p = this.dmgCalculator.damagePipelineForUI.basic;
+    if (!p || p.totalMax == null) return null;
+
+    const steps: DamageStep[] = [];
+    let running = p.totalMax;
+
+    steps.push({ label: 'Total ATK', operation: `${running}`, result: running, color: 'white' });
+
+    if (p.rangedMultiplier !== 1) {
+      running = floor(running * p.rangedMultiplier);
+      steps.push({ label: 'Melee/Range %', operation: `× ${round(p.rangedMultiplier, 4)}`, result: running });
+    }
+
+    if (p.dmgMultiplier !== 1) {
+      running = floor(running * p.dmgMultiplier);
+      steps.push({ label: 'Dmg %', operation: `× ${round(p.dmgMultiplier, 4)}`, result: running });
+    }
+
+    if (p.resReduction !== 1) {
+      running = floor(running * p.resReduction);
+      steps.push({ label: 'RES Reduction', operation: `× ${round(p.resReduction, 4)}`, result: running });
+    }
+
+    if (p.hardDef !== 1) {
+      running = floor(running * p.hardDef);
+      steps.push({ label: 'Hard DEF', operation: `× ${round(p.hardDef, 4)}`, result: running });
+    }
+
+    if (p.softDef !== 0) {
+      running = running - p.softDef;
+      steps.push({ label: 'Soft DEF', operation: `− ${p.softDef}`, result: running, color: 'red' });
+    }
+
+    if (p.advKatarMultiplier !== 1) {
+      running = floor(running * p.advKatarMultiplier);
+      steps.push({ label: 'Adv Katar', operation: `× ${round(p.advKatarMultiplier, 4)}`, result: running });
+    }
+
+    if (p.debuffMultiplier !== 1) {
+      running = floor(running * p.debuffMultiplier);
+      steps.push({ label: 'Debuff', operation: `× ${round(p.debuffMultiplier, 4)}`, result: running, color: 'yellow' });
+    }
+
+    const dmg = this.damageSummary;
+    return {
+      title: 'Basic Damage Breakdown',
+      steps,
+      minDamage: dmg.basicMinDamage,
+      maxDamage: dmg.basicMaxDamage,
+      dps: dmg.basicDps,
+      dpsLabel: 'Basic DPS',
     };
   }
 }

@@ -510,28 +510,32 @@
         ></app-calc-value>
       </div>
       <div class="col-12">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="Basic:"
-          styleClass="summary_damage"
-          styleClass2="summary_compare"
-          [showPercentDiff]="true"
-          [min]="totalSummary?.dmg?.basicMinDamage"
-          [max]="totalSummary?.dmg?.basicMaxDamage"
-          [min2]="totalSummary2?.dmg?.basicMinDamage"
-          [max2]="totalSummary2?.dmg?.basicMaxDamage"
-        ></app-calc-value>
+        <span style="cursor:pointer;" (click)="statBreakdownClick.emit('basicDmg:basic')">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+            label="Basic:"
+            styleClass="summary_damage"
+            styleClass2="summary_compare"
+            [showPercentDiff]="true"
+            [min]="totalSummary?.dmg?.basicMinDamage"
+            [max]="totalSummary?.dmg?.basicMaxDamage"
+            [min2]="totalSummary2?.dmg?.basicMinDamage"
+            [max2]="totalSummary2?.dmg?.basicMaxDamage"
+          ></app-calc-value>
+        </span>
       </div>
       <div class="col-12">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="DPS:"
-          styleClass="summary_highlight"
-          styleClass2="summary_compare"
-          [showPercentDiff]="true"
-          [max]="totalSummary?.dmg?.basicDps"
-          [max2]="totalSummary2?.dmg?.basicDps"
-        ></app-calc-value>
+        <span style="cursor:pointer;" (click)="statBreakdownClick.emit('basicDmg:basic')">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+            label="DPS:"
+            styleClass="summary_highlight"
+            styleClass2="summary_compare"
+            [showPercentDiff]="true"
+            [max]="totalSummary?.dmg?.basicDps"
+            [max2]="totalSummary2?.dmg?.basicDps"
+          ></app-calc-value>
+        </span>
       </div>
       <div class="col-12">
         <span>Tempo: </span>
