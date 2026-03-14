@@ -2,7 +2,8 @@
   <div *ngFor="let step of data.steps" class="dmg-step">
     <span class="dmg-step-label" [ngClass]="getColorClass(step.color)">{{ step.label }}</span>
     <span *ngIf="step.operation" class="dmg-step-operation">{{ step.operation }}</span>
-    <span class="dmg-step-result" [ngClass]="getColorClass(step.color)">{{ formatNumber(step.result) }}</span>
+    <span *ngIf="step.result >= 0" class="dmg-step-result" [ngClass]="getColorClass(step.color)">{{ formatNumber(step.result) }}</span>
+    <span *ngIf="step.result < 0" class="dmg-step-result"></span>
   </div>
 
   <div class="dmg-total-row">

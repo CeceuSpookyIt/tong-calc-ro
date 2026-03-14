@@ -841,7 +841,14 @@ export class DamageCalculator {
         propertyMultiplier,
         pAtkMultiplier,
         mildwindMultiplier,
-        // Combined group multipliers: compute effective multiplier from groupB vs raw input
+        // Individual group B multipliers for detailed breakdown
+        raceMultiplier: this.toPercent(this.getRaceMultiplier('p')),
+        sizeMultiplier: this.toPercent(this.getSizeMultiplier('p')),
+        elementMultiplier: this.toPercent(this.getElementMultiplier('p', propertyAtk)),
+        monsterTypeMultiplier: this.toPercent(this.getMonsterTypeMultiplier('p')),
+        cometMultiplier: this.getCometMultiplier(),
+        isEDP,
+        // Combined group multipliers
         groupAMaxOver: aMaxOver,
         groupBMaxOver: bMaxOver,
         rawWeaponPlusExtra: weaMaxOver + extraAtk,
