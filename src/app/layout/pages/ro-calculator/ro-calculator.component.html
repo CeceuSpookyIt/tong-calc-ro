@@ -404,7 +404,7 @@
                 <div class="grid grid-nogutter mx-1">
                   <div class="col-12" [pTooltip]="statDeltaTooltips['matk_row']" [escape]="false" tooltipPosition="right">
                     Alt+Q Matk:
-                    <span class="font-semibold px-1 summary_stat_matk"
+                    <span class="font-semibold px-1 summary_stat_matk" style="cursor:pointer;" (click)="openBreakdown('matk'); $event.stopPropagation()"
                       >{{ totalSummary?.calc?.totalStatusMatk || 0 }} +
                       {{
                         totalSummary?.weapon?.baseWeaponMatk +

@@ -1920,6 +1920,109 @@ export class Calculator {
     };
   }
 
+  getMatkBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const atkSummary = this.dmgCalculator.atkSummaryForUI;
+    const { totalInt, totalDex, totalLuk, totalSpl } = this.dmgCalculator.status;
+    const baseLvl = this.model.level;
+
+    // 1. Status MATK
+    const statusEntries: BreakdownEntry[] = [
+      { source: 'Level / 4', value: floor(baseLvl / 4), color: 'white' },
+      { source: 'INT', value: totalInt, color: 'white' },
+      { source: 'INT / 2', value: floor(totalInt / 2), color: 'white' },
+      { source: 'DEX / 5', value: floor(totalDex / 5), color: 'white' },
+      { source: 'LUK / 3', value: floor(totalLuk / 3), color: 'white' },
+    ];
+    if (totalSpl > 0) {
+      statusEntries.push({ source: 'SPL × 5', value: totalSpl * 5, color: 'white' });
+    }
+    const formulaStr = totalSpl > 0
+      ? `floor(${baseLvl}/4 + ${totalInt} + ${totalInt}/2 + ${totalDex}/5 + ${totalLuk}/3) + ${totalSpl}×5`
+      : `floor(${baseLvl}/4 + ${totalInt} + ${totalInt}/2 + ${totalDex}/5 + ${totalLuk}/3)`;
+
+    sections.push({
+      label: 'Status MATK',
+      entries: statusEntries,
+      formula: formulaStr,
+      subtotal: atkSummary.totalStatusMatk,
+    });
+
+    // 2. Weapon MATK
+    const weaponData = this.weaponData?.data;
+    const baseWeaponMatk = weaponData?.baseWeaponMatk || 0;
+    const refineBonus = weaponData?.refineBonus || 0;
+    const highUpgradeBonus = weaponData?.highUpgradeBonus || 0;
+    const weaponEntries: BreakdownEntry[] = [];
+
+    if (baseWeaponMatk > 0) {
+      const weaponName = this.equipItem.get('weapon' as any)?.name || 'Arma';
+      weaponEntries.push({ source: weaponName, value: baseWeaponMatk, color: 'white' });
+    }
+    if (refineBonus > 0) {
+      weaponEntries.push({ source: `Refine +${this.model.weaponRefine || 0}`, value: refineBonus, color: 'white' });
+    }
+    if (highUpgradeBonus > 0) {
+      weaponEntries.push({ source: 'High Upgrade Bonus', value: highUpgradeBonus, color: 'white' });
+    }
+
+    // Left weapon refine bonus
+    const leftRefineBonus = this.leftWeaponData?.data?.refineBonus || 0;
+    if (leftRefineBonus > 0) {
+      const leftWeaponName = this.equipItem.get('leftWeapon' as any)?.name || 'Arma Esquerda';
+      weaponEntries.push({ source: `${leftWeaponName} Refine`, value: leftRefineBonus, color: 'white' });
+    }
+
+    const weaponTotal = baseWeaponMatk + refineBonus + highUpgradeBonus + leftRefineBonus;
+
+    sections.push({
+      label: 'Weapon MATK',
+      entries: weaponEntries,
+      subtotal: weaponTotal,
+      emptyMessage: 'Nenhuma arma equipada',
+    });
+
+    // 3. Equipment MATK
+    const itemSummaryFull = this.getItemSummary();
+    const equipEntries: BreakdownEntry[] = [];
+
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const matkVal = (stats as any)?.matk;
+      if (matkVal && matkVal !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        const source = itemData?.name || slotLabel;
+        equipEntries.push({
+          source,
+          slot: slotLabel,
+          value: matkVal,
+        });
+      }
+    }
+
+    equipEntries.sort((a, b) => (b.value as number) - (a.value as number));
+    const equipTotal = equipEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: 'Equipamentos MATK',
+      entries: equipEntries,
+      subtotal: equipTotal,
+      emptyMessage: 'Nenhum equipamento com MATK',
+    });
+
+    // Total
+    const statusMatk = atkSummary.totalStatusMatk;
+    const otherMatk = weaponTotal + equipTotal;
+
+    return {
+      title: 'MATK Breakdown',
+      sections,
+      totalLabel: 'MATK',
+      totalValue: `${statusMatk} + ${otherMatk}`,
+    };
+  }
+
   getCriBreakdown(context: BreakdownContext, damageSummary: any): StatBreakdown {
     const sections: BreakdownSection[] = [];
     const itemSummaryFull = this.getItemSummary();
