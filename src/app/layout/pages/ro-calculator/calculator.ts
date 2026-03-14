@@ -3355,6 +3355,47 @@ export class Calculator {
     };
   }
 
+  getSkillBonusBreakdown(skillValue: string): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+
+    // Extract skill name from "SkillName==Level" format
+    const skillName = (skillValue || '').split('==')[0];
+
+    const equipEntries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const val = (stats as any)?.[skillName];
+      if (val && val !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        equipEntries.push({ source: itemData?.name || slotLabel, slot: slotLabel, value: val });
+      }
+    }
+    equipEntries.sort((a, b) => (b.value as number) - (a.value as number));
+    const equipTotal = equipEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    const totalFromEquipStatus = this.totalEquipStatus[skillName] || 0;
+    const additional = totalFromEquipStatus - equipTotal;
+    if (additional !== 0) {
+      equipEntries.push({ source: 'Skill/Class Bonus', slot: 'Skill', value: additional });
+    }
+
+    sections.push({
+      label: `Equipamentos (${skillName})`,
+      entries: equipEntries,
+      subtotal: totalFromEquipStatus,
+      emptyMessage: `Nenhum equipamento com bônus para ${skillName}`,
+    });
+
+    return {
+      title: `Skill Bonus Breakdown`,
+      sections,
+      totalLabel: 'Skill Bonus',
+      totalValue: `${totalFromEquipStatus}%`,
+    };
+  }
+
   getPenetrationBreakdown(context: BreakdownContext, damageSummary: any): StatBreakdown {
     const sections: BreakdownSection[] = [];
     const itemSummaryFull = this.getItemSummary();

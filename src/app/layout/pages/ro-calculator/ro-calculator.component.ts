@@ -1790,6 +1790,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       case 'sizePenalty':
         breakdown = this.calculator.getSizePenaltyBreakdown(context, this.totalSummary?.dmg);
         break;
+      case 'skillBonus':
+        breakdown = this.calculator.getSkillBonusBreakdown(this.model.selectedAtkSkill);
+        break;
     }
 
     if (!breakdown) return;
