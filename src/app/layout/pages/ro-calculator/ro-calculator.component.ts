@@ -1744,6 +1744,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       case 'matkPercent':
         breakdown = this.calculator.getMatkPercentBreakdown();
         break;
+      case 'vct':
+        breakdown = this.calculator.getVctBreakdown();
+        break;
+      case 'fct':
+        breakdown = this.calculator.getFctBreakdown();
+        break;
+      case 'acd':
+        breakdown = this.calculator.getAcdBreakdown();
+        break;
+      case 'cd':
+        breakdown = this.calculator.getCdBreakdown();
+        break;
     }
 
     if (!breakdown) return;

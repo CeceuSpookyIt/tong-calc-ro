@@ -426,15 +426,15 @@
                   </div>
                   <div class="col-12" [pTooltip]="statDeltaTooltips['acd']" [escape]="false" tooltipPosition="right">
                     After Cast Delay:
-                    <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.acd || 0 }}</span>
+                    <span class="font-semibold px-1 summary_stat_matk" style="cursor:pointer;" (click)="openBreakdown('acd'); $event.stopPropagation()">{{ totalSummary?.acd || 0 }}</span>
                   </div>
                   <div class="col-12" [pTooltip]="statDeltaTooltips['fct']" [escape]="false" tooltipPosition="right">
                     Fixed Cast Time:
-                    <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.fct || 0 }}</span>
+                    <span class="font-semibold px-1 summary_stat_matk" style="cursor:pointer;" (click)="openBreakdown('fct'); $event.stopPropagation()">{{ totalSummary?.fct || 0 }}</span>
                   </div>
                   <div class="col-12" [pTooltip]="statDeltaTooltips['vct']" [escape]="false" tooltipPosition="right">
                     Variable Cast Time:
-                    <span class="font-semibold px-1 summary_stat_matk">{{ totalSummary?.vct || 0 }}</span>
+                    <span class="font-semibold px-1 summary_stat_matk" style="cursor:pointer;" (click)="openBreakdown('vct'); $event.stopPropagation()">{{ totalSummary?.vct || 0 }}</span>
                   </div>
                   <div class="col-12">
                     Dex2 Int1:

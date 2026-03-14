@@ -3138,4 +3138,129 @@ export class Calculator {
       totalValue: `${this.totalEquipStatus.matkPercent || 0}%`,
     };
   }
+
+  getVctBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+
+    const equipEntries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const vctVal = (stats as any)?.vct;
+      if (vctVal && vctVal !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        equipEntries.push({ source: itemData?.name || slotLabel, slot: slotLabel, value: vctVal });
+      }
+      const vctIncVal = (stats as any)?.vct_inc;
+      if (vctIncVal && vctIncVal !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        equipEntries.push({ source: `${itemData?.name || slotLabel} (inc)`, slot: slotLabel, value: vctIncVal, color: 'red' });
+      }
+    }
+    equipEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const equipTotal = equipEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: 'Equipamentos VCT',
+      entries: equipEntries,
+      subtotal: equipTotal,
+      emptyMessage: 'Nenhum equipamento com VCT',
+    });
+
+    return {
+      title: 'VCT Breakdown',
+      sections,
+      totalLabel: 'VCT',
+      totalValue: `${this.totalEquipStatus.vct || 0}%`,
+    };
+  }
+
+  getFctBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+
+    const equipEntries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const fctVal = (stats as any)?.fct;
+      if (fctVal && fctVal !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        equipEntries.push({ source: itemData?.name || slotLabel, slot: slotLabel, value: fctVal });
+      }
+      const fctPctVal = (stats as any)?.fctPercent;
+      if (fctPctVal && fctPctVal !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        equipEntries.push({ source: `${itemData?.name || slotLabel} (%)`, slot: slotLabel, value: fctPctVal, detail: '%' });
+      }
+    }
+    equipEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const equipTotal = equipEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: 'Equipamentos FCT',
+      entries: equipEntries,
+      subtotal: equipTotal,
+      emptyMessage: 'Nenhum equipamento com FCT',
+    });
+
+    return {
+      title: 'FCT Breakdown',
+      sections,
+      totalLabel: 'FCT',
+      totalValue: `${this.totalEquipStatus.fct || 0}`,
+    };
+  }
+
+  getAcdBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+
+    const equipEntries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const val = (stats as any)?.acd;
+      if (val && val !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        equipEntries.push({ source: itemData?.name || slotLabel, slot: slotLabel, value: val });
+      }
+    }
+    equipEntries.sort((a, b) => (b.value as number) - (a.value as number));
+    const equipTotal = equipEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: 'Equipamentos ACD',
+      entries: equipEntries,
+      subtotal: equipTotal,
+      emptyMessage: 'Nenhum equipamento com ACD',
+    });
+
+    return {
+      title: 'ACD Breakdown',
+      sections,
+      totalLabel: 'ACD',
+      totalValue: `${this.totalEquipStatus.acd || 0}`,
+    };
+  }
+
+  getCdBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+
+    sections.push({
+      label: 'Cooldown',
+      entries: [],
+      emptyMessage: 'CD é calculado por skill (cd__SkillName)',
+    });
+
+    return {
+      title: 'CD Breakdown',
+      sections,
+      totalLabel: 'CD',
+      totalValue: 'Per skill',
+    };
+  }
 }

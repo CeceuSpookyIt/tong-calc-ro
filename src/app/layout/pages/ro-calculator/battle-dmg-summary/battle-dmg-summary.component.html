@@ -134,56 +134,64 @@
   <div class="col-12" [hidden]="!!totalSummary?.dmg?.requireTxt">
     <div class="grid grid-nogutter">
       <div class="col-6">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="VCT:"
-          styleClass="summary_value"
-          styleClass2="summary_compare"
-          [isGreaterIsBetter]="false"
-          [displayRaw]="true"
-          [raw]="totalSummary?.calcSkill?.vct"
-          [max]="totalSummary?.calcSkill?.reducedVct"
-          [max2]="totalSummary2?.calcSkill?.reducedVct"
-        ></app-calc-value>
+        <span style="cursor:pointer;" (click)="statBreakdownClick.emit('vct:skill')">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+            label="VCT:"
+            styleClass="summary_value"
+            styleClass2="summary_compare"
+            [isGreaterIsBetter]="false"
+            [displayRaw]="true"
+            [raw]="totalSummary?.calcSkill?.vct"
+            [max]="totalSummary?.calcSkill?.reducedVct"
+            [max2]="totalSummary2?.calcSkill?.reducedVct"
+          ></app-calc-value>
+        </span>
       </div>
       <div class="col-6">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="FCT:"
-          styleClass="summary_value"
-          styleClass2="summary_compare"
-          [isGreaterIsBetter]="false"
-          [displayRaw]="true"
-          [raw]="totalSummary?.calcSkill?.fct"
-          [max]="totalSummary?.calcSkill?.reducedFct"
-          [max2]="totalSummary2?.calcSkill?.reducedFct"
-        ></app-calc-value>
+        <span style="cursor:pointer;" (click)="statBreakdownClick.emit('fct:skill')">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+            label="FCT:"
+            styleClass="summary_value"
+            styleClass2="summary_compare"
+            [isGreaterIsBetter]="false"
+            [displayRaw]="true"
+            [raw]="totalSummary?.calcSkill?.fct"
+            [max]="totalSummary?.calcSkill?.reducedFct"
+            [max2]="totalSummary2?.calcSkill?.reducedFct"
+          ></app-calc-value>
+        </span>
       </div>
       <div class="col-6">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="CD:"
-          styleClass="summary_value"
-          styleClass2="summary_compare"
-          [isGreaterIsBetter]="false"
-          [displayRaw]="true"
-          [raw]="totalSummary?.calcSkill?.cd"
-          [max]="totalSummary?.calcSkill?.reducedCd"
-          [max2]="totalSummary2?.calcSkill?.reducedCd"
-        ></app-calc-value>
+        <span style="cursor:pointer;" (click)="statBreakdownClick.emit('cd:skill')">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+            label="CD:"
+            styleClass="summary_value"
+            styleClass2="summary_compare"
+            [isGreaterIsBetter]="false"
+            [displayRaw]="true"
+            [raw]="totalSummary?.calcSkill?.cd"
+            [max]="totalSummary?.calcSkill?.reducedCd"
+            [max2]="totalSummary2?.calcSkill?.reducedCd"
+          ></app-calc-value>
+        </span>
       </div>
       <div class="col-6">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="Delay:"
-          styleClass="summary_value"
-          styleClass2="summary_compare"
-          [isGreaterIsBetter]="false"
-          [displayRaw]="true"
-          [raw]="totalSummary?.calcSkill?.acd"
-          [max]="totalSummary?.calcSkill?.reducedAcd"
-          [max2]="totalSummary2?.calcSkill?.reducedAcd"
-        ></app-calc-value>
+        <span style="cursor:pointer;" (click)="statBreakdownClick.emit('acd:skill')">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+            label="Delay:"
+            styleClass="summary_value"
+            styleClass2="summary_compare"
+            [isGreaterIsBetter]="false"
+            [displayRaw]="true"
+            [raw]="totalSummary?.calcSkill?.acd"
+            [max]="totalSummary?.calcSkill?.reducedAcd"
+            [max2]="totalSummary2?.calcSkill?.reducedAcd"
+          ></app-calc-value>
+        </span>
       </div>
       <div class="col-6">
         <app-calc-value
