@@ -1688,6 +1688,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   openBreakdown(stat: string, context: BreakdownContext = 'status') {
     const dmgBreakdowns: Record<string, () => DamageBreakdown | null> = {
       basicDmg: () => this.calculator.getBasicDamageBreakdown(),
+      criDamage: () => this.calculator.getCritDamageBreakdown(),
     };
 
     if (dmgBreakdowns[stat]) {

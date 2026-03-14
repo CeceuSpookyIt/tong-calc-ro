@@ -498,16 +498,18 @@
         </span>
       </div>
       <div class="col-6">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.dmg"
-          label="CriDmg:"
-          styleClass="summary_damage"
-          styleClass2="summary_compare"
-          [min]="totalSummary?.dmg?.criMinDamage"
-          [max]="totalSummary?.dmg?.criMaxDamage"
-          [min2]="totalSummary2?.dmg?.criMinDamage"
-          [max2]="totalSummary2?.dmg?.criMaxDamage"
-        ></app-calc-value>
+        <span style="cursor:pointer;" (click)="statBreakdownClick.emit('criDamage:basic')">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.dmg"
+            label="CriDmg:"
+            styleClass="summary_damage"
+            styleClass2="summary_compare"
+            [min]="totalSummary?.dmg?.criMinDamage"
+            [max]="totalSummary?.dmg?.criMaxDamage"
+            [min2]="totalSummary2?.dmg?.criMinDamage"
+            [max2]="totalSummary2?.dmg?.criMaxDamage"
+          ></app-calc-value>
+        </span>
       </div>
       <div class="col-12">
         <span style="cursor:pointer;" (click)="statBreakdownClick.emit('basicDmg:basic')">

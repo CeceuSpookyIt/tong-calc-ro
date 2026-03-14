@@ -3528,4 +3528,73 @@ export class Calculator {
       dpsLabel: 'Basic DPS',
     };
   }
+
+  getCritDamageBreakdown(): DamageBreakdown | null {
+    const p = this.dmgCalculator.damagePipelineForUI.crit;
+    if (!p || p.totalMaxAtkOver == null) return null;
+
+    const steps: DamageStep[] = [];
+    let running = p.totalMaxAtkOver;
+
+    steps.push({ label: 'Max ATK', operation: `${running}`, result: running, color: 'white' });
+
+    if (p.bonusCriDmgMultiplier !== 1) {
+      running = floor(running * p.bonusCriDmgMultiplier);
+      steps.push({ label: 'Crit Dmg %', operation: `× ${round(p.bonusCriDmgMultiplier, 4)}`, result: running });
+    }
+
+    if (p.rangedMultiplier !== 1) {
+      running = floor(running * p.rangedMultiplier);
+      steps.push({ label: 'Melee/Range %', operation: `× ${round(p.rangedMultiplier, 4)}`, result: running });
+    }
+
+    if (p.dmgMultiplier !== 1) {
+      // NO Math.floor on this step — matching actual code line 1188
+      running = running * p.dmgMultiplier;
+      steps.push({ label: 'Dmg %', operation: `× ${round(p.dmgMultiplier, 4)}`, result: floor(running) });
+    }
+
+    if (p.resReduction !== 1) {
+      running = floor(running * p.resReduction);
+      steps.push({ label: 'RES Reduction', operation: `× ${round(p.resReduction, 4)}`, result: running });
+    }
+
+    if (p.hardDef !== 1) {
+      running = floor(running * p.hardDef);
+      steps.push({ label: 'Hard DEF', operation: `× ${round(p.hardDef, 4)}`, result: running });
+    }
+
+    if (p.advKatarMultiplier !== 1) {
+      running = floor(running * p.advKatarMultiplier);
+      steps.push({ label: 'Adv Katar', operation: `× ${round(p.advKatarMultiplier, 4)}`, result: running });
+    }
+
+    if (p.softDef !== 0) {
+      running = running - p.softDef;
+      steps.push({ label: 'Soft DEF', operation: `− ${p.softDef}`, result: running, color: 'red' });
+    }
+
+    if (p.criMultiplier !== 1) {
+      running = floor(running * p.criMultiplier);
+      steps.push({ label: 'Crit Multiplier', operation: `× ${round(p.criMultiplier, 4)}`, result: running, color: 'yellow' });
+    }
+
+    if (p.debuffMultiplier !== 1) {
+      running = floor(running * p.debuffMultiplier);
+      steps.push({ label: 'Debuff', operation: `× ${round(p.debuffMultiplier, 4)}`, result: running, color: 'yellow' });
+    }
+
+    if (p.extraDmgTotal && p.extraDmgTotal !== 0) {
+      running = running + floor(p.extraDmgTotal);
+      steps.push({ label: 'Extra Damage', operation: `+ ${floor(p.extraDmgTotal)}`, result: running, color: 'green' });
+    }
+
+    const dmg = this.damageSummary;
+    return {
+      title: 'Crit Damage Breakdown',
+      steps,
+      minDamage: dmg.criMinDamage,
+      maxDamage: dmg.criMaxDamage,
+    };
+  }
 }
