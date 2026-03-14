@@ -951,9 +951,6 @@ export class DamageCalculator {
 
     if (!this._skillPipeline.dmgType) this._skillPipeline = {
       dmgType: 'Physical',
-      skillName,
-      baseSkillDamage,
-      flatDmg: this.getFlatDmg(skillName),
       rangedMultiplier, baseSkillMultiplier, equipSkillMultiplier,
       resReduction, hardDef, softDef,
       criMultiplierBonus: criMultiplier,
@@ -1093,9 +1090,6 @@ export class DamageCalculator {
 
     if (!this._skillPipeline.dmgType) this._skillPipeline = {
       dmgType: 'Magical',
-      skillName,
-      baseSkillDamage,
-      flatDmg: this.getFlatDmg(skillName),
       sMatkMultiplier, raceMultiplier, sizeMultiplier,
       elementMultiplier, monsterTypeMultiplier, matkPercentMultiplier,
       cometMultiplier, baseSkillMultiplier, myElementMultiplier,

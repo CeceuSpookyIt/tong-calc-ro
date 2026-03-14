@@ -3396,57 +3396,6 @@ export class Calculator {
     };
   }
 
-  getBaseSkillBreakdown(): StatBreakdown {
-    const p = this.dmgCalculator.damagePipelineForUI.skill;
-    const sections: BreakdownSection[] = [];
-    const itemSummaryFull = this.getItemSummary();
-
-    const skillName = p.skillName || '';
-    const baseSkillDamage = p.baseSkillDamage || 0;
-    const flatDmg = p.flatDmg || 0;
-    const formulaResult = baseSkillDamage - flatDmg;
-
-    // Section 1: Skill formula
-    const formulaEntries: BreakdownEntry[] = [];
-    formulaEntries.push({ source: `${skillName} Formula`, value: formulaResult, color: 'white' });
-
-    if (flatDmg !== 0) {
-      // Show flat dmg sources from equipment
-      const flatEntries: BreakdownEntry[] = [];
-      for (const [slot, stats] of Object.entries(itemSummaryFull)) {
-        if (slot === 'consumableBonuses') continue;
-        const statObj = stats as any;
-        if (!statObj) continue;
-        const flatVal = (statObj['flatDmg'] || 0) + (statObj[`flat_${skillName}`] || 0);
-        if (flatVal !== 0) {
-          const itemData = this.equipItem.get(slot as any);
-          const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
-          flatEntries.push({ source: itemData?.name || slotLabel, slot: slotLabel, value: flatVal });
-        }
-      }
-      flatEntries.sort((a, b) => (b.value as number) - (a.value as number));
-      for (const e of flatEntries) formulaEntries.push(e);
-
-      const totalFlat = flatEntries.reduce((sum, e) => sum + (e.value as number), 0);
-      if (flatDmg !== totalFlat) {
-        formulaEntries.push({ source: 'Skill/Class Bonus', slot: 'Skill', value: flatDmg - totalFlat });
-      }
-    }
-
-    sections.push({
-      label: 'Base Skill Damage',
-      entries: formulaEntries,
-      subtotal: baseSkillDamage,
-    });
-
-    return {
-      title: `Base Skill Breakdown`,
-      sections,
-      totalLabel: 'Base Skill',
-      totalValue: `${baseSkillDamage}%`,
-    };
-  }
-
   getPenetrationBreakdown(context: BreakdownContext, damageSummary: any): StatBreakdown {
     const sections: BreakdownSection[] = [];
     const itemSummaryFull = this.getItemSummary();
