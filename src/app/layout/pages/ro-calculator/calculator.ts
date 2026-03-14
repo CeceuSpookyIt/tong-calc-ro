@@ -2172,6 +2172,80 @@ export class Calculator {
     };
   }
 
+  getMdefBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const { level } = this.model;
+    const { totalInt, totalVit, totalDex } = this.dmgCalculator.status;
+    const { softMdef: equipSoftMdef = 0, softMdefPercent = 0, mdef: equipMdef = 0, mdefPercent = 0 } = this.totalEquipStatus;
+    const itemSummaryFull = this.getItemSummary();
+
+    // 1. Soft MDEF
+    const softMdefEntries: BreakdownEntry[] = [
+      { source: 'INT', value: totalInt, color: 'white' },
+      { source: 'VIT / 5', value: floor(totalVit / 5), color: 'white' },
+      { source: 'DEX / 5', value: floor(totalDex / 5), color: 'white' },
+      { source: 'Level / 4', value: floor(level / 4), color: 'white' },
+    ];
+
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const smVal = (stats as any)?.softMdef;
+      if (smVal && smVal !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        softMdefEntries.push({ source: itemData?.name || slotLabel, slot: slotLabel, value: smVal });
+      }
+    }
+
+    if (softMdefPercent !== 0) {
+      softMdefEntries.push({ source: 'Soft MDEF %', value: softMdefPercent, detail: '%' });
+    }
+
+    const rawSoftMdef = floor(totalInt + totalVit / 5 + totalDex / 5 + level / 4);
+    const formulaSoftMdef = softMdefPercent !== 0
+      ? `floor((${rawSoftMdef} + ${equipSoftMdef}) × ${100 + softMdefPercent}/100)`
+      : `floor(${totalInt} + ${totalVit}/5 + ${totalDex}/5 + ${level}/4) + equipSoftMdef`;
+
+    sections.push({
+      label: 'Soft MDEF',
+      entries: softMdefEntries,
+      formula: formulaSoftMdef,
+      subtotal: this.softMdef,
+    });
+
+    // 2. Hard MDEF (Equipment)
+    const hardMdefEntries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const mdefVal = (stats as any)?.mdef;
+      if (mdefVal && mdefVal !== 0) {
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        hardMdefEntries.push({ source: itemData?.name || slotLabel, slot: slotLabel, value: mdefVal });
+      }
+    }
+    hardMdefEntries.sort((a, b) => (b.value as number) - (a.value as number));
+    const hardMdefTotal = hardMdefEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    if (mdefPercent !== 0) {
+      hardMdefEntries.push({ source: 'MDEF %', value: mdefPercent, detail: '%' });
+    }
+
+    sections.push({
+      label: 'Hard MDEF (Equip)',
+      entries: hardMdefEntries,
+      subtotal: this.mdef,
+      emptyMessage: 'Nenhum equipamento com MDEF',
+    });
+
+    return {
+      title: 'MDEF Breakdown',
+      sections,
+      totalLabel: 'MDEF',
+      totalValue: `${this.softMdef} + ${this.mdef}`,
+    };
+  }
+
   getCriBreakdown(context: BreakdownContext, damageSummary: any): StatBreakdown {
     const sections: BreakdownSection[] = [];
     const itemSummaryFull = this.getItemSummary();
