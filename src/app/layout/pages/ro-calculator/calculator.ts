@@ -22,7 +22,7 @@ import { AdditionalBonusInput } from '../../../models/info-for-class.model';
 import { ItemModel } from '../../../models/item.model';
 import { MainModel } from '../../../models/main.model';
 import { MonsterModel } from '../../../models/monster.model';
-import { CriBreakdown, CriBreakdownEntry, CriBreakdownContext, LukBreakdownEntry } from './cri-breakdown.model';
+import { BreakdownContext, BreakdownEntry, BreakdownSection, StatBreakdown } from './stat-breakdown.model';
 import { DamageCalculator } from './damage-calculator';
 import { HpSpCalculator } from './hp-sp-calculator';
 
@@ -1799,10 +1799,12 @@ export class Calculator {
     return this.possiblyDamages;
   }
 
-  getCriBreakdown(context: CriBreakdownContext, damageSummary: any): CriBreakdown {
-    // 1. Collect equip cri entries from equipStatus
-    const equipEntries: CriBreakdownEntry[] = [];
+  getCriBreakdown(context: BreakdownContext, damageSummary: any): StatBreakdown {
+    const sections: BreakdownSection[] = [];
     const itemSummaryFull = this.getItemSummary();
+
+    // 1. Collect equip cri entries from equipStatus
+    const equipEntries: BreakdownEntry[] = [];
 
     for (const [slot, stats] of Object.entries(itemSummaryFull)) {
       if (slot === 'consumableBonuses') continue;
@@ -1820,7 +1822,7 @@ export class Calculator {
     }
 
     // Add class additional bonus cri (e.g., Two Hand Quicken)
-    const additionalCri = (this.totalEquipStatus.cri || 0) - equipEntries.reduce((sum, e) => sum + e.value, 0);
+    const additionalCri = (this.totalEquipStatus.cri || 0) - equipEntries.reduce((sum, e) => sum + (e.value as number), 0);
     if (additionalCri > 0) {
       equipEntries.push({
         source: 'Skill/Class Bonus',
@@ -1830,9 +1832,16 @@ export class Calculator {
     }
 
     // Sort by value descending
-    equipEntries.sort((a, b) => b.value - a.value);
+    equipEntries.sort((a, b) => (b.value as number) - (a.value as number));
 
-    const equipTotal = equipEntries.reduce((sum, e) => sum + e.value, 0);
+    const equipTotal = equipEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: 'Equipamentos',
+      entries: equipEntries,
+      subtotal: equipTotal,
+      emptyMessage: 'Nenhum equipamento com CRI',
+    });
 
     // 2. LUK breakdown
     const { luk, jobLuk } = this.model;
@@ -1840,7 +1849,9 @@ export class Calculator {
     const allStatusVal = this.totalEquipStatus.allStatus ?? 0;
     const totalLuk = luk + (jobLuk ?? 0) + equipLukDirect;
 
-    const lukEntries: LukBreakdownEntry[] = [];
+    const lukEntries: BreakdownEntry[] = [];
+
+    lukEntries.push({ source: 'Base LUK', value: luk, color: 'white' });
 
     // Per-item luk and allStatus entries
     for (const [slot, stats] of Object.entries(itemSummaryFull)) {
@@ -1864,20 +1875,66 @@ export class Calculator {
       }
     }
 
+    if (jobLuk && jobLuk !== 0) {
+      lukEntries.push({ source: 'Job Bonus', value: jobLuk });
+    }
+
     const isActual = context !== 'status';
     const criFromLuk = isActual ? floor(totalLuk * 0.3) : floor(totalLuk / 3);
     const formulaStr = isActual ? `floor(${totalLuk} × 0.3) = ${criFromLuk}` : `floor(${totalLuk} / 3) = ${criFromLuk}`;
 
-    // 3. Skill-specific data
+    lukEntries.push({ source: 'Cri from LUK', value: criFromLuk, color: 'green' });
+
+    sections.push({
+      label: 'LUK → Cri',
+      entries: lukEntries,
+      subtotal: totalLuk,
+      formula: formulaStr,
+    });
+
+    // 3. Katar section
+    const isKatar = this.weaponData.data?.typeName === 'katar';
+    if (isKatar) {
+      sections.push({
+        label: 'Katar',
+        entries: [{ source: 'Katar ×2', value: '×2', color: 'yellow' }],
+      });
+    }
+
+    // 4. Skill-specific data
     const skillBaseCri = damageSummary?.baseSkillCri ?? 0;
     const skillBaseCriPercentage = damageSummary?.baseCriPercentage ?? 1;
 
-    // 4. Extra cri vs monster and criShield
+    if (context === 'skill' && skillBaseCri > 0) {
+      const skillEntries: BreakdownEntry[] = [{ source: 'Skill Base Cri', value: skillBaseCri }];
+      if (skillBaseCriPercentage !== 1) {
+        skillEntries.push({ source: 'Skill Cri %', value: `×${skillBaseCriPercentage}`, color: 'yellow' });
+      }
+      sections.push({
+        label: 'Skill Cri',
+        entries: skillEntries,
+      });
+    }
+
+    // 5. Extra cri vs monster and criShield
     const extraCriToMonster = damageSummary?.extraCriToMonster ?? 0;
     const criShield = damageSummary?.criShield ?? 0;
 
-    // 5. Compute total
-    const isKatar = this.weaponData.data?.typeName === 'katar';
+    if ((context !== 'status' && extraCriToMonster !== 0) || criShield !== 0) {
+      const vsEntries: BreakdownEntry[] = [];
+      if (extraCriToMonster !== 0) {
+        vsEntries.push({ source: 'Extra Cri vs Monster', value: extraCriToMonster });
+      }
+      if (criShield !== 0) {
+        vsEntries.push({ source: 'Cri Shield', value: -criShield, color: 'red' });
+      }
+      sections.push({
+        label: 'vs Monstro',
+        entries: vsEntries,
+      });
+    }
+
+    // 6. Compute total (same logic as before)
     let total: number;
     if (context === 'status') {
       const base = 1 + equipTotal + criFromLuk;
@@ -1894,25 +1951,13 @@ export class Calculator {
       total = floor(adjusted);
     }
 
+    const contextLabels: Record<BreakdownContext, string> = { status: 'Status', basic: 'Basic ATQ', skill: 'Skill' };
+
     return {
-      base: 1,
-      equipEntries,
-      equipTotal,
-      lukBreakdown: {
-        baseLuk: luk,
-        jobLuk: jobLuk ?? 0,
-        entries: lukEntries,
-        totalLuk,
-        criFromLuk,
-        formula: formulaStr,
-      },
-      extraCriToMonster,
-      skillBaseCri: context === 'skill' ? skillBaseCri : 0,
-      skillBaseCriPercentage: context === 'skill' ? skillBaseCriPercentage : 1,
-      criShield,
-      total,
-      isKatar,
-      context,
+      title: 'CriRate Breakdown',
+      sections,
+      totalLabel: `CriRate (${contextLabels[context]})`,
+      totalValue: String(total),
     };
   }
 }
