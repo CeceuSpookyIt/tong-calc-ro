@@ -1756,6 +1756,12 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       case 'cd':
         breakdown = this.calculator.getCdBreakdown();
         break;
+      case 'penetration':
+        breakdown = this.calculator.getPenetrationBreakdown(context, this.totalSummary?.dmg);
+        break;
+      case 'accuracy':
+        breakdown = this.calculator.getAccuracyBreakdown(context, this.totalSummary?.dmg);
+        break;
     }
 
     if (!breakdown) return;

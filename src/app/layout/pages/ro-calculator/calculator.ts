@@ -3263,4 +3263,133 @@ export class Calculator {
       totalValue: 'Per skill',
     };
   }
+
+  getPenetrationBreakdown(context: BreakdownContext, damageSummary: any): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+
+    // 1. Physical Penetration
+    const physEntries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const statObj = stats as any;
+      if (!statObj) continue;
+      for (const [key, val] of Object.entries(statObj)) {
+        if ((key.startsWith('p_pene_') || key === 'p_infiltration') && val && (val as number) !== 0) {
+          const itemData = this.equipItem.get(slot as any);
+          const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+          const label = key.replace('p_pene_', '').replace('_', ' ');
+          physEntries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+        }
+      }
+    }
+    physEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const physTotal = physEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: 'Penetração Física',
+      entries: physEntries,
+      subtotal: physTotal,
+      emptyMessage: 'Nenhum equipamento com penetração física',
+    });
+
+    // 2. Magical Penetration
+    const magEntries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const statObj = stats as any;
+      if (!statObj) continue;
+      for (const [key, val] of Object.entries(statObj)) {
+        if (key.startsWith('m_pene_') && val && (val as number) !== 0) {
+          const itemData = this.equipItem.get(slot as any);
+          const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+          const label = key.replace('m_pene_', '').replace('_', ' ');
+          magEntries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+        }
+      }
+    }
+    magEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const magTotal = magEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: 'Penetração Mágica',
+      entries: magEntries,
+      subtotal: magTotal,
+      emptyMessage: 'Nenhum equipamento com penetração mágica',
+    });
+
+    // 3. RES/MRES Penetration
+    const resEntries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const statObj = stats as any;
+      if (!statObj) continue;
+      for (const [key, val] of Object.entries(statObj)) {
+        if ((key.startsWith('pene_res') || key.startsWith('pene_mres')) && val && (val as number) !== 0) {
+          const itemData = this.equipItem.get(slot as any);
+          const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+          const label = key.replace('pene_', '').replace('_', ' ');
+          resEntries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+        }
+      }
+    }
+    resEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const resTotal = resEntries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: 'Penetração RES/MRES',
+      entries: resEntries,
+      subtotal: resTotal,
+      emptyMessage: 'Nenhum equipamento com penetração RES/MRES',
+    });
+
+    const peneValue = context === 'basic'
+      ? (damageSummary?.totalPene ?? 0)
+      : (damageSummary?.skillTotalPene ?? 0);
+
+    return {
+      title: 'Penetração Breakdown',
+      sections,
+      totalLabel: 'Penetração',
+      totalValue: `${peneValue}%`,
+    };
+  }
+
+  getAccuracyBreakdown(context: BreakdownContext, damageSummary: any): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const totalHit = this.miscSummary.totalHit || 0;
+    const hitRequireFor100 = this.monster?.data?.hitRequireFor100 || 0;
+
+    const accuracyValue = context === 'basic'
+      ? (damageSummary?.accuracy ?? this.miscSummary.accuracy ?? 0)
+      : (damageSummary?.skillAccuracy ?? this.miscSummary.accuracy ?? 0);
+
+    // 1. HIT Total
+    sections.push({
+      label: 'HIT Total',
+      entries: [{ source: 'HIT Total', value: totalHit, color: 'white' }],
+      subtotal: totalHit,
+    });
+
+    // 2. Monster Hit Required
+    sections.push({
+      label: 'Monster Hit Required',
+      entries: [{ source: `Hit p/ 100% (${this.monster?.data?.name || 'Monster'})`, value: hitRequireFor100, color: 'red' }],
+      subtotal: hitRequireFor100,
+    });
+
+    // 3. Formula
+    sections.push({
+      label: 'Fórmula',
+      entries: [{ source: `max(5, min(100, 100 + ${totalHit} - ${hitRequireFor100}))`, value: accuracyValue, color: 'white' }],
+      subtotal: accuracyValue,
+    });
+
+    return {
+      title: 'Precisão Breakdown',
+      sections,
+      totalLabel: 'Precisão',
+      totalValue: `${accuracyValue}%`,
+    };
+  }
 }
