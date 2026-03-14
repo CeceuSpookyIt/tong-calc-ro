@@ -1,0 +1,32 @@
+<div *ngIf="data">
+  <ng-container *ngFor="let section of data.sections">
+    <div class="bd-section-header">{{ section.label }}<span *ngIf="section.subtotal != null"> ({{ section.subtotal }})</span></div>
+
+    <div *ngFor="let entry of section.entries" class="bd-row">
+      <span class="bd-row-source">
+        {{ entry.source }}
+        <span *ngIf="entry.detail" class="bd-formula">({{ entry.detail }})</span>
+      </span>
+      <span *ngIf="entry.slot" class="bd-row-slot">{{ entry.slot }}</span>
+      <span class="bd-row-value" [ngClass]="getColorClass(entry.color)">{{ formatValue(entry.value) }}</span>
+    </div>
+
+    <div *ngIf="section.entries.length === 0 && section.emptyMessage" class="bd-empty">
+      {{ section.emptyMessage }}
+    </div>
+
+    <div *ngIf="section.subtotal != null" class="bd-subtotal-row">
+      <span>Total</span>
+      <span class="color-white">{{ section.subtotal }}</span>
+    </div>
+
+    <div *ngIf="section.formula" class="bd-row">
+      <span class="bd-formula">{{ section.formula }}</span>
+    </div>
+  </ng-container>
+
+  <div class="bd-total-row">
+    <span>{{ data.totalLabel }}</span>
+    <span class="color-green">{{ data.totalValue }}</span>
+  </div>
+</div>
