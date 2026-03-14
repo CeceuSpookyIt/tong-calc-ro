@@ -1,0 +1,21 @@
+<div *ngIf="data">
+  <div *ngFor="let step of data.steps" class="dmg-step">
+    <span class="dmg-step-label" [ngClass]="getColorClass(step.color)">{{ step.label }}</span>
+    <span *ngIf="step.operation" class="dmg-step-operation">{{ step.operation }}</span>
+    <span class="dmg-step-result" [ngClass]="getColorClass(step.color)">{{ formatNumber(step.result) }}</span>
+  </div>
+
+  <div class="dmg-total-row">
+    <span>{{ data.title }}</span>
+    <span class="color-green">{{ formatNumber(data.minDamage) }} - {{ formatNumber(data.maxDamage) }}</span>
+  </div>
+
+  <div *ngIf="data.dps != null" class="dmg-dps-row">
+    <span>DPS</span>
+    <span class="color-yellow">{{ formatNumber(data.dps) }}</span>
+  </div>
+
+  <div *ngIf="data.extraInfo" class="dmg-dps-row">
+    <span class="color-muted">{{ data.extraInfo }}</span>
+  </div>
+</div>
