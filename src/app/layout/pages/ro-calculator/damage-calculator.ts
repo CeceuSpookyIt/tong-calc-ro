@@ -828,7 +828,25 @@ export class DamageCalculator {
     const totalMax = (statusAtk + floor((aMax + bMax) * propertyMultiplier)) * pAtkMultiplier + masteryAtk;
     const totalMaxOver = (statusAtk + floor((aMaxOver + bMaxOver) * propertyMultiplier)) * pAtkMultiplier + masteryAtk;
 
-    return { totalMin, totalMax, totalMaxOver, propertyMultiplier };
+    return {
+      totalMin, totalMax, totalMaxOver, propertyMultiplier,
+      // ATK pipeline intermediates for breakdown display
+      _atkPipeline: {
+        statusAtkRaw: this.getStatusAtk(),
+        statusAtk,
+        weaponAtkMaxOver: weaMaxOver,
+        extraAtkTotal: extraAtk,
+        masteryAtkTotal: masteryAtk,
+        atkPercent: this.toPercent(this.totalBonus.atkPercent),
+        propertyMultiplier,
+        pAtkMultiplier,
+        mildwindMultiplier,
+        // Combined group multipliers: compute effective multiplier from groupB vs raw input
+        groupAMaxOver: aMaxOver,
+        groupBMaxOver: bMaxOver,
+        rawWeaponPlusExtra: weaMaxOver + extraAtk,
+      },
+    };
   }
 
   private applyFinalMultiplier(rawDamage: number, atkType: 'phy' | 'magic') {
@@ -914,7 +932,7 @@ export class DamageCalculator {
     };
 
     const propertyAtk = element || weaponPropertyAtk;
-    const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
+    const { totalMin, totalMax, totalMaxOver, propertyMultiplier, _atkPipeline } = this.calcTotalAtk({
       propertyAtk,
       sizePenalty,
       isEDP: this.isActiveEDP(skillName),
@@ -935,6 +953,7 @@ export class DamageCalculator {
       totalMin, totalMax, totalMaxOver,
       extraDmg: this._class.getAdditionalDmg(this.infoForClass),
       modifyFinalAtkFactor: this._class.modifyFinalAtk(1, infoForClass),
+      ..._atkPipeline,
     };
 
     const rawMaxDamage = skillFormula(totalMaxOver, canCri) + extraDmgCri;
@@ -1228,7 +1247,7 @@ export class DamageCalculator {
     this._skillPipeline = {};
     const { skillValue, propertyAtk, maxHp, maxSp, overrideSkillData } = args;
     const sizePenalty = this.getSizePenalty();
-    const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
+    const { totalMin, totalMax, totalMaxOver, propertyMultiplier, _atkPipeline } = this.calcTotalAtk({
       propertyAtk,
       sizePenalty,
       isEDP: this.isActiveEDP(''),
@@ -1240,6 +1259,10 @@ export class DamageCalculator {
       totalMaxAtk: totalMax,
       totalMaxAtkOver: totalMaxOver,
     });
+
+    // Attach ATK pipeline intermediates for breakdown display
+    Object.assign(this._basicPipeline, _atkPipeline);
+    Object.assign(this._critPipeline, _atkPipeline);
 
     const criShield = this.monster.data.criShield;
     const misc = this.getMiscData();

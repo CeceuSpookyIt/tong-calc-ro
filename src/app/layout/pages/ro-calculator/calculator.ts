@@ -3564,14 +3564,97 @@ export class Calculator {
     };
   }
 
+  /**
+   * Build ATK processing steps showing how raw ATK components become totalATK.
+   * Used at the beginning of physical basic/crit/skill breakdowns.
+   */
+  private _buildAtkProcessingSteps(p: any, finalTotalAtk: number, extras?: { extraDmg?: number; extraBasicDmg?: number }): { steps: DamageStep[]; running: number } {
+    const steps: DamageStep[] = [];
+
+    // Step 1: Status ATK × 2 (× mildwind if active)
+    // p.statusAtk is already rawStatusAtk * 2 * mildwindMultiplier
+    const statusAtk2 = floor(p.statusAtk);
+    let running = statusAtk2;
+    steps.push({ label: 'Status ATK × 2', operation: `${floor(p.statusAtkRaw)} × 2`, result: running, color: 'white' });
+
+    // Step 2: + Weapon ATK
+    const weaponAtk = floor(p.weaponAtkMaxOver || 0);
+    if (weaponAtk !== 0) {
+      running = running + weaponAtk;
+      steps.push({ label: '+ Weapon ATK', operation: `+ ${weaponAtk}`, result: running, color: 'green' });
+    }
+
+    // Step 3: + Equipment ATK
+    const extraAtk = floor(p.extraAtkTotal || 0);
+    if (extraAtk !== 0) {
+      running = running + extraAtk;
+      steps.push({ label: '+ Equipment ATK', operation: `+ ${extraAtk}`, result: running, color: 'green' });
+    }
+
+    // Step 4: × Modifiers (combined atkPercent + race + size + element + monsterType + property)
+    // Compute effective combined multiplier from raw weapon+extra through groups A+B and property
+    const rawBase = p.rawWeaponPlusExtra || 0;
+    if (rawBase > 0) {
+      const groupA = p.groupAMaxOver || 0;
+      const groupB = p.groupBMaxOver || 0;
+      const combinedAfterProperty = floor((groupA + groupB) * (p.propertyMultiplier || 1));
+      // The raw base just with statusAtk would give: statusAtk2 + rawBase
+      // After modifiers it becomes: statusAtk2 + combinedAfterProperty
+      const beforeMod = statusAtk2 + rawBase;
+      const afterMod = statusAtk2 + combinedAfterProperty;
+      if (beforeMod > 0 && Math.abs(afterMod / beforeMod - 1) > 0.001) {
+        const effectiveMultiplier = round(afterMod / beforeMod, 4);
+        running = afterMod;
+        steps.push({ label: '× Modifiers', operation: `× ${effectiveMultiplier}`, result: running });
+      } else {
+        running = afterMod;
+      }
+    }
+
+    // Step 5: × P.Atk
+    if (p.pAtkMultiplier && p.pAtkMultiplier !== 1) {
+      running = floor(running * p.pAtkMultiplier);
+      steps.push({ label: '× P.Atk', operation: `× ${round(p.pAtkMultiplier, 4)}`, result: running });
+    }
+
+    // Step 6: + Mastery ATK
+    const masteryAtk = floor(p.masteryAtkTotal || 0);
+    if (masteryAtk !== 0) {
+      running = running + masteryAtk;
+      steps.push({ label: '+ Mastery ATK', operation: `+ ${masteryAtk}`, result: running, color: 'green' });
+    }
+
+    // Extra damage from class skills (added before entering formula)
+    const extraDmg = floor(extras?.extraDmg || 0);
+    const extraBasicDmg = floor(extras?.extraBasicDmg || 0);
+    if (extraDmg !== 0) {
+      running = running + extraDmg;
+      steps.push({ label: '+ Extra ATK', operation: `+ ${extraDmg}`, result: running, color: 'green' });
+    }
+    if (extraBasicDmg !== 0) {
+      running = running + extraBasicDmg;
+      steps.push({ label: '+ Extra Basic ATK', operation: `+ ${extraBasicDmg}`, result: running, color: 'green' });
+    }
+
+    // Final: = Total ATK (use authoritative value)
+    running = finalTotalAtk;
+    steps.push({ label: '= Total ATK', result: running, color: 'white' });
+
+    return { steps, running };
+  }
+
   getBasicDamageBreakdown(): DamageBreakdown | null {
     const p = this.dmgCalculator.damagePipelineForUI.basic;
     if (!p || p.totalMax == null) return null;
 
-    const steps: DamageStep[] = [];
+    const hasAtkPipeline = p.statusAtk != null;
+    const atkSteps = hasAtkPipeline ? this._buildAtkProcessingSteps(p, p.totalMax, { extraDmg: p.extraDmg, extraBasicDmg: p.extraBasicDmg }) : null;
+    const steps: DamageStep[] = atkSteps ? [...atkSteps.steps] : [];
     let running = p.totalMax;
 
-    steps.push({ label: 'Total ATK', operation: `${running}`, result: running, color: 'white' });
+    if (!hasAtkPipeline) {
+      steps.push({ label: 'Total ATK', operation: `${running}`, result: running, color: 'white' });
+    }
 
     if (p.rangedMultiplier !== 1) {
       running = floor(running * p.rangedMultiplier);
@@ -3623,10 +3706,14 @@ export class Calculator {
     const p = this.dmgCalculator.damagePipelineForUI.crit;
     if (!p || p.totalMaxAtkOver == null) return null;
 
-    const steps: DamageStep[] = [];
+    const hasAtkPipeline = p.statusAtk != null;
+    const atkSteps = hasAtkPipeline ? this._buildAtkProcessingSteps(p, p.totalMaxAtkOver) : null;
+    const steps: DamageStep[] = atkSteps ? [...atkSteps.steps] : [];
     let running = p.totalMaxAtkOver;
 
-    steps.push({ label: 'Max ATK', operation: `${running}`, result: running, color: 'white' });
+    if (!hasAtkPipeline) {
+      steps.push({ label: 'Max ATK', operation: `${running}`, result: running, color: 'white' });
+    }
 
     if (p.bonusCriDmgMultiplier !== 1) {
       running = floor(running * p.bonusCriDmgMultiplier);
@@ -3699,10 +3786,14 @@ export class Calculator {
   }
 
   private _buildPhysicalSkillBreakdown(p: any, dmg: any): DamageBreakdown {
-    const steps: DamageStep[] = [];
+    const hasAtkPipeline = p.statusAtk != null;
+    const atkSteps = hasAtkPipeline ? this._buildAtkProcessingSteps(p, p.totalMaxOver) : null;
+    const steps: DamageStep[] = atkSteps ? [...atkSteps.steps] : [];
     let running = p.totalMaxOver as number;
 
-    steps.push({ label: 'Total ATK', operation: `${running}`, result: running, color: 'white' });
+    if (!hasAtkPipeline) {
+      steps.push({ label: 'Total ATK', operation: `${running}`, result: running, color: 'white' });
+    }
 
     if (p.modifyFinalAtkFactor !== 1) {
       running = floor(running * p.modifyFinalAtkFactor);
