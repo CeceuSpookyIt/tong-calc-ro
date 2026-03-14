@@ -29,6 +29,11 @@ export class DamageCalculator {
   private readonly EDP_EQUIP_MULTIPLIER = 4;
   private readonly _BASE_CRI_MULTIPLIER = 1.4;
 
+  // Pipeline snapshots for damage breakdown UI
+  private _basicPipeline: any = {};
+  private _critPipeline: any = {};
+  private _skillPipeline: any = {};
+
   private skillName: SKILL_NAME = '' as any;
   private equipStatus: Record<ItemTypeEnum, EquipmentSummaryModel>;
   totalBonus: EquipmentSummaryModel;
@@ -246,6 +251,14 @@ export class DamageCalculator {
 
   get criMultiplier() {
     return this._BASE_CRI_MULTIPLIER + this.traitBonus.cRate * 0.01;
+  }
+
+  get damagePipelineForUI() {
+    return {
+      basic: this._basicPipeline,
+      crit: this._critPipeline,
+      skill: this._skillPipeline,
+    };
   }
 
   get infoForClass(): InfoForClass {
@@ -911,6 +924,19 @@ export class DamageCalculator {
     const extraDmg = this._class.getAdditionalDmg(infoForClass);
     const extraDmgCri = canCri ? floor(extraDmg * criMultiplier) : extraDmg;
 
+    if (!this._skillPipeline.dmgType) this._skillPipeline = {
+      dmgType: 'Physical',
+      rangedMultiplier, baseSkillMultiplier, equipSkillMultiplier,
+      resReduction, hardDef, softDef,
+      criMultiplierBonus: criMultiplier,
+      criMultiplierBase: this.criMultiplier,
+      advKatarMultiplier: finalDmgMultipliers[0] || 1,
+      debuffMultiplier, canCri,
+      totalMin, totalMax, totalMaxOver,
+      extraDmg: this._class.getAdditionalDmg(this.infoForClass),
+      modifyFinalAtkFactor: this._class.modifyFinalAtk(1, infoForClass),
+    };
+
     const rawMaxDamage = skillFormula(totalMaxOver, canCri) + extraDmgCri;
     const maxDamage = this._class.calcSkillDmgByTotalHit({
       info: this.infoForClass,
@@ -1035,6 +1061,20 @@ export class DamageCalculator {
     const { weaponMinMatk, weaponMaxMatk } = this.getWeaponMatk();
 
     const rawMatk = extraMatk + totalStatusMatk * this.myticalAmp;
+
+    if (!this._skillPipeline.dmgType) this._skillPipeline = {
+      dmgType: 'Magical',
+      sMatkMultiplier, raceMultiplier, sizeMultiplier,
+      elementMultiplier, monsterTypeMultiplier, matkPercentMultiplier,
+      cometMultiplier, baseSkillMultiplier, myElementMultiplier,
+      mresReduction, hardDef: dmgReductionByMHardDef, softMDef,
+      equipSkillMultiplier, propertyMultiplier, finalDmgMultiplier,
+      magicFinalMultiplier: this.applyFinalMultiplier(1, 'magic'),
+      debuffMultiplier,
+      totalMatkMin: rawMatk + weaponMinMatk,
+      totalMatkMax: rawMatk + weaponMaxMatk,
+    };
+
     const weaponMinDmg = skillFormula(weaponMinMatk * this.myticalAmp + rawMatk);
     const weaponMaxDmg = skillFormula(weaponMaxMatk * this.myticalAmp + rawMatk);
 
@@ -1112,6 +1152,14 @@ export class DamageCalculator {
     const basicMinDamage = formula(totalMin + extraDmg + extraBasicDmg);
     const basicMaxDamage = formula(totalMax + extraDmg + extraBasicDmg);
 
+    this._basicPipeline = {
+      rangedMultiplier, dmgMultiplier, resReduction,
+      hardDef, softDef, advKatarMultiplier, debuffMultiplier,
+      extraDmg, extraBasicDmg,
+      totalMin: totalMin + extraDmg + extraBasicDmg,
+      totalMax: totalMax + extraDmg + extraBasicDmg,
+    };
+
     return { basicMinDamage, basicMaxDamage };
   }
 
@@ -1151,10 +1199,33 @@ export class DamageCalculator {
     const criMinDamage = formula(totalMaxAtk) + extraDmg + formula(extraBasic, false);
     const criMaxDamage = formula(totalMaxAtkOver) + extraDmg + formula(extraBasic, false);
 
+    // Pre-compute extraBasic through formula without DEF for breakdown display
+    const extraBasicProcessed = extraBasic > 0 ? (() => {
+      let t = floor(extraBasic * bonusCriDmgMultiplier);
+      t = floor(t * rangedMultiplier);
+      t = floor(t * resReduction);
+      t = floor(t * hardDef);
+      t = floor(t * advKatarMultiplier);
+      t = floor(t * this.criMultiplier);
+      t = floor(t * debuffMultiplier);
+      return Math.max(t, 0);
+    })() : 0;
+
+    this._critPipeline = {
+      bonusCriDmgMultiplier, rangedMultiplier, dmgMultiplier,
+      resReduction, hardDef, softDef,
+      advKatarMultiplier, debuffMultiplier,
+      criMultiplier: this.criMultiplier,
+      extraDmg, extraBasic,
+      extraDmgTotal: floor(extraDmg) + extraBasicProcessed,
+      totalMaxAtk, totalMaxAtkOver,
+    };
+
     return { criMinDamage, criMaxDamage, sizePenalty: 100 };
   }
 
   calculateAllDamages(args: { skillValue: string; propertyAtk: ElementType; maxHp: number; maxSp: number; overrideSkillData?: AtkSkillModel; }): DamageSummaryModel {
+    this._skillPipeline = {};
     const { skillValue, propertyAtk, maxHp, maxSp, overrideSkillData } = args;
     const sizePenalty = this.getSizePenalty();
     const { totalMin, totalMax, totalMaxOver, propertyMultiplier } = this.calcTotalAtk({
