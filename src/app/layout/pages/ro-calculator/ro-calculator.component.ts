@@ -63,7 +63,7 @@ import { Calculator } from './calculator';
 import { MonsterDataViewComponent } from './monster-data-view/monster-data-view.component';
 import { PresetTableComponent } from './preset-table/preset-table.component';
 import { StatBreakdownDialogComponent } from './stat-breakdown-dialog/stat-breakdown-dialog.component';
-import { BreakdownContext } from './stat-breakdown.model';
+import { BreakdownContext, StatBreakdown } from './stat-breakdown.model';
 
 interface MonsterSelectItemGroup extends SelectItemGroup {
   items: any[];
@@ -1683,8 +1683,17 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     this.preSets = this.preSets.filter((a) => a.value !== presetId);
   }
 
-  openCriBreakdown(context: BreakdownContext) {
-    const breakdown = this.calculator.getCriBreakdown(context, this.totalSummary?.dmg);
+  openBreakdown(stat: string, context: BreakdownContext = 'status') {
+    let breakdown: StatBreakdown | null = null;
+
+    switch (stat) {
+      case 'cri':
+        breakdown = this.calculator.getCriBreakdown(context, this.totalSummary?.dmg);
+        break;
+    }
+
+    if (!breakdown) return;
+
     this.dialogService.open(StatBreakdownDialogComponent, {
       header: breakdown.title,
       width: '420px',
@@ -1693,6 +1702,11 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       dismissableMask: true,
       data: breakdown,
     });
+  }
+
+  onStatBreakdownClick(statContext: string) {
+    const [stat, context] = statContext.split(':') as [string, BreakdownContext];
+    this.openBreakdown(stat, context || 'status');
   }
 
   openPresetManagement() {
