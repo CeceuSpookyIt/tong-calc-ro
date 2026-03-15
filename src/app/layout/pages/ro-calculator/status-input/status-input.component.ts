@@ -13,6 +13,7 @@ export class StatusInputComponent {
   @Output() valueChange = new EventEmitter<number>();
 
   @Input({ required: true }) extraValue: number;
+  @Output() extraValueClick = new EventEmitter<void>();
   @Input() badgeSeverity: 'success' | 'info' | 'warning' | 'danger' = 'info';
   @Input() disabled = false;
 

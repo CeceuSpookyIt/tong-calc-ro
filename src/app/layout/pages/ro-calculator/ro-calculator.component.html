@@ -191,6 +191,7 @@
                     [(value)]="model.str"
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobStr || 0) + (totalSummary?.str || 0)"
+                    (extraValueClick)="openStatBonusBreakdown('str', model.jobStr)"
                   ></app-status-input>
                 </div>
                 <div class="col-6">
@@ -202,6 +203,7 @@
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobPow || 0) + (totalSummary?.pow || 0)"
                     badgeSeverity="danger"
+                    (extraValueClick)="openStatBonusBreakdown('pow', model.jobPow)"
                   ></app-status-input>
                 </div>
               </div>
@@ -215,6 +217,7 @@
                     [(value)]="model.agi"
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobAgi || 0) + (totalSummary?.agi || 0)"
+                    (extraValueClick)="openStatBonusBreakdown('agi', model.jobAgi)"
                   ></app-status-input>
                 </div>
                 <div class="col-6">
@@ -226,6 +229,7 @@
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobSta || 0) + (totalSummary?.sta || 0)"
                     badgeSeverity="danger"
+                    (extraValueClick)="openStatBonusBreakdown('sta', model.jobSta)"
                   ></app-status-input>
                 </div>
               </div>
@@ -239,6 +243,7 @@
                     [(value)]="model.vit"
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobVit || 0) + (totalSummary?.vit || 0)"
+                    (extraValueClick)="openStatBonusBreakdown('vit', model.jobVit)"
                   ></app-status-input>
                 </div>
                 <div class="col-6">
@@ -250,6 +255,7 @@
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobWis || 0) + (totalSummary?.wis || 0)"
                     badgeSeverity="danger"
+                    (extraValueClick)="openStatBonusBreakdown('wis', model.jobWis)"
                   ></app-status-input>
                 </div>
               </div>
@@ -263,6 +269,7 @@
                     [(value)]="model.int"
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobInt || 0) + (totalSummary?.int || 0)"
+                    (extraValueClick)="openStatBonusBreakdown('int', model.jobInt)"
                   ></app-status-input>
                 </div>
                 <div class="col-6">
@@ -274,6 +281,7 @@
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobSpl || 0) + (totalSummary?.spl || 0)"
                     badgeSeverity="danger"
+                    (extraValueClick)="openStatBonusBreakdown('spl', model.jobSpl)"
                   ></app-status-input>
                 </div>
               </div>
@@ -287,6 +295,7 @@
                     [(value)]="model.dex"
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobDex || 0) + (totalSummary?.dex || 0)"
+                    (extraValueClick)="openStatBonusBreakdown('dex', model.jobDex)"
                   ></app-status-input>
                 </div>
                 <div class="col-6">
@@ -298,6 +307,7 @@
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobCon || 0) + (totalSummary?.con || 0)"
                     badgeSeverity="danger"
+                    (extraValueClick)="openStatBonusBreakdown('con', model.jobCon)"
                   ></app-status-input>
                 </div>
               </div>
@@ -311,6 +321,7 @@
                     [(value)]="model.luk"
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobLuk || 0) + (totalSummary?.luk || 0)"
+                    (extraValueClick)="openStatBonusBreakdown('luk', model.jobLuk)"
                   ></app-status-input>
                 </div>
                 <div class="col-6">
@@ -322,6 +333,7 @@
                     (valueChange)="onBaseStatusChange()"
                     [extraValue]="(model.jobCrt || 0) + (totalSummary?.crt || 0)"
                     badgeSeverity="danger"
+                    (extraValueClick)="openStatBonusBreakdown('crt', model.jobCrt)"
                   ></app-status-input>
                 </div>
               </div>

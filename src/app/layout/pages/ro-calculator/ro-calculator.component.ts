@@ -1807,6 +1807,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     });
   }
 
+  openStatBonusBreakdown(statName: string, jobBonus: number) {
+    const breakdown = this.calculator.getStatBonusBreakdown(statName, jobBonus || 0);
+    this.dialogService.open(StatBreakdownDialogComponent, {
+      header: breakdown.title,
+      width: '420px',
+      contentStyle: { overflow: 'auto', 'max-height': '80vh' },
+      baseZIndex: 10000,
+      dismissableMask: true,
+      data: breakdown,
+    });
+  }
+
   onStatBreakdownClick(statContext: string) {
     const [stat, context] = statContext.split(':') as [string, BreakdownContext];
     this.openBreakdown(stat, context || 'status');

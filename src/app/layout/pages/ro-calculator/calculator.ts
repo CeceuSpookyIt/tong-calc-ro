@@ -3355,6 +3355,59 @@ export class Calculator {
     };
   }
 
+  getStatBonusBreakdown(statName: string, jobBonus: number): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+    const label = statName.toUpperCase();
+
+    const entries: BreakdownEntry[] = [];
+
+    // Job Bonus
+    if (jobBonus > 0) {
+      entries.push({ source: 'Job Bonus', slot: 'Class', value: jobBonus, color: 'white' });
+    }
+
+    // Equipment contributions: stat-specific + allStatus (or allTrait for trait stats)
+    const traitStats = ['pow', 'sta', 'wis', 'spl', 'con', 'crt'];
+    const isTrait = traitStats.includes(statName);
+    const allKey = isTrait ? 'allTrait' : 'allStatus';
+
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const s = stats as any;
+      if (!s) continue;
+      const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+      const itemData = this.equipItem.get(slot as any);
+      const itemName = itemData?.name || slotLabel;
+
+      const statVal = s[statName];
+      if (statVal && statVal !== 0) {
+        entries.push({ source: itemName, slot: slotLabel, value: statVal });
+      }
+      const allVal = s[allKey];
+      if (allVal && allVal !== 0) {
+        entries.push({ source: itemName, slot: slotLabel, value: allVal, detail: allKey });
+      }
+    }
+
+    entries.sort((a, b) => (b.value as number) - (a.value as number));
+    const equipTotal = entries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: `${label} Bonus`,
+      entries,
+      subtotal: equipTotal,
+      emptyMessage: `Nenhum bônus de ${label}`,
+    });
+
+    return {
+      title: `${label} Breakdown`,
+      sections,
+      totalLabel: label,
+      totalValue: `+${equipTotal}`,
+    };
+  }
+
   getSkillBonusBreakdown(skillValue: string): StatBreakdown {
     const sections: BreakdownSection[] = [];
     const itemSummaryFull = this.getItemSummary();
