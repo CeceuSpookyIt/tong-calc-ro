@@ -72,6 +72,7 @@ export class CalcValueComponent {
     const avg2 = (this.totalHit2 || 1) * (this._min2 + this.max2) / 2;
 
     const percentage = ((avg2 - avg1) * 100) / avg1;
+    if (!isFinite(percentage)) return '';
     const prefix = percentage > 0 ? '+' : '';
 
     return `(${prefix}${floor(percentage, 1)} %)`;
