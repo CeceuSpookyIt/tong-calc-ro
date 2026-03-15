@@ -1588,6 +1588,20 @@ export class Calculator {
     const c = this.getChanceBonus();
     if (c.length === 0) {
       this.selectedChanceList = [];
+      // Clear effected values when no chances are selected
+      this.damageSummary = {
+        ...this.damageSummary,
+        effectedBasicDamageMin: 0,
+        effectedBasicDamageMax: 0,
+        effectedBasicCriDamageMin: 0,
+        effectedBasicCriDamageMax: 0,
+        effectedBasicDps: 0,
+        effectedBasicHitsPerSec: 0,
+        effectedSkillDamageMin: 0,
+        effectedSkillDamageMax: 0,
+        effectedSkillDps: 0,
+        effectedSkillHitsPerSec: 0,
+      };
       return this;
     }
 

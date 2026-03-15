@@ -566,9 +566,16 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         filter(() => {
           const needCalc = this.selectedChances?.length > 0;
           if (!needCalc) {
-            this.isCalculatingEvent.next(false);
-            this.calculator.setSelectedChances([]);
+            this.calculator.setSelectedChances([]).recalcExtraBonus(this.model.selectedAtkSkill);
+            this.totalSummary = this.calculator.getTotalSummary();
+            if (this.isRedAura) {
+              this.applyRedAuraDivisor(this.totalSummary);
+            }
             this.calculateToSelectedMonsters();
+            if (this.isEnableCompare) {
+              this.onCompareItemChange();
+            }
+            this.isCalculatingEvent.next(false);
           }
 
           return needCalc;
