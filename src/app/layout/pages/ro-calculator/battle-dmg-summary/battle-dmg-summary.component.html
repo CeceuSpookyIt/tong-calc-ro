@@ -580,7 +580,7 @@
   </div>
 
   <!-- Autocast -->
-  <div class="col-12" [hidden]="!totalSummary?.autocast?.entries?.length">
+  <div class="col-12" [hidden]="!totalSummary?.autocast?.entries?.length && !(isEnableCompare && totalSummary2?.autocast?.entries?.length)">
     <div class="grid grid-nogutter">
       <div class="col-12 py-1 divider">
         <p-divider></p-divider>
@@ -610,6 +610,35 @@
             [max]="ac.dps"
           ></app-calc-value>
         </div>
+      </ng-container>
+      <!-- Compare autocast entries (only show entries that differ or are new) -->
+      <ng-container *ngIf="isEnableCompare && totalSummary2?.autocast?.entries?.length">
+        <div class="col-12 mt-1 mb-1">
+          <span class="font-bold summary_compare" style="font-size: 0.8rem;">AUTOCAST (Compare)</span>
+        </div>
+        <ng-container *ngFor="let ac2 of totalSummary2?.autocast?.entries">
+          <div class="col-12">
+            <span class="summary_value font-semibold">{{ ac2.skillName }}</span>
+            <span class="summary_highlight px-1">Lv{{ ac2.skillLevel }}</span>
+            <span class="{{ 'property_' + ac2.element }} px-1 font-semibold">{{ ac2.element }}</span>
+            <span class="summary_monster_value px-1">({{ ac2.chancePercent }}% {{ ac2.trigger }})</span>
+          </div>
+          <div class="col-6">
+            <app-calc-value
+              label="Dmg:"
+              styleClass="summary_compare"
+              [min]="ac2.minDamage"
+              [max]="ac2.maxDamage"
+            ></app-calc-value>
+          </div>
+          <div class="col-6">
+            <app-calc-value
+              label="DPS:"
+              styleClass="summary_compare"
+              [max]="ac2.dps"
+            ></app-calc-value>
+          </div>
+        </ng-container>
       </ng-container>
       <div class="col-12 py-1 divider">
         <p-divider></p-divider>
