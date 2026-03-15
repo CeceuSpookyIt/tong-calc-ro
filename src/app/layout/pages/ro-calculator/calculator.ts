@@ -3393,10 +3393,18 @@ export class Calculator {
     entries.sort((a, b) => (b.value as number) - (a.value as number));
     const equipTotal = entries.reduce((sum, e) => sum + (e.value as number), 0);
 
+    // Check for missing sources (buffs, class skills, consumables, etc.)
+    const totalFromEquipStatus = (this.totalEquipStatus[statName] || 0) + (this.totalEquipStatus[allKey] || 0);
+    const realTotal = jobBonus + totalFromEquipStatus;
+    const additional = realTotal - equipTotal;
+    if (additional !== 0) {
+      entries.push({ source: 'Skill/Class Bonus', slot: 'Skill', value: additional });
+    }
+
     sections.push({
       label: `${label} Bonus`,
       entries,
-      subtotal: equipTotal,
+      subtotal: realTotal,
       emptyMessage: `Nenhum bônus de ${label}`,
     });
 
@@ -3404,7 +3412,7 @@ export class Calculator {
       title: `${label} Breakdown`,
       sections,
       totalLabel: label,
-      totalValue: `+${equipTotal}`,
+      totalValue: `+${realTotal}`,
     };
   }
 
