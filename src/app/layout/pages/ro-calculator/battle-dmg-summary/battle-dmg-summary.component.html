@@ -380,6 +380,52 @@
       <span class="text-lg font-medium px-1 summary_compare">{{ formatTime(totalSummary2?.dmg?.skillBattleTime) }}</span>
     </span>
   </div>
+  <!-- Autocast on skill -->
+  <ng-container *ngIf="totalSummary?.autocast?.onSkillEntries?.length">
+    <div class="col-12 mt-1" style="border-left: 3px solid var(--primary-color); padding-left: 8px; margin-left: 4px;">
+      <span class="font-bold text-primary" style="font-size: 0.8rem;">AUTOCAST (on skill)</span>
+    </div>
+    <ng-container *ngFor="let ac of totalSummary?.autocast?.onSkillEntries">
+      <div class="col-12" style="padding-left: 16px;">
+        <span class="summary_value font-semibold">{{ ac.skillName }}</span>
+        <span class="summary_highlight px-1">Lv{{ ac.skillLevel }}</span>
+        <span class="{{ 'property_' + ac.element }} px-1 font-semibold">{{ ac.element }}</span>
+        <span class="summary_monster_value px-1">({{ ac.chancePercent }}%)</span>
+      </div>
+      <div class="col-6" style="padding-left: 16px;">
+        <app-calc-value label="Dmg:" styleClass="summary_damage" [min]="ac.minDamage" [max]="ac.maxDamage"></app-calc-value>
+      </div>
+      <div class="col-6">
+        <app-calc-value label="DPS:" styleClass="summary_highlight" [max]="ac.dps"></app-calc-value>
+      </div>
+    </ng-container>
+    <div class="col-12" style="padding-left: 16px;">
+      <app-calc-value
+        [enableCompare]="isEnableCompare && totalSummary2?.autocast"
+        label="Autocast DPS:"
+        styleClass="summary_highlight"
+        styleClass2="summary_compare"
+        [max]="totalSummary?.autocast?.onSkillDps"
+        [max2]="totalSummary2?.autocast?.onSkillDps || 0"
+      ></app-calc-value>
+    </div>
+    <div class="col-12" style="padding-left: 16px;">
+      <app-calc-value
+        [enableCompare]="isEnableCompare && totalSummary2?.autocast"
+        label="DPS Total (Skill + AC):"
+        styleClass="summary_chance_hilight"
+        styleClass2="summary_compare"
+        [showPercentDiff]="true"
+        [max]="totalSummary?.autocast?.combinedSkillDps"
+        [max2]="totalSummary2?.autocast?.combinedSkillDps || totalSummary2?.dmg?.skillDps || 0"
+      ></app-calc-value>
+    </div>
+    <div class="col-12" style="padding-left: 16px;" [hidden]="totalSummary?.dmg?.isAutoSpell || !!totalSummary?.dmg?.requireTxt">
+      <span>Tempo: </span>
+      <span class="text-lg font-medium px-1 summary_chance_hilight">{{ formatTime(totalSummary?.autocast?.combinedSkillBattleTime) }}</span>
+      <span style="font-size: 0.75rem; color: var(--text-color-secondary);">(Skill + AC)</span>
+    </div>
+  </ng-container>
   <div class="col-12" [hidden]="totalSummary?.dmg?.effectedSkillDamageMin <= 0 || !selectedChances?.length">
     <app-calc-value
       [enableCompare]="isEnableCompare && totalSummary2?.dmg"
@@ -424,7 +470,7 @@
   <div class="col-12" [hidden]="hideBasicAtk">
     <div class="grid grid-nogutter">
       <div class="col-12 mb-1">
-        <span class="font-bold text-primary" style="font-size: 0.9rem; letter-spacing: 0.05em;">ATQ BÁSICO</span>
+        <span class="font-bold text-primary" style="font-size: 0.9rem; letter-spacing: 0.05em;">AUTO ATAQUE</span>
         <span class="summary_monster_value px-1 font-bold" style="color: var(--red-500); font-size: 0.75rem;" [hidden]="!showLeftWeapon || !model.leftWeapon">***ATK mão esquerda não calculado</span>
       </div>
       <div class="col-6">
@@ -589,95 +635,78 @@
           [max2]="totalSummary2?.dmg?.effectedBasicDps || totalSummary2?.dmg?.basicDps"
         ></app-calc-value>
       </div>
+      <!-- Autocast on hit -->
+      <ng-container *ngIf="totalSummary?.autocast?.onHitEntries?.length">
+        <div class="col-12 mt-1" style="border-left: 3px solid var(--primary-color); padding-left: 8px; margin-left: 4px;">
+          <span class="font-bold text-primary" style="font-size: 0.8rem;">AUTOCAST (on hit)</span>
+        </div>
+        <ng-container *ngFor="let ac of totalSummary?.autocast?.onHitEntries">
+          <div class="col-12" style="padding-left: 16px;">
+            <span class="summary_value font-semibold">{{ ac.skillName }}</span>
+            <span class="summary_highlight px-1">Lv{{ ac.skillLevel }}</span>
+            <span class="{{ 'property_' + ac.element }} px-1 font-semibold">{{ ac.element }}</span>
+            <span class="summary_monster_value px-1">({{ ac.chancePercent }}%)</span>
+          </div>
+          <div class="col-6" style="padding-left: 16px;">
+            <app-calc-value label="Dmg:" styleClass="summary_damage" [min]="ac.minDamage" [max]="ac.maxDamage"></app-calc-value>
+          </div>
+          <div class="col-6">
+            <app-calc-value label="DPS:" styleClass="summary_highlight" [max]="ac.dps"></app-calc-value>
+          </div>
+        </ng-container>
+        <div class="col-12" style="padding-left: 16px;">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.autocast"
+            label="Autocast DPS:"
+            styleClass="summary_highlight"
+            styleClass2="summary_compare"
+            [max]="totalSummary?.autocast?.onHitDps"
+            [max2]="totalSummary2?.autocast?.onHitDps || 0"
+          ></app-calc-value>
+        </div>
+        <div class="col-12" style="padding-left: 16px;">
+          <app-calc-value
+            [enableCompare]="isEnableCompare && totalSummary2?.autocast"
+            label="DPS Total (Auto Ataque + AC):"
+            styleClass="summary_chance_hilight"
+            styleClass2="summary_compare"
+            [showPercentDiff]="true"
+            [max]="totalSummary?.autocast?.combinedBasicDps"
+            [max2]="totalSummary2?.autocast?.combinedBasicDps || totalSummary2?.dmg?.basicDps || 0"
+          ></app-calc-value>
+        </div>
+        <div class="col-12" style="padding-left: 16px;">
+          <span>Tempo: </span>
+          <span class="text-lg font-medium px-1 summary_chance_hilight">{{ formatTime(totalSummary?.autocast?.combinedBasicBattleTime) }}</span>
+          <span style="font-size: 0.75rem; color: var(--text-color-secondary);">(Auto Ataque + AC)</span>
+        </div>
+      </ng-container>
     </div>
   </div>
 
-  <!-- Autocast -->
-  <div class="col-12" [hidden]="!totalSummary?.autocast?.entries?.length && !(isEnableCompare && totalSummary2?.autocast?.entries?.length)">
+  <!-- Autocast on hurt (separate section, if any) -->
+  <div class="col-12" *ngIf="totalSummary?.autocast?.onHurtEntries?.length">
     <div class="grid grid-nogutter">
       <div class="col-12 py-1 divider">
         <p-divider></p-divider>
       </div>
       <div class="col-12 mb-1">
-        <span class="font-bold text-primary" style="font-size: 0.9rem; letter-spacing: 0.05em;">AUTOCAST</span>
+        <span class="font-bold text-primary" style="font-size: 0.9rem; letter-spacing: 0.05em;">AUTOCAST (on hurt)</span>
       </div>
-      <ng-container *ngFor="let ac of totalSummary?.autocast?.entries">
+      <ng-container *ngFor="let ac of totalSummary?.autocast?.onHurtEntries">
         <div class="col-12">
           <span class="summary_value font-semibold">{{ ac.skillName }}</span>
           <span class="summary_highlight px-1">Lv{{ ac.skillLevel }}</span>
           <span class="{{ 'property_' + ac.element }} px-1 font-semibold">{{ ac.element }}</span>
-          <span class="summary_monster_value px-1">({{ ac.chancePercent }}% {{ ac.trigger }})</span>
+          <span class="summary_monster_value px-1">({{ ac.chancePercent }}%)</span>
         </div>
         <div class="col-6">
-          <app-calc-value
-            label="Dmg:"
-            styleClass="summary_damage"
-            [min]="ac.minDamage"
-            [max]="ac.maxDamage"
-          ></app-calc-value>
+          <app-calc-value label="Dmg:" styleClass="summary_damage" [min]="ac.minDamage" [max]="ac.maxDamage"></app-calc-value>
         </div>
         <div class="col-6">
-          <app-calc-value
-            label="DPS:"
-            styleClass="summary_highlight"
-            [max]="ac.dps"
-          ></app-calc-value>
+          <app-calc-value label="DPS:" styleClass="summary_highlight" [max]="ac.dps"></app-calc-value>
         </div>
       </ng-container>
-      <!-- Compare autocast entries (only show entries that differ or are new) -->
-      <ng-container *ngIf="isEnableCompare && totalSummary2?.autocast?.entries?.length">
-        <div class="col-12 mt-1 mb-1">
-          <span class="font-bold summary_compare" style="font-size: 0.8rem;">AUTOCAST (Compare)</span>
-        </div>
-        <ng-container *ngFor="let ac2 of totalSummary2?.autocast?.entries">
-          <div class="col-12">
-            <span class="summary_value font-semibold">{{ ac2.skillName }}</span>
-            <span class="summary_highlight px-1">Lv{{ ac2.skillLevel }}</span>
-            <span class="{{ 'property_' + ac2.element }} px-1 font-semibold">{{ ac2.element }}</span>
-            <span class="summary_monster_value px-1">({{ ac2.chancePercent }}% {{ ac2.trigger }})</span>
-          </div>
-          <div class="col-6">
-            <app-calc-value
-              label="Dmg:"
-              styleClass="summary_compare"
-              [min]="ac2.minDamage"
-              [max]="ac2.maxDamage"
-            ></app-calc-value>
-          </div>
-          <div class="col-6">
-            <app-calc-value
-              label="DPS:"
-              styleClass="summary_compare"
-              [max]="ac2.dps"
-            ></app-calc-value>
-          </div>
-        </ng-container>
-      </ng-container>
-      <div class="col-12 py-1 divider">
-        <p-divider></p-divider>
-      </div>
-      <div class="col-12">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.autocast"
-          label="Autocast DPS:"
-          styleClass="summary_highlight"
-          styleClass2="summary_compare"
-          [showPercentDiff]="true"
-          [max]="totalSummary?.autocast?.totalDps"
-          [max2]="totalSummary2?.autocast?.totalDps || 0"
-        ></app-calc-value>
-      </div>
-      <div class="col-12">
-        <app-calc-value
-          [enableCompare]="isEnableCompare && totalSummary2?.autocast"
-          label="DPS Total (Básico + Autocast):"
-          styleClass="summary_chance_hilight"
-          styleClass2="summary_compare"
-          [showPercentDiff]="true"
-          [max]="totalSummary?.autocast?.combinedBasicDps"
-          [max2]="totalSummary2?.autocast?.combinedBasicDps || totalSummary2?.dmg?.basicDps || 0"
-        ></app-calc-value>
-      </div>
     </div>
   </div>
 </div>

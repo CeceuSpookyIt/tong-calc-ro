@@ -910,6 +910,9 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       const dmgKeys = [
         'basicMinDamage', 'basicMaxDamage', 'criMinDamage', 'criMaxDamage',
         'skillMinDamage', 'skillMaxDamage', 'skillCriMinDamage', 'skillCriMaxDamage',
+        'skillMinDamageNoCri', 'skillMaxDamageNoCri',
+        'noStackMinCriDamage', 'noStackMaxCriDamage',
+        'skillMinDamage2', 'skillMaxDamage2',
         'effectedBasicDamageMin', 'effectedBasicDamageMax',
         'effectedBasicCriDamageMin', 'effectedBasicCriDamageMax',
         'effectedSkillDamageMin', 'effectedSkillDamageMax',
@@ -929,12 +932,21 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
     }
     const ac = summary.autocast;
     if (ac) {
-      if (typeof ac.totalDps === 'number') ac.totalDps = Math.floor(ac.totalDps / 1000);
-      if (typeof ac.combinedBasicDps === 'number') ac.combinedBasicDps = Math.floor(ac.combinedBasicDps / 1000);
-      for (const entry of ac.entries || []) {
-        for (const key of ['minDamage', 'maxDamage', 'avgDamage', 'dps']) {
-          if (typeof entry[key] === 'number') entry[key] = Math.floor(entry[key] / 1000);
+      for (const dpsKey of ['totalDps', 'onSkillDps', 'onHitDps', 'combinedSkillDps', 'combinedBasicDps']) {
+        if (typeof ac[dpsKey] === 'number') ac[dpsKey] = Math.floor(ac[dpsKey] / 1000);
+      }
+      for (const entryList of [ac.entries, ac.onSkillEntries, ac.onHitEntries, ac.onHurtEntries]) {
+        for (const entry of entryList || []) {
+          for (const key of ['minDamage', 'maxDamage', 'avgDamage', 'dps']) {
+            if (typeof entry[key] === 'number') entry[key] = Math.floor(entry[key] / 1000);
+          }
         }
+      }
+      // Recalculate combined battle times with reduced DPS
+      const monsterHp = this.monsterDataMap[this.selectedMonster]?.stats?.health;
+      if (monsterHp) {
+        if (ac.combinedSkillDps > 0) ac.combinedSkillBattleTime = Math.round((monsterHp / ac.combinedSkillDps) * 10) / 10;
+        if (ac.combinedBasicDps > 0) ac.combinedBasicBattleTime = Math.round((monsterHp / ac.combinedBasicDps) * 10) / 10;
       }
     }
     if (summary.calc) {

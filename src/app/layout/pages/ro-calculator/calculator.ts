@@ -361,6 +361,8 @@ export class Calculator {
   private autocastEntries: AutocastEntry[] = [];
   private autocastSummaries: AutocastDamageSummary[] = [];
   private autocastTotalDps = 0;
+  private autocastOnSkillDps = 0;
+  private autocastOnHitDps = 0;
   private possiblyDamages: any[] = [];
 
   get chanceList() {
@@ -1469,6 +1471,8 @@ export class Calculator {
   private calculateAutocastDamages() {
     this.autocastSummaries = [];
     this.autocastTotalDps = 0;
+    this.autocastOnSkillDps = 0;
+    this.autocastOnHitDps = 0;
 
     if (this.autocastEntries.length === 0) return;
 
@@ -1561,6 +1565,11 @@ export class Calculator {
       });
 
       this.autocastTotalDps += dps;
+      if (entry.trigger === 'onskill') {
+        this.autocastOnSkillDps += dps;
+      } else if (entry.trigger === 'onhit') {
+        this.autocastOnHitDps += dps;
+      }
     }
   }
 
@@ -1781,9 +1790,23 @@ export class Calculator {
         ...this.damageSummary,
       },
       autocast: {
-        entries: this.autocastSummaries,
+        entries: this.autocastSummaries.map((a) => ({ ...a })),
+        onSkillEntries: this.autocastSummaries.filter((a) => a.trigger === 'onskill').map((a) => ({ ...a })),
+        onHitEntries: this.autocastSummaries.filter((a) => a.trigger === 'onhit').map((a) => ({ ...a })),
+        onHurtEntries: this.autocastSummaries.filter((a) => a.trigger === 'onhurt').map((a) => ({ ...a })),
         totalDps: this.autocastTotalDps,
-        combinedBasicDps: (this.damageSummary.basicDps || 0) + this.autocastTotalDps,
+        onSkillDps: this.autocastOnSkillDps,
+        onHitDps: this.autocastOnHitDps,
+        combinedSkillDps: (this.damageSummary.skillDps || 0) + this.autocastOnSkillDps,
+        combinedBasicDps: (this.damageSummary.basicDps || 0) + this.autocastOnHitDps,
+        combinedSkillBattleTime: (() => {
+          const combined = (this.damageSummary.skillDps || 0) + this.autocastOnSkillDps;
+          return combined > 0 ? Math.round((this.monster.data.hp / combined) * 10) / 10 : 0;
+        })(),
+        combinedBasicBattleTime: (() => {
+          const combined = (this.damageSummary.basicDps || 0) + this.autocastOnHitDps;
+          return combined > 0 ? Math.round((this.monster.data.hp / combined) * 10) / 10 : 0;
+        })(),
       },
       equipments: [...this.equipItemNameSet.keys()],
     };
