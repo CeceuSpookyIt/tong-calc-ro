@@ -937,7 +937,7 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       }
       for (const entryList of [ac.entries, ac.onSkillEntries, ac.onHitEntries, ac.onHurtEntries]) {
         for (const entry of entryList || []) {
-          for (const key of ['minDamage', 'maxDamage', 'avgDamage', 'dps']) {
+          for (const key of ['minDamage', 'maxDamage', 'criMinDamage', 'criMaxDamage', 'avgDamage', 'dps']) {
             if (typeof entry[key] === 'number') entry[key] = Math.floor(entry[key] / 1000);
           }
         }
@@ -1824,6 +1824,18 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
         break;
       case 'skillBonus':
         breakdown = this.calculator.getSkillBonusBreakdown(this.model.selectedAtkSkill);
+        break;
+      case 'race':
+        breakdown = this.calculator.getRaceBreakdown();
+        break;
+      case 'sizeVsMonster':
+        breakdown = this.calculator.getSizeVsMonsterBreakdown();
+        break;
+      case 'monsterType':
+        breakdown = this.calculator.getMonsterTypeBreakdown();
+        break;
+      case 'elementVsMonster':
+        breakdown = this.calculator.getElementVsMonsterBreakdown();
         break;
     }
 

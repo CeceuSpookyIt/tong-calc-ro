@@ -154,6 +154,60 @@ export class DamageCalculator {
     return this;
   }
 
+  /**
+   * Calculate fixed damage for autocast skills (e.g., Storm Blast).
+   * The formula gives base damage directly; only element/race/size/class/DEF modifiers apply.
+   */
+  calcFixedAutocastDamage(params: { baseDamage: number; isMelee: boolean; canCri: boolean; criDmgPercentage: number; }) {
+    const { baseDamage, isMelee, canCri, criDmgPercentage } = params;
+    const atkType = 'p';
+    const race = this.toPercent(this.getRaceMultiplier(atkType));
+    const size = this.toPercent(this.getSizeMultiplier(atkType));
+    const element = this.toPercent(this.getElementMultiplier(atkType));
+    const monsterType = this.toPercent(this.getMonsterTypeMultiplier(atkType));
+    const { finalDmgReduction, finalSoftDef, resReduction } = this.getPhisicalDefData();
+    const { melee, range, criDmg } = this.totalBonus;
+    const rangedBonus = isMelee ? (melee || 0) : (range || 0);
+    const rangedMultiplier = this.toPercent(rangedBonus + 100);
+    const debuffMultiplier = this.getDebuffMultiplier(isMelee ? SkillType.MELEE : SkillType.RANGE);
+
+    let dmg = floor(baseDamage);
+    dmg = floor(dmg * race);
+    dmg = floor(dmg * size);
+    dmg = floor(dmg * element);
+    dmg = floor(dmg * monsterType);
+    dmg = floor(dmg * rangedMultiplier);
+    dmg = floor(dmg * resReduction);
+    dmg = floor(dmg * finalDmgReduction);
+    dmg = dmg - finalSoftDef;
+    dmg = floor(dmg * debuffMultiplier);
+    dmg = Math.max(1, dmg);
+
+    let criDmgValue = 0;
+    if (canCri) {
+      const criDmgBonus = floor((criDmg || 0) * criDmgPercentage);
+      const criMultiplier = this.toPercent(criDmgBonus + 100);
+      let cDmg = floor(baseDamage);
+      cDmg = floor(cDmg * race);
+      cDmg = floor(cDmg * size);
+      cDmg = floor(cDmg * element);
+      cDmg = floor(cDmg * monsterType);
+      cDmg = floor(cDmg * criMultiplier);
+      cDmg = floor(cDmg * rangedMultiplier);
+      cDmg = floor(cDmg * resReduction);
+      cDmg = floor(cDmg * finalDmgReduction);
+      cDmg = cDmg - finalSoftDef;
+      cDmg = floor(cDmg * this.criMultiplier);
+      cDmg = floor(cDmg * debuffMultiplier);
+      cDmg = Math.max(1, cDmg);
+      criDmgValue = cDmg;
+    }
+
+    const criRate = canCri ? Math.min(100, this.getBaseCriRate(true)) / 100 : 0;
+
+    return { damage: dmg, criDamage: criDmgValue, criRate };
+  }
+
   setExtraBonus(extraBonus: Record<keyof EquipmentSummaryModel, number>[]) {
     const totalBonus = { ...this._totalEquipStatus };
     for (const bonus of extraBonus) {

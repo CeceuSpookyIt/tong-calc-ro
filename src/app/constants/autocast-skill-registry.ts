@@ -4,9 +4,15 @@ export interface AutocastSkillDef {
   name: string;
   isMatk: boolean;
   isMelee: boolean;
-  element: ElementType;
+  element: ElementType | null;
   hit: number;
   totalHit: number;
+  canCri?: boolean;
+  criDmgPercentage?: number;
+  /** If true, formula returns flat damage (not ATK%), only modified by element/race/size/class/def */
+  isFixedDamage?: boolean;
+  /** If set, skill level comes from this learned skill instead of the autocast entry level */
+  linkedSkill?: string;
   formula: (params: { skillLevel: number; baseLevel: number; str?: number; int?: number; agi?: number }) => number;
 }
 
@@ -162,10 +168,13 @@ export const AUTOCAST_SKILL_REGISTRY: Record<string, AutocastSkillDef> = {
     name: 'Runic Explosion',
     isMatk: false,
     isMelee: true,
-    element: ElementType.Neutral,
+    element: null,
     hit: 1,
     totalHit: 1,
-    formula: ({ skillLevel, baseLevel, str }) => (skillLevel + (str || 0) / 8) * 140 * (baseLevel / 100),
+    canCri: true,
+    criDmgPercentage: 1,
+    linkedSkill: 'Rune Mastery',
+    formula: ({ skillLevel, baseLevel, str }) => (skillLevel + (str || 0) / 5.7) * 100 * (baseLevel / 100),
   },
   'Earth Spike': {
     name: 'Earth Spike',

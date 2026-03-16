@@ -10,6 +10,7 @@ export class BattleMonsterSummaryComponent {
   @Input({ required: true }) isInProcessingPreset: boolean;
 
   @Output() showElementTableClick = new EventEmitter<any>();
+  @Output() statBreakdownClick = new EventEmitter<string>();
 
   constructor() {}
 

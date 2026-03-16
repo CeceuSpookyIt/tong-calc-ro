@@ -1498,6 +1498,10 @@ export class Calculator {
       if (!skillDef) continue;
 
       let finalLevel = entry.skillLevel;
+      if (skillDef.linkedSkill) {
+        const linkedLevel = this.learnedSkillMap.get(skillDef.linkedSkill) || 0;
+        if (linkedLevel > 0) finalLevel = linkedLevel;
+      }
       if (entry.useLearned) {
         const learnedLevel = this.learnedSkillMap.get(entry.skillName) || 0;
         const offensiveLevel = entry.skillName === this.skillName ? this.offensiveSkillLevel : 0;
@@ -1505,39 +1509,79 @@ export class Calculator {
       }
 
       const skillValue = `${entry.skillName}==${finalLevel}`;
-      const tempSkillData: AtkSkillModel = {
-        label: `${entry.skillName} Lv${finalLevel}`,
-        name: entry.skillName as any,
-        value: skillValue,
-        acd: 0,
-        fct: 0,
-        vct: 0,
-        cd: 0,
-        hit: skillDef.hit,
-        totalHit: skillDef.totalHit,
-        isMatk: skillDef.isMatk,
-        isMelee: skillDef.isMelee,
-        element: skillDef.element,
-        isHit100: true,
-        autoSpellChance: entry.chancePercent / 100,
-        formula: () => skillDef.formula({ skillLevel: finalLevel, baseLevel: this.model.level || 1, str: this.model.str || 0, int: this.model.int || 0, agi: this.model.agi || 0 }),
-      };
+      const baseDamage = skillDef.formula({ skillLevel: finalLevel, baseLevel: this.model.level || 1, str: this.model.str || 0, int: this.model.int || 0, agi: this.model.agi || 0 });
 
-      const result = this.dmgCalculator
-        .setExtraBonus([])
-        .calculateAllDamages({
-          skillValue,
-          propertyAtk: skillDef.element,
-          maxHp: this.maxHp,
-          maxSp: this.maxSp,
-          overrideSkillData: tempSkillData,
+      let skillMinDamage: number, skillMaxDamage: number;
+      let skillMinDamageNoCri: number, skillMaxDamageNoCri: number;
+      let criRate = 0;
+
+      if (skillDef.isFixedDamage) {
+        // Fixed damage: formula gives base damage directly, apply modifiers without ATK
+        const fixedResult = this.dmgCalculator.calcFixedAutocastDamage({
+          baseDamage,
+          isMelee: skillDef.isMelee,
+          canCri: !!skillDef.canCri,
+          criDmgPercentage: skillDef.criDmgPercentage ?? 1,
         });
+        skillMinDamage = fixedResult.criDamage || fixedResult.damage;
+        skillMaxDamage = fixedResult.criDamage || fixedResult.damage;
+        skillMinDamageNoCri = fixedResult.damage;
+        skillMaxDamageNoCri = fixedResult.damage;
+        criRate = fixedResult.criRate;
+      } else {
+        // Normal autocast: formula gives skill% applied to ATK
+        // Use weapon element when skillDef.element is null
+        const autocastElement = skillDef.element || this.propertyBasicAtk;
+        const tempSkillData: AtkSkillModel = {
+          label: `${entry.skillName} Lv${finalLevel}`,
+          name: entry.skillName as any,
+          value: skillValue,
+          acd: 0,
+          fct: 0,
+          vct: 0,
+          cd: 0,
+          hit: skillDef.hit,
+          totalHit: skillDef.totalHit,
+          isMatk: skillDef.isMatk,
+          isMelee: skillDef.isMelee,
+          element: autocastElement,
+          isHit100: true,
+          canCri: !!skillDef.canCri,
+          criDmgPercentage: skillDef.criDmgPercentage ?? 1,
+          autoSpellChance: entry.chancePercent / 100,
+          formula: () => baseDamage,
+        };
 
-      if (!result.skillDmg) continue;
+        const result = this.dmgCalculator
+          .setExtraBonus([])
+          .calculateAllDamages({
+            skillValue,
+            propertyAtk: autocastElement,
+            maxHp: this.maxHp,
+            maxSp: this.maxSp,
+            overrideSkillData: tempSkillData,
+          });
 
-      const { skillMinDamage, skillMaxDamage } = result.skillDmg;
-      const avgDamage = floor((skillMinDamage + skillMaxDamage) / 2);
+        if (!result.skillDmg) continue;
+
+        skillMinDamage = result.skillDmg.skillMinDamage;
+        skillMaxDamage = result.skillDmg.skillMaxDamage;
+        skillMinDamageNoCri = result.skillDmg.skillMinDamageNoCri;
+        skillMaxDamageNoCri = result.skillDmg.skillMaxDamageNoCri;
+        criRate = Math.min(100, result.skillDmg.skillCriRateToMonster) / 100;
+      }
+
       const totalHit = skillDef.totalHit;
+
+      // If skill can crit, calculate weighted average damage with crit
+      let avgDamage: number;
+      if (skillDef.canCri && criRate > 0) {
+        const avgNormal = floor(((skillMinDamageNoCri || skillMinDamage) + (skillMaxDamageNoCri || skillMaxDamage)) / 2);
+        const avgCri = floor((skillMinDamage + skillMaxDamage) / 2);
+        avgDamage = floor(avgNormal * (1 - criRate) + avgCri * criRate);
+      } else {
+        avgDamage = floor((skillMinDamage + skillMaxDamage) / 2);
+      }
 
       let procsPerSec = 0;
       if (entry.trigger === 'onhit') {
@@ -1556,12 +1600,14 @@ export class Calculator {
         chancePercent: entry.chancePercent,
         trigger: entry.trigger,
         sourceItemName: entry.sourceItemName,
-        minDamage: skillMinDamage,
-        maxDamage: skillMaxDamage,
+        minDamage: skillDef.canCri ? (skillMinDamageNoCri || skillMinDamage) : skillMinDamage,
+        maxDamage: skillDef.canCri ? (skillMaxDamageNoCri || skillMaxDamage) : skillMaxDamage,
+        criMinDamage: skillDef.canCri ? skillMinDamage : undefined,
+        criMaxDamage: skillDef.canCri ? skillMaxDamage : undefined,
         avgDamage,
         dps,
         isMatk: skillDef.isMatk,
-        element: skillDef.element,
+        element: skillDef.element || this.propertyBasicAtk,
       });
 
       this.autocastTotalDps += dps;
@@ -3763,6 +3809,186 @@ export class Calculator {
       sections,
       totalLabel: 'Size Penalty',
       totalValue: `${penalty}%`,
+    };
+  }
+
+  getRaceBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+    const monsterRace = this.monster.race;
+
+    const entries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const statObj = stats as any;
+      if (!statObj) continue;
+      for (const [key, val] of Object.entries(statObj)) {
+        if (!val || (val as number) === 0) continue;
+        let suffix: string | null = null;
+        let label = '';
+        if (key.startsWith('p_race_')) {
+          suffix = key.replace('p_race_', '');
+          label = `Phys ${suffix}`;
+        } else if (key.startsWith('m_race_')) {
+          suffix = key.replace('m_race_', '');
+          label = `Mag ${suffix}`;
+        }
+        if (!suffix || (suffix !== 'all' && suffix !== monsterRace)) continue;
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        entries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+      }
+    }
+    entries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const total = entries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: `Race Damage (${monsterRace})`,
+      entries,
+      subtotal: total,
+      emptyMessage: 'Nenhum equipamento com bônus de raça',
+    });
+
+    return {
+      title: 'Race Breakdown',
+      sections,
+      totalLabel: 'Race',
+      totalValue: `${100 + total}%`,
+    };
+  }
+
+  getSizeVsMonsterBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+    const monsterSize = this.monster.size;
+
+    const entries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const statObj = stats as any;
+      if (!statObj) continue;
+      for (const [key, val] of Object.entries(statObj)) {
+        if (!val || (val as number) === 0) continue;
+        let suffix: string | null = null;
+        let label = '';
+        if (key.startsWith('p_size_')) {
+          suffix = key.replace('p_size_', '');
+          label = `Phys ${suffix}`;
+        } else if (key.startsWith('m_size_')) {
+          suffix = key.replace('m_size_', '');
+          label = `Mag ${suffix}`;
+        }
+        if (!suffix || (suffix !== 'all' && suffix !== monsterSize)) continue;
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        entries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+      }
+    }
+    entries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const total = entries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: `Size Damage (${monsterSize})`,
+      entries,
+      subtotal: total,
+      emptyMessage: 'Nenhum equipamento com bônus de tamanho',
+    });
+
+    return {
+      title: 'Size Breakdown',
+      sections,
+      totalLabel: 'Size',
+      totalValue: `${100 + total}%`,
+    };
+  }
+
+  getMonsterTypeBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+    const monsterType = this.monster.type;
+
+    const entries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const statObj = stats as any;
+      if (!statObj) continue;
+      for (const [key, val] of Object.entries(statObj)) {
+        if (!val || (val as number) === 0) continue;
+        let suffix: string | null = null;
+        let label = '';
+        if (key.startsWith('p_class_')) {
+          suffix = key.replace('p_class_', '');
+          label = `Phys ${suffix}`;
+        } else if (key.startsWith('m_class_')) {
+          suffix = key.replace('m_class_', '');
+          label = `Mag ${suffix}`;
+        }
+        if (!suffix || (suffix !== 'all' && suffix !== monsterType)) continue;
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        entries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+      }
+    }
+    entries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const total = entries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: `Class Damage (${monsterType})`,
+      entries,
+      subtotal: total,
+      emptyMessage: 'Nenhum equipamento com bônus de classe',
+    });
+
+    return {
+      title: 'Class Breakdown',
+      sections,
+      totalLabel: 'Class',
+      totalValue: `${100 + total}%`,
+    };
+  }
+
+  getElementVsMonsterBreakdown(): StatBreakdown {
+    const sections: BreakdownSection[] = [];
+    const itemSummaryFull = this.getItemSummary();
+    const monsterElement = this.monster.element;
+
+    const entries: BreakdownEntry[] = [];
+    for (const [slot, stats] of Object.entries(itemSummaryFull)) {
+      if (slot === 'consumableBonuses') continue;
+      const statObj = stats as any;
+      if (!statObj) continue;
+      for (const [key, val] of Object.entries(statObj)) {
+        if (!val || (val as number) === 0) continue;
+        let suffix: string | null = null;
+        let label = '';
+        if (key.startsWith('p_element_')) {
+          suffix = key.replace('p_element_', '');
+          label = `Phys ${suffix}`;
+        } else if (key.startsWith('m_element_')) {
+          suffix = key.replace('m_element_', '');
+          label = `Mag ${suffix}`;
+        }
+        if (!suffix || (suffix !== 'all' && suffix !== monsterElement)) continue;
+        const itemData = this.equipItem.get(slot as any);
+        const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
+        entries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+      }
+    }
+    entries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const total = entries.reduce((sum, e) => sum + (e.value as number), 0);
+
+    sections.push({
+      label: `Element Damage vs ${monsterElement}`,
+      entries,
+      subtotal: total,
+      emptyMessage: 'Nenhum equipamento com bônus vs elemento',
+    });
+
+    return {
+      title: 'Element vs Monster Breakdown',
+      sections,
+      totalLabel: 'Element',
+      totalValue: `${100 + total}%`,
     };
   }
 

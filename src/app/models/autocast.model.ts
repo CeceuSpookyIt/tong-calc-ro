@@ -17,6 +17,8 @@ export interface AutocastDamageSummary {
   sourceItemName: string;
   minDamage: number;
   maxDamage: number;
+  criMinDamage?: number;
+  criMaxDamage?: number;
   avgDamage: number;
   dps: number;
   isMatk: boolean;

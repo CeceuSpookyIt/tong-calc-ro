@@ -10,8 +10,8 @@
   </div>
   <div class="col-7">
     Element:
-    <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{ totalSummary?.calcSkill?.propertySkill }}</span
-    ><span class="summary_highlight px-2" style="cursor:pointer;" (click)="statBreakdownClick.emit('element:skill')">( x {{ totalSummary?.dmg?.skillPropertyMultiplier }})</span>
+    <span class="{{ 'property_' + totalSummary?.calcSkill?.propertySkill }} px-1 font-semibold">{{ totalSummary?.calcSkill?.propertySkill }}</span>
+    <span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.skillPropertyMultiplier }})</span>
     <span>
       <button
         pButton
@@ -398,6 +398,9 @@
       <div class="col-6">
         <app-calc-value label="DPS:" styleClass="summary_highlight" [max]="ac.dps"></app-calc-value>
       </div>
+      <div class="col-6" style="padding-left: 16px;" *ngIf="ac.criMinDamage">
+        <app-calc-value label="CriDmg:" styleClass="summary_damage" [min]="ac.criMinDamage" [max]="ac.criMaxDamage"></app-calc-value>
+      </div>
     </ng-container>
     <div class="col-12" style="padding-left: 16px;">
       <app-calc-value
@@ -475,8 +478,8 @@
       </div>
       <div class="col-6">
         Element:
-        <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{ totalSummary?.propertyAtk }}</span
-        ><span class="summary_highlight px-2" style="cursor:pointer;" (click)="statBreakdownClick.emit('element:basic')">( x {{ totalSummary?.dmg?.propertyMultiplier }})</span>
+        <span class="{{ 'property_' + totalSummary?.propertyAtk }} px-1 font-semibold">{{ totalSummary?.propertyAtk }}</span>
+        <span class="summary_highlight px-2">( x {{ totalSummary?.dmg?.propertyMultiplier }})</span>
       </div>
       <div class="col-6">
         <span style="cursor:pointer;" (click)="statBreakdownClick.emit('sizePenalty:basic')">
@@ -653,6 +656,9 @@
           <div class="col-6">
             <app-calc-value label="DPS:" styleClass="summary_highlight" [max]="ac.dps"></app-calc-value>
           </div>
+          <div class="col-6" style="padding-left: 16px;" *ngIf="ac.criMinDamage">
+            <app-calc-value label="CriDmg:" styleClass="summary_damage" [min]="ac.criMinDamage" [max]="ac.criMaxDamage"></app-calc-value>
+          </div>
         </ng-container>
         <div class="col-12" style="padding-left: 16px;">
           <app-calc-value
@@ -705,6 +711,9 @@
         </div>
         <div class="col-6">
           <app-calc-value label="DPS:" styleClass="summary_highlight" [max]="ac.dps"></app-calc-value>
+        </div>
+        <div class="col-6" *ngIf="ac.criMinDamage">
+          <app-calc-value label="CriDmg:" styleClass="summary_damage" [min]="ac.criMinDamage" [max]="ac.criMaxDamage"></app-calc-value>
         </div>
       </ng-container>
     </div>
