@@ -685,6 +685,13 @@ export class Calculator {
       return calc(learned, Number(skillLv));
     }
 
+    // level:Soul Destroyer---1
+    const skillLevelMatch = condition.match(/^level:(\D.+)$/);
+    if (skillLevelMatch && bonusNum) {
+      const skillLevel = this.learnedSkillMap.get(skillLevelMatch[1]) || 0;
+      return skillLevel * bonusNum;
+    }
+
     // level:1(125)---1
     // level:1(1-125)---1
     const [, everyBaseLv, range] = condition.match(/level:(-*\d+)\((.+)\)/) ?? [];

@@ -400,7 +400,9 @@ export abstract class CharacterBase {
       const { bonus, isUse, skillLv, value } = skill.dropdown.find((x) => x.value === this.activeSkillIds[index]) ?? {};
       if (!isUse) return;
 
-      usedSkillMap.set(skill.name, skillLv ?? Number(value));
+      const level = skillLv ?? Number(value);
+      usedSkillMap.set(skill.name, level);
+      learnedSkillMap.set(skill.name, level);
       activeSkillNames.add(skill.name);
       if (!bonus) return;
 
