@@ -3832,7 +3832,8 @@ export class Calculator {
     const itemSummaryFull = this.getItemSummary();
     const monsterRace = this.monster.race;
 
-    const entries: BreakdownEntry[] = [];
+    const physEntries: BreakdownEntry[] = [];
+    const magEntries: BreakdownEntry[] = [];
     for (const [slot, stats] of Object.entries(itemSummaryFull)) {
       if (slot === 'consumableBonuses') continue;
       const statObj = stats as any;
@@ -3840,35 +3841,45 @@ export class Calculator {
       for (const [key, val] of Object.entries(statObj)) {
         if (!val || (val as number) === 0) continue;
         let suffix: string | null = null;
-        let label = '';
+        let isPhys = false;
         if (key.startsWith('p_race_')) {
           suffix = key.replace('p_race_', '');
-          label = `Phys ${suffix}`;
+          isPhys = true;
         } else if (key.startsWith('m_race_')) {
           suffix = key.replace('m_race_', '');
-          label = `Mag ${suffix}`;
         }
         if (!suffix || (suffix !== 'all' && suffix !== monsterRace)) continue;
         const itemData = this.equipItem.get(slot as any);
         const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
-        entries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+        const label = isPhys ? `Phys ${suffix}` : `Mag ${suffix}`;
+        const entry = { source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number };
+        if (isPhys) physEntries.push(entry); else magEntries.push(entry);
       }
     }
-    entries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
-    const total = entries.reduce((sum, e) => sum + (e.value as number), 0);
+    physEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    magEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const physTotal = physEntries.reduce((sum, e) => sum + (e.value as number), 0);
+    const magTotal = magEntries.reduce((sum, e) => sum + (e.value as number), 0);
 
     sections.push({
-      label: `Race Damage (${monsterRace})`,
-      entries,
-      subtotal: total,
-      emptyMessage: 'Nenhum equipamento com bônus de raça',
+      label: `Phys Race Damage (${monsterRace})`,
+      entries: physEntries,
+      subtotal: physTotal,
+      emptyMessage: 'Nenhum equipamento com bônus físico de raça',
+    });
+
+    sections.push({
+      label: `Mag Race Damage (${monsterRace})`,
+      entries: magEntries,
+      subtotal: magTotal,
+      emptyMessage: 'Nenhum equipamento com bônus mágico de raça',
     });
 
     return {
       title: 'Race Breakdown',
       sections,
       totalLabel: 'Race',
-      totalValue: `${100 + total}%`,
+      totalValue: `Phys ${100 + physTotal}% / Mag ${100 + magTotal}%`,
     };
   }
 
@@ -3933,7 +3944,8 @@ export class Calculator {
     const itemSummaryFull = this.getItemSummary();
     const monsterType = this.monster.type;
 
-    const entries: BreakdownEntry[] = [];
+    const physEntries: BreakdownEntry[] = [];
+    const magEntries: BreakdownEntry[] = [];
     for (const [slot, stats] of Object.entries(itemSummaryFull)) {
       if (slot === 'consumableBonuses') continue;
       const statObj = stats as any;
@@ -3941,35 +3953,45 @@ export class Calculator {
       for (const [key, val] of Object.entries(statObj)) {
         if (!val || (val as number) === 0) continue;
         let suffix: string | null = null;
-        let label = '';
+        let isPhys = false;
         if (key.startsWith('p_class_')) {
           suffix = key.replace('p_class_', '');
-          label = `Phys ${suffix}`;
+          isPhys = true;
         } else if (key.startsWith('m_class_')) {
           suffix = key.replace('m_class_', '');
-          label = `Mag ${suffix}`;
         }
         if (!suffix || (suffix !== 'all' && suffix !== monsterType)) continue;
         const itemData = this.equipItem.get(slot as any);
         const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
-        entries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+        const label = isPhys ? `Phys ${suffix}` : `Mag ${suffix}`;
+        const entry = { source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number };
+        if (isPhys) physEntries.push(entry); else magEntries.push(entry);
       }
     }
-    entries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
-    const total = entries.reduce((sum, e) => sum + (e.value as number), 0);
+    physEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    magEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const physTotal = physEntries.reduce((sum, e) => sum + (e.value as number), 0);
+    const magTotal = magEntries.reduce((sum, e) => sum + (e.value as number), 0);
 
     sections.push({
-      label: `Class Damage (${monsterType})`,
-      entries,
-      subtotal: total,
-      emptyMessage: 'Nenhum equipamento com bônus de classe',
+      label: `Phys Class Damage (${monsterType})`,
+      entries: physEntries,
+      subtotal: physTotal,
+      emptyMessage: 'Nenhum equipamento com bônus físico de classe',
+    });
+
+    sections.push({
+      label: `Mag Class Damage (${monsterType})`,
+      entries: magEntries,
+      subtotal: magTotal,
+      emptyMessage: 'Nenhum equipamento com bônus mágico de classe',
     });
 
     return {
       title: 'Class Breakdown',
       sections,
       totalLabel: 'Class',
-      totalValue: `${100 + total}%`,
+      totalValue: `Phys ${100 + physTotal}% / Mag ${100 + magTotal}%`,
     };
   }
 
@@ -3978,7 +4000,8 @@ export class Calculator {
     const itemSummaryFull = this.getItemSummary();
     const monsterElement = this.monster.element;
 
-    const entries: BreakdownEntry[] = [];
+    const physEntries: BreakdownEntry[] = [];
+    const magEntries: BreakdownEntry[] = [];
     for (const [slot, stats] of Object.entries(itemSummaryFull)) {
       if (slot === 'consumableBonuses') continue;
       const statObj = stats as any;
@@ -3986,35 +4009,45 @@ export class Calculator {
       for (const [key, val] of Object.entries(statObj)) {
         if (!val || (val as number) === 0) continue;
         let suffix: string | null = null;
-        let label = '';
+        let isPhys = false;
         if (key.startsWith('p_element_')) {
           suffix = key.replace('p_element_', '');
-          label = `Phys ${suffix}`;
+          isPhys = true;
         } else if (key.startsWith('m_element_')) {
           suffix = key.replace('m_element_', '');
-          label = `Mag ${suffix}`;
         }
         if (!suffix || (suffix !== 'all' && suffix !== monsterElement)) continue;
         const itemData = this.equipItem.get(slot as any);
         const slotLabel = Calculator.SLOT_LABELS[slot] || slot;
-        entries.push({ source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number });
+        const label = isPhys ? `Phys ${suffix}` : `Mag ${suffix}`;
+        const entry = { source: `${itemData?.name || slotLabel} (${label})`, slot: slotLabel, value: val as number };
+        if (isPhys) physEntries.push(entry); else magEntries.push(entry);
       }
     }
-    entries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
-    const total = entries.reduce((sum, e) => sum + (e.value as number), 0);
+    physEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    magEntries.sort((a, b) => Math.abs(b.value as number) - Math.abs(a.value as number));
+    const physTotal = physEntries.reduce((sum, e) => sum + (e.value as number), 0);
+    const magTotal = magEntries.reduce((sum, e) => sum + (e.value as number), 0);
 
     sections.push({
-      label: `Element Damage vs ${monsterElement}`,
-      entries,
-      subtotal: total,
-      emptyMessage: 'Nenhum equipamento com bônus vs elemento',
+      label: `Phys Element Damage vs ${monsterElement}`,
+      entries: physEntries,
+      subtotal: physTotal,
+      emptyMessage: 'Nenhum equipamento com bônus físico vs elemento',
+    });
+
+    sections.push({
+      label: `Mag Element Damage vs ${monsterElement}`,
+      entries: magEntries,
+      subtotal: magTotal,
+      emptyMessage: 'Nenhum equipamento com bônus mágico vs elemento',
     });
 
     return {
       title: 'Element vs Monster Breakdown',
       sections,
       totalLabel: 'Element',
-      totalValue: `${100 + total}%`,
+      totalValue: `Phys ${100 + physTotal}% / Mag ${100 + magTotal}%`,
     };
   }
 
