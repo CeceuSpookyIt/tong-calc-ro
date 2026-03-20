@@ -1480,14 +1480,31 @@ export class DamageCalculator {
     } else if (customFormula && typeof customFormula === 'function') {
       const skillPropertyAtk = typeof getElement === 'function' ? getElement(skillValue) : skillData.element || propertyAtk;
       const propertyMultiplier = this.getPropertyMultiplier(skillPropertyAtk);
+      const defData = this.getPhisicalDefData();
 
       const d = customFormula({
         ...formulaParams,
         baseSkillDamage,
         sizePenalty,
         propertyMultiplier,
-        ...this.getPhisicalDefData(),
+        ...defData,
       });
+
+      if (!this._skillPipeline.dmgType) {
+        this._skillPipeline = {
+          dmgType: 'Custom',
+          baseSkillDamage,
+          reducedHardDef: defData.reducedHardDef,
+          finalSoftDef: defData.finalSoftDef,
+          rangeBonus: this.totalBonus.range || 0,
+          skillBonus: this.getSkillBonus(skillName),
+          propertyMultiplier,
+          cometMultiplier: this.getCometMultiplier(),
+          debuffMultiplier: this.getDebuffMultiplier(SkillType.RANGE),
+          finalDamage: d,
+        };
+      }
+
       calculated = {
         canCri: false,
         minDamage: d,

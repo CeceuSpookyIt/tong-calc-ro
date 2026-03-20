@@ -4278,6 +4278,9 @@ export class Calculator {
     const p = this.dmgCalculator.damagePipelineForUI.skill;
     if (!p || !p.dmgType) return null;
     const dmg = this.damageSummary;
+    if (p.dmgType === 'Custom') {
+      return this._buildCustomSkillBreakdown(p, dmg);
+    }
     if (p.dmgType === 'Magical') {
       return this._buildMagicalSkillBreakdown(p, dmg);
     }
@@ -4356,6 +4359,55 @@ export class Calculator {
 
     return {
       title: 'Skill Damage (Physical)',
+      steps,
+      minDamage: dmg.skillMinDamage,
+      maxDamage: dmg.skillMaxDamage,
+      dps: dmg.skillDps,
+      dpsLabel: 'Skill DPS',
+    };
+  }
+
+  private _buildCustomSkillBreakdown(p: any, dmg: any): DamageBreakdown {
+    const steps: DamageStep[] = [];
+    let running = p.baseSkillDamage as number;
+
+    steps.push({ label: 'Base Skill Damage', operation: `${running}`, result: running, color: 'white' });
+
+    const totalDef = p.reducedHardDef + p.finalSoftDef;
+    if (totalDef > 0) {
+      running = running - totalDef;
+      steps.push({ label: 'DEF (Hard + Soft)', operation: `− ${totalDef}`, result: running, color: 'red' });
+    }
+
+    const rangeMultiplier = (100 + p.rangeBonus) / 100;
+    if (rangeMultiplier !== 1) {
+      running = floor(running * rangeMultiplier);
+      steps.push({ label: 'Range %', operation: `× ${round(rangeMultiplier, 4)}`, result: running });
+    }
+
+    const skillMultiplier = (100 + p.skillBonus) / 100;
+    if (skillMultiplier !== 1) {
+      running = floor(running * skillMultiplier);
+      steps.push({ label: 'Skill Bonus %', operation: `× ${round(skillMultiplier, 4)}`, result: running });
+    }
+
+    if (p.propertyMultiplier !== 1) {
+      running = floor(running * p.propertyMultiplier);
+      steps.push({ label: 'Element', operation: `× ${round(p.propertyMultiplier, 4)}`, result: running });
+    }
+
+    if (p.cometMultiplier !== 1) {
+      running = floor(running * p.cometMultiplier);
+      steps.push({ label: 'Comet', operation: `× ${round(p.cometMultiplier, 4)}`, result: running });
+    }
+
+    if (p.debuffMultiplier !== 1) {
+      running = floor(running * p.debuffMultiplier);
+      steps.push({ label: 'Debuff', operation: `× ${round(p.debuffMultiplier, 4)}`, result: running, color: 'yellow' });
+    }
+
+    return {
+      title: 'Skill Damage (Dragon Breath)',
       steps,
       minDamage: dmg.skillMinDamage,
       maxDamage: dmg.skillMaxDamage,
