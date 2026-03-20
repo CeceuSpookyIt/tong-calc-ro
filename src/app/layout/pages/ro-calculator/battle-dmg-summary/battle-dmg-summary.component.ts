@@ -24,6 +24,24 @@ export class BattleDmgSummaryComponent {
 
   constructor() {}
 
+  get skillTime1() {
+    return this.totalSummary?.autocast?.onSkillEntries?.length ? this.totalSummary?.autocast?.combinedSkillBattleTime : this.totalSummary?.dmg?.skillBattleTime;
+  }
+  get skillTime2() {
+    return this.totalSummary2?.autocast?.onSkillEntries?.length ? this.totalSummary2?.autocast?.combinedSkillBattleTime : this.totalSummary2?.dmg?.skillBattleTime;
+  }
+  get basicTime1() {
+    return this.totalSummary?.autocast?.onHitEntries?.length ? this.totalSummary?.autocast?.combinedBasicBattleTime : this.totalSummary?.dmg?.basicBattleTime;
+  }
+  get basicTime2() {
+    return this.totalSummary2?.autocast?.onHitEntries?.length ? this.totalSummary2?.autocast?.combinedBasicBattleTime : this.totalSummary2?.dmg?.basicBattleTime;
+  }
+
+  getTimeCompareClass(time1: number, time2: number) {
+    if (!time1 || !time2 || time1 === time2) return '';
+    return time2 < time1 ? 'compare_greater' : 'compare_lower';
+  }
+
   onShowElementalTableClick() {
     this.showElementTableClick.emit(1);
   }

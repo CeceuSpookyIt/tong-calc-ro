@@ -44,7 +44,11 @@
       </div>
       <div class="col-6" [hidden]="totalSummary?.dmg?.isAutoSpell">
         <span>Tempo: </span>
-        <span class="text-lg font-medium px-1 summary_highlight">{{ formatTime(totalSummary?.autocast?.onSkillEntries?.length ? totalSummary?.autocast?.combinedSkillBattleTime : totalSummary?.dmg?.skillBattleTime) }}</span>
+        <span class="text-lg font-medium px-1 summary_highlight">{{ formatTime(skillTime1) }}</span>
+        <span *ngIf="isEnableCompare && totalSummary2?.dmg && skillTime1 !== skillTime2">
+          <i class="pi pi-arrow-right vs_sign px-1"></i>
+          <span class="text-lg font-medium px-1" [ngClass]="getTimeCompareClass(skillTime1, skillTime2)">{{ formatTime(skillTime2) }}</span>
+        </span>
       </div>
       <!-- Triggered skill -->
       <ng-container *ngIf="totalSummary?.dmg?.effectedSkillDamageMin > 0 && selectedChances?.length">
@@ -161,7 +165,11 @@
       </div>
       <div class="col-6">
         <span>Tempo: </span>
-        <span class="text-lg font-medium px-1 summary_highlight">{{ formatTime(totalSummary?.autocast?.onHitEntries?.length ? totalSummary?.autocast?.combinedBasicBattleTime : totalSummary?.dmg?.basicBattleTime) }}</span>
+        <span class="text-lg font-medium px-1 summary_highlight">{{ formatTime(basicTime1) }}</span>
+        <span *ngIf="isEnableCompare && totalSummary2?.dmg && basicTime1 !== basicTime2">
+          <i class="pi pi-arrow-right vs_sign px-1"></i>
+          <span class="text-lg font-medium px-1" [ngClass]="getTimeCompareClass(basicTime1, basicTime2)">{{ formatTime(basicTime2) }}</span>
+        </span>
       </div>
       <!-- Triggered basic -->
       <ng-container *ngIf="totalSummary?.dmg?.effectedBasicDamageMin > 0 && selectedChances?.length">
@@ -343,6 +351,10 @@
         <div class="col-6" [hidden]="totalSummary?.dmg?.isAutoSpell">
           <span>Tempo: </span>
           <span class="text-lg font-medium px-1 summary_highlight">{{ formatTime(totalSummary?.dmg?.skillBattleTime) }}</span>
+          <span *ngIf="isEnableCompare && totalSummary2?.dmg && totalSummary?.dmg?.skillBattleTime !== totalSummary2?.dmg?.skillBattleTime">
+            <i class="pi pi-arrow-right vs_sign px-1"></i>
+            <span class="text-lg font-medium px-1" [ngClass]="getTimeCompareClass(totalSummary?.dmg?.skillBattleTime, totalSummary2?.dmg?.skillBattleTime)">{{ formatTime(totalSummary2?.dmg?.skillBattleTime) }}</span>
+          </span>
         </div>
 
         <!-- Autocast entries (all types) -->
