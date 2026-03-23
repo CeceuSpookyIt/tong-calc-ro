@@ -244,7 +244,7 @@ export class OvalComponent implements OnInit {
         rarePct: (a.rares / a.spins) * 100,
         items: Object.entries(a.rareItems).map(([item, count]) => `${count}x ${this.shortItemName(item)}`).join(', '),
       }))
-      .sort((a, b) => b.rares - a.rares || b.rarePct - a.rarePct)
+      .sort((a, b) => b.rarePct - a.rarePct || b.rares - a.rares)
       .slice(0, 5);
 
     // Unlucky: most spins with 0 rares
