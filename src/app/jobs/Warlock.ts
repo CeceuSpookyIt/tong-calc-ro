@@ -535,14 +535,28 @@ export class Warlock extends HighWizard {
     {
       name: 'Tetra Vortex',
       label: 'Tetra Vortex Lv10 (Released)',
-      value: 'Tetra Vortex Released==10',
+      value: 'Tetra Vortex Released Fire==10',
+      levelList: [
+        { label: 'Tetra Vortex Lv10 Released (Fogo)', value: 'Tetra Vortex Released Fire==10' },
+        { label: 'Tetra Vortex Lv10 Released (Água)', value: 'Tetra Vortex Released Water==10' },
+        { label: 'Tetra Vortex Lv10 Released (Vento)', value: 'Tetra Vortex Released Wind==10' },
+        { label: 'Tetra Vortex Lv10 Released (Terra)', value: 'Tetra Vortex Released Earth==10' },
+      ],
       acd: 0,
       fct: 0,
       vct: 0,
       cd: 0,
       isMatk: true,
       totalHit: 4,
-      element: ElementType.Neutral,
+      getElement(skillValue) {
+        const map = {
+          'Tetra Vortex Released Fire==10': ElementType.Fire,
+          'Tetra Vortex Released Water==10': ElementType.Water,
+          'Tetra Vortex Released Wind==10': ElementType.Wind,
+          'Tetra Vortex Released Earth==10': ElementType.Earth,
+        };
+        return map[skillValue];
+      },
       precastSequence: [
         {
           name: 'Memorizar', label: 'Memorizar',
