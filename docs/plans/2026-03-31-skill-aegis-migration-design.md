@@ -86,6 +86,8 @@ O script cruza as 3 fontes, logando skills sem match para resolução manual. Ou
 | Prefixo `flat_` | `"flat_Arrow Vulcan": ["100"]` | `"flat_CG_ARROWVULCAN": ["100"]` |
 | Prefixo `dmg__` | `"dmg__Lucifer Morocc": ["10"]` | `"dmg__DK_LUCIFERMOROCC": ["10"]` |
 
+**Nota sobre separadores:** Prefixos `cd__`, `vct__`, `fct__`, `fix_vct__`, `acd__`, `autocast__`, `dmg__` usam duplo underscore (`__`). O prefixo `flat_` usa underscore simples (`_`). AegisNames também usam underscore simples (`RK_IGNITIONBREAK`) mas **nunca contêm duplo underscore** (confirmado contra 1539 aegisNames do GRF). O parser do calculator distingue os prefixos por match exato do prefixo, não por split em `_`/`__`, então não há conflito.
+
 ### Valores a migrar (dentro das strings de valor)
 
 | Padrão | Exemplo antes | Exemplo depois |
@@ -165,7 +167,7 @@ if (skillName === 'Fist Spell') ...
 if (skillName === 'WL_FISTSPELL') ...
 ```
 
-Arquivos afetados: `damage-calculator.ts`, `Cardinal.ts`, `Sura.ts`, `Windhawk.ts`, `ShadowChaser.ts`, `SuperNovice.ts`.
+Arquivos afetados: `damage-calculator.ts`, `Cardinal.ts`, `Sura.ts`, `Windhawk.ts`, `ShadowChaser.ts`, `SuperNovice.ts`, `ro-calculator.component.ts` (`'Special Pharmacy'` → `'GN_S_PHARMACY'`).
 
 ### 3.5 Outros constants
 
@@ -269,7 +271,7 @@ offensiveSkills = names.map(name => ({
 
 **Arquivo:** `scripts/migrate-supabase-skills.mjs`
 
-1. Lê todos os presets e shared builds do Supabase
+1. Lê todos os registros das tabelas `presets` e `shared_builds` do Supabase (tabela `shared_build_likes` não contém skill names)
 2. Para cada registro:
    - `selectedAtkSkill` / `skill_name`: extrai nome antes de `==`, traduz via `aegisByEN`, reescreve
    - `skillBuffMap`, `activeSkillMap`, `passiveSkillMap`: traduz cada chave via `aegisByEN`
