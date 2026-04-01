@@ -33,6 +33,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 
 import { RoCalculatorComponent } from './ro-calculator.component';
 import { PrettyJsonPipe } from '../../prettier-json.pipe';
+import { SkillNamePipe } from '../../../pipes/skill-name.pipe';
 import { RoCalculatorRoutingModule } from './ro-calculator-routing.module';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { CalcValueComponent } from './calc-value/calc-value.component';
@@ -94,6 +95,7 @@ import { DamageBreakdownDialogComponent } from './damage-breakdown-dialog/damage
     EquipmentComponent,
     CalcValueComponent,
     PrettyJsonPipe,
+    SkillNamePipe,
     PresetTableComponent,
     MonsterDataViewComponent,
     MiscDetailComponent,
