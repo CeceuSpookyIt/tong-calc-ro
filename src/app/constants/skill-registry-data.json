@@ -1,0 +1,2490 @@
+{
+  "ABC_ABYSS_DAGGER": {
+    "en": "Abyss Dagger",
+    "ptbr": "Ofensiva Abissal"
+  },
+  "ABC_ABYSS_FLAME": {
+    "en": "Abyss Flame",
+    "ptbr": "Abyss Flame"
+  },
+  "ABC_ABYSS_SLAYER": {
+    "en": "Abyss Slayer",
+    "ptbr": "Sangue-Frio"
+  },
+  "ABC_ABYSS_SQUARE": {
+    "en": "Abyss Square",
+    "ptbr": "Fenda do Abismo"
+  },
+  "ABC_ABYSS_STRIKE": {
+    "en": "Omega Abyss Strike",
+    "ptbr": "Meteoro \\212mega"
+  },
+  "ABC_CHAIN_REACTION_SHOT": {
+    "en": "Chain Reaction Shot",
+    "ptbr": "Disparo Progressivo"
+  },
+  "ABC_DAGGER_AND_BOW_M": {
+    "en": "Dagger & Bow Mastery",
+    "ptbr": "Versatilidade"
+  },
+  "ABC_DEFT_STAB": {
+    "en": "Deft Stab",
+    "ptbr": "Esfaquear"
+  },
+  "ABC_FRENZY_SHOT": {
+    "en": "Frenzy Shot",
+    "ptbr": "Rajada Fren\\233tica"
+  },
+  "ABC_FROM_THE_ABYSS": {
+    "en": "From the Abyss",
+    "ptbr": "Invoca\\231\\227o do Abismo"
+  },
+  "ABC_MAGIC_SWORD_M": {
+    "en": "Magic Sword Mastery",
+    "ptbr": "L\\226mina M\\225gica"
+  },
+  "ABC_STRIP_SHADOW": {
+    "en": "Strip Shadow",
+    "ptbr": "Remo\\231\\227o Sombria Total"
+  },
+  "ABC_UNLUCKY_RUSH": {
+    "en": "Unlucky Rush",
+    "ptbr": "Salto Rev\\233s"
+  },
+  "AB_ADORAMUS": {
+    "en": "Adoramus",
+    "ptbr": "Adoramus"
+  },
+  "AB_CANTO": {
+    "en": "Cantocandidus",
+    "ptbr": "Canto Candidus"
+  },
+  "AB_CLEMENTIA": {
+    "en": "Clementia",
+    "ptbr": "Clementia"
+  },
+  "AB_DUPLELIGHT": {
+    "en": "Duple Light",
+    "ptbr": "Gemini Lumen"
+  },
+  "AB_EXPIATIO": {
+    "en": "Expiatio",
+    "ptbr": "Expiatio"
+  },
+  "AB_JUDEX": {
+    "en": "Judex",
+    "ptbr": "Judex"
+  },
+  "AB_LAUDAAGNUS": {
+    "en": "Laudaagnus",
+    "ptbr": "Lauda Agnus"
+  },
+  "AB_OFFERTORIUM": {
+    "en": "Offertorium",
+    "ptbr": "Offertorium"
+  },
+  "AB_ORATIO": {
+    "en": "Oratio",
+    "ptbr": "Oratio"
+  },
+  "AC_CONCENTRATION": {
+    "en": "Improve Concentration",
+    "ptbr": "Concentrar"
+  },
+  "AC_DOUBLE": {
+    "en": "Double Strafe",
+    "ptbr": "Rajada de Flechas"
+  },
+  "AC_OWL": {
+    "en": "Owl's Eye",
+    "ptbr": "Olhos de Coruja"
+  },
+  "AC_SHOWER": {
+    "en": "Arrow Shower",
+    "ptbr": "Chuva de Flechas"
+  },
+  "AC_VULTURE": {
+    "en": "Vulture's Eye",
+    "ptbr": "Olhos de \\193guia"
+  },
+  "AG_ALL_BLOOM": {
+    "en": "All Bloom",
+    "ptbr": "Florescer"
+  },
+  "AG_ASTRAL_STRIKE": {
+    "en": "Astral Strike",
+    "ptbr": "Colis\\227o Astral"
+  },
+  "AG_CLIMAX": {
+    "en": "Climax",
+    "ptbr": "Intensifica\\231\\227o"
+  },
+  "AG_CRIMSON_ARROW": {
+    "en": "Crimson Arrow",
+    "ptbr": "Dardo de Fogo"
+  },
+  "AG_CRYSTAL_IMPACT": {
+    "en": "Crystal Impact",
+    "ptbr": "Impacto de Cristal"
+  },
+  "AG_DESTRUCTIVE_HURRICANE": {
+    "en": "Destructive Hurricane",
+    "ptbr": "Tuf\\227o Destrutivo"
+  },
+  "AG_FLORAL_FLARE_ROAD": {
+    "en": "Floral Flare Road",
+    "ptbr": "Vereda Floral Incandescente"
+  },
+  "AG_FROZEN_SLASH": {
+    "en": "Frozen Slash",
+    "ptbr": "Cacos de Gelo"
+  },
+  "AG_MYSTERY_ILLUSION": {
+    "en": "Mystery Illusion",
+    "ptbr": "Ilusionismo"
+  },
+  "AG_RAIN_OF_CRYSTAL": {
+    "en": "Rain of Crystal",
+    "ptbr": "Chuva de Cristais"
+  },
+  "AG_ROCK_DOWN": {
+    "en": "Rock Down",
+    "ptbr": "Deslize de Pedras"
+  },
+  "AG_SOUL_VC_STRIKE": {
+    "en": "Soul Vulcan Strike",
+    "ptbr": "Esp\\237ritos Ancestrais"
+  },
+  "AG_STORM_CANNON": {
+    "en": "Storm Cannon",
+    "ptbr": "Lufada de Vento"
+  },
+  "AG_STRANTUM_TREMOR": {
+    "en": "Stratum Tremor",
+    "ptbr": "Stratum Tremor"
+  },
+  "AG_TORNADO_STORM": {
+    "en": "Tornado Storm",
+    "ptbr": "Ciclone"
+  },
+  "AG_TWOHANDSTAFF": {
+    "en": "Two hand Staff Mastery",
+    "ptbr": "Per\\237cia com Cajado de Duas M\\227os"
+  },
+  "AG_VIOLENT_QUAKE": {
+    "en": "Violent Quake",
+    "ptbr": "Pilares de Pedra"
+  },
+  "ALL_ODINS_POWER": {
+    "en": "Odin's Power",
+    "ptbr": "Poder de Odin"
+  },
+  "AL_DEMONBANE": {
+    "en": "Demon Bane",
+    "ptbr": "Flagelo do Mal"
+  },
+  "AL_DP": {
+    "en": "Divine Protection",
+    "ptbr": "Prote\\231\\227o Divina"
+  },
+  "AL_HEAL": {
+    "en": "Heal",
+    "ptbr": "Curar"
+  },
+  "AL_HOLYLIGHT": {
+    "en": "Holy Light",
+    "ptbr": "Luz Divina"
+  },
+  "AM_ACIDTERROR": {
+    "en": "Acid Terror",
+    "ptbr": "Terror \\193cido"
+  },
+  "AM_AXEMASTERY": {
+    "en": "Axe Mastery",
+    "ptbr": "Per\\237cia com Machado e Espada"
+  },
+  "AM_CANNIBALIZE": {
+    "en": "Summon Flora",
+    "ptbr": "Criar Monstro Planta"
+  },
+  "AM_LEARNINGPOTION": {
+    "en": "Learning Potion",
+    "ptbr": "Pesquisa de Po\\231\\245es"
+  },
+  "AM_POTIONPITCHER": {
+    "en": "Potion Pitcher",
+    "ptbr": "Arremessar Po\\231\\227o"
+  },
+  "ASC_BREAKER": {
+    "en": "Soul Destroyer",
+    "ptbr": "Destruidor de Almas"
+  },
+  "ASC_EDP": {
+    "en": "Enchant Deadly Poison",
+    "ptbr": "Encantar com Veneno Mortal"
+  },
+  "ASC_KATAR": {
+    "en": "Advanced Katar Mastery",
+    "ptbr": "Per\\237cia com Katar Avan\\231ada"
+  },
+  "ASC_METEORASSAULT": {
+    "en": "Meteor Assault",
+    "ptbr": "Impacto Meteoro"
+  },
+  "AS_GRIMTOOTH": {
+    "en": "Grimtooth",
+    "ptbr": "Tocaia"
+  },
+  "AS_KATAR": {
+    "en": "Katar Mastery",
+    "ptbr": "Per\\237cia com Katar"
+  },
+  "AS_LEFT": {
+    "en": "Lefthand Mastery",
+    "ptbr": "Per\\237cia com M\\227o Esquerda"
+  },
+  "AS_RIGHT": {
+    "en": "Righthand Mastery",
+    "ptbr": "Per\\237cia com M\\227o Direita"
+  },
+  "AS_SONICBLOW": {
+    "en": "Sonic Blow",
+    "ptbr": "L\\226minas Destruidoras"
+  },
+  "BA_MUSICALLESSON": {
+    "en": "Musical Lesson",
+    "ptbr": "Li\\231\\245es de M\\250sica"
+  },
+  "BA_MUSICALSTRIKE": {
+    "en": "Musical Strike",
+    "ptbr": "Flecha Mel\\243dica"
+  },
+  "BA_POEMBRAGI": {
+    "en": "Bragi's Poem",
+    "ptbr": "Poema de Bragi"
+  },
+  "BO_ACIDIFIED_ZONE_FIRE": {
+    "en": "Acidified Zone Fire",
+    "ptbr": "Atirar \\193cido Fogoso"
+  },
+  "BO_ACIDIFIED_ZONE_GROUND": {
+    "en": "Acidified Zone Earth",
+    "ptbr": "Atirar \\193cido Terroso"
+  },
+  "BO_ACIDIFIED_ZONE_WATER": {
+    "en": "Acidified Zone Water",
+    "ptbr": "Atirar \\193cido Aquoso"
+  },
+  "BO_ACIDIFIED_ZONE_WIND": {
+    "en": "Acidified Zone Wind",
+    "ptbr": "Atirar \\193cido Gasoso"
+  },
+  "BO_DUST_EXPLOSION": {
+    "en": "Dust Explosion",
+    "ptbr": "Dust Explosion"
+  },
+  "BO_EXPLOSIVE_POWDER": {
+    "en": "Explosive Powder",
+    "ptbr": "Explosive Powder"
+  },
+  "BO_MAYHEMIC_THORNS": {
+    "en": "Mayhemic Thorns",
+    "ptbr": "Mayhemic Thorns"
+  },
+  "BO_MYSTERY_POWDER": {
+    "en": "Mystery Powder",
+    "ptbr": "Mystery Powder"
+  },
+  "BO_RESEARCHREPORT": {
+    "en": "Research Report",
+    "ptbr": "Relatat\\243rio de Pesquisa"
+  },
+  "BO_WOODEN_FAIRY": {
+    "en": "Wooden Fairy",
+    "ptbr": "Cultivar Fada"
+  },
+  "BS_ADRENALINE": {
+    "en": "Adrenaline Rush",
+    "ptbr": "Adrenalina Pura"
+  },
+  "BS_HILTBINDING": {
+    "en": "Hilt Binding",
+    "ptbr": "Punho Firme"
+  },
+  "BS_MAXIMIZE": {
+    "en": "Power Maximize",
+    "ptbr": "Amplificar Poder"
+  },
+  "BS_OVERTHRUST": {
+    "en": "Power Thrust",
+    "ptbr": "For\\231a Violenta"
+  },
+  "BS_SKINTEMPER": {
+    "en": "Skin Tempering",
+    "ptbr": "Resist\\234ncia ao Fogo"
+  },
+  "BS_WEAPONPERFECT": {
+    "en": "Weapon Perfection",
+    "ptbr": "Manejo Perfeito"
+  },
+  "BS_WEAPONRESEARCH": {
+    "en": "Weaponry Research",
+    "ptbr": "Per\\237cia em Armamento"
+  },
+  "CD_ARBITRIUM": {
+    "en": "Arbitrium",
+    "ptbr": "Arbitrium"
+  },
+  "CD_ARGUTUS_TELUM": {
+    "en": "Argutus Telum",
+    "ptbr": "Argutus Telum"
+  },
+  "CD_ARGUTUS_VITA": {
+    "en": "Argutus Vita",
+    "ptbr": "Argutus Vita"
+  },
+  "CD_BENEDICTUM": {
+    "en": "Benedictum",
+    "ptbr": "Benedictum"
+  },
+  "CD_COMPETENTIA": {
+    "en": "Competentia",
+    "ptbr": "Competentia"
+  },
+  "CD_DIVINUS_FLOS": {
+    "en": "Divinus Flos",
+    "ptbr": "Divinus Flos"
+  },
+  "CD_EFFLIGO": {
+    "en": "Effligo",
+    "ptbr": "Effligo"
+  },
+  "CD_FIDUS_ANIMUS": {
+    "en": "Fidus Animus",
+    "ptbr": "Fidus Animus"
+  },
+  "CD_FRAMEN": {
+    "en": "Framen",
+    "ptbr": "Flamen"
+  },
+  "CD_MACE_BOOK_M": {
+    "en": "Mace & Book Mastery",
+    "ptbr": "Estudo Religioso"
+  },
+  "CD_PETITIO": {
+    "en": "Petitio",
+    "ptbr": "Petitio"
+  },
+  "CD_PNEUMATICUS_PROCELLA": {
+    "en": "Pneumaticus Procella",
+    "ptbr": "Chuva Milagrosa"
+  },
+  "CD_PRESENS_ACIES": {
+    "en": "Presens Acies",
+    "ptbr": "Presens Acies"
+  },
+  "CD_RELIGIO": {
+    "en": "Religio",
+    "ptbr": "Religio"
+  },
+  "CG_ARROWVULCAN": {
+    "en": "Arrow Vulcan",
+    "ptbr": "Vulc\\227o de Flechas"
+  },
+  "CH_CHAINCRUSH": {
+    "en": "Chain Crush Combo",
+    "ptbr": "Combo Esmagador"
+  },
+  "CR_ACIDDEMONSTRATION": {
+    "en": "Acid Bomb",
+    "ptbr": "Bomba \\193cida"
+  },
+  "CR_AUTOGUARD": {
+    "en": "Auto Guard",
+    "ptbr": "Bloqueio"
+  },
+  "CR_GRANDCROSS": {
+    "en": "Grand Cross",
+    "ptbr": "Crux Magnum"
+  },
+  "CR_HOLYCROSS": {
+    "en": "Holy Cross",
+    "ptbr": "Crux Divinum"
+  },
+  "CR_SHIELDBOOMERANG": {
+    "en": "Shield Boomerang",
+    "ptbr": "Escudo Bumerangue"
+  },
+  "CR_SPEARQUICKEN": {
+    "en": "Spear Quicken",
+    "ptbr": "Rapidez com Lan\\231a"
+  },
+  "CR_TRUST": {
+    "en": "Faith",
+    "ptbr": "F\\233"
+  },
+  "DC_DANCINGLESSON": {
+    "en": "Dancing Lesson",
+    "ptbr": "Li\\231\\245es de Dan\\231a"
+  },
+  "DC_THROWARROW": {
+    "en": "Slinging Arrow",
+    "ptbr": "Estilingue"
+  },
+  "DC_WINKCHARM": {
+    "en": "Charm",
+    "ptbr": "Piscadela"
+  },
+  "DK_DRAGONIC_AURA": {
+    "en": "Dragonic Aura",
+    "ptbr": "Aura Draconiana"
+  },
+  "DK_DRAGONIC_BREATH": {
+    "en": "Dragonic Breath",
+    "ptbr": "Dragonic Breath"
+  },
+  "DK_DRAGONIC_PIERCE": {
+    "en": "Dragonic Pierce",
+    "ptbr": "Dragonic Pierce"
+  },
+  "DK_HACKANDSLASHER": {
+    "en": "Hack and Slasher",
+    "ptbr": "Corte e Massacre"
+  },
+  "DK_MADNESS_CRUSHER": {
+    "en": "Madness Crusher",
+    "ptbr": "C\\243lera Esmagadora"
+  },
+  "DK_SERVANTWEAPON": {
+    "en": "Servant Weapon",
+    "ptbr": "Espada Alada"
+  },
+  "DK_STORMSLASH": {
+    "en": "Storm Slash",
+    "ptbr": "Dilacerar"
+  },
+  "DK_TWOHANDDEF": {
+    "en": "Two Hand Defending",
+    "ptbr": "Defesa com as M\\227os"
+  },
+  "DK_VIGOR": {
+    "en": "Vigor Explosion",
+    "ptbr": "Determina\\231\\227o"
+  },
+  "EM_CONFLAGRATION": {
+    "en": "Conflagration",
+    "ptbr": "Conflagra\\231\\227o"
+  },
+  "EM_DIAMOND_STORM": {
+    "en": "Diamond Storm",
+    "ptbr": "Execu\\231\\227o Aurora"
+  },
+  "EM_ELEMENTAL_BUSTER": {
+    "en": "Elemental Buster",
+    "ptbr": "C\\237rculo Elemental"
+  },
+  "EM_ELEMENTAL_SPIRIT_M": {
+    "en": "Elemental Spirit Mastery",
+    "ptbr": "Per\\237cia Elemental"
+  },
+  "EM_LIGHTNING_LAND": {
+    "en": "Lightning Land",
+    "ptbr": "Tormenta"
+  },
+  "EM_MAGIC_BOOK_M": {
+    "en": "Magic Book Mastery",
+    "ptbr": "Estudo dos Elementos"
+  },
+  "EM_PSYCHIC_STREAM": {
+    "en": "Psychic Stream",
+    "ptbr": "Psychic Stream"
+  },
+  "EM_SPELL_ENCHANTING": {
+    "en": "Spell Enchanting",
+    "ptbr": "Enfeiti\\231ar"
+  },
+  "EM_SUMMON_ELEMENTAL_ARDOR": {
+    "en": "Ardor",
+    "ptbr": "Invocar Ardor"
+  },
+  "EM_SUMMON_ELEMENTAL_PROCELLA": {
+    "en": "Procella",
+    "ptbr": "Invocar Procella"
+  },
+  "EM_SUMMON_ELEMENTAL_SERPENS": {
+    "en": "Serpens",
+    "ptbr": "Invocar Serpens"
+  },
+  "EM_SUMMON_ELEMENTAL_TERREMOTUS": {
+    "en": "Terramotus",
+    "ptbr": "Invocar Terremotus"
+  },
+  "EM_TERRA_DRIVE": {
+    "en": "Terra Drive",
+    "ptbr": "Tremor de Terra"
+  },
+  "EM_VENOM_SWAMP": {
+    "en": "Venom Swamp",
+    "ptbr": "Po\\231o Venenoso"
+  },
+  "GC_CLOAKINGEXCEED": {
+    "en": "Cloaking Exceed",
+    "ptbr": "Oculta\\231\\227o"
+  },
+  "GC_COUNTERSLASH": {
+    "en": "Counter Slash",
+    "ptbr": "Retalia\\231\\227o"
+  },
+  "GC_CROSSIMPACT": {
+    "en": "Cross Impact",
+    "ptbr": "L\\226minas Retalhadoras"
+  },
+  "GC_CROSSRIPPERSLASHER": {
+    "en": "Cross Ripper Slasher",
+    "ptbr": "Castigo de Loki"
+  },
+  "GC_DARKCROW": {
+    "en": "Dark Claw",
+    "ptbr": "Garra Sombria"
+  },
+  "GC_DARKILLUSION": {
+    "en": "Dark Illusion",
+    "ptbr": "Passo Sombrio"
+  },
+  "GC_PHANTOMMENACE": {
+    "en": "Phantom Menace",
+    "ptbr": "Amea\\231a Fantasma"
+  },
+  "GC_POISONINGWEAPON": {
+    "en": "Poisonous Weapon",
+    "ptbr": "Aplicar Toxina"
+  },
+  "GC_POISONSMOKE": {
+    "en": "Poison Burst",
+    "ptbr": "Nevoeiro T\\243xico"
+  },
+  "GC_RESEARCHNEWPOISON": {
+    "en": "New Poison Research",
+    "ptbr": "Pesquisa de Toxinas"
+  },
+  "GC_ROLLINGCUTTER": {
+    "en": "Rolling Cutter",
+    "ptbr": "L\\226minas de Loki"
+  },
+  "GC_VENOMIMPRESS": {
+    "en": "Venom Impression",
+    "ptbr": "Potencializar Veneno"
+  },
+  "GC_WEAPONBLOCKING": {
+    "en": "Weapon Blocking",
+    "ptbr": "Reflexo de Combate"
+  },
+  "GN_CARTCANNON": {
+    "en": "Cart Cannon",
+    "ptbr": "Canh\\227o de Pr\\243tons"
+  },
+  "GN_CART_TORNADO": {
+    "en": "Cart Tornado",
+    "ptbr": "Tornado de Carrinho"
+  },
+  "GN_CRAZYWEED": {
+    "en": "Crazy Weed",
+    "ptbr": "Erva Daninha"
+  },
+  "GN_HELLS_PLANT": {
+    "en": "Hell Plant",
+    "ptbr": "Planta Infernal"
+  },
+  "GN_MANDRAGORA": {
+    "en": "Mandragora Howling",
+    "ptbr": "Grito da Mandr\\225gora"
+  },
+  "GN_REMODELING_CART": {
+    "en": "Cart Weight",
+    "ptbr": "Aprimorar Carrinho"
+  },
+  "GN_SPORE_EXPLOSION": {
+    "en": "Spore Explosion",
+    "ptbr": "Esporo Explosivo"
+  },
+  "GS_CHAINACTION": {
+    "en": "Chain Action",
+    "ptbr": "Rea\\231\\227o em Cadeia"
+  },
+  "GS_DESPERADO": {
+    "en": "Desperado",
+    "ptbr": "Desperado"
+  },
+  "GS_SINGLEACTION": {
+    "en": "Single Action",
+    "ptbr": "Ataque Concentrado"
+  },
+  "GS_SNAKEEYE": {
+    "en": "Snake Eyes",
+    "ptbr": "Olhos de Serpente"
+  },
+  "GS_SPREADATTACK": {
+    "en": "Spread Shot",
+    "ptbr": "Disparo Espalhado"
+  },
+  "HN_DOUBLEBOWLINGBASH": {
+    "en": "Double Bowling Bash",
+    "ptbr": "Golpe de Tyr"
+  },
+  "HN_GROUND_GRAVITATION": {
+    "en": "Ground Gravitation",
+    "ptbr": "Zona Gravitacional"
+  },
+  "HN_HELLS_DRIVE": {
+    "en": "Hell's Drive",
+    "ptbr": "Ira da Terra"
+  },
+  "HN_JACK_FROST_NOVA": {
+    "en": "Jack Frost Nova",
+    "ptbr": "Esquife Congelante"
+  },
+  "HN_JUPITEL_THUNDER_STORM": {
+    "en": "Jupitel Thunderstorm",
+    "ptbr": "Tempestade de J\\250piter"
+  },
+  "HN_MEGA_SONIC_BLOW": {
+    "en": "Mega Sonic Blow",
+    "ptbr": "L\\226minas Devastadoras"
+  },
+  "HN_METEOR_STORM_BUSTER": {
+    "en": "Meteor Storm Buster",
+    "ptbr": "Chuva de Meteoritos"
+  },
+  "HN_NAPALM_VULCAN_STRIKE": {
+    "en": "Napalm Vulcan Strike",
+    "ptbr": "Espectro Napalm"
+  },
+  "HN_SELFSTUDY_SOCERY": {
+    "en": "Self Study Sorcery",
+    "ptbr": "M\\225gico Autodidata"
+  },
+  "HN_SELFSTUDY_TATICS": {
+    "en": "Self Study Tactics",
+    "ptbr": "F\\237sico Autodidata"
+  },
+  "HN_SHIELD_CHAIN_RUSH": {
+    "en": "Shield Chain Rush",
+    "ptbr": "Choque Violento"
+  },
+  "HN_SPIRAL_PIERCE_MAX": {
+    "en": "Spiral Pierce Max",
+    "ptbr": "Cortar em Espiral"
+  },
+  "HP_ASSUMPTIO": {
+    "en": "Assumptio",
+    "ptbr": "Assumptio"
+  },
+  "HP_BASILICA": {
+    "en": "Basilica",
+    "ptbr": "Bas\\237lica"
+  },
+  "HP_MEDITATIO": {
+    "en": "Meditation",
+    "ptbr": "Meditatio"
+  },
+  "HT_BEASTBANE": {
+    "en": "Beast Bane",
+    "ptbr": "Flagelo das Feras"
+  },
+  "HT_BLITZBEAT": {
+    "en": "Blitz Beat",
+    "ptbr": "Ataque A\\233reo"
+  },
+  "HT_CLAYMORETRAP": {
+    "en": "Claymore Trap",
+    "ptbr": "Armadilha Explosiva"
+  },
+  "HT_LANDMINE": {
+    "en": "Land Mine",
+    "ptbr": "Armadilha Atordoante"
+  },
+  "HT_STEELCROW": {
+    "en": "Steel Crow",
+    "ptbr": "Garras de A\\231o"
+  },
+  "HW_GRAVITATION": {
+    "en": "Gravitational Field",
+    "ptbr": "Campo Gravitacional"
+  },
+  "HW_MAGICPOWER": {
+    "en": "Mystical Amplification",
+    "ptbr": "Amplifica\\231\\227o M\\237stica"
+  },
+  "HW_NAPALMVULCAN": {
+    "en": "Napalm Vulcan",
+    "ptbr": "Vulc\\227o Napalm"
+  },
+  "HW_SOULDRAIN": {
+    "en": "Soul Drain",
+    "ptbr": "Dreno de Alma"
+  },
+  "IG_ATTACK_STANCE": {
+    "en": "Attack Stance",
+    "ptbr": "Posi\\231\\227o de Ataque"
+  },
+  "IG_CROSS_RAIN": {
+    "en": "Cross Rain",
+    "ptbr": "Crux Tempestas"
+  },
+  "IG_GRAND_JUDGEMENT": {
+    "en": "Grand Judgement",
+    "ptbr": "Lan\\231a do Supl\\237cio"
+  },
+  "IG_HOLY_SHIELD": {
+    "en": "Holy Shield",
+    "ptbr": "Escudo Divino"
+  },
+  "IG_IMPERIAL_CROSS": {
+    "en": "Imperial Cross",
+    "ptbr": "Imperial Cross"
+  },
+  "IG_OVERSLASH": {
+    "en": "Overslash",
+    "ptbr": "Talho do Destino"
+  },
+  "IG_RADIANT_SPEAR": {
+    "en": "Radiant Spear",
+    "ptbr": "Radiant Spear"
+  },
+  "IG_SHIELD_MASTERY": {
+    "en": "Shield Mastery",
+    "ptbr": "Per\\237cia com Escudo"
+  },
+  "IG_SHIELD_SHOOTING": {
+    "en": "Shield Shooting",
+    "ptbr": "Arremessar Escudo"
+  },
+  "IG_SPEAR_SWORD_M": {
+    "en": "Spear & Sword Mastery",
+    "ptbr": "Per\\237cia Hoplita"
+  },
+  "IQ_BLAZING_FLAME_BLAST": {
+    "en": "Blazing Flame Blast",
+    "ptbr": "Blazing Flame Blast"
+  },
+  "IQ_EXPOSION_BLASTER": {
+    "en": "Explosion Blaster",
+    "ptbr": "T\\233cnica da M\\227o Explosiva"
+  },
+  "IQ_FIRST_BRAND": {
+    "en": "First Brand",
+    "ptbr": "Estigma"
+  },
+  "IQ_MASSIVE_F_BLASTER": {
+    "en": "Massive Flame Blaster",
+    "ptbr": "Punho Labareda"
+  },
+  "IQ_OLEUM_SANCTUM": {
+    "en": "Oleum Sanctum",
+    "ptbr": "Oleum Sanctum"
+  },
+  "IQ_SECOND_FAITH": {
+    "en": "Second Faith",
+    "ptbr": "Golpe Pantocrator"
+  },
+  "IQ_SECOND_FLAME": {
+    "en": "Second Flame",
+    "ptbr": "Palma Fervorosa"
+  },
+  "IQ_SECOND_JUDGEMENT": {
+    "en": "Second Judgement",
+    "ptbr": "Toque Intercessor"
+  },
+  "IQ_THIRD_CONSECRATION": {
+    "en": "Third Consecration",
+    "ptbr": "Veredicto"
+  },
+  "IQ_THIRD_FLAME_BOMB": {
+    "en": "Third Flame Bomb",
+    "ptbr": "Fogueira Divina"
+  },
+  "IQ_THIRD_PUNISH": {
+    "en": "Third Punish",
+    "ptbr": "Soco Guilhotina"
+  },
+  "IQ_WILL_OF_FAITH": {
+    "en": "Will of Faith",
+    "ptbr": "Caminhos da F\\233 "
+  },
+  "KG_KAGEMUSYA": {
+    "en": "Shadow Warrior",
+    "ptbr": "Contrato das Sombras"
+  },
+  "KG_KYOMU": {
+    "en": "Empty Shadow",
+    "ptbr": "Vazio das Sombras"
+  },
+  "KN_BOWLINGBASH": {
+    "en": "Bowling Bash",
+    "ptbr": "Impacto de Tyr"
+  },
+  "KN_BRANDISHSPEAR": {
+    "en": "Brandish Spear",
+    "ptbr": "Brandir Lan\\231a"
+  },
+  "KN_CAVALIERMASTERY": {
+    "en": "Cavalier Mastery",
+    "ptbr": "Per\\237cia em Montaria"
+  },
+  "KN_PIERCE": {
+    "en": "Pierce",
+    "ptbr": "Perfurar"
+  },
+  "KN_RIDING": {
+    "en": "Ride Peco",
+    "ptbr": "Montaria"
+  },
+  "KN_SPEARMASTERY": {
+    "en": "Spear Mastery",
+    "ptbr": "Per\\237cia com Lan\\231a"
+  },
+  "KN_TWOHANDQUICKEN": {
+    "en": "Two hand Quicken",
+    "ptbr": "Rapidez com Duas M\\227os"
+  },
+  "KO_BAKURETSU": {
+    "en": "Kunai Explosion",
+    "ptbr": "Kunai Explosiva"
+  },
+  "KO_GENWAKU": {
+    "en": "Illusion - Bewitch",
+    "ptbr": "Genjutsu: Substitui\\231\\227o"
+  },
+  "KO_HAPPOKUNAI": {
+    "en": "Kunai Splash",
+    "ptbr": "Turbilh\\227o de Kunais"
+  },
+  "KO_HUUMARANKA": {
+    "en": "Swirling Petal",
+    "ptbr": "Turbilh\\227o de P\\233talas"
+  },
+  "KO_IZAYOI": {
+    "en": "16th Night",
+    "ptbr": "Inspira\\231\\227o"
+  },
+  "KO_JYUMONJIKIRI": {
+    "en": "Cross Slash",
+    "ptbr": "Impacto Cruzado"
+  },
+  "KO_JYUSATSU": {
+    "en": "Illusion - Death",
+    "ptbr": "Genjutsu: Chamado da Morte"
+  },
+  "KO_KYOUGAKU": {
+    "en": "Illusion - Shock",
+    "ptbr": "Genjutsu: Assalto das Sombras"
+  },
+  "KO_MEIKYOUSISUI": {
+    "en": "Pure Soul",
+    "ptbr": "Purifica\\231\\227o da Alma"
+  },
+  "KO_SETSUDAN": {
+    "en": "Soul Cutter",
+    "ptbr": "Corte Espiritual"
+  },
+  "KO_ZANZOU": {
+    "en": "Illusion - Shadow",
+    "ptbr": "Genjutsu: Clone das Sombras"
+  },
+  "LG_BANISHINGPOINT": {
+    "en": "Banishing Point",
+    "ptbr": "Toque do Obl\\237vio"
+  },
+  "LG_CANNONSPEAR": {
+    "en": "Vanishing Buster",
+    "ptbr": "Disparo Perfurante"
+  },
+  "LG_EARTHDRIVE": {
+    "en": "Earth Drive",
+    "ptbr": "Aegis Inferi"
+  },
+  "LG_HESPERUSLIT": {
+    "en": "Hesperus Lit",
+    "ptbr": "Trindade"
+  },
+  "LG_INSPIRATION": {
+    "en": "Inspiration",
+    "ptbr": "Consagra\\231\\227o"
+  },
+  "LG_MOONSLASHER": {
+    "en": "Moon Slasher",
+    "ptbr": "Espiral Lunar"
+  },
+  "LG_OVERBRAND": {
+    "en": "Over Brand",
+    "ptbr": "Lan\\231a do Destino"
+  },
+  "LG_PIETY": {
+    "en": "Piety",
+    "ptbr": "Devo\\231\\227o"
+  },
+  "LG_PINPOINTATTACK": {
+    "en": "Hundred Spears",
+    "ptbr": "Estocada Precisa"
+  },
+  "LG_RAYOFGENESIS": {
+    "en": "Genesis Ray",
+    "ptbr": "Luz da Cria\\231\\227o"
+  },
+  "LG_SHIELDPRESS": {
+    "en": "Shield Press",
+    "ptbr": "Escudo Compressor"
+  },
+  "LG_SHIELDSPELL": {
+    "en": "Shield Spell",
+    "ptbr": "Aegis Domini"
+  },
+  "LK_AURABLADE": {
+    "en": "Aura Blade",
+    "ptbr": "L\\226mina de Aura"
+  },
+  "LK_CONCENTRATION": {
+    "en": "Spear Dynamo",
+    "ptbr": "Dedica\\231\\227o"
+  },
+  "LK_SPIRALPIERCE": {
+    "en": "Clashing Spiral",
+    "ptbr": "Perfurar em Espiral"
+  },
+  "MC_CARTREVOLUTION": {
+    "en": "Cart Revolution",
+    "ptbr": "Cavalo-de-Pau"
+  },
+  "MC_LOUD": {
+    "en": "Crazy Uproar",
+    "ptbr": "Grito de Guerra"
+  },
+  "MC_MAMMONITE": {
+    "en": "Mammonite",
+    "ptbr": "Mammonita"
+  },
+  "MG_COLDBOLT": {
+    "en": "Cold Bolt",
+    "ptbr": "Lan\\231as de Gelo"
+  },
+  "MG_FIREBALL": {
+    "en": "Fire Ball",
+    "ptbr": "Bolas de Fogo"
+  },
+  "MG_FIREBOLT": {
+    "en": "Fire Bolt",
+    "ptbr": "Lan\\231as de Fogo"
+  },
+  "MG_FIREWALL": {
+    "en": "Firewall",
+    "ptbr": "Barreira de Fogo"
+  },
+  "MG_LIGHTNINGBOLT": {
+    "en": "Lightening Bolt",
+    "ptbr": "Rel\\226mpago"
+  },
+  "MG_NAPALMBEAT": {
+    "en": "Napalm Beat",
+    "ptbr": "Ataque Espiritual"
+  },
+  "MG_SAFETYWALL": {
+    "en": "Safety Wall",
+    "ptbr": "Escudo M\\225gico"
+  },
+  "MG_SOULSTRIKE": {
+    "en": "Soul Strike",
+    "ptbr": "Esp\\237ritos Anci\\245es"
+  },
+  "MG_SRECOVERY": {
+    "en": "Increase SP Recovery",
+    "ptbr": "Aumentar Recupera\\231\\227o de SP"
+  },
+  "MG_THUNDERSTORM": {
+    "en": "Thunderstorm",
+    "ptbr": "Tempestade de Raios"
+  },
+  "MH_MAGMA_FLOW": {
+    "en": "Lava Flow",
+    "ptbr": "Inunda\\231\\227o de Magma"
+  },
+  "MH_PYROCLASTIC": {
+    "en": "Pyroclastic",
+    "ptbr": "Pirocl\\225stico"
+  },
+  "MI_RUSH_WINDMILL": {
+    "en": "Rush To Windmill",
+    "ptbr": "Sinfonia dos Ventos"
+  },
+  "MO_ABSORBSPIRITS": {
+    "en": "Power Absorb",
+    "ptbr": "Absorver Esferas Espirituais"
+  },
+  "MO_CHAINCOMBO": {
+    "en": "Chain Combo",
+    "ptbr": "Combo Qu\\225druplo"
+  },
+  "MO_COMBOFINISH": {
+    "en": "Combo Finish",
+    "ptbr": "O \\218ltimo Drag\\227o"
+  },
+  "MO_DODGE": {
+    "en": "Dodge",
+    "ptbr": "Cair das P\\233talas"
+  },
+  "MO_FINGEROFFENSIVE": {
+    "en": "Finger Offensive",
+    "ptbr": "Disparo de Esferas Espirituais"
+  },
+  "MO_IRONHAND": {
+    "en": "Iron Hand",
+    "ptbr": "Punhos de Ferro"
+  },
+  "MT_AXE_STOMP": {
+    "en": "Axe Stomp",
+    "ptbr": "Machado Esmagador"
+  },
+  "MT_A_MACHINE": {
+    "en": "Activation Attack Machine",
+    "ptbr": "Ativar Rob\\244 Atacante"
+  },
+  "MT_ENERGY_CANNONADE": {
+    "en": "Energy Cannonade",
+    "ptbr": "Energy Cannonade"
+  },
+  "MT_MIGHTY_SMASH": {
+    "en": "Mighty Smash",
+    "ptbr": "Mighty Smash"
+  },
+  "MT_POWERFUL_SWING": {
+    "en": "Powerful Swing",
+    "ptbr": "Powerful Swing"
+  },
+  "MT_RUSH_QUAKE": {
+    "en": "Rush Quake",
+    "ptbr": "Avan\\231o S\\237smico"
+  },
+  "MT_RUSH_STRIKE": {
+    "en": "Rush Strike",
+    "ptbr": "Rush Strike"
+  },
+  "MT_SPARK_BLASTER": {
+    "en": "Spark Blaster",
+    "ptbr": "Spark Blaster"
+  },
+  "MT_TRIPLE_LASER": {
+    "en": "Triple Laser",
+    "ptbr": "Triple Laser"
+  },
+  "NC_ARMSCANNON": {
+    "en": "Arm Cannon",
+    "ptbr": "Canh\\227o"
+  },
+  "NC_AXEBOOMERANG": {
+    "en": "Axe Boomerang",
+    "ptbr": "Arremesso de Machado"
+  },
+  "NC_AXETORNADO": {
+    "en": "Axe Tornado",
+    "ptbr": "F\\250ria do Furac\\227o "
+  },
+  "NC_BOOSTKNUCKLE": {
+    "en": "Nuckle Boost",
+    "ptbr": "Punho Foguete"
+  },
+  "NC_COLDSLOWER": {
+    "en": "Cold Slower",
+    "ptbr": "G\\225s Criog\\234nico"
+  },
+  "NC_FLAMELAUNCHER": {
+    "en": "Flame Launcher",
+    "ptbr": "Lan\\231a Chamas"
+  },
+  "NC_MADOLICENCE": {
+    "en": "On Magogear",
+    "ptbr": "Licen\\231a de Pilotagem"
+  },
+  "NC_NEUTRALBARRIER": {
+    "en": "Neutral Barrier",
+    "ptbr": "Campo Protetor"
+  },
+  "NC_PILEBUNKER": {
+    "en": "Pile Bunker",
+    "ptbr": "Bate Estaca"
+  },
+  "NC_POWERSWING": {
+    "en": "Tornado Axe",
+    "ptbr": "Brandir Machado"
+  },
+  "NC_RESEARCHFE": {
+    "en": "Fire Earth Research",
+    "ptbr": "Sabedoria de Hefesto"
+  },
+  "NC_VULCANARM": {
+    "en": "Vulcan Arm",
+    "ptbr": "Metralhadora"
+  },
+  "NJ_HUUJIN": {
+    "en": "Wind Blade",
+    "ptbr": "L\\226mina de Vento"
+  },
+  "NJ_HUUMA": {
+    "en": "Throw Huuma Shuriken",
+    "ptbr": "Arremessar Huuma"
+  },
+  "NJ_HYOUSYOURAKU": {
+    "en": "Snow Flake Draft",
+    "ptbr": "Grande Floco de Neve"
+  },
+  "NJ_KAMAITACHI": {
+    "en": "First Wind",
+    "ptbr": "Brisa Cortante"
+  },
+  "NJ_KOUENKA": {
+    "en": "Flaming Petals",
+    "ptbr": "P\\233talas Flamejantes"
+  },
+  "NJ_KUNAI": {
+    "en": "Throw Kunai",
+    "ptbr": "Arremessar Kunai"
+  },
+  "NJ_NEN": {
+    "en": "Soul",
+    "ptbr": "Aura Ninja"
+  },
+  "NJ_NINPOU": {
+    "en": "Ninja Mastery",
+    "ptbr": "Per\\237cia Ninja"
+  },
+  "NJ_TOBIDOUGU": {
+    "en": "Dagger Throwing Practice",
+    "ptbr": "Per\\237cia com Shuriken"
+  },
+  "NPC_RUN": {
+    "en": "Run",
+    "ptbr": "Run"
+  },
+  "NV_BREAKTHROUGH": {
+    "en": "Break Through",
+    "ptbr": "Crescimento"
+  },
+  "NV_TRANSCENDENCE": {
+    "en": "Transcendence",
+    "ptbr": "Transcend\\234ncia"
+  },
+  "NW_AUTO_FIRING_LAUNCHER": {
+    "en": "Full Blast",
+    "ptbr": "Disparo Autom\\225tico"
+  },
+  "NW_BASIC_GRENADE": {
+    "en": "Basic Grenade",
+    "ptbr": "Jogar Granada"
+  },
+  "NW_GRENADES_DROPPING": {
+    "en": "Grenade Dropping",
+    "ptbr": "Queda de Granadas"
+  },
+  "NW_GRENADE_FRAGMENT": {
+    "en": "Grenade Fragment",
+    "ptbr": "Fragmenta\\231\\227o"
+  },
+  "NW_GRENADE_MASTERY": {
+    "en": "Grenade Mastery",
+    "ptbr": "Per\\237cia em Granada"
+  },
+  "NW_HASTY_FIRE_IN_THE_HOLE": {
+    "en": "Hasty Fire in the Hole",
+    "ptbr": "Gatilho Incandescente"
+  },
+  "NW_HIDDEN_CARD": {
+    "en": "Hidden Card",
+    "ptbr": "Carta na Manga"
+  },
+  "NW_INTENSIVE_AIM": {
+    "en": "Intensive Aim",
+    "ptbr": "Mira Focalizada"
+  },
+  "NW_MAGAZINE_FOR_ONE": {
+    "en": "Magazine for One",
+    "ptbr": "Artilharia Pesada"
+  },
+  "NW_MIDNIGHT_FALLEN": {
+    "en": "Midnight Fallen",
+    "ptbr": "Midnight Fallen"
+  },
+  "NW_MISSION_BOMBARD": {
+    "en": "Mission Bombard",
+    "ptbr": "Bombardeio"
+  },
+  "NW_ONLY_ONE_BULLET": {
+    "en": "Only One Bullet",
+    "ptbr": "Disparo \\218nico"
+  },
+  "NW_P_F_I": {
+    "en": "PFI",
+    "ptbr": "A.D.P"
+  },
+  "NW_SPIRAL_SHOOTING": {
+    "en": "Spiral Shooting",
+    "ptbr": "Atirar em Espiral"
+  },
+  "NW_THE_VIGILANTE_AT_NIGHT": {
+    "en": "The Vigilante at Night",
+    "ptbr": "Vig\\237lia Noturna"
+  },
+  "NW_WILD_FIRE": {
+    "en": "Wild Fire",
+    "ptbr": "Chuva de Tiros"
+  },
+  "NW_WILD_SHOT": {
+    "en": "Wild Shot",
+    "ptbr": "Wild Shot"
+  },
+  "OB_OBOROGENSOU": {
+    "en": "Moonlight Fantasy",
+    "ptbr": "Ilus\\227o do Luar"
+  },
+  "OB_ZANGETSU": {
+    "en": "Distorted Crescent",
+    "ptbr": "Distor\\231\\227o Crescente"
+  },
+  "PA_PRESSURE": {
+    "en": "Gloria Domini",
+    "ptbr": "Gloria Domini"
+  },
+  "PA_SHIELDCHAIN": {
+    "en": "Shield Chain",
+    "ptbr": "Choque R\\225pido"
+  },
+  "PF_HPCONVERSION": {
+    "en": "Indulge",
+    "ptbr": "Indulgir"
+  },
+  "PF_MEMORIZE": {
+    "en": "Foresight",
+    "ptbr": "Presci\\234ncia"
+  },
+  "PR_IMPOSITIO": {
+    "en": "Impositio Manus",
+    "ptbr": "Impositio Manus"
+  },
+  "PR_KYRIE": {
+    "en": "Kyrie Eleison",
+    "ptbr": "Kyrie Eleison"
+  },
+  "PR_MACEMASTERY": {
+    "en": "Mace Mastery",
+    "ptbr": "Per\\237cia com Ma\\231a"
+  },
+  "PR_MAGNIFICAT": {
+    "en": "Magnificat",
+    "ptbr": "Magnificat"
+  },
+  "PR_MAGNUS": {
+    "en": "Magnus Exorcismus",
+    "ptbr": "Magnus Exorcismus"
+  },
+  "PR_TURNUNDEAD": {
+    "en": "Turn Undead",
+    "ptbr": "Esconjurar"
+  },
+  "RA_AIMEDBOLT": {
+    "en": "Aimed Bolt",
+    "ptbr": "Disparo Certeiro"
+  },
+  "RA_ARROWSTORM": {
+    "en": "Arrow Storm",
+    "ptbr": "Tempestade de Flechas"
+  },
+  "RA_CAMOUFLAGE": {
+    "en": "Camouflage",
+    "ptbr": "Camuflagem"
+  },
+  "RA_CLUSTERBOMB": {
+    "en": "Bomb Cluster",
+    "ptbr": "Bomba Rel\\243gio"
+  },
+  "RA_FEARBREEZE": {
+    "en": "Fear Breeze",
+    "ptbr": "Disparo Selvagem"
+  },
+  "RA_RANGERMAIN": {
+    "en": "Main Ranger",
+    "ptbr": "T\\225ticas de Sobreviv\\234ncia"
+  },
+  "RA_RESEARCHTRAP": {
+    "en": "Trap Research",
+    "ptbr": "Per\\237cia com Armadilha"
+  },
+  "RA_UNLIMIT": {
+    "en": "No Limits",
+    "ptbr": "Ilimitar"
+  },
+  "RA_WUGRIDER": {
+    "en": "Wug Rider",
+    "ptbr": "Montaria em Worg"
+  },
+  "RA_WUGSTRIKE": {
+    "en": "Warg Strike",
+    "ptbr": "Investida de Worg"
+  },
+  "RG_BACKSTAP": {
+    "en": "Back Stab",
+    "ptbr": "Apunhalar"
+  },
+  "RG_PLAGIARISM": {
+    "en": "Plagiarism",
+    "ptbr": "Pl\\225gio"
+  },
+  "RG_RAID": {
+    "en": "Sightless Mind",
+    "ptbr": "Ataque Surpresa"
+  },
+  "RG_SNATCHER": {
+    "en": "Snatcher",
+    "ptbr": "M\\227os Leves"
+  },
+  "RK_DEATHBOUND": {
+    "en": "Death Bound",
+    "ptbr": "Revidar Dano"
+  },
+  "RK_DRAGONBREATH": {
+    "en": "Dragon Breath",
+    "ptbr": "Sopro do Drag\\227o"
+  },
+  "RK_DRAGONBREATH_WATER": {
+    "en": "Dragon Breath - WATER",
+    "ptbr": "Bafo do Drag\\227o"
+  },
+  "RK_DRAGONHOWLING": {
+    "en": "Dragon Howling",
+    "ptbr": "Rugido do Drag\\227o"
+  },
+  "RK_DRAGONTRAINING": {
+    "en": "Ride Dragon",
+    "ptbr": "Adestrar Drag\\227o"
+  },
+  "RK_ENCHANTBLADE": {
+    "en": "Enchant Blade",
+    "ptbr": "Encantar L\\226mina"
+  },
+  "RK_IGNITIONBREAK": {
+    "en": "Ignition Break",
+    "ptbr": "Impacto Flamejante"
+  },
+  "RK_LUXANIMA": {
+    "en": "Lux Anima Runestone",
+    "ptbr": "Luz da Alma"
+  },
+  "RK_RUNEMASTERY": {
+    "en": "Rune Mastery",
+    "ptbr": "Per\\237cia em Runas"
+  },
+  "RK_SONICWAVE": {
+    "en": "Sonic Wave",
+    "ptbr": "Onda de Choque"
+  },
+  "RK_STORMBLAST": {
+    "en": "Storm Blast",
+    "ptbr": "Explos\\227o R\\250nica"
+  },
+  "RK_WINDCUTTER": {
+    "en": "Wind Cutter",
+    "ptbr": "Vento Cortante"
+  },
+  "RL_AM_BLAST": {
+    "en": "Anti-Material Blast",
+    "ptbr": "Explos\\227o Antimat\\233ria"
+  },
+  "RL_C_MARKER": {
+    "en": "Crimson Marker",
+    "ptbr": "Marcar em Brasa"
+  },
+  "RL_D_TAIL": {
+    "en": "Dragon Tail",
+    "ptbr": "Lan\\231ar M\\237ssil"
+  },
+  "RL_FIREDANCE": {
+    "en": "Fire Dance",
+    "ptbr": "Descarregar Tambor"
+  },
+  "RL_FIRE_RAIN": {
+    "en": "Fire Rain",
+    "ptbr": "Disparo Labareda"
+  },
+  "RL_FLICKER": {
+    "en": "Gunslinger Mine",
+    "ptbr": "Igni\\231\\227o"
+  },
+  "RL_HAMMER_OF_GOD": {
+    "en": "God's Hammer",
+    "ptbr": "Execu\\231\\227o"
+  },
+  "RL_HEAT_BARREL": {
+    "en": "Hot Barrel",
+    "ptbr": "Furor"
+  },
+  "RL_H_MINE": {
+    "en": "Howling Mine",
+    "ptbr": "Arremessar Granada"
+  },
+  "RL_MASS_SPIRAL": {
+    "en": "Mass Spiral",
+    "ptbr": "Espiral Perfurante"
+  },
+  "RL_P_ALTER": {
+    "en": "Platinum Altar",
+    "ptbr": "Prote\\231\\227o de Platina"
+  },
+  "RL_QD_SHOT": {
+    "en": "Quick Draw Shot",
+    "ptbr": "Saque R\\225pido"
+  },
+  "RL_RICHS_COIN": {
+    "en": "Rich's Coin",
+    "ptbr": "Farta Fortuna"
+  },
+  "RL_R_TRIP": {
+    "en": "Round Trip",
+    "ptbr": "Expurgar"
+  },
+  "RL_SLUGSHOT": {
+    "en": "Slug Shot",
+    "ptbr": "Calibre Letal"
+  },
+  "RL_S_STORM": {
+    "en": "Shatter Storm",
+    "ptbr": "Rajada Estilha\\231ante"
+  },
+  "SA_ADVANCEDBOOK": {
+    "en": "Advanced Book",
+    "ptbr": "Estudo de Livros"
+  },
+  "SA_AUTOSPELL": {
+    "en": "Auto Spell",
+    "ptbr": "Desejo Arcano"
+  },
+  "SA_DRAGONOLOGY": {
+    "en": "Dragonology",
+    "ptbr": "Dragonologia"
+  },
+  "SA_FREECAST": {
+    "en": "Lucky Cast",
+    "ptbr": "Conjura\\231\\227o Livre"
+  },
+  "SA_FROSTWEAPON": {
+    "en": "Frost Weapon",
+    "ptbr": "Encantar com Geada"
+  },
+  "SA_LANDPROTECTOR": {
+    "en": "Land Protector",
+    "ptbr": "Proteger Terreno"
+  },
+  "SA_LIGHTNINGLOADER": {
+    "en": "Lightning Loader",
+    "ptbr": "Encantar com Ventania"
+  },
+  "SA_SEISMICWEAPON": {
+    "en": "Seismic Weapon",
+    "ptbr": "Encantar com Terremoto"
+  },
+  "SC_AUTOSHADOWSPELL": {
+    "en": "Shadow Spell",
+    "ptbr": "Desejo das Sombras"
+  },
+  "SC_ENERVATION": {
+    "en": "Masquerade-Enervation",
+    "ptbr": "M\\225scara da Fraqueza"
+  },
+  "SC_ESCAPE": {
+    "en": "Urgent Escape",
+    "ptbr": "Escapar"
+  },
+  "SC_FEINTBOMB": {
+    "en": "Feint Bomb",
+    "ptbr": "C\\243pia Explosiva"
+  },
+  "SC_GROOMY": {
+    "en": "Masquerade-Groomy",
+    "ptbr": "M\\225scara da Melancolia"
+  },
+  "SC_MAELSTROM": {
+    "en": "Maelstrom",
+    "ptbr": "Redemoinho de Absor\\231\\227o"
+  },
+  "SC_REPRODUCE": {
+    "en": "Reproduce",
+    "ptbr": "Mimetismo"
+  },
+  "SC_SHADOWFORM": {
+    "en": "Shadow Formation",
+    "ptbr": "V\\237nculo Sombrio"
+  },
+  "SC_TRIANGLESHOT": {
+    "en": "Triangle Shot",
+    "ptbr": "Disparo Triplo"
+  },
+  "SC_WEAKNESS": {
+    "en": "Masquerade-Weakness",
+    "ptbr": "M\\225scara da Vulnerabilidade"
+  },
+  "SG_FUSION": {
+    "en": "Fusion of Sun, Moon and Star",
+    "ptbr": "Uni\\227o Solar, Lunar e Estelar"
+  },
+  "SG_KNOWLEDGE": {
+    "en": "Knowledge of Sun, Moon and Star",
+    "ptbr": "Transmiss\\227o Solar, Lunar e Estelar"
+  },
+  "SG_MOON_BLESS": {
+    "en": "Blessing of Moon",
+    "ptbr": "B\\234n\\231\\227o Lunar"
+  },
+  "SG_STAR_BLESS": {
+    "en": "Blessing of Star",
+    "ptbr": "B\\234n\\231\\227o Estelar"
+  },
+  "SG_SUN_BLESS": {
+    "en": "Blessing of Sun",
+    "ptbr": "B\\234n\\231\\227o Solar"
+  },
+  "SHC_CROSS_SLASH": {
+    "en": "Shadow Wound",
+    "ptbr": "Shadow Wound"
+  },
+  "SHC_DANCING_KNIFE": {
+    "en": "Dancing Knife",
+    "ptbr": "Adagas Voadoras"
+  },
+  "SHC_ENCHANTING_SHADOW": {
+    "en": "Enchanting Shadow",
+    "ptbr": "Profanar Arma"
+  },
+  "SHC_ETERNAL_SLASH": {
+    "en": "Eternal Slash",
+    "ptbr": "Talho Eterno"
+  },
+  "SHC_FATAL_SHADOW_CROW": {
+    "en": "Fatal Shadow Claw",
+    "ptbr": "Revoada Sombria"
+  },
+  "SHC_IMPACT_CRATER": {
+    "en": "Impact Crater",
+    "ptbr": "Impacto Cratera"
+  },
+  "SHC_POTENT_VENOM": {
+    "en": "Potent Venom",
+    "ptbr": "Adulterar Veneno"
+  },
+  "SHC_SAVAGE_IMPACT": {
+    "en": "Savage Impact",
+    "ptbr": "Impacto Brutal"
+  },
+  "SHC_SHADOW_EXCEED": {
+    "en": "Shadow Exceed",
+    "ptbr": "Carrasco Sombrio"
+  },
+  "SHC_SHADOW_SENSE": {
+    "en": "Shadow Sense",
+    "ptbr": "Senso das Sombras"
+  },
+  "SHC_SHADOW_STAB": {
+    "en": "Shadow Stab",
+    "ptbr": "Facada"
+  },
+  "SH_CHUL_HO_BATTERING": {
+    "en": "Chulho Battering",
+    "ptbr": "Chulho Battering"
+  },
+  "SH_CHUL_HO_SONIC_CLAW": {
+    "en": "Chulho Sonic Claw",
+    "ptbr": "Garras de On\\231a"
+  },
+  "SH_COLORS_OF_HYUN_ROK": {
+    "en": "Colors of Hynrok",
+    "ptbr": "Cores do Arco-\\205ris"
+  },
+  "SH_COMMUNE_WITH_CHUL_HO": {
+    "en": "Commune with Chulho",
+    "ptbr": "Uni\\227o com On\\231a"
+  },
+  "SH_COMMUNE_WITH_HYUN_ROK": {
+    "en": "Commune with Hyunrok",
+    "ptbr": "Uni\\227o com Cervo"
+  },
+  "SH_HOGOGONG_STRIKE": {
+    "en": "Hogogong Strike",
+    "ptbr": "Patada Felina"
+  },
+  "SH_HOWLING_OF_CHUL_HO": {
+    "en": "Howling of Chulho",
+    "ptbr": "Rugido da On\\231a"
+  },
+  "SH_HYUN_ROKS_BREEZE": {
+    "en": "Hyunrok Breeze",
+    "ptbr": "Brisa Silvestre"
+  },
+  "SH_HYUN_ROK_CANNON": {
+    "en": "Hyunrok Cannon",
+    "ptbr": "Lan\\231a Galhada"
+  },
+  "SH_HYUN_ROK_SPIRIT_POWER": {
+    "en": "Hyunrok Spirit Power",
+    "ptbr": "Hyunrok Spirit Power"
+  },
+  "SH_MYSTICAL_CREATURE_MASTERY": {
+    "en": "Mystical Creature Mastery",
+    "ptbr": "Maestria M\\237stica"
+  },
+  "SJ_FALLINGSTAR": {
+    "en": "Falling Stars",
+    "ptbr": "Chuva Estelar"
+  },
+  "SJ_FLASHKICK": {
+    "en": "Flash Kick",
+    "ptbr": "Chute Estelar"
+  },
+  "SJ_FULLMOONKICK": {
+    "en": "Full Moon Kick",
+    "ptbr": "Chute Lunar"
+  },
+  "SJ_LIGHTOFMOON": {
+    "en": "Lunar Luminance",
+    "ptbr": "Luz Lunar"
+  },
+  "SJ_LIGHTOFSTAR": {
+    "en": "Stellar Luminance",
+    "ptbr": "Luz Estelar"
+  },
+  "SJ_LIGHTOFSUN": {
+    "en": "Solar Luminance",
+    "ptbr": "Luz Solar"
+  },
+  "SJ_NEWMOONKICK": {
+    "en": "New Moon Kick",
+    "ptbr": "Eclipse Lunar"
+  },
+  "SJ_NOVAEXPLOSING": {
+    "en": "Solar Explosion",
+    "ptbr": "Hipernova"
+  },
+  "SJ_PROMINENCEKICK": {
+    "en": "Blaze Kick",
+    "ptbr": "Chute Solar"
+  },
+  "SJ_STARSTANCE": {
+    "en": "Stellar Stance",
+    "ptbr": "Postura Estelar"
+  },
+  "SJ_SUNSTANCE": {
+    "en": "Solar Stance",
+    "ptbr": "Postura Solar"
+  },
+  "SKE_ALL_IN_THE_SKY": {
+    "en": "All in the Sky",
+    "ptbr": "Firmamento"
+  },
+  "SKE_DAWN_BREAK": {
+    "en": "Dawn Break",
+    "ptbr": "Alvorada"
+  },
+  "SKE_MIDNIGHT_KICK": {
+    "en": "Midnight Kick",
+    "ptbr": "Chute Meia-Lua"
+  },
+  "SKE_NOON_BLAST": {
+    "en": "Noon Blast",
+    "ptbr": "Entardecer"
+  },
+  "SKE_RISING_SUN": {
+    "en": "Rising Sun",
+    "ptbr": "Amanhecer"
+  },
+  "SKE_SKY_MASTERY": {
+    "en": "Sky Mastery",
+    "ptbr": "Maestria Celestial"
+  },
+  "SKE_SKY_MOON": {
+    "en": "Sky Moon",
+    "ptbr": "Sky Moon"
+  },
+  "SKE_SKY_SUN": {
+    "en": "Sky Sun",
+    "ptbr": "Sky Sun"
+  },
+  "SKE_STAR_CANNON": {
+    "en": "Star Cannon",
+    "ptbr": "Constela\\231\\227o"
+  },
+  "SKE_STAR_LIGHT_KICK": {
+    "en": "Star Light Kick",
+    "ptbr": "Star Light Kick"
+  },
+  "SKE_SUNSET_BLAST": {
+    "en": "Sunset Blast",
+    "ptbr": "Crep\\250sculo do Poente"
+  },
+  "SKE_TWINKLING_GALAXY": {
+    "en": "Twinkling Galaxy",
+    "ptbr": "Explos\\227o Gal\\225tica"
+  },
+  "SKE_WAR_BOOK_MASTERY": {
+    "en": "War Book Mastery",
+    "ptbr": "Per\\237cia com Livro"
+  },
+  "SL_KAAHI": {
+    "en": "Kaahi",
+    "ptbr": "Kaahi"
+  },
+  "SL_SMA": {
+    "en": "Esma",
+    "ptbr": "Esma"
+  },
+  "SM_BASH": {
+    "en": "Bash",
+    "ptbr": "Golpe Fulminante"
+  },
+  "SM_FATALBLOW": {
+    "en": "Fatal Manace",
+    "ptbr": "Ataque Fatal"
+  },
+  "SM_MAGNUM": {
+    "en": "Magnum Break",
+    "ptbr": "Impacto Explosivo"
+  },
+  "SM_RECOVERY": {
+    "en": "Increase HP Recovery",
+    "ptbr": "Aumentar Recupera\\231\\227o de HP"
+  },
+  "SM_SWORD": {
+    "en": "Sword Mastery",
+    "ptbr": "Per\\237cia com Espada"
+  },
+  "SM_TWOHAND": {
+    "en": "Two-Handed Sword Mastery",
+    "ptbr": "Per\\237cia com Espada de Duas M\\227os"
+  },
+  "SN_SHARPSHOOTING": {
+    "en": "Focused Arrow Strike",
+    "ptbr": "Tiro Preciso"
+  },
+  "SN_SIGHT": {
+    "en": "Falcon Eyes",
+    "ptbr": "Vis\\227o Real"
+  },
+  "SN_WINDWALK": {
+    "en": "Wind Walk",
+    "ptbr": "Caminho do Vento"
+  },
+  "SOA_EXORCISM_OF_MALICIOUS_SOUL": {
+    "en": "Exorcism of Malicious Soul",
+    "ptbr": "Exorcizar Assombra\\231\\227o"
+  },
+  "SOA_SOUL_GATHERING": {
+    "en": "Soul Gathering",
+    "ptbr": "Convocar Almas"
+  },
+  "SOA_SOUL_MASTERY": {
+    "en": "Soul Mastery",
+    "ptbr": "Maestria com Almas"
+  },
+  "SOA_TALISMAN_MASTERY": {
+    "en": "Talisman Mastery",
+    "ptbr": "Per\\237cia com Talism\\227s"
+  },
+  "SOA_TALISMAN_OF_BLACK_TORTOISE": {
+    "en": "Talisman of Black Tortoise",
+    "ptbr": "Talism\\227 do Jabuti"
+  },
+  "SOA_TALISMAN_OF_BLUE_DRAGON": {
+    "en": "Talisman of Blue Dragon",
+    "ptbr": "Talism\\227 do Drag\\227o"
+  },
+  "SOA_TALISMAN_OF_FIVE_ELEMENTS": {
+    "en": "Talisman of Five Elements",
+    "ptbr": "Talism\\227 dos Elementos"
+  },
+  "SOA_TALISMAN_OF_FOUR_BEARING_GOD": {
+    "en": "Talisman of Four Bearing God",
+    "ptbr": "Talism\\227 das Divindades"
+  },
+  "SOA_TALISMAN_OF_RED_PHOENIX": {
+    "en": "Talisman of Red Phoenix",
+    "ptbr": "Talim\\227 da F\\234nix"
+  },
+  "SOA_TALISMAN_OF_SOUL_STEALING": {
+    "en": "Talisman of Soul Stealing",
+    "ptbr": "Talism\\227 do Ceifeiro"
+  },
+  "SOA_TALISMAN_OF_WHITE_TIGER": {
+    "en": "Talisman of White Tiger",
+    "ptbr": "Talism\\227 do Tigre"
+  },
+  "SOA_TOTEM_OF_TUTELARY": {
+    "en": "Totem of Tutelary",
+    "ptbr": "Totem de Tutela"
+  },
+  "SO_CLOUD_KILL": {
+    "en": "Killing Cloud",
+    "ptbr": "Maldi\\231\\227o de Jormungand"
+  },
+  "SO_DIAMONDDUST": {
+    "en": "Diamond Dust",
+    "ptbr": "P\\243 de Diamante"
+  },
+  "SO_EARTHGRAVE": {
+    "en": "Earth Grave",
+    "ptbr": "Castigo de Nerthus"
+  },
+  "SO_PSYCHIC_WAVE": {
+    "en": "Psychic Wave",
+    "ptbr": "Onda Ps\\237quica"
+  },
+  "SO_SPELLFIST": {
+    "en": "Fist Spell",
+    "ptbr": "Punho Arcano"
+  },
+  "SO_STRIKING": {
+    "en": "Striking",
+    "ptbr": "Encanto de \\211rion"
+  },
+  "SO_VARETYR_SPEAR": {
+    "en": "Varetyr Spear",
+    "ptbr": "Lan\\231as dos Aesir"
+  },
+  "SO_WARMER": {
+    "en": "Warmer",
+    "ptbr": "Aquecer Terreno"
+  },
+  "SO_WATER_INSIGNIA": {
+    "en": "Water Insignia",
+    "ptbr": "Ins\\237gnia da \\193gua"
+  },
+  "SP_CURSEEXPLOSION": {
+    "en": "Curse Explosion",
+    "ptbr": "Necroexplos\\227o"
+  },
+  "SP_SOULCOLLECT": {
+    "en": "Soul Harvest",
+    "ptbr": "Coletar Alma"
+  },
+  "SP_SOULCURSE": {
+    "en": "Evil Soul Curse",
+    "ptbr": "Necromancia"
+  },
+  "SP_SOULFAIRY": {
+    "en": "Fairy Soul",
+    "ptbr": "Esp\\237rito da Fada"
+  },
+  "SP_SPA": {
+    "en": "Espa",
+    "ptbr": "Espa"
+  },
+  "SP_SWHOO": {
+    "en": "Eswhoo",
+    "ptbr": "Eswhoo"
+  },
+  "SR_DRAGONCOMBO": {
+    "en": "Exploding Dragon",
+    "ptbr": "Punho do Drag\\227o"
+  },
+  "SR_EARTHSHAKER": {
+    "en": "Earth Shaker",
+    "ptbr": "Impacto S\\237smico"
+  },
+  "SR_FALLENEMPIRE": {
+    "en": "Fallen Empire",
+    "ptbr": "Ru\\237na"
+  },
+  "SR_FLASHCOMBO": {
+    "en": "Flash Combo",
+    "ptbr": "Combo R\\225pido"
+  },
+  "SR_GENTLETOUCH_CHANGE": {
+    "en": "Gentle Touch - Opposite",
+    "ptbr": "Chakra da F\\250ria"
+  },
+  "SR_GENTLETOUCH_ENERGYGAIN": {
+    "en": "Gentle Touch - Alive",
+    "ptbr": "Chakra da Energia"
+  },
+  "SR_HELLGATE": {
+    "en": "Hell Gate",
+    "ptbr": "Hell Gate"
+  },
+  "SR_HOWLINGOFLION": {
+    "en": "Lion Howling",
+    "ptbr": "Rugido do Le\\227o"
+  },
+  "SR_KNUCKLEARROW": {
+    "en": "Knuckle Arrow",
+    "ptbr": "Pancada Corporal"
+  },
+  "SR_RAISINGDRAGON": {
+    "en": "Rising Dragon",
+    "ptbr": "Drag\\227o Ascendente"
+  },
+  "SR_RAMPAGEBLASTER": {
+    "en": "Rampage Blast",
+    "ptbr": "Explos\\227o Espiritual"
+  },
+  "SR_RIDEINLIGHTNING": {
+    "en": "Lightning Ride",
+    "ptbr": "Tempestade Espiritual"
+  },
+  "SR_SKYNETBLOW": {
+    "en": "Sky Blow",
+    "ptbr": "Soco Furac\\227o"
+  },
+  "SR_TIGERCANNON": {
+    "en": "Tiger Cannon",
+    "ptbr": "Garra de Tigre"
+  },
+  "SS_ANKOKURYUUAKUMU": {
+    "en": "Dark Dragon - Nightmare",
+    "ptbr": "Mahou do Pesadelo"
+  },
+  "SS_ANTENPOU": {
+    "en": "Darkening Cannon",
+    "ptbr": "Mahou da Escurid\\227o"
+  },
+  "SS_FUUMAKOUCHIKU": {
+    "en": "Huuma Shuriken - Construct",
+    "ptbr": "Huuma Andarilho"
+  },
+  "SS_FUUMASHOUAKU": {
+    "en": "Huuma Shuriken - Grasp",
+    "ptbr": "Huuma Aderente"
+  },
+  "SS_HITOUAKUMU": {
+    "en": "Kunai - Nightmare",
+    "ptbr": "Kunai do Pesadelo"
+  },
+  "SS_KAGEGARI": {
+    "en": "Shadow Hunting",
+    "ptbr": "L\\226mina das Trevas"
+  },
+  "SS_KAGEGISSEN": {
+    "en": "Shadow Flash",
+    "ptbr": "Centelha das Trevas"
+  },
+  "SS_KAGENOMAI": {
+    "en": "Shadow Dance",
+    "ptbr": "Dan\\231a das Trevas"
+  },
+  "SS_KINRYUUHOU": {
+    "en": "Golden Dragon Cannon",
+    "ptbr": "Mahou do Drag\\227o \\193ureo"
+  },
+  "SS_KUNAIKAITEN": {
+    "en": "Kunai - Rotation",
+    "ptbr": "Kunai Rotat\\243ria"
+  },
+  "SS_KUNAIKUSSETSU": {
+    "en": "Kunai - Refraction",
+    "ptbr": "Kunai Refratada"
+  },
+  "SS_KUNAIWAIKYOKU": {
+    "en": "Kunai - Distortion",
+    "ptbr": "Kunai Distorcida"
+  },
+  "SS_RAIDENPOU": {
+    "en": "Thundering Cannon",
+    "ptbr": "Mahou da Trovoada"
+  },
+  "SS_REIKETSUHOU": {
+    "en": "Cold Blooded Cannon",
+    "ptbr": "Mahou da N\\233voa Fria"
+  },
+  "SS_SEKIENHOU": {
+    "en": "Red Flame Cannon",
+    "ptbr": "Mahou da Chama Vermelha"
+  },
+  "SS_SHIMIRU": {
+    "en": "Infiltration",
+    "ptbr": "Infiltrar"
+  },
+  "ST_PRESERVE": {
+    "en": "Preserve",
+    "ptbr": "Preservar"
+  },
+  "SU_ARCLOUSEDASH": {
+    "en": "Arclouse Dash",
+    "ptbr": "Impulso de Arclouse"
+  },
+  "SU_BUNCHOFSHRIMP": {
+    "en": "Bunch of Shrimp",
+    "ptbr": "Chuva de Mariscos"
+  },
+  "SU_CHATTERING": {
+    "en": "Chattering",
+    "ptbr": "Despertar"
+  },
+  "SU_CN_METEOR": {
+    "en": "Catnip Meteor",
+    "ptbr": "Meteoros de Nepeta"
+  },
+  "SU_FRESHSHRIMP": {
+    "en": "Frash Shrimp",
+    "ptbr": "Camar\\227o Fresquinho"
+  },
+  "SU_HISS": {
+    "en": "Hiss",
+    "ptbr": "Riscar F\\243sforo"
+  },
+  "SU_LUNATICCARROTBEAT": {
+    "en": "Lunatic Carrot Beat",
+    "ptbr": "Cometas Lun\\225ticos"
+  },
+  "SU_MEOWMEOW": {
+    "en": "Meow Meow",
+    "ptbr": "Balaio de Gato"
+  },
+  "SU_NYANGGRASS": {
+    "en": "Nyang Grass",
+    "ptbr": "Mato de Gato"
+  },
+  "SU_PICKYPECK": {
+    "en": "Picky Peck",
+    "ptbr": "Chilique de Picky"
+  },
+  "SU_POWEROFFLOCK": {
+    "en": "Power of Flock",
+    "ptbr": "Intimidar"
+  },
+  "SU_POWEROFLAND": {
+    "en": "Power of Land",
+    "ptbr": "Poder da Selva"
+  },
+  "SU_POWEROFLIFE": {
+    "en": "Power of Life",
+    "ptbr": "Poder da Fauna"
+  },
+  "SU_POWEROFSEA": {
+    "en": "Power of Sea",
+    "ptbr": "Poder das Mar\\233s"
+  },
+  "SU_SCAROFTAROU": {
+    "en": "Scar of Tarou",
+    "ptbr": "Ferida de Tarou"
+  },
+  "SU_SCRATCH": {
+    "en": "Scratch",
+    "ptbr": "Arranhar"
+  },
+  "SU_SHRIMPARTY": {
+    "en": "Tasty Shrimp Party",
+    "ptbr": "Festa do Camar\\227o"
+  },
+  "SU_SPIRITOFLIFE": {
+    "en": "Sprit Of Life",
+    "ptbr": "Invoca\\231\\227o da Fauna"
+  },
+  "SU_SVG_SPIRIT": {
+    "en": "Wug Strike",
+    "ptbr": "Ataque Selvagem"
+  },
+  "SU_SV_ROOTTWIST": {
+    "en": "Silvervine Root Twist",
+    "ptbr": "Hera Venenosa"
+  },
+  "SU_SV_STEMSPEAR": {
+    "en": "Silvervine Stem Spear",
+    "ptbr": "Lan\\231a Gateira"
+  },
+  "TF_DOUBLE": {
+    "en": "Double Attack",
+    "ptbr": "Ataque Duplo"
+  },
+  "TF_HIDING": {
+    "en": "Hiding",
+    "ptbr": "Esconderijo"
+  },
+  "TF_POISON": {
+    "en": "Envenom",
+    "ptbr": "Envenenar"
+  },
+  "TK_DODGE": {
+    "en": "Improve Dodge",
+    "ptbr": "Cambalhota"
+  },
+  "TK_HPTIME": {
+    "en": "Peaceful Break",
+    "ptbr": "Tr\\233gua R\\225pida"
+  },
+  "TK_POWER": {
+    "en": "Power",
+    "ptbr": "Kihop"
+  },
+  "TK_SEVENWIND": {
+    "en": "Seven Wind",
+    "ptbr": "Brisa Leve"
+  },
+  "TK_SPTIME": {
+    "en": "Happy Break",
+    "ptbr": "Retiro R\\225pido"
+  },
+  "TR_AIN_RHAPSODY": {
+    "en": "Rhapsody of Mineworker",
+    "ptbr": "Raps\\243dia do Minerador"
+  },
+  "TR_GEF_NOCTURN": {
+    "en": "Geffenia Nocturne",
+    "ptbr": "Recital de Geffenia"
+  },
+  "TR_JAWAII_SERENADE": {
+    "en": "Serenade of Jawaii",
+    "ptbr": "Serenata de Jawaii"
+  },
+  "TR_METALIC_FURY": {
+    "en": "Metallic Fury",
+    "ptbr": "F\\250ria Estridente"
+  },
+  "TR_MYSTIC_SYMPHONY": {
+    "en": "Mystic Symphony",
+    "ptbr": "Sinfonia M\\237stica"
+  },
+  "TR_PRON_MARCH": {
+    "en": "March of Prontera",
+    "ptbr": "Marcha de Prontera"
+  },
+  "TR_RHYTHMICAL_WAVE": {
+    "en": "Rhythmical Wave",
+    "ptbr": "Rhythmical Wave"
+  },
+  "TR_RHYTHMSHOOTING": {
+    "en": "Rhythm Shooting",
+    "ptbr": "Disparo R\\237tmico"
+  },
+  "TR_ROSEBLOSSOM": {
+    "en": "Rose Blossom",
+    "ptbr": "Atirar Rosas"
+  },
+  "TR_SOUNDBLEND": {
+    "en": "Sound Blend",
+    "ptbr": "Arranjo Musical"
+  },
+  "TR_STAGE_MANNER": {
+    "en": "Stage Manner",
+    "ptbr": "Presen\\231a de Palco"
+  },
+  "WA_MOONLIT_SERENADE": {
+    "en": "Moonlight Serenade",
+    "ptbr": "Serenata ao Luar"
+  },
+  "WA_SWING_DANCE": {
+    "en": "Swing Dance",
+    "ptbr": "Ritmo Contagiante"
+  },
+  "WH_CALAMITYGALE": {
+    "en": "Calamity Gale",
+    "ptbr": "Ventos Sinistros"
+  },
+  "WH_CRESCIVE_BOLT": {
+    "en": "Crescive Bolt",
+    "ptbr": "Tiro Crescente"
+  },
+  "WH_DEEPBLINDTRAP": {
+    "en": "Deep Blind Trap",
+    "ptbr": "Armadilha Sombria"
+  },
+  "WH_FLAMETRAP": {
+    "en": "Flame Trap",
+    "ptbr": "Armadilha Ardente"
+  },
+  "WH_GALESTORM": {
+    "en": "Gale Storm",
+    "ptbr": "Vendaval de Flechas"
+  },
+  "WH_HAWKBOOMERANG": {
+    "en": "Hawk Boomerang",
+    "ptbr": "Aterrissagem"
+  },
+  "WH_HAWKRUSH": {
+    "en": "Hawk Rush",
+    "ptbr": "Mergulho A\\233reo"
+  },
+  "WH_NATUREFRIENDLY": {
+    "en": "Circling Nature",
+    "ptbr": "Amigo da Natureza"
+  },
+  "WH_SOLIDTRAP": {
+    "en": "Solid Trap",
+    "ptbr": "Armadilha Terrestre"
+  },
+  "WH_SWIFTTRAP": {
+    "en": "Switf Trap",
+    "ptbr": "Armadilha Atormentante"
+  },
+  "WH_WILD_WALK": {
+    "en": "Wild Walk",
+    "ptbr": "Wild Walk"
+  },
+  "WL_CHAINLIGHTNING": {
+    "en": "Chain Lightning",
+    "ptbr": "Corrente El\\233trica"
+  },
+  "WL_COMET": {
+    "en": "Comet",
+    "ptbr": "Cometa"
+  },
+  "WL_CRIMSONROCK": {
+    "en": "Crimson Rock",
+    "ptbr": "Meteoro Escarlate"
+  },
+  "WL_DRAINLIFE": {
+    "en": "Drain Life",
+    "ptbr": "Drenar Vida"
+  },
+  "WL_EARTHSTRAIN": {
+    "en": "Earth Strain",
+    "ptbr": "Abalo S\\237smico"
+  },
+  "WL_FREEZE_SP": {
+    "en": "Freezing Spell",
+    "ptbr": "Estudo Arcano Avan\\231ado"
+  },
+  "WL_FROSTMISTY": {
+    "en": "Frost Misty",
+    "ptbr": "Zero Absoluto"
+  },
+  "WL_HELLINFERNO": {
+    "en": "Hell Inferno",
+    "ptbr": "Chamas de Hela"
+  },
+  "WL_JACKFROST": {
+    "en": "Jack Frost",
+    "ptbr": "Esquife de Gelo"
+  },
+  "WL_RADIUS": {
+    "en": "Radius",
+    "ptbr": "Radius"
+  },
+  "WL_RECOGNIZEDSPELL": {
+    "en": "Recognized Spell",
+    "ptbr": "Maestria Arcana"
+  },
+  "WL_RELEASE": {
+    "en": "Released",
+    "ptbr": "Lan\\231ar Magia"
+  },
+  "WL_SOULEXPANSION": {
+    "en": "Soul Expansion",
+    "ptbr": "Impacto Espiritual"
+  },
+  "WL_TETRAVORTEX": {
+    "en": "Tetra Vortex",
+    "ptbr": "Tetra Vortex"
+  },
+  "WM_FRIGG_SONG": {
+    "en": "Frigg's Song",
+    "ptbr": "Can\\231\\227o de Frigga"
+  },
+  "WM_GREAT_ECHO": {
+    "en": "Great Echo",
+    "ptbr": "Brado de Odin"
+  },
+  "WM_LERADS_DEW": {
+    "en": "Lerad's Dew",
+    "ptbr": "Orvalho de Idun"
+  },
+  "WM_LESSON": {
+    "en": "Lesson",
+    "ptbr": "Dom\\237nio Musicial"
+  },
+  "WM_METALICSOUND": {
+    "en": "Metalic Sound",
+    "ptbr": "Ru\\237do Estridente"
+  },
+  "WM_REVERBERATION": {
+    "en": "Reverberation",
+    "ptbr": "Resson\\226ncia"
+  },
+  "WM_SEVERE_RAINSTORM": {
+    "en": "Severe Rainstorm",
+    "ptbr": "Temporal de Flechas"
+  },
+  "WM_SONG_OF_MANA": {
+    "en": "Song Of Mana",
+    "ptbr": "Can\\231\\227o de Alfheim"
+  },
+  "WS_CARTBOOST": {
+    "en": "Cart Boost",
+    "ptbr": "Impulso no Carrinho"
+  },
+  "WS_CARTTERMINATION": {
+    "en": "Cart Termination",
+    "ptbr": "Choque de Carrinho"
+  },
+  "WZ_EARTHSPIKE": {
+    "en": "Earth Spike",
+    "ptbr": "Coluna de Pedra"
+  },
+  "WZ_FIREPILLAR": {
+    "en": "Fire Pillar",
+    "ptbr": "Coluna de Fogo"
+  },
+  "WZ_FROSTNOVA": {
+    "en": "Frost Nova",
+    "ptbr": "Congelar"
+  },
+  "WZ_HEAVENDRIVE": {
+    "en": "Heaven's Drive",
+    "ptbr": "F\\250ria da Terra"
+  },
+  "WZ_JUPITEL": {
+    "en": "Jupitel Thunder",
+    "ptbr": "Trov\\227o de J\\250piter"
+  },
+  "WZ_METEOR": {
+    "en": "Meteor Storm",
+    "ptbr": "Chuva de Meteoros"
+  },
+  "WZ_STORMGUST": {
+    "en": "Storm Gust",
+    "ptbr": "Nevasca"
+  },
+  "WZ_VERMILION": {
+    "en": "Lord of Vermilion",
+    "ptbr": "Ira de Thor"
+  },
+  "_CALC_3FAITH": {
+    "en": "_3Faith",
+    "ptbr": "_3Faith"
+  },
+  "_CALC_ARGUTUS_VITA_TELUM": {
+    "en": "_Argutus Vita_Telum",
+    "ptbr": "_Argutus Vita_Telum"
+  },
+  "_CALC_ASIR_RUNESTONE": {
+    "en": "Asir Runestone",
+    "ptbr": "Asir Runestone"
+  },
+  "_CALC_BIOLO_MONSTER_LIST": {
+    "en": "_Biolo_Monster_List",
+    "ptbr": "_Biolo_Monster_List"
+  },
+  "_CALC_COMET_AMP": {
+    "en": "Comet Amp",
+    "ptbr": "Comet Amp"
+  },
+  "_CALC_CRI_RACE_DEMON": {
+    "en": "cri_race_demon",
+    "ptbr": "cri_race_demon"
+  },
+  "_CALC_CRI_RACE_DRAGON": {
+    "en": "cri_race_dragon",
+    "ptbr": "cri_race_dragon"
+  },
+  "_CALC_CRI_RACE_FISH": {
+    "en": "cri_race_fish",
+    "ptbr": "cri_race_fish"
+  },
+  "_CALC_CRI_RACE_INSECT": {
+    "en": "cri_race_insect",
+    "ptbr": "cri_race_insect"
+  },
+  "_CALC_CRI_RACE_UNDEAD": {
+    "en": "cri_race_undead",
+    "ptbr": "cri_race_undead"
+  },
+  "_CALC_CURRENT_HP": {
+    "en": "Current HP",
+    "ptbr": "Current HP"
+  },
+  "_CALC_CURRENT_SP": {
+    "en": "Current SP",
+    "ptbr": "Current SP"
+  },
+  "_CALC_DART_ARROW": {
+    "en": "Dart Arrow",
+    "ptbr": "Dart Arrow"
+  },
+  "_CALC_DEBUFF_SPORE_EXPLOSION": {
+    "en": "Debuff_Spore Explosion",
+    "ptbr": "Debuff_Spore Explosion"
+  },
+  "_CALC_DEBUF_SONIC_BRAND": {
+    "en": "_Debuf_Sonic_Brand",
+    "ptbr": "_Debuf_Sonic_Brand"
+  },
+  "_CALC_DIVULIO": {
+    "en": "Divulio",
+    "ptbr": "Divulio"
+  },
+  "_CALC_DMG_LUCIFER_MOROCC": {
+    "en": "dmg__Lucifer Morocc",
+    "ptbr": "dmg__Lucifer Morocc"
+  },
+  "_CALC_ELEMENTALMASTER_SPIRIT": {
+    "en": "_ElementalMaster_spirit",
+    "ptbr": "_ElementalMaster_spirit"
+  },
+  "_CALC_INTENSIFICATION": {
+    "en": "Intensification",
+    "ptbr": "Intensification"
+  },
+  "_CALC_MEISTER_ABR_LIST": {
+    "en": "_Meister_ABR_List",
+    "ptbr": "_Meister_ABR_List"
+  },
+  "_CALC_MEISTER_QUAKE": {
+    "en": "_Meister_Quake",
+    "ptbr": "_Meister_Quake"
+  },
+  "_CALC_MEISTER_RUSH": {
+    "en": "_Meister_Rush",
+    "ptbr": "_Meister_Rush"
+  },
+  "_CALC_NIGHTWATCH_AIMING_COUNT": {
+    "en": "_NightWatch_Aiming Count",
+    "ptbr": "_NightWatch_Aiming Count"
+  },
+  "_CALC_RELIGIO_BENEDICTUM": {
+    "en": "_Religio_Benedictum",
+    "ptbr": "_Religio_Benedictum"
+  },
+  "_CALC_SKYEMPEROR_RISING_MOON": {
+    "en": "_SkyEmperor_Rising_Moon",
+    "ptbr": "_SkyEmperor_Rising_Moon"
+  },
+  "_CALC_SKYEMPEROR_RISING_SUN": {
+    "en": "_SkyEmperor_Rising_Sun",
+    "ptbr": "_SkyEmperor_Rising_Sun"
+  },
+  "_CALC_SORCERER_ELEMENTAL_SPIRIT": {
+    "en": "_Sorcerer_Elemental_Spirit",
+    "ptbr": "_Sorcerer_Elemental_Spirit"
+  },
+  "_CALC_SOULASCETIC_BLESSING": {
+    "en": "_SoulAscetic_Blessing",
+    "ptbr": "_SoulAscetic_Blessing"
+  },
+  "_CALC_SPIN_COUNT": {
+    "en": "Spin Count",
+    "ptbr": "Spin Count"
+  },
+  "_CALC_TOTAL_SOUL": {
+    "en": "Total Soul",
+    "ptbr": "Total Soul"
+  },
+  "_CALC_TOTAL_SPIRIT": {
+    "en": "Total Spirit",
+    "ptbr": "Total Spirit"
+  },
+  "_CALC_TROUVERE_TROUBADOUR_IGNORE_RES_MRES": {
+    "en": "_Trouvere_Troubadour_ignore_res_mres",
+    "ptbr": "_Trouvere_Troubadour_ignore_res_mres"
+  },
+  "_CALC_TROUVERE_TROUBADOUR_PATK_SMATK": {
+    "en": "_Trouvere_Troubadour_pAtk_sMatk",
+    "ptbr": "_Trouvere_Troubadour_pAtk_sMatk"
+  },
+  "_CALC_TURISUS_RUNESTONE": {
+    "en": "Turisus Runestone",
+    "ptbr": "Turisus Runestone"
+  },
+  "_CALC_WRATH_OF": {
+    "en": "Wrath of",
+    "ptbr": "Wrath of"
+  }
+}
