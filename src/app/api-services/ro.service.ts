@@ -4,7 +4,7 @@ import * as yaml from 'js-yaml';
 import { Observable, map, shareReplay, tap } from 'rxjs';
 import { createRawTotalBonus } from 'src/app/utils';
 import { environment } from 'src/environments/environment';
-import { OFFENSIVE_SKILL_NAMES } from '../constants/skill-name';
+import { OFFENSIVE_SKILL_NAMES, ACTIVE_PASSIVE_SKILL_NAMES } from '../constants/skill-name';
 import { validClassNameSet } from './valid-bonuses';
 
 type baseStat = 'Str' | 'Agi' | 'Int' | 'Dex' | 'Luk' | 'Vit' | 'Pow' | 'Con' | 'Crt' | 'Spl' | 'Sta' | 'Wis';
@@ -45,7 +45,7 @@ export class RoService {
         const its = Object.values(items) as any[];
         const invalidBonusSet = new Set();
         const invalidClassNameSet = new Set();
-        const validSkillNameSet = new Set(OFFENSIVE_SKILL_NAMES as any);
+        const validSkillNameSet = new Set([...OFFENSIVE_SKILL_NAMES, ...ACTIVE_PASSIVE_SKILL_NAMES] as any);
 
         for (const item of its) {
           const script = item.script as Record<string, string[]>;
@@ -65,7 +65,10 @@ export class RoService {
               .replace('fctPercent__', '')
               .replace('fct__', '')
               .replace('acd__', '')
-              .replace('cd__', '');
+              .replace('cd__', '')
+              .replace('autocast__', '')
+              .replace('dmg__', '')
+              .replace(/^flat_/, '');
             if (validStatusSet.has(realKey)) continue;
             if (invalidBonusSet.has(realKey)) continue;
             if (validSkillNameSet.has(realKey)) continue;
