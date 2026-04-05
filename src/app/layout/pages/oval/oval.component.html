@@ -7,6 +7,17 @@
   </div>
 
   <ng-container *ngIf="!isLoading">
+    <!-- Event tabs -->
+    <p-tabView *ngIf="events.length > 1" [activeIndex]="activeTabIndex" (onChange)="onTabChange($event)" styleClass="mb-3">
+      <p-tabPanel *ngFor="let ev of events" [header]="ev.name">
+      </p-tabPanel>
+    </p-tabView>
+
+    <div *ngIf="isLoadingTab" class="flex justify-content-center p-5">
+      <i class="pi pi-spin pi-spinner" style="font-size: 1.5rem"></i>
+    </div>
+
+    <ng-container *ngIf="!isLoadingTab">
     <!-- Stat cards -->
     <div class="grid mb-4">
       <div class="col-3">
@@ -186,5 +197,6 @@
         </div>
       </div>
     </div>
+    </ng-container>
   </ng-container>
 </div>

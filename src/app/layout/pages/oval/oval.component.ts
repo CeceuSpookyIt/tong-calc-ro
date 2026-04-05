@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouletteService, RouletteHistoryRow } from '../../../api-services/roulette.service';
+import { RouletteService, RouletteHistoryRow, RouletteEvent } from '../../../api-services/roulette.service';
 
 interface PrizeRanking {
   item: string;
@@ -28,17 +28,6 @@ interface ProbTier {
   cards: { spins: number; prob: number }[];
 }
 
-const JACKPOT_ITEMS: { item: string; tier: 'jackpot' }[] = [
-  { item: '100x Artefato Oval', tier: 'jackpot' },
-  { item: '200x Blacksmith Blessing', tier: 'jackpot' },
-  { item: '100x Blacksmith Blessing', tier: 'jackpot' },
-];
-
-const RARE_ITEMS = new Set([
-  '[Costume] Hollgrehenn Aura',
-  '10x Blacksmith Blessing',
-  '5x Blacksmith Blessing',
-]);
 
 @Component({
   selector: 'app-oval',
@@ -65,16 +54,52 @@ export class OvalComponent implements OnInit {
   unluckyAccounts: LuckEntry[] = [];
   probTiers: ProbTier[] = [];
 
+  // Tabs per event
+  events: RouletteEvent[] = [];
+  activeTabIndex = 0;
+  isLoadingTab = false;
+
+  // Current event tiers (from DB)
+  private jackpotItems: string[] = [];
+  private rareItems = new Set<string>();
+
   constructor(private rouletteService: RouletteService) {}
 
   ngOnInit(): void {
-    this.rouletteService.getHistory().subscribe({
-      next: (rows) => {
-        this.processData(rows);
-        this.isLoading = false;
+    this.rouletteService.getEvents().subscribe({
+      next: (events) => {
+        this.events = events;
+        if (events.length > 0) {
+          this.activeTabIndex = 0;
+          this.loadEvent(events[this.activeTabIndex]);
+        } else {
+          this.isLoading = false;
+        }
       },
       error: () => {
         this.isLoading = false;
+      },
+    });
+  }
+
+  onTabChange(event: any): void {
+    this.activeTabIndex = event.index;
+    this.loadEvent(this.events[this.activeTabIndex]);
+  }
+
+  private loadEvent(ev: RouletteEvent): void {
+    this.jackpotItems = ev.jackpot_items ?? [];
+    this.rareItems = new Set(ev.rare_items ?? []);
+    this.isLoadingTab = true;
+    this.rouletteService.getHistory(ev.slug).subscribe({
+      next: (rows) => {
+        this.processData(rows);
+        this.isLoading = false;
+        this.isLoadingTab = false;
+      },
+      error: () => {
+        this.isLoading = false;
+        this.isLoadingTab = false;
       },
     });
   }
@@ -99,25 +124,21 @@ export class OvalComponent implements OnInit {
       .map(([item, quantity]) => {
         const p = totalQty > 0 ? quantity / totalQty : 0;
         const [lo, hi] = this.wilsonCI(p, totalQty);
-        const tier = RARE_ITEMS.has(item) ? 'rare' as const : 'common' as const;
+        const tier = this.rareItems.has(item) ? 'rare' as const : 'common' as const;
         return { item, quantity, percentage: p * 100, tier, rateLo: lo * 100, rateHi: hi * 100 };
       })
       .sort((a, b) => b.quantity - a.quantity);
 
-    // Add jackpot items (0 drops)
-    const [, jackpotHi] = this.wilsonCI(0, totalQty);
-    const jackpotRanking: PrizeRanking[] = JACKPOT_ITEMS
-      .filter(j => !counts[j.item])
-      .map(j => ({
-        item: j.item,
-        quantity: 0,
-        percentage: 0,
-        tier: 'jackpot' as const,
-        rateLo: 0,
-        rateHi: jackpotHi * 100,
-      }));
+    // Add jackpot/rare items with 0 drops
+    const [, zeroHi] = this.wilsonCI(0, totalQty);
+    const jackpotZero: PrizeRanking[] = this.jackpotItems
+      .filter(item => !counts[item])
+      .map(item => ({ item, quantity: 0, percentage: 0, tier: 'jackpot' as const, rateLo: 0, rateHi: zeroHi * 100 }));
+    const rareZero: PrizeRanking[] = [...this.rareItems]
+      .filter(item => !counts[item])
+      .map(item => ({ item, quantity: 0, percentage: 0, tier: 'rare' as const, rateLo: 0, rateHi: zeroHi * 100 }));
 
-    this.ranking = [...jackpotRanking, ...droppedRanking.filter(r => r.tier === 'rare'), ...droppedRanking.filter(r => r.tier === 'common')];
+    this.ranking = [...jackpotZero, ...rareZero, ...droppedRanking.filter(r => r.tier === 'rare'), ...droppedRanking.filter(r => r.tier === 'common')];
 
     // Trend chart
     this.buildTrendChart(rows);
@@ -225,7 +246,7 @@ export class OvalComponent implements OnInit {
       if (!accountMap.has(h)) accountMap.set(h, { spins: 0, rares: 0, rareItems: {} });
       const acc = accountMap.get(h)!;
       acc.spins++;
-      if (RARE_ITEMS.has(row.item.trim())) {
+      if (this.rareItems.has(row.item.trim())) {
         acc.rares++;
         const item = row.item.trim();
         acc.rareItems[item] = (acc.rareItems[item] || 0) + 1;
@@ -265,24 +286,27 @@ export class OvalComponent implements OnInit {
     const [, jackpotUpper] = this.wilsonCI(0, totalQty);
     const spinSteps = [1, 5, 10, 15, 20, 30, 50];
 
-    this.probTiers = [
-      {
+    this.probTiers = [];
+    if (this.jackpotItems.length > 0) {
+      this.probTiers.push({
         name: 'Jackpot',
-        desc: '100x Artefato Oval, 200x BSB, 100x BSB',
+        desc: this.jackpotItems.map(i => this.shortItemName(i)).join(', '),
         color: '#FF6384',
         rate: jackpotUpper,
         note: 'estimativa (0 drops)',
         cards: spinSteps.map(n => ({ spins: n, prob: (1 - Math.pow(1 - jackpotUpper, n)) * 100 })),
-      },
-      {
+      });
+    }
+    if (this.rareItems.size > 0) {
+      this.probTiers.push({
         name: 'Raro',
-        desc: 'Costume, 10x BSB, 5x BSB',
+        desc: [...this.rareItems].map(i => this.shortItemName(i)).join(', '),
         color: '#FFCE56',
         rate: rareRate,
         note: null,
         cards: spinSteps.map(n => ({ spins: n, prob: (1 - Math.pow(1 - rareRate, n)) * 100 })),
-      },
-    ];
+      });
+    }
   }
 
   private buildPieChart(droppedRanking: PrizeRanking[]): void {
@@ -310,9 +334,11 @@ export class OvalComponent implements OnInit {
   }
 
   private shortItemName(item: string): string {
-    if (item.includes('Hollgrehenn')) return 'Costume';
-    if (item.startsWith('10x')) return '10xBSB';
-    if (item.startsWith('5x')) return '5xBSB';
+    // "100x Blacksmith Blessing" → "100xBSB"
+    const bsb = item.match(/^(\d+)x\s+Blacksmith Blessing$/i);
+    if (bsb) return `${bsb[1]}xBSB`;
+    // "[Costume] Xyz" → "Costume"
+    if (item.startsWith('[Costume]')) return 'Costume';
     return item;
   }
 
