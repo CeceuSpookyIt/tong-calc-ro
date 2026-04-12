@@ -1151,6 +1151,10 @@
     "en": "Soul",
     "ptbr": "Aura Ninja"
   },
+  "NJ_SYURIKEN": {
+    "en": "Throw Shuriken",
+    "ptbr": "Arremessar Shuriken"
+  },
   "NJ_NINPOU": {
     "en": "Ninja Mastery",
     "ptbr": "Perícia Ninja"
@@ -1335,6 +1339,10 @@
     "en": "Plagiarism",
     "ptbr": "Plágio"
   },
+  "RG_INTIMIDATE": {
+    "en": "Snatch",
+    "ptbr": "Rapto"
+  },
   "RG_RAID": {
     "en": "Sightless Mind",
     "ptbr": "Ataque Surpresa"
@@ -1498,6 +1506,10 @@
   "SC_ESCAPE": {
     "en": "Urgent Escape",
     "ptbr": "Escapar"
+  },
+  "SC_FATALMENACE": {
+    "en": "Fatal Menace",
+    "ptbr": "Ofensiva Fatal"
   },
   "SC_FEINTBOMB": {
     "en": "Feint Bomb",
@@ -2278,6 +2290,10 @@
   "WM_FRIGG_SONG": {
     "en": "Frigg's Song",
     "ptbr": "Canção de Frigga"
+  },
+  "WM_DANCE_WITH_WUG": {
+    "en": "Dance With A Warg",
+    "ptbr": "Dança com Lobos"
   },
   "WM_GREAT_ECHO": {
     "en": "Great Echo",
