@@ -175,7 +175,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'SO_PSYCHIC_WAVE',
-      label: 'Onda Psquica Lv5',
+      label: 'Onda Psíquica Lv5',
       value: 'SO_PSYCHIC_WAVE==5',
       fct: 0.6,
       vct: 12,
@@ -216,7 +216,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'SO_VARETYR_SPEAR',
-      label: 'Lanas dos Aesir Lv10',
+      label: 'Lanças dos Aesir Lv10',
       value: 'SO_VARETYR_SPEAR==10',
       fct: 1,
       vct: 4,
@@ -238,7 +238,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'GC_POISONSMOKE',
-      label: 'Nevoeiro T£xico Lv5',
+      label: 'Nevoeiro Tóxico Lv5',
       value: 'GC_POISONSMOKE==5',
       fct: 0,
       vct: 6,
@@ -273,7 +273,7 @@ export class Sorcerer extends Scholar {
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       name: 'SO_STRIKING',
-      label: 'Encanto de rion',
+      label: 'Encanto de Órion',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -286,7 +286,7 @@ export class Sorcerer extends Scholar {
     },
     {
       name: 'SO_DIAMONDDUST',
-      label: 'P£ de Diamante',
+      label: 'Pó de Diamante',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },

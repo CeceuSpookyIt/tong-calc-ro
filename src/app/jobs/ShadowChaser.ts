@@ -128,7 +128,7 @@ export class ShadowChaser extends Stalker {
     },
     {
       name: 'SC_FEINTBOMB',
-      label: 'C£pia Explosiva Lv10',
+      label: 'Cópia Explosiva Lv10',
       value: 'SC_FEINTBOMB==10',
       acd: 0,
       fct: 0,
@@ -162,7 +162,7 @@ export class ShadowChaser extends Stalker {
     },
     {
       name: 'SO_PSYCHIC_WAVE',
-      label: 'Onda Psquica',
+      label: 'Onda Psíquica',
       value: 'SO_PSYCHIC_WAVE==5',
       fct: (lv) => 1.1 - lv * 0.1,
       vct: (lv) => 7 + lv,
@@ -171,11 +171,11 @@ export class ShadowChaser extends Stalker {
       totalHit: ({ skillLevel: lv }) => 2 + lv,
       isMatk: true,
       levelList: [
-        { label: 'Onda Psquica Lv1', value: 'SO_PSYCHIC_WAVE==1' },
-        { label: 'Onda Psquica Lv2', value: 'SO_PSYCHIC_WAVE==2' },
-        { label: 'Onda Psquica Lv3', value: 'SO_PSYCHIC_WAVE==3' },
-        { label: 'Onda Psquica Lv4', value: 'SO_PSYCHIC_WAVE==4' },
-        { label: 'Onda Psquica Lv5', value: 'SO_PSYCHIC_WAVE==5' },
+        { label: 'Onda Psíquica Lv1', value: 'SO_PSYCHIC_WAVE==1' },
+        { label: 'Onda Psíquica Lv2', value: 'SO_PSYCHIC_WAVE==2' },
+        { label: 'Onda Psíquica Lv3', value: 'SO_PSYCHIC_WAVE==3' },
+        { label: 'Onda Psíquica Lv4', value: 'SO_PSYCHIC_WAVE==4' },
+        { label: 'Onda Psíquica Lv5', value: 'SO_PSYCHIC_WAVE==5' },
       ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -297,7 +297,7 @@ export class ShadowChaser extends Stalker {
     },
     {
       name: 'WM_REVERBERATION',
-      label: 'Ressonncia Lv5',
+      label: 'Ressonância Lv5',
       value: 'WM_REVERBERATION==5',
       acd: 0.5,
       fct: 0.5,
@@ -313,7 +313,7 @@ export class ShadowChaser extends Stalker {
     },
     {
       name: 'LG_RAYOFGENESIS',
-      label: 'Luz da Criao Lv10',
+      label: 'Luz da Criação Lv10',
       value: 'LG_RAYOFGENESIS==10',
       acd: 1,
       fct: 0.5,
@@ -377,7 +377,7 @@ export class ShadowChaser extends Stalker {
     DoubleStrafeFn(),
     {
       inputType: 'dropdown',
-      label: 'Percia com Espada',
+      label: 'Perícia com Espada',
       name: 'SM_SWORD',
       isMasteryAtk: true,
       dropdown: [
@@ -428,7 +428,7 @@ export class ShadowChaser extends Stalker {
     },
     {
       inputType: 'dropdown',
-      label: 'Plgio',
+      label: 'Plágio',
       name: 'RG_PLAGIARISM',
       isEquipAtk: true,
       dropdown: [
@@ -447,7 +447,7 @@ export class ShadowChaser extends Stalker {
     },
     {
       inputType: 'dropdown',
-      label: 'Redemoinho de Absoro',
+      label: 'Redemoinho de Absorção',
       name: 'SC_MAELSTROM',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -458,7 +458,7 @@ export class ShadowChaser extends Stalker {
     },
     {
       inputType: 'dropdown',
-      label: 'C£pia Explosiva',
+      label: 'Cópia Explosiva',
       name: 'SC_FEINTBOMB',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -489,7 +489,7 @@ export class ShadowChaser extends Stalker {
     },
     {
       inputType: 'dropdown',
-      label: 'Vnculo Sombrio',
+      label: 'Vínculo Sombrio',
       name: 'SC_SHADOWFORM',
       dropdown: [
         { label: '-', value: 0, isUse: false },

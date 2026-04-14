@@ -86,7 +86,7 @@ export class RoyalGuard extends Paladin {
   protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'LG_BANISHINGPOINT',
-      label: 'Toque do Oblvio Lv10',
+      label: 'Toque do Oblívio Lv10',
       value: 'LG_BANISHINGPOINT==10',
       values: ['[Improved] LG_BANISHINGPOINT==10'],
       acd: 0,
@@ -107,7 +107,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'LG_RAYOFGENESIS',
-      label: 'Luz da Criao Lv10',
+      label: 'Luz da Criação Lv10',
       value: 'LG_RAYOFGENESIS==10',
       values: ['[Improved] LG_RAYOFGENESIS==10'],
       acd: 1,
@@ -134,7 +134,7 @@ export class RoyalGuard extends Paladin {
     },
     {
       name: 'LG_OVERBRAND',
-      label: 'Lana do Destino Lv5',
+      label: 'Lança do Destino Lv5',
       value: 'LG_OVERBRAND==5',
       values: ['[Improved] LG_OVERBRAND==5'],
       acd: 1,
@@ -333,7 +333,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Lana do Destino',
+      label: 'Lança do Destino',
       name: 'LG_OVERBRAND',
       inputType: 'dropdown',
       dropdown: [
@@ -346,7 +346,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Consagrao',
+      label: 'Consagração',
       name: 'LG_INSPIRATION',
       inputType: 'dropdown',
       dropdown: [
@@ -359,7 +359,7 @@ export class RoyalGuard extends Paladin {
       ],
     },
     {
-      label: 'Devoo',
+      label: 'Devoção',
       name: 'LG_PIETY',
       inputType: 'dropdown',
       dropdown: [

@@ -101,7 +101,7 @@ export class HighWizard extends Mage {
     // },
     {
       name: 'HW_NAPALMVULCAN',
-      label: 'Vulco Napalm Lv5',
+      label: 'Vulcão Napalm Lv5',
       value: 'HW_NAPALMVULCAN==5',
       fct: 0.3,
       vct: 0.5,
@@ -139,7 +139,7 @@ export class HighWizard extends Mage {
       },
     },
     {
-      label: 'F¨ria da Terra Lv5',
+      label: 'Fúria da Terra Lv5',
       name: 'WZ_HEAVENDRIVE',
       value: 'WZ_HEAVENDRIVE==5',
       fct: 0.8,

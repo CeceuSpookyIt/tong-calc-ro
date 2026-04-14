@@ -282,7 +282,7 @@ export abstract class CharacterBase {
     if (cName !== ClassName.Warlock && cName !== ClassName.ArchMage) {
       skills.push({
         name: 'HW_NAPALMVULCAN',
-        label: 'Vulco Napalm Lv4',
+        label: 'Vulcão Napalm Lv4',
         value: 'HW_NAPALMVULCAN==4',
         fct: 0.3,
         vct: 0.5,

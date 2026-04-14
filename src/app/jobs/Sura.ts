@@ -86,7 +86,7 @@ export class Sura extends Champion {
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'SR_DRAGONCOMBO',
-      label: 'Punho do Drago Lv10',
+      label: 'Punho do Dragão Lv10',
       value: 'SR_DRAGONCOMBO==10',
       fct: 0,
       vct: 0,
@@ -103,7 +103,7 @@ export class Sura extends Champion {
     },
     {
       name: 'SR_FALLENEMPIRE',
-      label: 'Runa Lv10',
+      label: 'Ruína Lv10',
       value: 'SR_FALLENEMPIRE==10',
       fct: 0,
       vct: 0,
@@ -124,7 +124,7 @@ export class Sura extends Champion {
     },
     // {
     //   name: 'SR_FLASHCOMBO',
-    //   label: 'Combo Rpido Lv5',
+    //   label: 'Combo Rápido Lv5',
     //   value: 'SR_FLASHCOMBO==1',
     //   fct: 0,
     //   vct: 0,
@@ -144,7 +144,7 @@ export class Sura extends Champion {
     // },
     {
       name: 'SR_HOWLINGOFLION',
-      label: 'Rugido do Leo Lv5',
+      label: 'Rugido do Leão Lv5',
       value: 'SR_HOWLINGOFLION==5',
       fct: 0,
       vct: 0,
@@ -160,7 +160,7 @@ export class Sura extends Champion {
     },
     {
       name: 'SR_SKYNETBLOW',
-      label: 'Soco Furaco Lv5',
+      label: 'Soco Furacão Lv5',
       value: 'SR_SKYNETBLOW==5',
       values: ['[Improved] SR_SKYNETBLOW==5'],
       fct: 0,
@@ -178,7 +178,7 @@ export class Sura extends Champion {
     },
     {
       name: 'SR_EARTHSHAKER',
-      label: 'Impacto Ssmico Lv5',
+      label: 'Impacto Sísmico Lv5',
       value: 'SR_EARTHSHAKER==5',
       fct: 0,
       vct: 0,
@@ -194,7 +194,7 @@ export class Sura extends Champion {
     },
     {
       name: 'SR_RAMPAGEBLASTER',
-      label: 'Exploso Espiritual Lv5',
+      label: 'Explosão Espiritual Lv5',
       value: 'SR_RAMPAGEBLASTER==5',
       fct: 0,
       vct: 0,
@@ -401,7 +401,7 @@ export class Sura extends Champion {
 
   private readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
-      label: 'Drago Ascendente',
+      label: 'Dragão Ascendente',
       name: 'SR_RAISINGDRAGON',
       inputType: 'dropdown',
       dropdown: [
@@ -470,7 +470,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Impacto Ssmico',
+      label: 'Impacto Sísmico',
       name: 'SR_EARTHSHAKER',
       isDebuff: true,
       inputType: 'selectButton',
@@ -496,7 +496,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Combo Rpido',
+      label: 'Combo Rápido',
       name: 'SR_FLASHCOMBO',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -546,7 +546,7 @@ export class Sura extends Champion {
 
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Proteo Divina',
+      label: 'Proteção Divina',
       name: 'AL_DP',
       inputType: 'dropdown',
       dropdown: [
@@ -583,7 +583,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Cair das Ptalas',
+      label: 'Cair das Pétalas',
       name: 'MO_DODGE',
       inputType: 'dropdown',
       dropdown: [
@@ -601,7 +601,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Determinao',
+      label: 'Determinação',
       name: 'DK_VIGOR',
       inputType: 'dropdown',
       dropdown: [
@@ -614,7 +614,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Drago Ascendente',
+      label: 'Dragão Ascendente',
       name: 'SR_RAISINGDRAGON',
       inputType: 'dropdown',
       dropdown: [
@@ -658,7 +658,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Exploso Espiritual',
+      label: 'Explosão Espiritual',
       name: 'SR_RAMPAGEBLASTER',
       inputType: 'dropdown',
       dropdown: [
@@ -676,7 +676,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Determinao',
+      label: 'Determinação',
       name: 'DK_VIGOR',
       inputType: 'dropdown',
       dropdown: [
@@ -689,7 +689,7 @@ export class Sura extends Champion {
       ],
     },
     {
-      label: 'Combo Qudruplo',
+      label: 'Combo Quádruplo',
       name: 'MO_CHAINCOMBO',
       inputType: 'dropdown',
       dropdown: [

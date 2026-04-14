@@ -197,7 +197,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'SKE_SUNSET_BLAST',
-      label: '[V2] Crep¨sculo do Poente Lv5',
+      label: '[V2] Crepúsculo do Poente Lv5',
       value: 'SKE_SUNSET_BLAST==5',
       acd: 0.5,
       fct: 0,
@@ -267,7 +267,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'SKE_STAR_CANNON',
-      label: '[V2] Constelao Lv5 (1 hit)',
+      label: '[V2] Constelação Lv5 (1 hit)',
       value: 'SKE_STAR_CANNON==5',
       acd: 0,
       fct: 0.5,
@@ -318,7 +318,7 @@ export class SkyEmperor extends StarEmperor {
     },
     {
       name: 'SKE_WAR_BOOK_MASTERY',
-      label: 'Percia com Livro',
+      label: 'Perícia com Livro',
       inputType: 'dropdown',
       dropdown: genSkillList(10)
     },

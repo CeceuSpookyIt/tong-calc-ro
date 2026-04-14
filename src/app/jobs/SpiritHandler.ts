@@ -163,7 +163,7 @@ export class SpiritHandler extends Doram {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'SH_CHUL_HO_SONIC_CLAW',
-      label: '[V2] Garras de Ona Lv7',
+      label: '[V2] Garras de Onça Lv7',
       value: 'SH_CHUL_HO_SONIC_CLAW==7',
       acd: 0.5,
       fct: 0,
@@ -187,7 +187,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'SH_HOWLING_OF_CHUL_HO',
-      label: '[V2] Rugido da Ona Lv7',
+      label: '[V2] Rugido da Onça Lv7',
       value: 'SH_HOWLING_OF_CHUL_HO==7',
       acd: 0,
       fct: 1,
@@ -253,7 +253,7 @@ export class SpiritHandler extends Doram {
     },
     {
       name: 'SH_HYUN_ROK_CANNON',
-      label: '[V2] Lana Galhada Lv7',
+      label: '[V2] Lança Galhada Lv7',
       value: 'SH_HYUN_ROK_CANNON==7',
       acd: 0,
       fct: 1.5,
@@ -276,7 +276,7 @@ export class SpiritHandler extends Doram {
   ];
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
-      label: 'Cores do Arco-ris',
+      label: 'Cores do Arco-Íris',
       name: 'SH_COLORS_OF_HYUN_ROK',
       inputType: 'dropdown',
       dropdown: [

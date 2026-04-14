@@ -99,7 +99,7 @@ export class Minstrel extends Dancer {
   private readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'CG_ARROWVULCAN',
-      label: 'Vulco de Flechas Lv10',
+      label: 'Vulcão de Flechas Lv10',
       value: 'CG_ARROWVULCAN==10',
       acd: 0.5,
       fct: 0.5,
@@ -114,7 +114,7 @@ export class Minstrel extends Dancer {
       },
     },
     {
-      label: 'Rudo Estridente Lv10',
+      label: 'Ruído Estridente Lv10',
       name: 'WM_METALICSOUND',
       value: 'WM_METALICSOUND==10',
       acd: 0.5,
@@ -175,7 +175,7 @@ export class Minstrel extends Dancer {
     },
     {
       name: 'WM_REVERBERATION',
-      label: 'Ressonncia Lv5',
+      label: 'Ressonância Lv5',
       value: 'WM_REVERBERATION==5',
       values: ['[Improved] WM_REVERBERATION==5'],
       acd: 0.5,
@@ -214,7 +214,7 @@ export class Minstrel extends Dancer {
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     SevereRainstormFn(),
     {
-      label: 'Li¥es de M¨sica',
+      label: 'Lições de Música',
       name: 'BA_MUSICALLESSON',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -234,7 +234,7 @@ export class Minstrel extends Dancer {
     },
     Lesson,
     {
-      label: 'Flecha Mel£dica',
+      label: 'Flecha Melódica',
       name: 'BA_MUSICALSTRIKE',
       inputType: 'dropdown',
       dropdown: [

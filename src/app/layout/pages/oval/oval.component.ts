@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { forkJoin, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { RouletteService, RouletteHistoryRow, RouletteEvent } from '../../../api-services/roulette.service';
 
 interface PrizeRanking {
@@ -62,12 +64,17 @@ export class OvalComponent implements OnInit {
   // Current event tiers (from DB)
   private jackpotItems: string[] = [];
   private rareItems = new Set<string>();
+  private aliasMap: Record<string, string> = {};
 
   constructor(private rouletteService: RouletteService) {}
 
   ngOnInit(): void {
-    this.rouletteService.getEvents().subscribe({
-      next: (events) => {
+    forkJoin({
+      events: this.rouletteService.getEvents(),
+      aliases: this.rouletteService.getAliases().pipe(catchError(() => of({} as Record<string, string>))),
+    }).subscribe({
+      next: ({ events, aliases }) => {
+        this.aliasMap = aliases;
         this.events = events;
         if (events.length > 0) {
           this.activeTabIndex = 0;
@@ -259,7 +266,7 @@ export class OvalComponent implements OnInit {
     this.luckyAccounts = [...accountMap.entries()]
       .filter(([, a]) => a.rares >= 2)
       .map(([hash, a]) => ({
-        hash: hash.slice(0, 8),
+        hash: this.aliasMap[hash] || hash.slice(0, 8),
         spins: a.spins,
         rares: a.rares,
         rarePct: (a.rares / a.spins) * 100,
@@ -272,7 +279,7 @@ export class OvalComponent implements OnInit {
     this.unluckyAccounts = [...accountMap.entries()]
       .filter(([, a]) => a.rares === 0 && a.spins >= 10)
       .map(([hash, a]) => ({
-        hash: hash.slice(0, 8),
+        hash: this.aliasMap[hash] || hash.slice(0, 8),
         spins: a.spins,
         rares: 0,
         rarePct: 0,

@@ -1,7 +1,7 @@
 import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const IncreaseSPRecoveryFn = (): PassiveSkillModel => ({
-  label: 'Aumentar Recuperao de SP',
+  label: 'Aumentar Recuperação de SP',
   name: 'MG_SRECOVERY',
   inputType: 'dropdown',
   dropdown: [

@@ -214,7 +214,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'RK_DRAGONBREATH',
-      label: 'Sopro do Drago Lv10',
+      label: 'Sopro do Dragão Lv10',
       value: 'RK_DRAGONBREATH==10',
       values: ['[Improved 2nd] RK_DRAGONBREATH==10'],
       acd: 2,
@@ -241,7 +241,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'RK_DRAGONBREATH_WATER',
-      label: 'Bafo do Drago Lv10',
+      label: 'Bafo do Dragão Lv10',
       value: 'RK_DRAGONBREATH_WATER==10',
       values: ['[Improved 2nd] RK_DRAGONBREATH_WATER==10'],
       acd: 2,
@@ -280,7 +280,7 @@ export class RuneKnight extends LordKnight {
     },
     {
       name: 'RK_DRAGONTRAINING',
-      label: 'Adestrar Drago',
+      label: 'Adestrar Dragão',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 5, isUse: true },
@@ -361,7 +361,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Adestrar Drago',
+      label: 'Adestrar Dragão',
       name: 'RK_DRAGONTRAINING',
       inputType: 'dropdown',
       dropdown: [
@@ -374,7 +374,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Sopro do Drago',
+      label: 'Sopro do Dragão',
       name: 'RK_DRAGONBREATH',
       inputType: 'dropdown',
       dropdown: [
@@ -410,7 +410,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Percia em Runas',
+      label: 'Perícia em Runas',
       name: 'RK_RUNEMASTERY',
       inputType: 'dropdown',
       dropdown: [
@@ -428,7 +428,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Encantar Lmina',
+      label: 'Encantar Lâmina',
       name: 'RK_ENCHANTBLADE',
       inputType: 'dropdown',
       dropdown: [
@@ -482,7 +482,7 @@ export class RuneKnight extends LordKnight {
       ],
     },
     {
-      label: 'Rugido do Drago',
+      label: 'Rugido do Dragão',
       name: 'RK_DRAGONHOWLING',
       inputType: 'dropdown',
       dropdown: [

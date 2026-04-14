@@ -182,7 +182,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'HN_MEGA_SONIC_BLOW',
-      label: '[V2] Lminas Devastadoras Lv10',
+      label: '[V2] Lâminas Devastadoras Lv10',
       value: 'HN_MEGA_SONIC_BLOW==10',
       acd: 0.5,
       fct: 0,
@@ -268,7 +268,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'HN_JUPITEL_THUNDER_STORM',
-      label: '[V2] Tempestade de J¨piter Lv10',
+      label: '[V2] Tempestade de Júpiter Lv10',
       value: 'HN_JUPITEL_THUNDER_STORM==10',
       acd: 0.5,
       fct: 1,
@@ -311,7 +311,7 @@ export class HyperNovice extends SuperNovice {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'HN_SELFSTUDY_TATICS',
-      label: 'Fsico Autodidata',
+      label: 'Físico Autodidata',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({
         pAtk: lv,
@@ -323,7 +323,7 @@ export class HyperNovice extends SuperNovice {
     },
     {
       name: 'HN_SELFSTUDY_SOCERY',
-      label: 'Mgico Autodidata',
+      label: 'Mágico Autodidata',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({
         sMatk: lv,

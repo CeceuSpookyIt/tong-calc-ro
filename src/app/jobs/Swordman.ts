@@ -167,7 +167,7 @@ export class Swordman extends CharacterBase {
   ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Percia com Espada',
+      label: 'Perícia com Espada',
       name: 'SM_SWORD',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -223,7 +223,7 @@ export class Swordman extends CharacterBase {
       ],
     },
     {
-      label: 'Aumentar Recuperao de HP',
+      label: 'Aumentar Recuperação de HP',
       name: 'SM_RECOVERY',
       inputType: 'dropdown',
       dropdown: [

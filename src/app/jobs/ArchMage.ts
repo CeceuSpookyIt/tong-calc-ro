@@ -165,7 +165,7 @@ export class ArchMage extends Warlock {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'AG_SOUL_VC_STRIKE',
-      label: '[V3] Espritos Ancestrais Lv5',
+      label: '[V3] Espíritos Ancestrais Lv5',
       value: 'AG_SOUL_VC_STRIKE==5',
       acd: 0.5,
       fct: 1,
@@ -405,7 +405,7 @@ export class ArchMage extends Warlock {
     },
     // {
     //   name: 'AG_ASTRAL_STRIKE',
-    //   label: '[V2] Coliso Astral Lv10',
+    //   label: '[V2] Colisão Astral Lv10',
     //   value: 'AG_ASTRAL_STRIKE==10',
     //   acd: 0.5,
     //   fct: 1.5,
@@ -429,7 +429,7 @@ export class ArchMage extends Warlock {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'AG_CLIMAX',
-      label: 'Intensificao',
+      label: 'Intensificação',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -444,7 +444,7 @@ export class ArchMage extends Warlock {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'AG_TWOHANDSTAFF',
-      label: 'Percia com Cajado de Duas Mos',
+      label: 'Perícia com Cajado de Duas Mãos',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

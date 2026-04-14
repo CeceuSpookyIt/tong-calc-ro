@@ -163,7 +163,7 @@ export class Shinkiro extends Kagerou {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'SS_KAGEGARI',
-      label: '[V2] Lmina das Trevas Lv10',
+      label: '[V2] Lâmina das Trevas Lv10',
       value: 'SS_KAGEGARI==10',
       acd: 0.15,
       fct: 0,
@@ -181,7 +181,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'SS_KAGENOMAI',
-      label: '[V2] Dana das Trevas Lv10',
+      label: '[V2] Dança das Trevas Lv10',
       value: 'SS_KAGENOMAI==10',
       acd: 0.25,
       fct: 1,
@@ -274,7 +274,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'SS_KUNAIKAITEN',
-      label: '[V2] Kunai Rotat£ria Lv5',
+      label: '[V2] Kunai Rotatória Lv5',
       value: 'SS_KUNAIKAITEN==5',
       acd: 0.5,
       fct: 0,
@@ -330,7 +330,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'SS_REIKETSUHOU',
-      label: '[V2] Mahou da Nvoa Fria Lv10',
+      label: '[V2] Mahou da Névoa Fria Lv10',
       value: 'SS_REIKETSUHOU==10',
       acd: 0,
       fct: 1,
@@ -370,7 +370,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'SS_KINRYUUHOU',
-      label: '[V2] Mahou do Drago Áureo Lv10',
+      label: '[V2] Mahou do Dragão Áureo Lv10',
       value: 'SS_KINRYUUHOU==10',
       acd: 0,
       fct: 1,
@@ -389,7 +389,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'SS_ANTENPOU',
-      label: '[V2] Mahou da Escurido Lv10',
+      label: '[V2] Mahou da Escuridão Lv10',
       value: 'SS_ANTENPOU==10',
       acd: 0,
       fct: 1,
@@ -411,13 +411,13 @@ export class Shinkiro extends Kagerou {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'SS_KAGEGARI',
-      label: 'Lmina das Trevas',
+      label: 'Lâmina das Trevas',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
     {
       name: 'SS_KAGENOMAI',
-      label: 'Dana das Trevas',
+      label: 'Dança das Trevas',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },
@@ -447,7 +447,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'SS_KUNAIKAITEN',
-      label: 'Kunai Rotat£ria',
+      label: 'Kunai Rotatória',
       inputType: 'dropdown',
       dropdown: genSkillList(5),
     },
@@ -459,7 +459,7 @@ export class Shinkiro extends Kagerou {
     },
     {
       name: 'SS_ANTENPOU',
-      label: 'Mahou da Escurido',
+      label: 'Mahou da Escuridão',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

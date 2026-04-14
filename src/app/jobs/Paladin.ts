@@ -104,7 +104,7 @@ export class Paladin extends Swordman {
     },
     {
       name: 'PA_SHIELDCHAIN',
-      label: 'Choque Rpido Lv5',
+      label: 'Choque Rápido Lv5',
       value: 'PA_SHIELDCHAIN==5',
       fct: 0.2,
       vct: 0.8,
@@ -144,7 +144,7 @@ export class Paladin extends Swordman {
     SpearMastery,
     CavalierMastery,
     {
-      label: 'Rapidez com Lana',
+      label: 'Rapidez com Lança',
       name: 'CR_SPEARQUICKEN',
       inputType: 'dropdown',
       dropdown: [

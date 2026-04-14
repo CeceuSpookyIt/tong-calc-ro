@@ -3,7 +3,7 @@ import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 export const SnatcherFn = (): PassiveSkillModel => ({
   name: 'RG_SNATCHER',
   inputType: 'dropdown',
-  label: 'Mos Leves',
+  label: 'Mãos Leves',
   dropdown: [
     { label: '-', value: 0, isUse: false },
     { label: 'Lv 1', value: 1, skillLv: 1, isUse: true },

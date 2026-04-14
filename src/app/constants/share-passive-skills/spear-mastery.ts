@@ -1,7 +1,7 @@
 import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const SpearMastery: PassiveSkillModel = {
-  label: 'Percia com Lana',
+  label: 'Perícia com Lança',
   name: 'KN_SPEARMASTERY',
   inputType: 'dropdown',
   isMasteryAtk: true,

@@ -95,7 +95,7 @@ export class Doram extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       name: 'SU_SV_STEMSPEAR',
-      label: 'Lana Gateira',
+      label: 'Lança Gateira',
       value: 'SU_SV_STEMSPEAR==1',
       acd: 1,
       fct: 0.5,
@@ -113,11 +113,11 @@ export class Doram extends CharacterBase {
         return map[skillValue];
       },
       levelList: [
-        { label: 'Lana Gateira Lv1 (Earth)', value: 'SU_SV_STEMSPEAR==1' },
-        { label: 'Lana Gateira Lv2 (Fire)', value: 'SU_SV_STEMSPEAR==2' },
-        { label: 'Lana Gateira Lv3 (Wind)', value: 'SU_SV_STEMSPEAR==3' },
-        { label: 'Lana Gateira Lv4 (Water)', value: 'SU_SV_STEMSPEAR==4' },
-        { label: 'Lana Gateira Lv5 (Ghost)', value: 'SU_SV_STEMSPEAR==5' },
+        { label: 'Lança Gateira Lv1 (Earth)', value: 'SU_SV_STEMSPEAR==1' },
+        { label: 'Lança Gateira Lv2 (Fire)', value: 'SU_SV_STEMSPEAR==2' },
+        { label: 'Lança Gateira Lv3 (Wind)', value: 'SU_SV_STEMSPEAR==3' },
+        { label: 'Lança Gateira Lv4 (Water)', value: 'SU_SV_STEMSPEAR==4' },
+        { label: 'Lança Gateira Lv5 (Ghost)', value: 'SU_SV_STEMSPEAR==5' },
       ],
       formula: (_input: AtkSkillFormulaInput): number => {
         return 700;
@@ -159,7 +159,7 @@ export class Doram extends CharacterBase {
       },
     },
     {
-      label: 'Cometas Lunticos Lv5',
+      label: 'Cometas Lunáticos Lv5',
       name: 'SU_LUNATICCARROTBEAT',
       value: 'SU_LUNATICCARROTBEAT==5',
       acd: 1,
@@ -207,7 +207,7 @@ export class Doram extends CharacterBase {
 
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Poder das Mars',
+      label: 'Poder das Marés',
       name: 'SU_POWEROFSEA',
       inputType: 'dropdown',
       dropdown: [
@@ -287,7 +287,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Riscar F£sforo',
+      label: 'Riscar Fósforo',
       name: 'SU_HISS',
       inputType: 'dropdown',
       dropdown: [
@@ -339,7 +339,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Invocao da Fauna',
+      label: 'Invocação da Fauna',
       name: 'SU_SPIRITOFLIFE',
       inputType: 'selectButton',
       dropdown: [
@@ -361,7 +361,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Lana Gateira',
+      label: 'Lança Gateira',
       name: 'SU_SV_STEMSPEAR',
       inputType: 'dropdown',
       dropdown: [
@@ -374,7 +374,7 @@ export class Doram extends CharacterBase {
       ],
     },
     {
-      label: 'Camaro Fresquinho',
+      label: 'Camarão Fresquinho',
       name: 'SU_FRESHSHRIMP',
       inputType: 'dropdown',
       dropdown: [

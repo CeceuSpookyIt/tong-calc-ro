@@ -128,7 +128,7 @@ export class Sniper extends Archer {
   private passiveSkillListHi: PassiveSkillModel[] = [
     BeastBaneFn(),
     {
-      label: 'Garras de Ao',
+      label: 'Garras de Aço',
       name: 'HT_STEELCROW',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -148,7 +148,7 @@ export class Sniper extends Archer {
     },
     {
       inputType: 'dropdown',
-      label: 'Viso Real',
+      label: 'Visão Real',
       name: 'SN_SIGHT',
       dropdown: [
         { label: '-', value: 0, isUse: false },

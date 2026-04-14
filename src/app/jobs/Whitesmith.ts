@@ -112,7 +112,7 @@ export class Whitesmith extends Merchant {
       ],
     },
     {
-      label: 'Fora Violenta Lv5',
+      label: 'Força Violenta Lv5',
       name: 'BS_OVERTHRUST',
       inputType: 'selectButton',
       dropdown: [
@@ -142,7 +142,7 @@ export class Whitesmith extends Merchant {
   protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     HiltBindingFn(),
     {
-      label: 'Resistncia ao Fogo',
+      label: 'Resistência ao Fogo',
       name: 'BS_SKINTEMPER',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -156,7 +156,7 @@ export class Whitesmith extends Merchant {
       ],
     },
     {
-      label: 'Percia em Armamento',
+      label: 'Perícia em Armamento',
       name: 'BS_WEAPONRESEARCH',
       inputType: 'dropdown',
       isMasteryAtk: true,

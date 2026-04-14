@@ -142,7 +142,7 @@ export class Ranger extends Sniper {
     {
       isMasteryAtk: true,
       inputType: 'dropdown',
-      label: 'Tticas de Sobrevivncia',
+      label: 'Táticas de Sobrevivência',
       name: 'RA_RANGERMAIN',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -219,7 +219,7 @@ export class Ranger extends Sniper {
       ],
     },
     {
-      label: 'Percia com Armadilha',
+      label: 'Perícia com Armadilha',
       name: 'RA_RESEARCHTRAP',
       inputType: 'dropdown',
       isEquipAtk: true,

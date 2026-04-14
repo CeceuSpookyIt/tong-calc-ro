@@ -2,7 +2,7 @@ import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const RighthandMasteryFn = (): PassiveSkillModel => ({
   inputType: 'dropdown',
-  label: 'Percia com Mo Direita',
+  label: 'Perícia com Mão Direita',
   name: 'AS_RIGHT',
   dropdown: [
     { label: '-', value: 0, isUse: false },

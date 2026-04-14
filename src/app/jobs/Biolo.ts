@@ -214,7 +214,7 @@ export class Biolo extends Genetic {
     },
     {
       name: 'BO_RESEARCHREPORT',
-      label: 'Relatat£rio de Pesquisa',
+      label: 'Relatatório de Pesquisa',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 1, isUse: true },

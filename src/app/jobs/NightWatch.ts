@@ -165,7 +165,7 @@ export class NightWatch extends Rebellion {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'NW_THE_VIGILANTE_AT_NIGHT',
-      label: '[V2] Viglia Noturna Lv5',
+      label: '[V2] Vigília Noturna Lv5',
       value: 'NW_THE_VIGILANTE_AT_NIGHT==5',
       acd: 1,
       fct: 1.5,
@@ -496,7 +496,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'NW_GRENADE_FRAGMENT',
-      label: 'Fragmentao',
+      label: 'Fragmentação',
       inputType: 'dropdown',
       dropdown: genSkillListWithLabel(6
         , lv => `${['-', 'Water', 'Wind', 'Earth', 'Fire', 'Dark', 'Holy'][lv]}`
@@ -519,7 +519,7 @@ export class NightWatch extends Rebellion {
     },
     {
       name: 'NW_GRENADE_MASTERY',
-      label: 'Percia em Granada',
+      label: 'Perícia em Granada',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({ con: lv }))
     },

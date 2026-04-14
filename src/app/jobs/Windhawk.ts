@@ -202,7 +202,7 @@ export class Windhawk extends Ranger {
     },
     {
       name: 'WH_HAWKRUSH',
-      label: '[V3] Mergulho Areo Lv5',
+      label: '[V3] Mergulho Aéreo Lv5',
       value: 'WH_HAWKRUSH==5',
       acd: 0,
       fct: 0,

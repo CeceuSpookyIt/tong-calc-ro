@@ -86,7 +86,7 @@ export class Mechanic extends Whitesmith {
   protected readonly atkSkillList3rd: AtkSkillModel[] = [
     {
       name: 'NC_AXETORNADO',
-      label: 'F¨ria do Furaco  Lv5',
+      label: 'Fúria do Furacão  Lv5',
       value: 'NC_AXETORNADO==5',
       values: ['[Improved] NC_AXETORNADO==5'],
       acd: 0.5,
@@ -171,7 +171,7 @@ export class Mechanic extends Whitesmith {
     },
     {
       name: 'NC_ARMSCANNON',
-      label: 'Canho Lv5',
+      label: 'Canhão Lv5',
       value: 'NC_ARMSCANNON==5',
       values: ['[Improved] NC_ARMSCANNON==5', 'NC_ARMSCANNON==1', 'NC_ARMSCANNON==2', 'NC_ARMSCANNON==3', 'NC_ARMSCANNON==4'],
       acd: 1,
@@ -215,7 +215,7 @@ export class Mechanic extends Whitesmith {
   ];
   protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     {
-      label: 'Licena de Pilotagem',
+      label: 'Licença de Pilotagem',
       name: 'NC_MADOLICENCE',
       inputType: 'selectButton',
       dropdown: [
@@ -227,7 +227,7 @@ export class Mechanic extends Whitesmith {
 
   protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Percia com Machado e Espada',
+      label: 'Perícia com Machado e Espada',
       name: 'AM_AXEMASTERY',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -273,7 +273,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Inundao de Magma',
+      label: 'Inundação de Magma',
       name: 'MH_MAGMA_FLOW',
       inputType: 'dropdown',
       dropdown: [
@@ -304,7 +304,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Licena de Pilotagem',
+      label: 'Licença de Pilotagem',
       name: 'NC_MADOLICENCE',
       inputType: 'dropdown',
       dropdown: [
@@ -317,7 +317,7 @@ export class Mechanic extends Whitesmith {
       ],
     },
     {
-      label: 'Canho',
+      label: 'Canhão',
       name: 'NC_ARMSCANNON',
       inputType: 'dropdown',
       dropdown: [

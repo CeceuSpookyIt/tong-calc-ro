@@ -103,7 +103,7 @@ export class Creator extends Merchant {
       ],
     },
     {
-      label: 'Percia com Machado e Espada',
+      label: 'Perícia com Machado e Espada',
       name: 'AM_AXEMASTERY',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -113,7 +113,7 @@ export class Creator extends Merchant {
       ],
     },
     {
-      label: 'Arremessar Poo',
+      label: 'Arremessar Poção',
       name: 'AM_POTIONPITCHER',
       inputType: 'dropdown',
       dropdown: [

@@ -105,7 +105,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'GC_ROLLINGCUTTER',
-      label: 'Lminas de Loki Lv5',
+      label: 'Lâminas de Loki Lv5',
       value: 'GC_ROLLINGCUTTER==5',
       values: ['[Improved] GC_ROLLINGCUTTER==5'],
       acd: 0.2,
@@ -122,7 +122,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'GC_CROSSIMPACT',
-      label: 'Lminas Retalhadoras Lv5',
+      label: 'Lâminas Retalhadoras Lv5',
       value: 'GC_CROSSIMPACT==5',
       values: ['[Improved 1st] GC_CROSSIMPACT==5', '[Improved 2rd] GC_CROSSIMPACT==5'],
       acd: 0.5,
@@ -142,7 +142,7 @@ export class GuillotineCross extends AssassinCross {
       },
     },
     {
-      label: 'Retaliao Lv10',
+      label: 'Retaliação Lv10',
       name: 'GC_COUNTERSLASH',
       value: 'GC_COUNTERSLASH==10',
       acd: 1,
@@ -266,7 +266,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'GC_CROSSIMPACT',
-      label: 'Lminas Retalhadoras',
+      label: 'Lâminas Retalhadoras',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -292,7 +292,7 @@ export class GuillotineCross extends AssassinCross {
     },
     {
       name: 'GC_CLOAKINGEXCEED',
-      label: 'Ocultao',
+      label: 'Ocultação',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', isUse: false, value: 0 },

@@ -1,7 +1,7 @@
 import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const FaithFn = (): PassiveSkillModel => ({
-  label: 'F',
+  label: 'Fé',
   name: 'CR_TRUST',
   inputType: 'dropdown',
   dropdown: [

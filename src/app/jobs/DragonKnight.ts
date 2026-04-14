@@ -237,7 +237,7 @@ export class DragonKnight extends RuneKnight {
     },
     {
       name: 'DK_MADNESS_CRUSHER',
-      label: '[V3] C£lera Esmagadora Lv5',
+      label: '[V3] Cólera Esmagadora Lv5',
       value: 'DK_MADNESS_CRUSHER==5',
       acd: 0.5,
       fct: 0.5,

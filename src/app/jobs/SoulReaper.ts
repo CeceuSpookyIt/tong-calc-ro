@@ -117,7 +117,7 @@ export class SoulReaper extends SoulLinker {
       },
     },
     {
-      label: 'Necroexploso Lv10',
+      label: 'Necroexplosão Lv10',
       name: 'SP_CURSEEXPLOSION',
       value: 'SP_CURSEEXPLOSION==10',
       acd: 0,
@@ -137,7 +137,7 @@ export class SoulReaper extends SoulLinker {
   protected readonly activeSkillList3rd: ActiveSkillModel[] = [
     // {
     //   inputType: 'dropdown',
-    //   label: 'Esprito da Fada',
+    //   label: 'Espírito da Fada',
     //   name: 'SP_SOULFAIRY',
     //   dropdown: [
     //     { label: '-', value: 0, isUse: false },

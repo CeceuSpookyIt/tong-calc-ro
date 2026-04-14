@@ -373,7 +373,7 @@ export const JobBuffs: ActiveSkillModel[] = [
   },
   // {
   //   name: 'AG_CLIMAX',
-  //   label: 'Intensificao',
+  //   label: 'Intensificação',
   //   inputType: 'dropdown',
   //   dropdown: [
   //     { label: '-', value: 0, isUse: false },

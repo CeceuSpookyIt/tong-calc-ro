@@ -234,7 +234,7 @@ export class StarEmperor extends StarGladiator {
 
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Bno Solar',
+      label: 'Bênção Solar',
       name: 'SG_SUN_BLESS',
       inputType: 'dropdown',
       dropdown: [
@@ -247,7 +247,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Bno Lunar',
+      label: 'Bênção Lunar',
       name: 'SG_MOON_BLESS',
       inputType: 'dropdown',
       dropdown: [
@@ -260,7 +260,7 @@ export class StarEmperor extends StarGladiator {
       ],
     },
     {
-      label: 'Bno Estelar',
+      label: 'Bênção Estelar',
       name: 'SG_STAR_BLESS',
       inputType: 'dropdown',
       dropdown: [

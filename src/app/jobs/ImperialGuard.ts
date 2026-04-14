@@ -229,7 +229,7 @@ export class ImperialGuard extends RoyalGuard {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'IG_ATTACK_STANCE',
-      label: 'Posio de Ataque',
+      label: 'Posição de Ataque',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -255,7 +255,7 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'IG_GRAND_JUDGEMENT',
-      label: 'Lana do Suplcio',
+      label: 'Lança do Suplício',
       inputType: 'selectButton',
       dropdown: [
         { label: 'Yes', value: 10, isUse: true },
@@ -275,7 +275,7 @@ export class ImperialGuard extends RoyalGuard {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'IG_SPEAR_SWORD_M',
-      label: 'Percia Hoplita',
+      label: 'Perícia Hoplita',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -293,7 +293,7 @@ export class ImperialGuard extends RoyalGuard {
     },
     {
       name: 'IG_SHIELD_MASTERY',
-      label: 'Percia com Escudo',
+      label: 'Perícia com Escudo',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },

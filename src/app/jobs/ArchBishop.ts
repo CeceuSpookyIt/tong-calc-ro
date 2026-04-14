@@ -233,7 +233,7 @@ export class ArchBishop extends HighPriest {
     },
     {
       inputType: 'dropdown',
-      label: 'Baslica',
+      label: 'Basílica',
       name: 'HP_BASILICA',
       dropdown: [
         { label: '-', isUse: false, value: 0 },
@@ -249,7 +249,7 @@ export class ArchBishop extends HighPriest {
   protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Percia com Maa',
+      label: 'Perícia com Maça',
       name: 'PR_MACEMASTERY',
       isEquipAtk: true,
       dropdown: [

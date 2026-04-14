@@ -1,7 +1,7 @@
 import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const MysticSymphonyFn = (): PassiveSkillModel => ({
-  label: 'Sinfonia Mstica',
+  label: 'Sinfonia Mística',
   name: 'TR_MYSTIC_SYMPHONY',
   inputType: 'selectButton',
   dropdown: [

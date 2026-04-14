@@ -128,7 +128,7 @@ export class AssassinCross extends Thief {
   protected readonly passiveSkillListHi: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Percia com Katar',
+      label: 'Perícia com Katar',
       name: 'AS_KATAR',
       isMasteryAtk: true,
       dropdown: [
@@ -160,7 +160,7 @@ export class AssassinCross extends Thief {
     },
     {
       inputType: 'dropdown',
-      label: 'Percia com Mo Esquerda',
+      label: 'Perícia com Mão Esquerda',
       name: 'AS_LEFT',
       dropdown: [
         { label: '-', isUse: false, value: 0 },

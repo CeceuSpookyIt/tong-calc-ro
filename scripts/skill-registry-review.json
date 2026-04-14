@@ -1,8 +1,4993 @@
 {
-  "total": 0,
-  "NONE": 0,
-  "LOW": 0,
-  "MEDIUM": 0,
+  "total": 623,
+  "NONE": 186,
+  "LOW": 344,
+  "MEDIUM": 93,
   "HIGH": 0,
-  "items": []
+  "items": [
+    {
+      "calcEN": "_CALC_ASIR_RUNESTONE",
+      "aegis": "_CALC__CALC_ASIR_RUNESTONE",
+      "rathenaEN": "Cavalier Mastery",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: KN_CAVALIERMASTERY (lev=41% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_BIOLO_MONSTER_LIST",
+      "aegis": "_CALC__CALC_BIOLO_MONSTER_LIST",
+      "rathenaEN": "Acid Demonstration",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: CR_ACIDDEMONSTRATION (lev=45% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_CRI_RACE_DEMON",
+      "aegis": "_CALC__CALC_CRI_RACE_DEMON",
+      "rathenaEN": "Hallucination",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: NPC_HALLUCINATION (lev=38% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_CRI_RACE_DRAGON",
+      "aegis": "_CALC__CALC_CRI_RACE_DRAGON",
+      "rathenaEN": "Raging Fire Dragon",
+      "score": 21,
+      "confidence": "NONE",
+      "reason": "best: NJ_BAKUENRYU (lev=53% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_CRI_RACE_FISH",
+      "aegis": "_CALC__CALC_CRI_RACE_FISH",
+      "rathenaEN": "Sacrifice",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: CR_DEVOTION (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_CRI_RACE_INSECT",
+      "aegis": "_CALC__CALC_CRI_RACE_INSECT",
+      "rathenaEN": "Call Parent",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: WE_CALLPARENT (lev=41% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_CRI_RACE_UNDEAD",
+      "aegis": "_CALC__CALC_CRI_RACE_UNDEAD",
+      "rathenaEN": "Turn Undead",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: PR_TURNUNDEAD (lev=41% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_CURRENT_HP",
+      "aegis": "_CALC__CALC_CURRENT_HP",
+      "rathenaEN": "Call Parent",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: WE_CALLPARENT (lev=54% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_CURRENT_SP",
+      "aegis": "_CALC__CALC_CURRENT_SP",
+      "rathenaEN": "Call Parent",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: WE_CALLPARENT (lev=54% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_DART_ARROW",
+      "aegis": "_CALC__CALC_DART_ARROW",
+      "rathenaEN": "Vulcan Arrow",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: CG_ARROWVULCAN (lev=62% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_DEBUF_SONIC_BRAND",
+      "aegis": "_CALC__CALC_DEBUF_SONIC_BRAND",
+      "rathenaEN": "Demon Bane",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: AL_DEMONBANE (lev=37% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_DIVULIO",
+      "aegis": "_CALC__CALC_DIVULIO",
+      "rathenaEN": "Cultivo",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: AM_CULTIVATION (lev=45% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_DMG_LUCIFER_MOROCC",
+      "aegis": "_CALC__CALC_DMG_LUCIFER_MOROCC",
+      "rathenaEN": "Hallucination",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: NPC_HALLUCINATION (lev=35% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_ELEMENTALMASTER_SPIRIT",
+      "aegis": "_CALC__CALC_ELEMENTALMASTER_SPIRIT",
+      "rathenaEN": "Elemental Buster Fire",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: EM_ELEMENTAL_BUSTER_FIRE (lev=60% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_INTENSIFICATION",
+      "aegis": "_CALC__CALC_INTENSIFICATION",
+      "rathenaEN": "Cart Termination",
+      "score": 21,
+      "confidence": "NONE",
+      "reason": "best: WS_CARTTERMINATION (lev=53% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_MEISTER_ABR_LIST",
+      "aegis": "_CALC__CALC_MEISTER_ABR_LIST",
+      "rathenaEN": "Calamity Gale",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: WH_CALAMITYGALE (lev=44% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_MEISTER_QUAKE",
+      "aegis": "_CALC__CALC_MEISTER_QUAKE",
+      "rathenaEN": "Calamity Gale",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: WH_CALAMITYGALE (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_MEISTER_RUSH",
+      "aegis": "_CALC__CALC_MEISTER_RUSH",
+      "rathenaEN": "Acid Terror",
+      "score": 19,
+      "confidence": "NONE",
+      "reason": "best: AM_ACIDTERROR (lev=47% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_NIGHTWATCH_AIMING_COUNT",
+      "aegis": "_CALC__CALC_NIGHTWATCH_AIMING_COUNT",
+      "rathenaEN": "Lightning Bolt",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: MG_LIGHTNINGBOLT (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_SORCERER_ELEMENTAL_SPIRIT",
+      "aegis": "_CALC__CALC_SORCERER_ELEMENTAL_SPIRIT",
+      "rathenaEN": "Elemental Shield",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: SO_ELEMENTAL_SHIELD (lev=41% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_SOULASCETIC_BLESSING",
+      "aegis": "_CALC__CALC_SOULASCETIC_BLESSING",
+      "rathenaEN": "Blessing",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: AL_BLESSING (lev=35% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_SPIN_COUNT",
+      "aegis": "_CALC__CALC_SPIN_COUNT",
+      "rathenaEN": "Banishing Point",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: LG_BANISHINGPOINT (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_TOTAL_SOUL",
+      "aegis": "_CALC__CALC_TOTAL_SOUL",
+      "rathenaEN": "Falcon's Soul",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: SP_SOULFALCON (lev=62% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_TOTAL_SPIRIT",
+      "aegis": "_CALC__CALC_TOTAL_SPIRIT",
+      "rathenaEN": "Falcon Assault",
+      "score": 19,
+      "confidence": "NONE",
+      "reason": "best: SN_FALCONASSAULT (lev=47% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_TROUVERE_TROUBADOUR_IGNORE_RES_MRES",
+      "aegis": "_CALC__CALC_TROUVERE_TROUBADOUR_IGNORE_RES_MRES",
+      "rathenaEN": "Masquerade - Ignorance",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: SC_IGNORANCE (lev=34% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_TROUVERE_TROUBADOUR_PATK_SMATK",
+      "aegis": "_CALC__CALC_TROUVERE_TROUBADOUR_PATK_SMATK",
+      "rathenaEN": "Water Attribute Attack",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: NPC_WATERATTACK (lev=35% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_TURISUS_RUNESTONE",
+      "aegis": "_CALC__CALC_TURISUS_RUNESTONE",
+      "rathenaEN": "Summon Stone",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: WL_SUMMONSTONE (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_WRATH_OF",
+      "aegis": "_CALC__CALC_WRATH_OF",
+      "rathenaEN": "Hallucination",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: NPC_HALLUCINATION (lev=46% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AB_CANTO",
+      "aegis": "_CALC_AB_CANTO",
+      "rathenaEN": "Arm Cannon",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: NC_ARMSCANNON (lev=56% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AB_CLEMENTIA",
+      "aegis": "_CALC_AB_CLEMENTIA",
+      "rathenaEN": "Crementia",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: AB_CLEMENTIA (lev=73% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "ABC_ABYSS_STRIKE",
+      "aegis": "_CALC_ABC_ABYSS_STRIKE",
+      "rathenaEN": "Omega Abyss Strike",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: ABC_ABYSS_STRIKE (lev=69% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "ABC_DAGGER_AND_BOW_M",
+      "aegis": "_CALC_ABC_DAGGER_AND_BOW_M",
+      "rathenaEN": "Dagger And Bow Mastery",
+      "score": 21,
+      "confidence": "NONE",
+      "reason": "best: ABC_DAGGER_AND_BOW_M (lev=53% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "ABC_MAGIC_SWORD_M",
+      "aegis": "_CALC_ABC_MAGIC_SWORD_M",
+      "rathenaEN": "Magic Rod",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: SA_MAGICROD (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AC_DOUBLE",
+      "aegis": "_CALC_AC_DOUBLE",
+      "rathenaEN": "Scribble",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: RG_GRAFFITI (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AC_OWL",
+      "aegis": "_CALC_AC_OWL",
+      "rathenaEN": "Ice Wall",
+      "score": 17,
+      "confidence": "NONE",
+      "reason": "best: WZ_ICEWALL (lev=43% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AC_SHOWER",
+      "aegis": "_CALC_AC_SHOWER",
+      "rathenaEN": "Arrow Shower",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: AC_SHOWER (lev=64% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AC_VULTURE",
+      "aegis": "_CALC_AC_VULTURE",
+      "rathenaEN": "Vulture's Eye",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: AC_VULTURE (lev=45% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AG_SOUL_VC_STRIKE",
+      "aegis": "_CALC_AG_SOUL_VC_STRIKE",
+      "rathenaEN": "Soul Strike",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: MG_SOULSTRIKE (lev=71% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AG_TWOHANDSTAFF",
+      "aegis": "_CALC_AG_TWOHANDSTAFF",
+      "rathenaEN": "Two Hand Def",
+      "score": 23,
+      "confidence": "NONE",
+      "reason": "best: DK_TWOHANDDEF (lev=57% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AL_DP",
+      "aegis": "_CALC_AL_DP",
+      "rathenaEN": "Amp",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: BD_ADAPTATION (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AL_HEAL",
+      "aegis": "_CALC_AL_HEAL",
+      "rathenaEN": "Heal",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: AL_HEAL (lev=67% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AM_CANNIBALIZE",
+      "aegis": "_CALC_AM_CANNIBALIZE",
+      "rathenaEN": "Analyze",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: NC_ANALYZE (lev=46% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AM_LEARNINGPOTION",
+      "aegis": "_CALC_AM_LEARNINGPOTION",
+      "rathenaEN": "Prepare Potion",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: AM_PHARMACY (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AM_POTIONPITCHER",
+      "aegis": "_CALC_AM_POTIONPITCHER",
+      "rathenaEN": "Moon Slasher",
+      "score": 19,
+      "confidence": "NONE",
+      "reason": "best: LG_MOONSLASHER (lev=47% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AS_KATAR",
+      "aegis": "_CALC_AS_KATAR",
+      "rathenaEN": "Back Stab",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: RG_BACKSTAP (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AS_LEFT",
+      "aegis": "_CALC_AS_LEFT",
+      "rathenaEN": "Napalm Beat",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: MG_NAPALMBEAT (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "AS_RIGHT",
+      "aegis": "_CALC_AS_RIGHT",
+      "rathenaEN": "Sight",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: MG_SIGHT (lev=71% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "ASC_BREAKER",
+      "aegis": "_CALC_ASC_BREAKER",
+      "rathenaEN": "Mind Breaker",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: PF_MINDBREAKER (lev=64% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "ASC_EDP",
+      "aegis": "_CALC_ASC_EDP",
+      "rathenaEN": "Speed UP",
+      "score": 17,
+      "confidence": "NONE",
+      "reason": "best: NPC_SPEEDUP (lev=43% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "ASC_KATAR",
+      "aegis": "_CALC_ASC_KATAR",
+      "rathenaEN": "Back Stab",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: RG_BACKSTAP (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "BA_MUSICALSTRIKE",
+      "aegis": "_CALC_BA_MUSICALSTRIKE",
+      "rathenaEN": "Astral Strike",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: AG_ASTRAL_STRIKE (lev=67% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "BA_POEMBRAGI",
+      "aegis": "_CALC_BA_POEMBRAGI",
+      "rathenaEN": "Napalm Beat",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: MG_NAPALMBEAT (lev=45% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "BS_ADRENALINE",
+      "aegis": "_CALC_BS_ADRENALINE",
+      "rathenaEN": "Adrenaline Rush",
+      "score": 23,
+      "confidence": "NONE",
+      "reason": "best: BS_ADRENALINE (lev=57% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "BS_MAXIMIZE",
+      "aegis": "_CALC_BS_MAXIMIZE",
+      "rathenaEN": "Blast Mine",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: HT_BLASTMINE (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "BS_SKINTEMPER",
+      "aegis": "_CALC_BS_SKINTEMPER",
+      "rathenaEN": "Skin Tempering",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: BS_SKINTEMPER (lev=62% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "BS_WEAPONPERFECT",
+      "aegis": "_CALC_BS_WEAPONPERFECT",
+      "rathenaEN": "Weapon Perfection",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: BS_WEAPONPERFECT (lev=69% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "CD_MACE_BOOK_M",
+      "aegis": "_CALC_CD_MACE_BOOK_M",
+      "rathenaEN": "Mace Book Mastery",
+      "score": 19,
+      "confidence": "NONE",
+      "reason": "best: CD_MACE_BOOK_M (lev=47% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "CG_ARROWVULCAN",
+      "aegis": "_CALC_CG_ARROWVULCAN",
+      "rathenaEN": "Napalm Vulcan",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: HW_NAPALMVULCAN (lev=54% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "CH_CHAINCRUSH",
+      "aegis": "_CALC_CH_CHAINCRUSH",
+      "rathenaEN": "Shield Chain Rush",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: HN_SHIELD_CHAIN_RUSH (lev=60% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "CR_TRUST",
+      "aegis": "_CALC_CR_TRUST",
+      "rathenaEN": "Cart Boost",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: WS_CARTBOOST (lev=56% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "DC_THROWARROW",
+      "aegis": "_CALC_DC_THROWARROW",
+      "rathenaEN": "Crimson Arrow",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: AG_CRIMSON_ARROW (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "DC_WINKCHARM",
+      "aegis": "_CALC_DC_WINKCHARM",
+      "rathenaEN": "Wind Charm",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: KO_KAZEHU_SEIRAN (lev=73% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "EM_ELEMENTAL_SPIRIT_M",
+      "aegis": "_CALC_EM_ELEMENTAL_SPIRIT_M",
+      "rathenaEN": "Elemental Spirit Mastery",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: EM_ELEMENTAL_SPIRIT_M (lev=64% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "EM_MAGIC_BOOK_M",
+      "aegis": "_CALC_EM_MAGIC_BOOK_M",
+      "rathenaEN": "Magic Rod",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: SA_MAGICROD (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "GC_DARKCROW",
+      "aegis": "_CALC_GC_DARKCROW",
+      "rathenaEN": "Dark Claw",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: GC_DARKCROW (lev=60% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "GN_MANDRAGORA",
+      "aegis": "_CALC_GN_MANDRAGORA",
+      "rathenaEN": "Howling of Mandragora",
+      "score": 23,
+      "confidence": "NONE",
+      "reason": "best: GN_MANDRAGORA (lev=58% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "GN_REMODELING_CART",
+      "aegis": "_CALC_GN_REMODELING_CART",
+      "rathenaEN": "Cart Remodeling",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: GN_REMODELING_CART (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "HW_GRAVITATION",
+      "aegis": "_CALC_HW_GRAVITATION",
+      "rathenaEN": "Ground Gravitation",
+      "score": 26,
+      "confidence": "NONE",
+      "reason": "best: HN_GROUND_GRAVITATION (lev=65% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "HW_MAGICPOWER",
+      "aegis": "_CALC_HW_MAGICPOWER",
+      "rathenaEN": "Magic Rod",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: SA_MAGICROD (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "IG_SPEAR_SWORD_M",
+      "aegis": "_CALC_IG_SPEAR_SWORD_M",
+      "rathenaEN": "Spear Stab",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: KN_SPEARSTAB (lev=46% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "IQ_MASSIVE_F_BLASTER",
+      "aegis": "_CALC_IQ_MASSIVE_F_BLASTER",
+      "rathenaEN": "Massive Flame Blaster",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: IQ_MASSIVE_F_BLASTER (lev=68% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KG_KAGEMUSYA",
+      "aegis": "_CALC_KG_KAGEMUSYA",
+      "rathenaEN": "Magia de Gema Sombria",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: DA_BLACK (lev=39% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KG_KYOMU",
+      "aegis": "_CALC_KG_KYOMU",
+      "rathenaEN": "Light of Sun",
+      "score": 12,
+      "confidence": "NONE",
+      "reason": "best: SJ_LIGHTOFSUN (lev=30% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KN_RIDING",
+      "aegis": "_CALC_KN_RIDING",
+      "rathenaEN": "Hiding",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: TF_HIDING (lev=63% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_BAKURETSU",
+      "aegis": "_CALC_KO_BAKURETSU",
+      "rathenaEN": "Kaupe",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: SL_KAUPE (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_GENWAKU",
+      "aegis": "_CALC_KO_GENWAKU",
+      "rathenaEN": "Violent Quake",
+      "score": 17,
+      "confidence": "NONE",
+      "reason": "best: AG_VIOLENT_QUAKE (lev=42% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_HAPPOKUNAI",
+      "aegis": "_CALC_KO_HAPPOKUNAI",
+      "rathenaEN": "Throw Kunai",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: NJ_KUNAI (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_HUUMARANKA",
+      "aegis": "_CALC_KO_HUUMARANKA",
+      "rathenaEN": "Throw Huuma Shuriken",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: NJ_HUUMA (lev=39% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_IZAYOI",
+      "aegis": "_CALC_KO_IZAYOI",
+      "rathenaEN": "Kamaitachi",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: NJ_KAMAITACHI (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_JYUMONJIKIRI",
+      "aegis": "_CALC_KO_JYUMONJIKIRI",
+      "rathenaEN": "Demonic Fire",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: GN_DEMONIC_FIRE (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_JYUSATSU",
+      "aegis": "_CALC_KO_JYUSATSU",
+      "rathenaEN": "Combustão",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: NPC_WIDEBODYBURNNING (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_KYOUGAKU",
+      "aegis": "_CALC_KO_KYOUGAKU",
+      "rathenaEN": "Power of Gaia",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: EL_POWER_OF_GAIA (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_MEIKYOUSISUI",
+      "aegis": "_CALC_KO_MEIKYOUSISUI",
+      "rathenaEN": "Ki Explosion",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: MO_BALKYOUNG (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_SETSUDAN",
+      "aegis": "_CALC_KO_SETSUDAN",
+      "rathenaEN": "Monster Summons",
+      "score": 17,
+      "confidence": "NONE",
+      "reason": "best: NPC_SUMMONMONSTER (lev=43% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "KO_ZANZOU",
+      "aegis": "_CALC_KO_ZANZOU",
+      "rathenaEN": "Volcano",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: SA_VOLCANO (lev=38% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "MC_LOUD",
+      "aegis": "_CALC_MC_LOUD",
+      "rathenaEN": "Cloud Kill",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: NPC_CLOUD_KILL (lev=44% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "MG_SRECOVERY",
+      "aegis": "_CALC_MG_SRECOVERY",
+      "rathenaEN": "Status Recovery",
+      "score": 26,
+      "confidence": "NONE",
+      "reason": "best: PR_STRECOVERY (lev=64% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "MO_ABSORBSPIRITS",
+      "aegis": "_CALC_MO_ABSORBSPIRITS",
+      "rathenaEN": "Absorb Spirit Sphere",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: MO_ABSORBSPIRITS (lev=61% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "MO_CHAINCOMBO",
+      "aegis": "_CALC_MO_CHAINCOMBO",
+      "rathenaEN": "Chain Crush Combo",
+      "score": 21,
+      "confidence": "NONE",
+      "reason": "best: CH_CHAINCRUSH (lev=53% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "MO_COMBOFINISH",
+      "aegis": "_CALC_MO_COMBOFINISH",
+      "rathenaEN": "Double Bowling Bash",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: HN_DOUBLEBOWLINGBASH (lev=41% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "MO_FINGEROFFENSIVE",
+      "aegis": "_CALC_MO_FINGEROFFENSIVE",
+      "rathenaEN": "Song of Lutie",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: BA_APPLEIDUN (lev=41% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "MO_IRONHAND",
+      "aegis": "_CALC_MO_IRONHAND",
+      "rathenaEN": "Power of Land",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: SU_POWEROFLAND (lev=55% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "MT_A_MACHINE",
+      "aegis": "_CALC_MT_A_MACHINE",
+      "rathenaEN": "Attack Machine",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: MT_A_MACHINE (lev=69% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NC_RESEARCHFE",
+      "aegis": "_CALC_NC_RESEARCHFE",
+      "rathenaEN": "Increase HP Recovery",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: SM_RECOVERY (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NJ_HUUJIN",
+      "aegis": "_CALC_NJ_HUUJIN",
+      "rathenaEN": "Wind Curtain",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: EL_WIND_CURTAIN (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NJ_HUUMA",
+      "aegis": "_CALC_NJ_HUUMA",
+      "rathenaEN": "Pneuma",
+      "score": 17,
+      "confidence": "NONE",
+      "reason": "best: AL_PNEUMA (lev=43% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NJ_HYOUSYOURAKU",
+      "aegis": "_CALC_NJ_HYOUSYOURAKU",
+      "rathenaEN": "Throw Shuriken",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: NJ_SYURIKEN (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NJ_KOUENKA",
+      "aegis": "_CALC_NJ_KOUENKA",
+      "rathenaEN": "NPC Coluceo Heal",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: NPC_CHEAL (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NJ_KUNAI",
+      "aegis": "_CALC_NJ_KUNAI",
+      "rathenaEN": "Throw Kunai",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: NJ_KUNAI (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NJ_NEN",
+      "aegis": "_CALC_NJ_NEN",
+      "rathenaEN": "Zen",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: CH_SOULCOLLECT (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NJ_NINPOU",
+      "aegis": "_CALC_NJ_NINPOU",
+      "rathenaEN": "SL_NINJA",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: SL_NINJA (lev=38% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NJ_TOBIDOUGU",
+      "aegis": "_CALC_NJ_TOBIDOUGU",
+      "rathenaEN": "Manobra Bongun",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: MB_B_DRIFT (lev=38% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NPC_RUN",
+      "aegis": "_CALC_NPC_RUN",
+      "rathenaEN": "Run",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: NPC_RUN (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "NW_P_F_I",
+      "aegis": "_CALC_NW_P_F_I",
+      "rathenaEN": "P.F.I",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: NW_P_F_I (lev=60% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "OB_OBOROGENSOU",
+      "aegis": "_CALC_OB_OBOROGENSOU",
+      "rathenaEN": "Book of Dimension",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: SJ_BOOKOFDIMENSION (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "OB_ZANGETSU",
+      "aegis": "_CALC_OB_ZANGETSU",
+      "rathenaEN": "Angelus",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: AL_ANGELUS (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "PA_PRESSURE",
+      "aegis": "_CALC_PA_PRESSURE",
+      "rathenaEN": "Imperial Pressure",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: IG_IMPERIAL_PRESSURE (lev=63% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "PF_HPCONVERSION",
+      "aegis": "_CALC_PF_HPCONVERSION",
+      "rathenaEN": "Energy Conversion",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: AG_ENERGY_CONVERSION (lev=63% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "PF_MEMORIZE",
+      "aegis": "_CALC_PF_MEMORIZE",
+      "rathenaEN": "Mammonite",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: MC_MAMMONITE (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "PR_IMPOSITIO",
+      "aegis": "_CALC_PR_IMPOSITIO",
+      "rathenaEN": "Impositio Manus",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: PR_IMPOSITIO (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "PR_KYRIE",
+      "aegis": "_CALC_PR_KYRIE",
+      "rathenaEN": "Preserve",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: ST_PRESERVE (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "PR_MAGNUS",
+      "aegis": "_CALC_PR_MAGNUS",
+      "rathenaEN": "Radius",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: WL_RADIUS (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RA_UNLIMIT",
+      "aegis": "_CALC_RA_UNLIMIT",
+      "rathenaEN": "Breaking Limit",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: HN_BREAKINGLIMIT (lev=62% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RA_WUGRIDER",
+      "aegis": "_CALC_RA_WUGRIDER",
+      "rathenaEN": "Warg Rider",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: RA_WUGRIDER (lev=70% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RA_WUGSTRIKE",
+      "aegis": "_CALC_RA_WUGSTRIKE",
+      "rathenaEN": "Warg Strike",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: RA_WUGSTRIKE (lev=73% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RG_BACKSTAP",
+      "aegis": "_CALC_RG_BACKSTAP",
+      "rathenaEN": "Back Stab",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: RG_BACKSTAP (lev=70% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RG_PLAGIARISM",
+      "aegis": "_CALC_RG_PLAGIARISM",
+      "rathenaEN": "Glacier Fist",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: CH_TIGERFIST (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RG_RAID",
+      "aegis": "_CALC_RG_RAID",
+      "rathenaEN": "First Aid",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: NV_FIRSTAID (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RL_C_MARKER",
+      "aegis": "_CALC_RL_C_MARKER",
+      "rathenaEN": "Cracker",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: GS_CRACKER (lev=56% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RL_D_TAIL",
+      "aegis": "_CALC_RL_D_TAIL",
+      "rathenaEN": "Dragon Tail",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: RL_D_TAIL (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RL_H_MINE",
+      "aegis": "_CALC_RL_H_MINE",
+      "rathenaEN": "Ice Mine",
+      "score": 23,
+      "confidence": "NONE",
+      "reason": "best: NPC_ICEMINE (lev=57% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RL_P_ALTER",
+      "aegis": "_CALC_RL_P_ALTER",
+      "rathenaEN": "Flasher",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: HT_FLASHER (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RL_QD_SHOT",
+      "aegis": "_CALC_RL_QD_SHOT",
+      "rathenaEN": "Slug Shot",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: RL_SLUGSHOT (lev=63% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RL_R_TRIP",
+      "aegis": "_CALC_RL_R_TRIP",
+      "rathenaEN": "Round Trip",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: RL_R_TRIP (lev=56% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "RL_S_STORM",
+      "aegis": "_CALC_RL_S_STORM",
+      "rathenaEN": "Gale Storm",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: WH_GALESTORM (lev=67% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SA_ADVANCEDBOOK",
+      "aegis": "_CALC_SA_ADVANCEDBOOK",
+      "rathenaEN": "Advanced Trap",
+      "score": 23,
+      "confidence": "NONE",
+      "reason": "best: WH_ADVANCED_TRAP (lev=57% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SA_AUTOSPELL",
+      "aegis": "_CALC_SA_AUTOSPELL",
+      "rathenaEN": "Shield Spell",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: LG_SHIELDSPELL (lev=55% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SA_FROSTWEAPON",
+      "aegis": "_CALC_SA_FROSTWEAPON",
+      "rathenaEN": "Divest Weapon",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: RG_STRIPWEAPON (lev=62% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SA_LANDPROTECTOR",
+      "aegis": "_CALC_SA_LANDPROTECTOR",
+      "rathenaEN": "Strong Protection",
+      "score": 25,
+      "confidence": "NONE",
+      "reason": "best: EM_EL_STRONG_PROTECTION (lev=63% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SA_LIGHTNINGLOADER",
+      "aegis": "_CALC_SA_LIGHTNINGLOADER",
+      "rathenaEN": "Lightning Land",
+      "score": 26,
+      "confidence": "NONE",
+      "reason": "best: EM_LIGHTNING_LAND (lev=65% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SA_SEISMICWEAPON",
+      "aegis": "_CALC_SA_SEISMICWEAPON",
+      "rathenaEN": "Alchemical Weapon",
+      "score": 23,
+      "confidence": "NONE",
+      "reason": "best: AM_CP_WEAPON (lev=56% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SC_ENERVATION",
+      "aegis": "_CALC_SC_ENERVATION",
+      "rathenaEN": "Acceleration",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: NC_ACCELERATION (lev=67% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SC_ESCAPE",
+      "aegis": "_CALC_SC_ESCAPE",
+      "rathenaEN": "Emergency Escape",
+      "score": 19,
+      "confidence": "NONE",
+      "reason": "best: SC_ESCAPE (lev=47% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SC_GROOMY",
+      "aegis": "_CALC_SC_GROOMY",
+      "rathenaEN": "Petrology",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: EL_PETROLOGY (lev=44% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SC_WEAKNESS",
+      "aegis": "_CALC_SC_WEAKNESS",
+      "rathenaEN": "Slyness",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: RG_GANGSTER (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SG_FUSION",
+      "aegis": "_CALC_SG_FUSION",
+      "rathenaEN": "Expulsion",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: NPC_EXPULSION (lev=56% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SG_KNOWLEDGE",
+      "aegis": "_CALC_SG_KNOWLEDGE",
+      "rathenaEN": "Shadow Leap",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: NJ_SHADOWJUMP (lev=45% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SG_MOON_BLESS",
+      "aegis": "_CALC_SG_MOON_BLESS",
+      "rathenaEN": "Noon Blast",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: SKE_NOON_BLAST (lev=55% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SG_STAR_BLESS",
+      "aegis": "_CALC_SG_STAR_BLESS",
+      "rathenaEN": "Star Burst",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: SKE_STAR_BURST (lev=55% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SG_SUN_BLESS",
+      "aegis": "_CALC_SG_SUN_BLESS",
+      "rathenaEN": "Slyness",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: RG_GANGSTER (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SJ_NOVAEXPLOSING",
+      "aegis": "_CALC_SJ_NOVAEXPLOSING",
+      "rathenaEN": "Nova Explosion",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: SJ_NOVAEXPLOSING (lev=73% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SL_SMA",
+      "aegis": "_CALC_SL_SMA",
+      "rathenaEN": "Esma",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: SL_SMA (lev=60% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SM_BASH",
+      "aegis": "_CALC_SM_BASH",
+      "rathenaEN": "Bash",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: SM_BASH (lev=67% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SM_MAGNUM",
+      "aegis": "_CALC_SM_MAGNUM",
+      "rathenaEN": "Suffragium",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: PR_SUFFRAGIUM (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SM_RECOVERY",
+      "aegis": "_CALC_SM_RECOVERY",
+      "rathenaEN": "Status Recovery",
+      "score": 26,
+      "confidence": "NONE",
+      "reason": "best: PR_STRECOVERY (lev=64% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SM_SWORD",
+      "aegis": "_CALC_SM_SWORD",
+      "rathenaEN": "Smith Sword",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: BS_SWORD (lev=70% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SM_TWOHAND",
+      "aegis": "_CALC_SM_TWOHAND",
+      "rathenaEN": "Two Hand Def",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: DK_TWOHANDDEF (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SN_SHARPSHOOTING",
+      "aegis": "_CALC_SN_SHARPSHOOTING",
+      "rathenaEN": "Spiral Shooting",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: NW_SPIRAL_SHOOTING (lev=67% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SN_WINDWALK",
+      "aegis": "_CALC_SN_WINDWALK",
+      "rathenaEN": "Wild Walk",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: WH_WILD_WALK (lev=70% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SP_SOULFAIRY",
+      "aegis": "_CALC_SP_SOULFAIRY",
+      "rathenaEN": "Soul Unity",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: SP_SOULUNITY (lev=55% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SP_SPA",
+      "aegis": "_CALC_SP_SPA",
+      "rathenaEN": "Espa",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: SP_SPA (lev=60% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SP_SWHOO",
+      "aegis": "_CALC_SP_SWHOO",
+      "rathenaEN": "Eswhoo",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: SP_SWHOO (lev=71% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_ANKOKURYUUAKUMU",
+      "aegis": "_CALC_SS_ANKOKURYUUAKUMU",
+      "rathenaEN": "Sanctuary",
+      "score": 12,
+      "confidence": "NONE",
+      "reason": "best: PR_SANCTUARY (lev=29% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_ANTENPOU",
+      "aegis": "_CALC_SS_ANTENPOU",
+      "rathenaEN": "Servant Weapon",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: DK_SERVANTWEAPON (lev=54% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_FUUMAKOUCHIKU",
+      "aegis": "_CALC_SS_FUUMAKOUCHIKU",
+      "rathenaEN": "Signum Crucis",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: AL_CRUCIS (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_FUUMASHOUAKU",
+      "aegis": "_CALC_SS_FUUMASHOUAKU",
+      "rathenaEN": "Rush Quake",
+      "score": 17,
+      "confidence": "NONE",
+      "reason": "best: MT_RUSH_QUAKE (lev=43% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_HITOUAKUMU",
+      "aegis": "_CALC_SS_HITOUAKUMU",
+      "rathenaEN": "Spirit of Savage",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: SU_SVG_SPIRIT (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_KAGEGARI",
+      "aegis": "_CALC_SS_KAGEGARI",
+      "rathenaEN": "Savage Impact",
+      "score": 17,
+      "confidence": "NONE",
+      "reason": "best: SHC_SAVAGE_IMPACT (lev=42% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_KAGEGISSEN",
+      "aegis": "_CALC_SS_KAGEGISSEN",
+      "rathenaEN": "Spear Quicken",
+      "score": 17,
+      "confidence": "NONE",
+      "reason": "best: CR_SPEARQUICKEN (lev=42% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_KAGENOMAI",
+      "aegis": "_CALC_SS_KAGENOMAI",
+      "rathenaEN": "Sandman",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: HT_SANDMAN (lev=45% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_KINRYUUHOU",
+      "aegis": "_CALC_SS_KINRYUUHOU",
+      "rathenaEN": "Mystic Symphony",
+      "score": 14,
+      "confidence": "NONE",
+      "reason": "best: TR_MYSTIC_SYMPHONY (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_KUNAIKUSSETSU",
+      "aegis": "_CALC_SS_KUNAIKUSSETSU",
+      "rathenaEN": "Kunai Splash",
+      "score": 19,
+      "confidence": "NONE",
+      "reason": "best: KO_HAPPOKUNAI (lev=47% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_KUNAIWAIKYOKU",
+      "aegis": "_CALC_SS_KUNAIWAIKYOKU",
+      "rathenaEN": "Stun Attack",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: NPC_STUNATTACK (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_RAIDENPOU",
+      "aegis": "_CALC_SS_RAIDENPOU",
+      "rathenaEN": "Servant Weapon",
+      "score": 18,
+      "confidence": "NONE",
+      "reason": "best: DK_SERVANTWEAPON (lev=46% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_REIKETSUHOU",
+      "aegis": "_CALC_SS_REIKETSUHOU",
+      "rathenaEN": "Refresh",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: RK_REFRESH (lev=38% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_SEKIENHOU",
+      "aegis": "_CALC_SS_SEKIENHOU",
+      "rathenaEN": "Envenom",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: TF_POISON (lev=36% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SS_SHIMIRU",
+      "aegis": "_CALC_SS_SHIMIRU",
+      "rathenaEN": "Tasty Shrimp Party",
+      "score": 15,
+      "confidence": "NONE",
+      "reason": "best: SU_SHRIMPARTY (lev=38% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SU_CN_METEOR",
+      "aegis": "_CALC_SU_CN_METEOR",
+      "rathenaEN": "Ice Meteor",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: NJ_HYOUSYOURAKU (lev=70% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SU_HISS",
+      "aegis": "_CALC_SU_HISS",
+      "rathenaEN": "Hiss",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: SU_HISS (lev=67% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SU_SHRIMPARTY",
+      "aegis": "_CALC_SU_SHRIMPARTY",
+      "rathenaEN": "Tasty Shrimp Party",
+      "score": 28,
+      "confidence": "NONE",
+      "reason": "best: SU_SHRIMPARTY (lev=69% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SU_SV_ROOTTWIST",
+      "aegis": "_CALC_SU_SV_ROOTTWIST",
+      "rathenaEN": "Silvervine Root Twist",
+      "score": 23,
+      "confidence": "NONE",
+      "reason": "best: SU_SV_ROOTTWIST (lev=58% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SU_SV_STEMSPEAR",
+      "aegis": "_CALC_SU_SV_STEMSPEAR",
+      "rathenaEN": "Silvervine Stem Spear",
+      "score": 23,
+      "confidence": "NONE",
+      "reason": "best: SU_SV_STEMSPEAR (lev=58% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "SU_SVG_SPIRIT",
+      "aegis": "_CALC_SU_SVG_SPIRIT",
+      "rathenaEN": "Fighting Spirit",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: RK_FIGHTINGSPIRIT (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "TF_DOUBLE",
+      "aegis": "_CALC_TF_DOUBLE",
+      "rathenaEN": "Endow Blaze",
+      "score": 20,
+      "confidence": "NONE",
+      "reason": "best: SA_FLAMELAUNCHER (lev=50% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "TF_POISON",
+      "aegis": "_CALC_TF_POISON",
+      "rathenaEN": "Slow Poison",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: PR_SLOWPOISON (lev=60% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "TK_HPTIME",
+      "aegis": "_CALC_TK_HPTIME",
+      "rathenaEN": "Rush Strike",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: MT_RUSH_STRIKE (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "TK_POWER",
+      "aegis": "_CALC_TK_POWER",
+      "rathenaEN": "Hell Power",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: NPC_HELLPOWER (lev=56% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "TK_SEVENWIND",
+      "aegis": "_CALC_TK_SEVENWIND",
+      "rathenaEN": "Tetra Vortex Wind",
+      "score": 19,
+      "confidence": "NONE",
+      "reason": "best: WL_TETRAVORTEX_WIND (lev=47% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "TK_SPTIME",
+      "aegis": "_CALC_TK_SPTIME",
+      "rathenaEN": "Earth Spike",
+      "score": 16,
+      "confidence": "NONE",
+      "reason": "best: WZ_EARTHSPIKE (lev=40% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "TR_GEF_NOCTURN",
+      "aegis": "_CALC_TR_GEF_NOCTURN",
+      "rathenaEN": "Geffenia Nocturn",
+      "score": 21,
+      "confidence": "NONE",
+      "reason": "best: TR_GEF_NOCTURN (lev=53% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "WL_FREEZE_SP",
+      "aegis": "_CALC_WL_FREEZE_SP",
+      "rathenaEN": "Freeze Spell",
+      "score": 22,
+      "confidence": "NONE",
+      "reason": "best: WL_FREEZE_SP (lev=55% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "WM_DANCE_WITH_WUG",
+      "aegis": "_CALC_WM_DANCE_WITH_WUG",
+      "rathenaEN": "Dance With A Warg",
+      "score": 26,
+      "confidence": "NONE",
+      "reason": "best: WM_DANCE_WITH_WUG (lev=64% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "WM_FRIGG_SONG",
+      "aegis": "_CALC_WM_FRIGG_SONG",
+      "rathenaEN": "Frigg's Song",
+      "score": 29,
+      "confidence": "NONE",
+      "reason": "best: WM_FRIGG_SONG (lev=73% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "WZ_JUPITEL",
+      "aegis": "_CALC_WZ_JUPITEL",
+      "rathenaEN": "Darkness Jupitel",
+      "score": 19,
+      "confidence": "NONE",
+      "reason": "best: NPC_DARKTHUNDER (lev=47% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "WZ_METEOR",
+      "aegis": "_CALC_WZ_METEOR",
+      "rathenaEN": "Ice Meteor",
+      "score": 27,
+      "confidence": "NONE",
+      "reason": "best: NJ_HYOUSYOURAKU (lev=67% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "WZ_VERMILION",
+      "aegis": "_CALC_WZ_VERMILION",
+      "rathenaEN": "Lord of Vermilion",
+      "score": 24,
+      "confidence": "NONE",
+      "reason": "best: WZ_VERMILION (lev=60% words=0% aegis=0%)"
+    },
+    {
+      "calcEN": "_CALC_3FAITH",
+      "aegis": "CR_TRUST",
+      "rathenaEN": "Faith",
+      "score": 35,
+      "confidence": "LOW",
+      "reason": "lev=50% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "_CALC_ARGUTUS_VITA_TELUM",
+      "aegis": "CD_ARGUTUS_VITA",
+      "rathenaEN": "Argutus Vita",
+      "score": 37,
+      "confidence": "LOW",
+      "reason": "lev=55% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "_CALC_COMET_AMP",
+      "aegis": "WL_COMET",
+      "rathenaEN": "Comet",
+      "score": 32,
+      "confidence": "LOW",
+      "reason": "lev=42% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "_CALC_DEBUFF_SPORE_EXPLOSION",
+      "aegis": "GN_SPORE_EXPLOSION",
+      "rathenaEN": "Spore Explosion",
+      "score": 38,
+      "confidence": "LOW",
+      "reason": "lev=58% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "_CALC_RELIGIO_BENEDICTUM",
+      "aegis": "CD_BENEDICTUM",
+      "rathenaEN": "Benedictum",
+      "score": 34,
+      "confidence": "LOW",
+      "reason": "lev=48% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "_CALC_SKYEMPEROR_RISING_MOON",
+      "aegis": "SKE_RISING_MOON",
+      "rathenaEN": "Rising Moon",
+      "score": 32,
+      "confidence": "LOW",
+      "reason": "lev=42% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "_CALC_SKYEMPEROR_RISING_SUN",
+      "aegis": "SKE_RISING_SUN",
+      "rathenaEN": "Rising Sun",
+      "score": 31,
+      "confidence": "LOW",
+      "reason": "lev=39% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AB_ADORAMUS",
+      "aegis": "AB_ADORAMUS",
+      "rathenaEN": "Adoramus",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AB_DUPLELIGHT",
+      "aegis": "AB_DUPLELIGHT",
+      "rathenaEN": "Duple Light",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AB_EXPIATIO",
+      "aegis": "AB_EXPIATIO",
+      "rathenaEN": "Expiatio",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AB_JUDEX",
+      "aegis": "AB_JUDEX",
+      "rathenaEN": "Judex",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=71% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AB_LAUDAAGNUS",
+      "aegis": "AB_LAUDAAGNUS",
+      "rathenaEN": "Lauda Agnus",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AB_OFFERTORIUM",
+      "aegis": "AB_OFFERTORIUM",
+      "rathenaEN": "Offertorium",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AB_ORATIO",
+      "aegis": "AB_ORATIO",
+      "rathenaEN": "Oratio",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_ABYSS_DAGGER",
+      "aegis": "ABC_ABYSS_DAGGER",
+      "rathenaEN": "Abyss Dagger",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_ABYSS_FLAME",
+      "aegis": "ABC_ABYSS_FLAME",
+      "rathenaEN": "Abyss Flame",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_ABYSS_SLAYER",
+      "aegis": "ABC_ABYSS_SLAYER",
+      "rathenaEN": "Abyss Slayer",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_ABYSS_SQUARE",
+      "aegis": "ABC_ABYSS_SQUARE",
+      "rathenaEN": "Abyss Square",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_CHAIN_REACTION_SHOT",
+      "aegis": "ABC_CHAIN_REACTION_SHOT",
+      "rathenaEN": "Chain Reaction Shot",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_DEFT_STAB",
+      "aegis": "ABC_DEFT_STAB",
+      "rathenaEN": "Deft Stab",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=73% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_FRENZY_SHOT",
+      "aegis": "ABC_FRENZY_SHOT",
+      "rathenaEN": "Frenzy Shot",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_FROM_THE_ABYSS",
+      "aegis": "ABC_FROM_THE_ABYSS",
+      "rathenaEN": "From The Abyss",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_STRIP_SHADOW",
+      "aegis": "ABC_STRIP_SHADOW",
+      "rathenaEN": "Strip Shadow",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ABC_UNLUCKY_RUSH",
+      "aegis": "ABC_UNLUCKY_RUSH",
+      "rathenaEN": "Unlucky Rush",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AC_CONCENTRATION",
+      "aegis": "LK_CONCENTRATION",
+      "rathenaEN": "Concentration",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_ALL_BLOOM",
+      "aegis": "AG_ALL_BLOOM",
+      "rathenaEN": "All Bloom",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_ASTRAL_STRIKE",
+      "aegis": "AG_ASTRAL_STRIKE",
+      "rathenaEN": "Astral Strike",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_CLIMAX",
+      "aegis": "AG_CLIMAX",
+      "rathenaEN": "Climax",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_CRIMSON_ARROW",
+      "aegis": "AG_CRIMSON_ARROW",
+      "rathenaEN": "Crimson Arrow",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_CRYSTAL_IMPACT",
+      "aegis": "AG_CRYSTAL_IMPACT",
+      "rathenaEN": "Crystal Impact",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_FROZEN_SLASH",
+      "aegis": "AG_FROZEN_SLASH",
+      "rathenaEN": "Frozen Slash",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_RAIN_OF_CRYSTAL",
+      "aegis": "AG_RAIN_OF_CRYSTAL",
+      "rathenaEN": "Rain Of Crystal",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_ROCK_DOWN",
+      "aegis": "AG_ROCK_DOWN",
+      "rathenaEN": "Rock Down",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_STORM_CANNON",
+      "aegis": "AG_STORM_CANNON",
+      "rathenaEN": "Storm Cannon",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_TORNADO_STORM",
+      "aegis": "AG_TORNADO_STORM",
+      "rathenaEN": "Tornado Storm",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_VIOLENT_QUAKE",
+      "aegis": "AG_VIOLENT_QUAKE",
+      "rathenaEN": "Violent Quake",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AL_DEMONBANE",
+      "aegis": "AL_DEMONBANE",
+      "rathenaEN": "Demon Bane",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AL_HOLYLIGHT",
+      "aegis": "AL_HOLYLIGHT",
+      "rathenaEN": "Holy Light",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ALL_ODINS_POWER",
+      "aegis": "ALL_ODINS_POWER",
+      "rathenaEN": "Odin's Power",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AM_ACIDTERROR",
+      "aegis": "AM_ACIDTERROR",
+      "rathenaEN": "Acid Terror",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AM_AXEMASTERY",
+      "aegis": "AM_AXEMASTERY",
+      "rathenaEN": "Axe Mastery",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AS_GRIMTOOTH",
+      "aegis": "AS_GRIMTOOTH",
+      "rathenaEN": "Grimtooth",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AS_SONICBLOW",
+      "aegis": "AS_SONICBLOW",
+      "rathenaEN": "Sonic Blow",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ASC_METEORASSAULT",
+      "aegis": "ASC_METEORASSAULT",
+      "rathenaEN": "Meteor Assault",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=81% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BA_MUSICALLESSON",
+      "aegis": "WM_LESSON",
+      "rathenaEN": "Lesson",
+      "score": 31,
+      "confidence": "LOW",
+      "reason": "lev=40% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_DUST_EXPLOSION",
+      "aegis": "BO_DUST_EXPLOSION",
+      "rathenaEN": "Dust Explosion",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_MYSTERY_POWDER",
+      "aegis": "BO_MYSTERY_POWDER",
+      "rathenaEN": "Mystery Powder",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_WOODEN_FAIRY",
+      "aegis": "BO_WOODEN_FAIRY",
+      "rathenaEN": "Wooden Fairy",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BS_HILTBINDING",
+      "aegis": "BS_HILTBINDING",
+      "rathenaEN": "Hilt Binding",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BS_OVERTHRUST",
+      "aegis": "BS_OVERTHRUST",
+      "rathenaEN": "Power-Thrust",
+      "score": 30,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BS_WEAPONRESEARCH",
+      "aegis": "BS_WEAPONRESEARCH",
+      "rathenaEN": "Weaponry Research",
+      "score": 30,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_ARBITRIUM",
+      "aegis": "CD_ARBITRIUM",
+      "rathenaEN": "Arbitrium",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_ARGUTUS_TELUM",
+      "aegis": "CD_ARGUTUS_TELUM",
+      "rathenaEN": "Argutus Telum",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_ARGUTUS_VITA",
+      "aegis": "CD_ARGUTUS_VITA",
+      "rathenaEN": "Argutus Vita",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_BENEDICTUM",
+      "aegis": "CD_BENEDICTUM",
+      "rathenaEN": "Benedictum",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_COMPETENTIA",
+      "aegis": "CD_COMPETENTIA",
+      "rathenaEN": "Competentia",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_DIVINUS_FLOS",
+      "aegis": "CD_DIVINUS_FLOS",
+      "rathenaEN": "Divinus Flos",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_EFFLIGO",
+      "aegis": "CD_EFFLIGO",
+      "rathenaEN": "Effligo",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=78% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_FIDUS_ANIMUS",
+      "aegis": "CD_FIDUS_ANIMUS",
+      "rathenaEN": "Fidus Animus",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_FRAMEN",
+      "aegis": "CD_FRAMEN",
+      "rathenaEN": "Framen",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_PETITIO",
+      "aegis": "CD_PETITIO",
+      "rathenaEN": "Petitio",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=78% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_PRESENS_ACIES",
+      "aegis": "CD_PRESENS_ACIES",
+      "rathenaEN": "Presens Acies",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_RELIGIO",
+      "aegis": "CD_RELIGIO",
+      "rathenaEN": "Religio",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=78% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CR_AUTOGUARD",
+      "aegis": "CR_AUTOGUARD",
+      "rathenaEN": "Guard",
+      "score": 33,
+      "confidence": "LOW",
+      "reason": "lev=45% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CR_GRANDCROSS",
+      "aegis": "CR_GRANDCROSS",
+      "rathenaEN": "Grand Cross",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CR_HOLYCROSS",
+      "aegis": "CR_HOLYCROSS",
+      "rathenaEN": "Holy Cross",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CR_SPEARQUICKEN",
+      "aegis": "CR_SPEARQUICKEN",
+      "rathenaEN": "Spear Quicken",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DC_DANCINGLESSON",
+      "aegis": "WM_LESSON",
+      "rathenaEN": "Lesson",
+      "score": 31,
+      "confidence": "LOW",
+      "reason": "lev=40% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_DRAGONIC_AURA",
+      "aegis": "DK_DRAGONIC_AURA",
+      "rathenaEN": "Dragonic Aura",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_SERVANTWEAPON",
+      "aegis": "DK_SERVANTWEAPON",
+      "rathenaEN": "Servant Weapon",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_STORMSLASH",
+      "aegis": "DK_STORMSLASH",
+      "rathenaEN": "Storm Slash",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_TWOHANDDEF",
+      "aegis": "DK_TWOHANDDEF",
+      "rathenaEN": "Two Hand Def",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_VIGOR",
+      "aegis": "DK_VIGOR",
+      "rathenaEN": "Vigor",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=71% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_CONFLAGRATION",
+      "aegis": "EM_CONFLAGRATION",
+      "rathenaEN": "Conflagration",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_DIAMOND_STORM",
+      "aegis": "EM_DIAMOND_STORM",
+      "rathenaEN": "Diamond Storm",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_LIGHTNING_LAND",
+      "aegis": "EM_LIGHTNING_LAND",
+      "rathenaEN": "Lightning Land",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_PSYCHIC_STREAM",
+      "aegis": "EM_PSYCHIC_STREAM",
+      "rathenaEN": "Psychic Stream",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_TERRA_DRIVE",
+      "aegis": "EM_TERRA_DRIVE",
+      "rathenaEN": "Terra Drive",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_VENOM_SWAMP",
+      "aegis": "EM_VENOM_SWAMP",
+      "rathenaEN": "Venom Swamp",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_COUNTERSLASH",
+      "aegis": "GC_COUNTERSLASH",
+      "rathenaEN": "Counter Slash",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_CROSSIMPACT",
+      "aegis": "GC_CROSSIMPACT",
+      "rathenaEN": "Cross Impact",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_DARKILLUSION",
+      "aegis": "GC_DARKILLUSION",
+      "rathenaEN": "Dark Illusion",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_PHANTOMMENACE",
+      "aegis": "GC_PHANTOMMENACE",
+      "rathenaEN": "Phantom Menace",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_POISONSMOKE",
+      "aegis": "GC_POISONSMOKE",
+      "rathenaEN": "Poison Smoke",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_ROLLINGCUTTER",
+      "aegis": "GC_ROLLINGCUTTER",
+      "rathenaEN": "Rolling Cutter",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_VENOMIMPRESS",
+      "aegis": "GC_VENOMIMPRESS",
+      "rathenaEN": "Venom Impress",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GN_CART_TORNADO",
+      "aegis": "GN_CART_TORNADO",
+      "rathenaEN": "Cart Tornado",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GN_CARTCANNON",
+      "aegis": "GN_CARTCANNON",
+      "rathenaEN": "Cart Cannon",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GN_CRAZYWEED",
+      "aegis": "GN_CRAZYWEED",
+      "rathenaEN": "Crazy Weed",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GN_HELLS_PLANT",
+      "aegis": "GN_HELLS_PLANT",
+      "rathenaEN": "Hell's Plant",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GS_CHAINACTION",
+      "aegis": "GS_CHAINACTION",
+      "rathenaEN": "Chain Action",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GS_DESPERADO",
+      "aegis": "GS_DESPERADO",
+      "rathenaEN": "Desperado",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GS_SINGLEACTION",
+      "aegis": "GS_SINGLEACTION",
+      "rathenaEN": "Single Action",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GS_SNAKEEYE",
+      "aegis": "GS_SNAKEEYE",
+      "rathenaEN": "Snake Eye",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GS_SPREADATTACK",
+      "aegis": "GS_SPREADATTACK",
+      "rathenaEN": "Spread Attack",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_HELLS_DRIVE",
+      "aegis": "HN_HELLS_DRIVE",
+      "rathenaEN": "Hell's Drive",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_JACK_FROST_NOVA",
+      "aegis": "HN_JACK_FROST_NOVA",
+      "rathenaEN": "Jack Frost Nova",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_MEGA_SONIC_BLOW",
+      "aegis": "HN_MEGA_SONIC_BLOW",
+      "rathenaEN": "Mega Sonic Blow",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_SELFSTUDY_SOCERY",
+      "aegis": "HN_SELFSTUDY_SOCERY",
+      "rathenaEN": "Self Study Sorcery",
+      "score": 33,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_SELFSTUDY_TATICS",
+      "aegis": "HN_SELFSTUDY_TATICS",
+      "rathenaEN": "Self Study Tactics",
+      "score": 33,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HP_ASSUMPTIO",
+      "aegis": "HP_ASSUMPTIO",
+      "rathenaEN": "Assumptio",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HP_BASILICA",
+      "aegis": "HP_BASILICA",
+      "rathenaEN": "Basilica",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HP_MEDITATIO",
+      "aegis": "HP_MEDITATIO",
+      "rathenaEN": "Meditatio",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HT_BEASTBANE",
+      "aegis": "HT_BEASTBANE",
+      "rathenaEN": "Beast Bane",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HT_BLITZBEAT",
+      "aegis": "HT_BLITZBEAT",
+      "rathenaEN": "Blitz Beat",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HT_CLAYMORETRAP",
+      "aegis": "HT_CLAYMORETRAP",
+      "rathenaEN": "Claymore Trap",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HT_LANDMINE",
+      "aegis": "HT_LANDMINE",
+      "rathenaEN": "Land Mine",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HT_STEELCROW",
+      "aegis": "HT_STEELCROW",
+      "rathenaEN": "Steel Crow",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HW_NAPALMVULCAN",
+      "aegis": "HW_NAPALMVULCAN",
+      "rathenaEN": "Napalm Vulcan",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HW_SOULDRAIN",
+      "aegis": "HW_SOULDRAIN",
+      "rathenaEN": "Soul Drain",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_ATTACK_STANCE",
+      "aegis": "IG_ATTACK_STANCE",
+      "rathenaEN": "Attack Stance",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_CROSS_RAIN",
+      "aegis": "IG_CROSS_RAIN",
+      "rathenaEN": "Cross Rain",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_HOLY_SHIELD",
+      "aegis": "IG_HOLY_SHIELD",
+      "rathenaEN": "Holy Shield",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_IMPERIAL_CROSS",
+      "aegis": "IG_IMPERIAL_CROSS",
+      "rathenaEN": "Imperial Cross",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_OVERSLASH",
+      "aegis": "IG_OVERSLASH",
+      "rathenaEN": "Overslash",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_RADIANT_SPEAR",
+      "aegis": "IG_RADIANT_SPEAR",
+      "rathenaEN": "Radiant Spear",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_SHIELD_MASTERY",
+      "aegis": "IG_SHIELD_MASTERY",
+      "rathenaEN": "Shield Mastery",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_EXPOSION_BLASTER",
+      "aegis": "IQ_EXPOSION_BLASTER",
+      "rathenaEN": "Explosion Blaster",
+      "score": 33,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_FIRST_BRAND",
+      "aegis": "IQ_FIRST_BRAND",
+      "rathenaEN": "First Brand",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_OLEUM_SANCTUM",
+      "aegis": "IQ_OLEUM_SANCTUM",
+      "rathenaEN": "Oleum Sanctum",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_SECOND_FAITH",
+      "aegis": "IQ_SECOND_FAITH",
+      "rathenaEN": "Second Faith",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_SECOND_FLAME",
+      "aegis": "IQ_SECOND_FLAME",
+      "rathenaEN": "Second Flame",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_THIRD_PUNISH",
+      "aegis": "IQ_THIRD_PUNISH",
+      "rathenaEN": "Third Punish",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_WILL_OF_FAITH",
+      "aegis": "IQ_WILL_OF_FAITH",
+      "rathenaEN": "Will Of Faith",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "KN_BOWLINGBASH",
+      "aegis": "KN_BOWLINGBASH",
+      "rathenaEN": "Bowling Bash",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "KN_BRANDISHSPEAR",
+      "aegis": "KN_BRANDISHSPEAR",
+      "rathenaEN": "Brandish Spear",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "KN_PIERCE",
+      "aegis": "KN_PIERCE",
+      "rathenaEN": "Pierce",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "KN_SPEARMASTERY",
+      "aegis": "KN_SPEARMASTERY",
+      "rathenaEN": "Spear Mastery",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_CANNONSPEAR",
+      "aegis": "LG_CANNONSPEAR",
+      "rathenaEN": "Cannon Spear",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_EARTHDRIVE",
+      "aegis": "LG_EARTHDRIVE",
+      "rathenaEN": "Earth Drive",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_HESPERUSLIT",
+      "aegis": "LG_HESPERUSLIT",
+      "rathenaEN": "Hesperus Lit",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_INSPIRATION",
+      "aegis": "LG_INSPIRATION",
+      "rathenaEN": "Inspiration",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_MOONSLASHER",
+      "aegis": "LG_MOONSLASHER",
+      "rathenaEN": "Moon Slasher",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_OVERBRAND",
+      "aegis": "LG_OVERBRAND",
+      "rathenaEN": "Over Brand",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_PIETY",
+      "aegis": "LG_PIETY",
+      "rathenaEN": "Piety",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=71% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_RAYOFGENESIS",
+      "aegis": "LG_RAYOFGENESIS",
+      "rathenaEN": "Ray of Genesis",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_SHIELDPRESS",
+      "aegis": "LG_SHIELDPRESS",
+      "rathenaEN": "Shield Press",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_SHIELDSPELL",
+      "aegis": "LG_SHIELDSPELL",
+      "rathenaEN": "Shield Spell",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LK_AURABLADE",
+      "aegis": "LK_AURABLADE",
+      "rathenaEN": "Aura Blade",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LK_CONCENTRATION",
+      "aegis": "LK_CONCENTRATION",
+      "rathenaEN": "Concentration",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LK_SPIRALPIERCE",
+      "aegis": "LK_SPIRALPIERCE",
+      "rathenaEN": "Spiral Pierce",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MC_MAMMONITE",
+      "aegis": "MC_MAMMONITE",
+      "rathenaEN": "Mammonite",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_COLDBOLT",
+      "aegis": "MG_COLDBOLT",
+      "rathenaEN": "Cold Bolt",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_FIREBALL",
+      "aegis": "MG_FIREBALL",
+      "rathenaEN": "Fire Ball",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_FIREBOLT",
+      "aegis": "MG_FIREBOLT",
+      "rathenaEN": "Fire Bolt",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_FIREWALL",
+      "aegis": "MG_FIREWALL",
+      "rathenaEN": "Fire Wall",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_LIGHTNINGBOLT",
+      "aegis": "MG_LIGHTNINGBOLT",
+      "rathenaEN": "Lightning Bolt",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_NAPALMBEAT",
+      "aegis": "MG_NAPALMBEAT",
+      "rathenaEN": "Napalm Beat",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_SAFETYWALL",
+      "aegis": "MG_SAFETYWALL",
+      "rathenaEN": "Safety Wall",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_SOULSTRIKE",
+      "aegis": "MG_SOULSTRIKE",
+      "rathenaEN": "Soul Strike",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MG_THUNDERSTORM",
+      "aegis": "MG_THUNDERSTORM",
+      "rathenaEN": "Thunderstorm",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MH_MAGMA_FLOW",
+      "aegis": "MH_MAGMA_FLOW",
+      "rathenaEN": "Magma Flow",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MH_PYROCLASTIC",
+      "aegis": "MH_PYROCLASTIC",
+      "rathenaEN": "Pyroclastic",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MI_RUSH_WINDMILL",
+      "aegis": "SR_WINDMILL",
+      "rathenaEN": "Windmill",
+      "score": 38,
+      "confidence": "LOW",
+      "reason": "lev=57% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MO_DODGE",
+      "aegis": "MO_DODGE",
+      "rathenaEN": "Dodge",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=71% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MT_AXE_STOMP",
+      "aegis": "MT_AXE_STOMP",
+      "rathenaEN": "Axe Stomp",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MT_MIGHTY_SMASH",
+      "aegis": "MT_MIGHTY_SMASH",
+      "rathenaEN": "Mighty Smash",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MT_POWERFUL_SWING",
+      "aegis": "MT_POWERFUL_SWING",
+      "rathenaEN": "Powerful Swing",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MT_RUSH_QUAKE",
+      "aegis": "MT_RUSH_QUAKE",
+      "rathenaEN": "Rush Quake",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MT_RUSH_STRIKE",
+      "aegis": "MT_RUSH_STRIKE",
+      "rathenaEN": "Rush Strike",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MT_SPARK_BLASTER",
+      "aegis": "MT_SPARK_BLASTER",
+      "rathenaEN": "Spark Blaster",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MT_TRIPLE_LASER",
+      "aegis": "MT_TRIPLE_LASER",
+      "rathenaEN": "Triple Laser",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_ARMSCANNON",
+      "aegis": "NC_ARMSCANNON",
+      "rathenaEN": "Arm Cannon",
+      "score": 30,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_AXEBOOMERANG",
+      "aegis": "NC_AXEBOOMERANG",
+      "rathenaEN": "Axe Boomerang",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_AXETORNADO",
+      "aegis": "NC_AXETORNADO",
+      "rathenaEN": "Axe Tornado",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_BOOSTKNUCKLE",
+      "aegis": "NC_BOOSTKNUCKLE",
+      "rathenaEN": "Boost Knuckle",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_COLDSLOWER",
+      "aegis": "NC_COLDSLOWER",
+      "rathenaEN": "Cold Slower",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_FLAMELAUNCHER",
+      "aegis": "NC_FLAMELAUNCHER",
+      "rathenaEN": "Flame Launcher",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_MADOLICENCE",
+      "aegis": "NC_MADOLICENCE",
+      "rathenaEN": "Mado License",
+      "score": 31,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_PILEBUNKER",
+      "aegis": "NC_PILEBUNKER",
+      "rathenaEN": "Pile Bunker",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_POWERSWING",
+      "aegis": "NC_POWERSWING",
+      "rathenaEN": "Power Swing",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_VULCANARM",
+      "aegis": "NC_VULCANARM",
+      "rathenaEN": "Vulcan Arm",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NJ_KAMAITACHI",
+      "aegis": "NJ_KAMAITACHI",
+      "rathenaEN": "Kamaitachi",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NV_BREAKTHROUGH",
+      "aegis": "NV_BREAKTHROUGH",
+      "rathenaEN": "Break Through",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NV_TRANSCENDENCE",
+      "aegis": "NV_TRANSCENDENCE",
+      "rathenaEN": "Transcendence",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_BASIC_GRENADE",
+      "aegis": "NW_BASIC_GRENADE",
+      "rathenaEN": "Basic Grenade",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_HIDDEN_CARD",
+      "aegis": "NW_HIDDEN_CARD",
+      "rathenaEN": "Hidden Card",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_INTENSIVE_AIM",
+      "aegis": "NW_INTENSIVE_AIM",
+      "rathenaEN": "Intensive Aim",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_ONLY_ONE_BULLET",
+      "aegis": "NW_ONLY_ONE_BULLET",
+      "rathenaEN": "Only One Bullet",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_WILD_FIRE",
+      "aegis": "NW_WILD_FIRE",
+      "rathenaEN": "Wild Fire",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_WILD_SHOT",
+      "aegis": "NW_WILD_SHOT",
+      "rathenaEN": "Wild Shot",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "PA_SHIELDCHAIN",
+      "aegis": "PA_SHIELDCHAIN",
+      "rathenaEN": "Shield Chain",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "PR_MACEMASTERY",
+      "aegis": "PR_MACEMASTERY",
+      "rathenaEN": "Mace Mastery",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "PR_MAGNIFICAT",
+      "aegis": "PR_MAGNIFICAT",
+      "rathenaEN": "Magnificat",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "PR_TURNUNDEAD",
+      "aegis": "PR_TURNUNDEAD",
+      "rathenaEN": "Turn Undead",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RA_AIMEDBOLT",
+      "aegis": "RA_AIMEDBOLT",
+      "rathenaEN": "Aimed Bolt",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RA_ARROWSTORM",
+      "aegis": "RA_ARROWSTORM",
+      "rathenaEN": "Arrow Storm",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RA_CAMOUFLAGE",
+      "aegis": "RA_CAMOUFLAGE",
+      "rathenaEN": "Camouflage",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RA_CLUSTERBOMB",
+      "aegis": "RA_CLUSTERBOMB",
+      "rathenaEN": "Cluster Bomb",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RA_FEARBREEZE",
+      "aegis": "RA_FEARBREEZE",
+      "rathenaEN": "Fear Breeze",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RA_RANGERMAIN",
+      "aegis": "RA_RANGERMAIN",
+      "rathenaEN": "Ranger Main",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RA_RESEARCHTRAP",
+      "aegis": "RA_RESEARCHTRAP",
+      "rathenaEN": "Research Trap",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RG_INTIMIDATE",
+      "aegis": "RG_PLAGIARISM",
+      "rathenaEN": "Intimidate",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RG_SNATCHER",
+      "aegis": "RG_INTIMIDATE",
+      "rathenaEN": "Snatch",
+      "score": 39,
+      "confidence": "LOW",
+      "reason": "lev=60% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_DEATHBOUND",
+      "aegis": "RK_DEATHBOUND",
+      "rathenaEN": "Death Bound",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_DRAGONBREATH",
+      "aegis": "RK_DRAGONBREATH",
+      "rathenaEN": "Dragon Breath",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_DRAGONHOWLING",
+      "aegis": "RK_DRAGONHOWLING",
+      "rathenaEN": "Dragon Howling",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_ENCHANTBLADE",
+      "aegis": "RK_ENCHANTBLADE",
+      "rathenaEN": "Enchant Blade",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_IGNITIONBREAK",
+      "aegis": "NPC_IGNITIONBREAK",
+      "rathenaEN": "Ignition Break",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_LUXANIMA",
+      "aegis": "RK_LUXANIMA",
+      "rathenaEN": "Lux Anima",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_RUNEMASTERY",
+      "aegis": "RK_RUNEMASTERY",
+      "rathenaEN": "Rune Mastery",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_SONICWAVE",
+      "aegis": "RK_SONICWAVE",
+      "rathenaEN": "Sonic Wave",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_STORMBLAST",
+      "aegis": "RK_STORMBLAST",
+      "rathenaEN": "Storm Blast",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_WINDCUTTER",
+      "aegis": "RK_WINDCUTTER",
+      "rathenaEN": "Wind Cutter",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_AM_BLAST",
+      "aegis": "EL_BLAST",
+      "rathenaEN": "Blast",
+      "score": 37,
+      "confidence": "LOW",
+      "reason": "lev=56% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_FIRE_RAIN",
+      "aegis": "RL_FIRE_RAIN",
+      "rathenaEN": "Fire Rain",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_FIREDANCE",
+      "aegis": "RL_FIREDANCE",
+      "rathenaEN": "Fire Dance",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_FLICKER",
+      "aegis": "RL_FLICKER",
+      "rathenaEN": "Flicker",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=78% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_HAMMER_OF_GOD",
+      "aegis": "RL_HAMMER_OF_GOD",
+      "rathenaEN": "Hammer of God",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_HEAT_BARREL",
+      "aegis": "RL_HEAT_BARREL",
+      "rathenaEN": "Heat Barrel",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_MASS_SPIRAL",
+      "aegis": "RL_MASS_SPIRAL",
+      "rathenaEN": "Mass Spiral",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_RICHS_COIN",
+      "aegis": "RL_RICHS_COIN",
+      "rathenaEN": "Rich's Coin",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RL_SLUGSHOT",
+      "aegis": "RL_SLUGSHOT",
+      "rathenaEN": "Slug Shot",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SA_DRAGONOLOGY",
+      "aegis": "SA_DRAGONOLOGY",
+      "rathenaEN": "Dragonology",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SA_FREECAST",
+      "aegis": "SA_FREECAST",
+      "rathenaEN": "Free Cast",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SC_FEINTBOMB",
+      "aegis": "SC_FEINTBOMB",
+      "rathenaEN": "Feint Bomb",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SC_MAELSTROM",
+      "aegis": "SC_MAELSTROM",
+      "rathenaEN": "Maelstrom",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SC_REPRODUCE",
+      "aegis": "SC_REPRODUCE",
+      "rathenaEN": "Reproduce",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SC_SHADOWFORM",
+      "aegis": "SC_SHADOWFORM",
+      "rathenaEN": "Shadow Form",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SC_TRIANGLESHOT",
+      "aegis": "SC_TRIANGLESHOT",
+      "rathenaEN": "Triangle Shot",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_HYUN_ROK_CANNON",
+      "aegis": "SH_HYUN_ROK_CANNON",
+      "rathenaEN": "Hyunrok Cannon",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_HYUN_ROKS_BREEZE",
+      "aegis": "SH_HYUN_ROKS_BREEZE",
+      "rathenaEN": "Hyunrok Breeze",
+      "score": 33,
+      "confidence": "LOW",
+      "reason": "lev=81% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_CROSS_SLASH",
+      "aegis": "KO_JYUMONJIKIRI",
+      "rathenaEN": "Cross Slash",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_DANCING_KNIFE",
+      "aegis": "SHC_DANCING_KNIFE",
+      "rathenaEN": "Dancing Knife",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_ENCHANTING_SHADOW",
+      "aegis": "SHC_ENCHANTING_SHADOW",
+      "rathenaEN": "Enchanting Shadow",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=84% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_ETERNAL_SLASH",
+      "aegis": "SHC_ETERNAL_SLASH",
+      "rathenaEN": "Eternal Slash",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_FATAL_SHADOW_CROW",
+      "aegis": "SHC_FATAL_SHADOW_CROW",
+      "rathenaEN": "Fatal Shadow Crow",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_IMPACT_CRATER",
+      "aegis": "SHC_IMPACT_CRATER",
+      "rathenaEN": "Impact Crater",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_POTENT_VENOM",
+      "aegis": "SHC_POTENT_VENOM",
+      "rathenaEN": "Potent Venom",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_SAVAGE_IMPACT",
+      "aegis": "SHC_SAVAGE_IMPACT",
+      "rathenaEN": "Savage Impact",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_SHADOW_EXCEED",
+      "aegis": "SHC_SHADOW_EXCEED",
+      "rathenaEN": "Shadow Exceed",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_SHADOW_SENSE",
+      "aegis": "SHC_SHADOW_SENSE",
+      "rathenaEN": "Shadow Sense",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SHC_SHADOW_STAB",
+      "aegis": "SHC_SHADOW_STAB",
+      "rathenaEN": "Shadow Stab",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_FALLINGSTAR",
+      "aegis": "SJ_FALLINGSTAR",
+      "rathenaEN": "Falling Star",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_FLASHKICK",
+      "aegis": "SJ_FLASHKICK",
+      "rathenaEN": "Flash Kick",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_FULLMOONKICK",
+      "aegis": "SJ_FULLMOONKICK",
+      "rathenaEN": "Full Moon Kick",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_LIGHTOFMOON",
+      "aegis": "SJ_LIGHTOFMOON",
+      "rathenaEN": "Light of Moon",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_LIGHTOFSTAR",
+      "aegis": "SJ_LIGHTOFSTAR",
+      "rathenaEN": "Light of Star",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_LIGHTOFSUN",
+      "aegis": "SJ_LIGHTOFSUN",
+      "rathenaEN": "Light of Sun",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_NEWMOONKICK",
+      "aegis": "SJ_NEWMOONKICK",
+      "rathenaEN": "New Moon Kick",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_STARSTANCE",
+      "aegis": "SJ_STARSTANCE",
+      "rathenaEN": "Star Stance",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_SUNSTANCE",
+      "aegis": "SJ_SUNSTANCE",
+      "rathenaEN": "Sun Stance",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_ALL_IN_THE_SKY",
+      "aegis": "SKE_ALL_IN_THE_SKY",
+      "rathenaEN": "All in the Sky",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_DAWN_BREAK",
+      "aegis": "SKE_DAWN_BREAK",
+      "rathenaEN": "Dawn Break",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_MIDNIGHT_KICK",
+      "aegis": "SKE_MIDNIGHT_KICK",
+      "rathenaEN": "Midnight Kick",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_NOON_BLAST",
+      "aegis": "SKE_NOON_BLAST",
+      "rathenaEN": "Noon Blast",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_RISING_SUN",
+      "aegis": "SKE_RISING_SUN",
+      "rathenaEN": "Rising Sun",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_SKY_MASTERY",
+      "aegis": "SKE_SKY_MASTERY",
+      "rathenaEN": "Sky Mastery",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_SKY_MOON",
+      "aegis": "SKE_SKY_MOON",
+      "rathenaEN": "Sky Moon",
+      "score": 43,
+      "confidence": "LOW",
+      "reason": "lev=70% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_SKY_SUN",
+      "aegis": "SKE_SKY_SUN",
+      "rathenaEN": "Sky Sun",
+      "score": 42,
+      "confidence": "LOW",
+      "reason": "lev=67% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_STAR_CANNON",
+      "aegis": "SKE_STAR_CANNON",
+      "rathenaEN": "Star Cannon",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_STAR_LIGHT_KICK",
+      "aegis": "SKE_STAR_LIGHT_KICK",
+      "rathenaEN": "Star Light Kick",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=81% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_SUNSET_BLAST",
+      "aegis": "SKE_SUNSET_BLAST",
+      "rathenaEN": "Sunset Blast",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_TWINKLING_GALAXY",
+      "aegis": "SKE_TWINKLING_GALAXY",
+      "rathenaEN": "Twinkling Galaxy",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SKE_WAR_BOOK_MASTERY",
+      "aegis": "SKE_WAR_BOOK_MASTERY",
+      "rathenaEN": "War Book Mastery",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SL_KAAHI",
+      "aegis": "SL_KAAHI",
+      "rathenaEN": "Kaahi",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=71% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SM_FATALBLOW",
+      "aegis": "SM_FATALBLOW",
+      "rathenaEN": "Fatal Blow",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SN_SIGHT",
+      "aegis": "MG_SIGHT",
+      "rathenaEN": "Sight",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=71% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_CLOUD_KILL",
+      "aegis": "NPC_CLOUD_KILL",
+      "rathenaEN": "Cloud Kill",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_DIAMONDDUST",
+      "aegis": "SO_DIAMONDDUST",
+      "rathenaEN": "Diamond Dust",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_EARTHGRAVE",
+      "aegis": "SO_EARTHGRAVE",
+      "rathenaEN": "Earth Grave",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_PSYCHIC_WAVE",
+      "aegis": "NPC_PSYCHIC_WAVE",
+      "rathenaEN": "Psychic Wave",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_SPELLFIST",
+      "aegis": "SO_SPELLFIST",
+      "rathenaEN": "Spell Fist",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_STRIKING",
+      "aegis": "SO_STRIKING",
+      "rathenaEN": "Striking",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_VARETYR_SPEAR",
+      "aegis": "SO_VARETYR_SPEAR",
+      "rathenaEN": "Varetyr Spear",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_WARMER",
+      "aegis": "SO_WARMER",
+      "rathenaEN": "Warmer",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SO_WATER_INSIGNIA",
+      "aegis": "SO_WATER_INSIGNIA",
+      "rathenaEN": "Water Insignia",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_SOUL_GATHERING",
+      "aegis": "SOA_SOUL_GATHERING",
+      "rathenaEN": "Soul Gathering",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=81% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_SOUL_MASTERY",
+      "aegis": "SOA_SOUL_MASTERY",
+      "rathenaEN": "Soul Mastery",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TALISMAN_MASTERY",
+      "aegis": "SOA_TALISMAN_MASTERY",
+      "rathenaEN": "Talisman Mastery",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TALISMAN_OF_BLUE_DRAGON",
+      "aegis": "SOA_TALISMAN_OF_BLUE_DRAGON",
+      "rathenaEN": "Talisman Of Blue Dragon",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TALISMAN_OF_RED_PHOENIX",
+      "aegis": "SOA_TALISMAN_OF_RED_PHOENIX",
+      "rathenaEN": "Talisman Of Red Phoenix",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TALISMAN_OF_WHITE_TIGER",
+      "aegis": "SOA_TALISMAN_OF_WHITE_TIGER",
+      "rathenaEN": "Talisman Of White Tiger",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TOTEM_OF_TUTELARY",
+      "aegis": "SOA_TOTEM_OF_TUTELARY",
+      "rathenaEN": "Totem Of Tutelary",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SP_SOULCOLLECT",
+      "aegis": "SP_SOULCOLLECT",
+      "rathenaEN": "Soul Collect",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SP_SOULCURSE",
+      "aegis": "SP_SOULCURSE",
+      "rathenaEN": "Soul Curse",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_DRAGONCOMBO",
+      "aegis": "SR_DRAGONCOMBO",
+      "rathenaEN": "Dragon Combo",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_EARTHSHAKER",
+      "aegis": "SR_EARTHSHAKER",
+      "rathenaEN": "Earth Shaker",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_FALLENEMPIRE",
+      "aegis": "SR_FALLENEMPIRE",
+      "rathenaEN": "Fallen Empire",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_FLASHCOMBO",
+      "aegis": "SR_FLASHCOMBO",
+      "rathenaEN": "Flash Combo",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_HELLGATE",
+      "aegis": "SR_HELLGATE",
+      "rathenaEN": "Hell Gate",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_HOWLINGOFLION",
+      "aegis": "SR_HOWLINGOFLION",
+      "rathenaEN": "Howling of Lion",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_KNUCKLEARROW",
+      "aegis": "SR_KNUCKLEARROW",
+      "rathenaEN": "Knuckle Arrow",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_RAISINGDRAGON",
+      "aegis": "SR_RAISINGDRAGON",
+      "rathenaEN": "Raising Dragon",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_RIDEINLIGHTNING",
+      "aegis": "SR_RIDEINLIGHTNING",
+      "rathenaEN": "Ride In Lightening",
+      "score": 33,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_SKYNETBLOW",
+      "aegis": "SR_SKYNETBLOW",
+      "rathenaEN": "Sky Net Blow",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_TIGERCANNON",
+      "aegis": "SR_TIGERCANNON",
+      "rathenaEN": "Tiger Cannon",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SS_KUNAIKAITEN",
+      "aegis": "SL_KAITE",
+      "rathenaEN": "Kaite",
+      "score": 30,
+      "confidence": "LOW",
+      "reason": "lev=38% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "ST_PRESERVE",
+      "aegis": "ST_PRESERVE",
+      "rathenaEN": "Preserve",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_ARCLOUSEDASH",
+      "aegis": "SU_ARCLOUSEDASH",
+      "rathenaEN": "Arclouse Dash",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_BUNCHOFSHRIMP",
+      "aegis": "SU_BUNCHOFSHRIMP",
+      "rathenaEN": "Bunch of Shrimp",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_CHATTERING",
+      "aegis": "SU_CHATTERING",
+      "rathenaEN": "Chattering",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_FRESHSHRIMP",
+      "aegis": "SU_FRESHSHRIMP",
+      "rathenaEN": "Fresh Shrimp",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_MEOWMEOW",
+      "aegis": "SU_MEOWMEOW",
+      "rathenaEN": "Meow Meow",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_NYANGGRASS",
+      "aegis": "SU_NYANGGRASS",
+      "rathenaEN": "Nyang Grass",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_PICKYPECK",
+      "aegis": "SU_PICKYPECK",
+      "rathenaEN": "Picky Peck",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_POWEROFFLOCK",
+      "aegis": "SU_POWEROFFLOCK",
+      "rathenaEN": "Power of Flock",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_POWEROFLAND",
+      "aegis": "SU_POWEROFLAND",
+      "rathenaEN": "Power of Land",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_POWEROFLIFE",
+      "aegis": "SU_POWEROFLIFE",
+      "rathenaEN": "Power of Life",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_POWEROFSEA",
+      "aegis": "SU_POWEROFSEA",
+      "rathenaEN": "Power of Sea",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_SCAROFTAROU",
+      "aegis": "SU_SCAROFTAROU",
+      "rathenaEN": "Scar of Tarou",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_SCRATCH",
+      "aegis": "SU_SCRATCH",
+      "rathenaEN": "Scratch",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=78% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_SPIRITOFLIFE",
+      "aegis": "SU_SPIRITOFLIFE",
+      "rathenaEN": "Spirit of Life",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TF_HIDING",
+      "aegis": "TF_HIDING",
+      "rathenaEN": "Hiding",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TK_DODGE",
+      "aegis": "MO_DODGE",
+      "rathenaEN": "Dodge",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=71% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_AIN_RHAPSODY",
+      "aegis": "TR_AIN_RHAPSODY",
+      "rathenaEN": "Ain Rhapsody",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_METALIC_FURY",
+      "aegis": "TR_METALIC_FURY",
+      "rathenaEN": "Metallic Fury",
+      "score": 31,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_PRON_MARCH",
+      "aegis": "TR_PRON_MARCH",
+      "rathenaEN": "Pron March",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_ROSEBLOSSOM",
+      "aegis": "TR_ROSEBLOSSOM",
+      "rathenaEN": "Rose Blossom",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_SOUNDBLEND",
+      "aegis": "TR_SOUNDBLEND",
+      "rathenaEN": "Sound Blend",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_STAGE_MANNER",
+      "aegis": "TR_STAGE_MANNER",
+      "rathenaEN": "Stage Manner",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WA_SWING_DANCE",
+      "aegis": "WA_SWING_DANCE",
+      "rathenaEN": "Swing Dance",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_CALAMITYGALE",
+      "aegis": "WH_CALAMITYGALE",
+      "rathenaEN": "Calamity Gale",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_CRESCIVE_BOLT",
+      "aegis": "WH_CRESCIVE_BOLT",
+      "rathenaEN": "Crescive Bolt",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=86% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_DEEPBLINDTRAP",
+      "aegis": "WH_DEEPBLINDTRAP",
+      "rathenaEN": "Deep Blind Trap",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_FLAMETRAP",
+      "aegis": "WH_FLAMETRAP",
+      "rathenaEN": "Flame Trap",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_GALESTORM",
+      "aegis": "WH_GALESTORM",
+      "rathenaEN": "Gale Storm",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_HAWKBOOMERANG",
+      "aegis": "WH_HAWKBOOMERANG",
+      "rathenaEN": "Hawk Boomerang",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_HAWKRUSH",
+      "aegis": "WH_HAWKRUSH",
+      "rathenaEN": "Hawk Rush",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_SOLIDTRAP",
+      "aegis": "WH_SOLIDTRAP",
+      "rathenaEN": "Solid Trap",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_SWIFTTRAP",
+      "aegis": "WH_SWIFTTRAP",
+      "rathenaEN": "Swift Trap",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_WILD_WALK",
+      "aegis": "WH_WILD_WALK",
+      "rathenaEN": "Wild Walk",
+      "score": 47,
+      "confidence": "LOW",
+      "reason": "lev=80% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_COMET",
+      "aegis": "WL_COMET",
+      "rathenaEN": "Comet",
+      "score": 44,
+      "confidence": "LOW",
+      "reason": "lev=71% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_CRIMSONROCK",
+      "aegis": "WL_CRIMSONROCK",
+      "rathenaEN": "Crimson Rock",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_DRAINLIFE",
+      "aegis": "WL_DRAINLIFE",
+      "rathenaEN": "Drain Life",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_EARTHSTRAIN",
+      "aegis": "WL_EARTHSTRAIN",
+      "rathenaEN": "Earth Strain",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_HELLINFERNO",
+      "aegis": "WL_HELLINFERNO",
+      "rathenaEN": "Hell Inferno",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_JACKFROST",
+      "aegis": "WL_JACKFROST",
+      "rathenaEN": "Jack Frost",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_RADIUS",
+      "aegis": "WL_RADIUS",
+      "rathenaEN": "Radius",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_RELEASE",
+      "aegis": "WL_RELEASE",
+      "rathenaEN": "Release",
+      "score": 46,
+      "confidence": "LOW",
+      "reason": "lev=78% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_SOULEXPANSION",
+      "aegis": "WL_SOULEXPANSION",
+      "rathenaEN": "Soul Expansion",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_TETRAVORTEX",
+      "aegis": "WL_TETRAVORTEX",
+      "rathenaEN": "Tetra Vortex",
+      "score": 49,
+      "confidence": "LOW",
+      "reason": "lev=85% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WM_GREAT_ECHO",
+      "aegis": "WM_GREAT_ECHO",
+      "rathenaEN": "Great Echo",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WM_LERADS_DEW",
+      "aegis": "WM_LERADS_DEW",
+      "rathenaEN": "Lerad's Dew",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WM_LESSON",
+      "aegis": "WM_LESSON",
+      "rathenaEN": "Lesson",
+      "score": 45,
+      "confidence": "LOW",
+      "reason": "lev=75% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WM_METALICSOUND",
+      "aegis": "WM_METALICSOUND",
+      "rathenaEN": "Metallic Sound",
+      "score": 31,
+      "confidence": "LOW",
+      "reason": "lev=79% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WM_REVERBERATION",
+      "aegis": "WM_REVERBERATION",
+      "rathenaEN": "Reverberation",
+      "score": 50,
+      "confidence": "LOW",
+      "reason": "lev=87% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WM_SONG_OF_MANA",
+      "aegis": "WM_SONG_OF_MANA",
+      "rathenaEN": "Song of Mana",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WS_CARTBOOST",
+      "aegis": "WS_CARTBOOST",
+      "rathenaEN": "Cart Boost",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WZ_EARTHSPIKE",
+      "aegis": "WZ_EARTHSPIKE",
+      "rathenaEN": "Earth Spike",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WZ_FIREPILLAR",
+      "aegis": "WZ_FIREPILLAR",
+      "rathenaEN": "Fire Pillar",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=83% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WZ_FROSTNOVA",
+      "aegis": "WZ_FROSTNOVA",
+      "rathenaEN": "Frost Nova",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WZ_HEAVENDRIVE",
+      "aegis": "WZ_HEAVENDRIVE",
+      "rathenaEN": "Heaven's Drive",
+      "score": 31,
+      "confidence": "LOW",
+      "reason": "lev=77% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WZ_STORMGUST",
+      "aegis": "WZ_STORMGUST",
+      "rathenaEN": "Storm Gust",
+      "score": 48,
+      "confidence": "LOW",
+      "reason": "lev=82% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_DESTRUCTIVE_HURRICANE",
+      "aegis": "AG_DESTRUCTIVE_HURRICANE",
+      "rathenaEN": "Destructive Hurricane",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=91% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_FLORAL_FLARE_ROAD",
+      "aegis": "AG_FLORAL_FLARE_ROAD",
+      "rathenaEN": "Floral Flare Road",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_MYSTERY_ILLUSION",
+      "aegis": "AG_MYSTERY_ILLUSION",
+      "rathenaEN": "Mystery Illusion",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "AG_STRANTUM_TREMOR",
+      "aegis": "AG_STRANTUM_TREMOR",
+      "rathenaEN": "Strantum Tremor",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_ACIDIFIED_ZONE_FIRE",
+      "aegis": "BO_ACIDIFIED_ZONE_FIRE",
+      "rathenaEN": "Acidified Zone Fire",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_ACIDIFIED_ZONE_GROUND",
+      "aegis": "BO_ACIDIFIED_ZONE_GROUND",
+      "rathenaEN": "Acidified Zone Ground",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_ACIDIFIED_ZONE_WATER",
+      "aegis": "BO_ACIDIFIED_ZONE_WATER",
+      "rathenaEN": "Acidified Zone Water",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_ACIDIFIED_ZONE_WIND",
+      "aegis": "BO_ACIDIFIED_ZONE_WIND",
+      "rathenaEN": "Acidified Zone Wind",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_EXPLOSIVE_POWDER",
+      "aegis": "BO_EXPLOSIVE_POWDER",
+      "rathenaEN": "Explosive Powder",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_MAYHEMIC_THORNS",
+      "aegis": "BO_MAYHEMIC_THORNS",
+      "rathenaEN": "Mayhemic Thorns",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "BO_RESEARCHREPORT",
+      "aegis": "BO_RESEARCHREPORT",
+      "rathenaEN": "Research Report",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CD_PNEUMATICUS_PROCELLA",
+      "aegis": "CD_PNEUMATICUS_PROCELLA",
+      "rathenaEN": "Pneumaticus Procella",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CR_ACIDDEMONSTRATION",
+      "aegis": "CR_ACIDDEMONSTRATION",
+      "rathenaEN": "Acid Demonstration",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "CR_SHIELDBOOMERANG",
+      "aegis": "CR_SHIELDBOOMERANG",
+      "rathenaEN": "Shield Boomerang",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_DRAGONIC_BREATH",
+      "aegis": "DK_DRAGONIC_BREATH",
+      "rathenaEN": "Dragonic Breath",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_DRAGONIC_PIERCE",
+      "aegis": "DK_DRAGONIC_PIERCE",
+      "rathenaEN": "Dragonic Pierce",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_HACKANDSLASHER",
+      "aegis": "DK_HACKANDSLASHER",
+      "rathenaEN": "Hack And Slasher",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "DK_MADNESS_CRUSHER",
+      "aegis": "DK_MADNESS_CRUSHER",
+      "rathenaEN": "Madness Crusher",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_ELEMENTAL_BUSTER",
+      "aegis": "EM_ELEMENTAL_BUSTER",
+      "rathenaEN": "Elemental Buster",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_SPELL_ENCHANTING",
+      "aegis": "EM_SPELL_ENCHANTING",
+      "rathenaEN": "Spell Enchanting",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_SUMMON_ELEMENTAL_ARDOR",
+      "aegis": "EM_SUMMON_ELEMENTAL_ARDOR",
+      "rathenaEN": "Summon Elemental Ardor",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=91% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_SUMMON_ELEMENTAL_PROCELLA",
+      "aegis": "EM_SUMMON_ELEMENTAL_PROCELLA",
+      "rathenaEN": "Summon Elemental Procella",
+      "score": 52,
+      "confidence": "MEDIUM",
+      "reason": "lev=92% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_SUMMON_ELEMENTAL_SERPENS",
+      "aegis": "EM_SUMMON_ELEMENTAL_SERPENS",
+      "rathenaEN": "Summon Elemental Serpens",
+      "score": 52,
+      "confidence": "MEDIUM",
+      "reason": "lev=92% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "EM_SUMMON_ELEMENTAL_TERREMOTUS",
+      "aegis": "EM_SUMMON_ELEMENTAL_TERREMOTUS",
+      "rathenaEN": "Summon Elemental Terremotus",
+      "score": 52,
+      "confidence": "MEDIUM",
+      "reason": "lev=93% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_CLOAKINGEXCEED",
+      "aegis": "GC_CLOAKINGEXCEED",
+      "rathenaEN": "Cloaking Exceed",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_CROSSRIPPERSLASHER",
+      "aegis": "GC_CROSSRIPPERSLASHER",
+      "rathenaEN": "Cross Ripper Slasher",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_POISONINGWEAPON",
+      "aegis": "GC_POISONINGWEAPON",
+      "rathenaEN": "Poisoning Weapon",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_RESEARCHNEWPOISON",
+      "aegis": "GC_RESEARCHNEWPOISON",
+      "rathenaEN": "Research New Poison",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GC_WEAPONBLOCKING",
+      "aegis": "GC_WEAPONBLOCKING",
+      "rathenaEN": "Weapon Blocking",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "GN_SPORE_EXPLOSION",
+      "aegis": "GN_SPORE_EXPLOSION",
+      "rathenaEN": "Spore Explosion",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_DOUBLEBOWLINGBASH",
+      "aegis": "HN_DOUBLEBOWLINGBASH",
+      "rathenaEN": "Double Bowling Bash",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_GROUND_GRAVITATION",
+      "aegis": "HN_GROUND_GRAVITATION",
+      "rathenaEN": "Ground Gravitation",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_JUPITEL_THUNDER_STORM",
+      "aegis": "HN_JUPITEL_THUNDER_STORM",
+      "rathenaEN": "Jupitel Thunderstorm",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_METEOR_STORM_BUSTER",
+      "aegis": "HN_METEOR_STORM_BUSTER",
+      "rathenaEN": "Meteor Storm Buster",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_NAPALM_VULCAN_STRIKE",
+      "aegis": "HN_NAPALM_VULCAN_STRIKE",
+      "rathenaEN": "Napalm Vulcan Strike",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_SHIELD_CHAIN_RUSH",
+      "aegis": "HN_SHIELD_CHAIN_RUSH",
+      "rathenaEN": "Shield Chain Rush",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "HN_SPIRAL_PIERCE_MAX",
+      "aegis": "HN_SPIRAL_PIERCE_MAX",
+      "rathenaEN": "Spiral Pierce Max",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_GRAND_JUDGEMENT",
+      "aegis": "IG_GRAND_JUDGEMENT",
+      "rathenaEN": "Grand Judgement",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IG_SHIELD_SHOOTING",
+      "aegis": "IG_SHIELD_SHOOTING",
+      "rathenaEN": "Shield Shooting",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_BLAZING_FLAME_BLAST",
+      "aegis": "IQ_BLAZING_FLAME_BLAST",
+      "rathenaEN": "Blazing Flame Blast",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_SECOND_JUDGEMENT",
+      "aegis": "IQ_SECOND_JUDGEMENT",
+      "rathenaEN": "Second Judgement",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_THIRD_CONSECRATION",
+      "aegis": "IQ_THIRD_CONSECRATION",
+      "rathenaEN": "Third Consecration",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "IQ_THIRD_FLAME_BOMB",
+      "aegis": "IQ_THIRD_FLAME_BOMB",
+      "rathenaEN": "Third Flame Bomb",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "KN_CAVALIERMASTERY",
+      "aegis": "KN_CAVALIERMASTERY",
+      "rathenaEN": "Cavalier Mastery",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "KN_TWOHANDQUICKEN",
+      "aegis": "KN_TWOHANDQUICKEN",
+      "rathenaEN": "Twohand Quicken",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_BANISHINGPOINT",
+      "aegis": "LG_BANISHINGPOINT",
+      "rathenaEN": "Banishing Point",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "LG_PINPOINTATTACK",
+      "aegis": "LG_PINPOINTATTACK",
+      "rathenaEN": "Pinpoint Attack",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MC_CARTREVOLUTION",
+      "aegis": "MC_CARTREVOLUTION",
+      "rathenaEN": "Cart Revolution",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "MT_ENERGY_CANNONADE",
+      "aegis": "MT_ENERGY_CANNONADE",
+      "rathenaEN": "Energy Cannonade",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NC_NEUTRALBARRIER",
+      "aegis": "NC_NEUTRALBARRIER",
+      "rathenaEN": "Neutral Barrier",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_AUTO_FIRING_LAUNCHER",
+      "aegis": "NW_AUTO_FIRING_LAUNCHER",
+      "rathenaEN": "Auto Firing Launcher",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_GRENADE_FRAGMENT",
+      "aegis": "NW_GRENADE_FRAGMENT",
+      "rathenaEN": "Grenade Fragment",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_GRENADE_MASTERY",
+      "aegis": "NW_GRENADE_MASTERY",
+      "rathenaEN": "Grenade Mastery",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_GRENADES_DROPPING",
+      "aegis": "NW_GRENADES_DROPPING",
+      "rathenaEN": "Grenades Dropping",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_HASTY_FIRE_IN_THE_HOLE",
+      "aegis": "NW_HASTY_FIRE_IN_THE_HOLE",
+      "rathenaEN": "Hasty Fire in the Hole",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_MAGAZINE_FOR_ONE",
+      "aegis": "NW_MAGAZINE_FOR_ONE",
+      "rathenaEN": "Magazine for One",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_MIDNIGHT_FALLEN",
+      "aegis": "NW_MIDNIGHT_FALLEN",
+      "rathenaEN": "Midnight Fallen",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_MISSION_BOMBARD",
+      "aegis": "NW_MISSION_BOMBARD",
+      "rathenaEN": "Mission Bombard",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_SPIRAL_SHOOTING",
+      "aegis": "NW_SPIRAL_SHOOTING",
+      "rathenaEN": "Spiral Shooting",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "NW_THE_VIGILANTE_AT_NIGHT",
+      "aegis": "NW_THE_VIGILANTE_AT_NIGHT",
+      "rathenaEN": "The Vigilante at Night",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_DRAGONBREATH_WATER",
+      "aegis": "RK_DRAGONBREATH_WATER",
+      "rathenaEN": "Dragon Breath - Water",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "RK_DRAGONTRAINING",
+      "aegis": "RK_DRAGONTRAINING",
+      "rathenaEN": "Dragon Training",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SC_AUTOSHADOWSPELL",
+      "aegis": "SC_AUTOSHADOWSPELL",
+      "rathenaEN": "Auto Shadow Spell",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_CHUL_HO_BATTERING",
+      "aegis": "SH_CHUL_HO_BATTERING",
+      "rathenaEN": "Chulho Battering",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_CHUL_HO_SONIC_CLAW",
+      "aegis": "SH_CHUL_HO_SONIC_CLAW",
+      "rathenaEN": "Chulho Sonic Claw",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_COLORS_OF_HYUN_ROK",
+      "aegis": "SH_COLORS_OF_HYUN_ROK",
+      "rathenaEN": "Colors of Hyunrok",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_COMMUNE_WITH_CHUL_HO",
+      "aegis": "SH_COMMUNE_WITH_CHUL_HO",
+      "rathenaEN": "Commune with Chulho",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_COMMUNE_WITH_HYUN_ROK",
+      "aegis": "SH_COMMUNE_WITH_HYUN_ROK",
+      "rathenaEN": "Commune with Hyunrok",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_HOGOGONG_STRIKE",
+      "aegis": "SH_HOGOGONG_STRIKE",
+      "rathenaEN": "Hogogong Strike",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_HOWLING_OF_CHUL_HO",
+      "aegis": "SH_HOWLING_OF_CHUL_HO",
+      "rathenaEN": "Howling of Chulho",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_HYUN_ROK_SPIRIT_POWER",
+      "aegis": "SH_HYUN_ROK_SPIRIT_POWER",
+      "rathenaEN": "Hyunrok Spirit Power",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=90% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SH_MYSTICAL_CREATURE_MASTERY",
+      "aegis": "SH_MYSTICAL_CREATURE_MASTERY",
+      "rathenaEN": "Mystical Creature Mastery",
+      "score": 52,
+      "confidence": "MEDIUM",
+      "reason": "lev=92% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SJ_PROMINENCEKICK",
+      "aegis": "SJ_PROMINENCEKICK",
+      "rathenaEN": "Prominence Kick",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_EXORCISM_OF_MALICIOUS_SOUL",
+      "aegis": "SOA_EXORCISM_OF_MALICIOUS_SOUL",
+      "rathenaEN": "Exorcism Of Malicious Soul",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TALISMAN_OF_BLACK_TORTOISE",
+      "aegis": "SOA_TALISMAN_OF_BLACK_TORTOISE",
+      "rathenaEN": "Talisman Of Black Tortoise",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TALISMAN_OF_FIVE_ELEMENTS",
+      "aegis": "SOA_TALISMAN_OF_FIVE_ELEMENTS",
+      "rathenaEN": "Talisman Of Five Elements",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TALISMAN_OF_FOUR_BEARING_GOD",
+      "aegis": "SOA_TALISMAN_OF_FOUR_BEARING_GOD",
+      "rathenaEN": "Talisman Of Four Bearing God",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SOA_TALISMAN_OF_SOUL_STEALING",
+      "aegis": "SOA_TALISMAN_OF_SOUL_STEALING",
+      "rathenaEN": "Talisman Of Soul Stealing",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SP_CURSEEXPLOSION",
+      "aegis": "SP_CURSEEXPLOSION",
+      "rathenaEN": "Curse Explosion",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_GENTLETOUCH_CHANGE",
+      "aegis": "SR_GENTLETOUCH_CHANGE",
+      "rathenaEN": "Gentle Touch - Change",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_GENTLETOUCH_ENERGYGAIN",
+      "aegis": "SR_GENTLETOUCH_ENERGYGAIN",
+      "rathenaEN": "Gentle Touch - Energy Gain",
+      "score": 52,
+      "confidence": "MEDIUM",
+      "reason": "lev=91% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SR_RAMPAGEBLASTER",
+      "aegis": "SR_RAMPAGEBLASTER",
+      "rathenaEN": "Rampage Blaster",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "SU_LUNATICCARROTBEAT",
+      "aegis": "SU_LUNATICCARROTBEAT",
+      "rathenaEN": "Lunatic Carrot Beat",
+      "score": 51,
+      "confidence": "MEDIUM",
+      "reason": "lev=89% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_JAWAII_SERENADE",
+      "aegis": "TR_JAWAII_SERENADE",
+      "rathenaEN": "Jawaii Serenade",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_MYSTIC_SYMPHONY",
+      "aegis": "TR_MYSTIC_SYMPHONY",
+      "rathenaEN": "Mystic Symphony",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_RHYTHMICAL_WAVE",
+      "aegis": "TR_RHYTHMICAL_WAVE",
+      "rathenaEN": "Rhythmical Wave",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "TR_RHYTHMSHOOTING",
+      "aegis": "TR_RHYTHMSHOOTING",
+      "rathenaEN": "Rhythm Shooting",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WA_MOONLIT_SERENADE",
+      "aegis": "WA_MOONLIT_SERENADE",
+      "rathenaEN": "Moonlit Serenade",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WH_NATUREFRIENDLY",
+      "aegis": "WH_NATUREFRIENDLY",
+      "rathenaEN": "Nature Friendly",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_CHAINLIGHTNING",
+      "aegis": "WL_CHAINLIGHTNING",
+      "rathenaEN": "Chain Lightning",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WL_RECOGNIZEDSPELL",
+      "aegis": "WL_RECOGNIZEDSPELL",
+      "rathenaEN": "Recognized Spell",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WM_SEVERE_RAINSTORM",
+      "aegis": "WM_SEVERE_RAINSTORM",
+      "rathenaEN": "Severe Rainstorm",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    },
+    {
+      "calcEN": "WS_CARTTERMINATION",
+      "aegis": "WS_CARTTERMINATION",
+      "rathenaEN": "Cart Termination",
+      "score": 50,
+      "confidence": "MEDIUM",
+      "reason": "lev=88% words=0% aegis=0%"
+    }
+  ]
 }

@@ -85,7 +85,7 @@ export class Scholar extends Mage {
   protected readonly activeSkillListHi: ActiveSkillModel[] = [
     {
       inputType: 'selectButton',
-      label: 'Prescincia',
+      label: 'Presciência',
       name: 'PF_MEMORIZE',
       dropdown: [
         { label: 'Yes', isUse: true, value: 1 },
@@ -94,7 +94,7 @@ export class Scholar extends Mage {
     },
     // {
     //   inputType: 'dropdown',
-    //   label: 'Lana Chamas',
+    //   label: 'Lança Chamas',
     //   name: 'NC_FLAMELAUNCHER',
     //   dropdown: [
     //     { label: '-', isUse: false, value: 0 },
@@ -238,7 +238,7 @@ export class Scholar extends Mage {
     },
     // {
     //   inputType: 'dropdown',
-    //   label: 'Lana Chamas',
+    //   label: 'Lança Chamas',
     //   name: 'NC_FLAMELAUNCHER',
     //   dropdown: [
     //     { label: '-', isUse: false, value: 0 },

@@ -189,7 +189,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'ABC_UNLUCKY_RUSH',
-      label: '[V3] Salto Revs Lv5',
+      label: '[V3] Salto Revés Lv5',
       value: 'ABC_UNLUCKY_RUSH==5',
       acd: 0.5,
       fct: 0,
@@ -249,7 +249,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'ABC_FRENZY_SHOT',
-      label: '[V3] Rajada Frentica Lv10 (1 hit)',
+      label: '[V3] Rajada Frenética Lv10 (1 hit)',
       value: 'ABC_FRENZY_SHOT==10',
       acd: 0.5,
       fct: 0,
@@ -274,7 +274,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'ABC_FROM_THE_ABYSS',
-      label: '[V3] Invocao do Abismo Lv5',
+      label: '[V3] Invocação do Abismo Lv5',
       value: 'ABC_FROM_THE_ABYSS==5',
       acd: 0,
       fct: 0,
@@ -313,7 +313,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'ABC_ABYSS_STRIKE',
-      label: '[V3] Meteoro mega Lv10',
+      label: '[V3] Meteoro Ômega Lv10',
       value: 'ABC_ABYSS_STRIKE==10',
       acd: 0.5,
       fct: 1.5,
@@ -334,7 +334,7 @@ export class AbyssChaser extends ShadowChaser {
   private readonly activeSkillList4th: ActiveSkillModel[] = [
     {
       name: 'ABC_STRIP_SHADOW',
-      label: 'Remoo Sombria Total',
+      label: 'Remoção Sombria Total',
       isDebuff: true,
       inputType: 'selectButton',
       dropdown: [
@@ -367,7 +367,7 @@ export class AbyssChaser extends ShadowChaser {
     },
     {
       name: 'ABC_MAGIC_SWORD_M',
-      label: 'Lmina Mgica',
+      label: 'Lâmina Mágica',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

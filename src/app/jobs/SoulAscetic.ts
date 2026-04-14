@@ -172,7 +172,7 @@ export class SoulAscetic extends SoulReaper {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'SOA_EXORCISM_OF_MALICIOUS_SOUL',
-      label: '[V2] Exorcizar Assombrao Lv5',
+      label: '[V2] Exorcizar Assombração Lv5',
       value: 'SOA_EXORCISM_OF_MALICIOUS_SOUL==5',
       acd: 0,
       fct: 1.5,
@@ -197,7 +197,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'SOA_TALISMAN_OF_BLUE_DRAGON',
-      label: '[V2] Talism do Drago Lv5',
+      label: '[V2] Talismã do Dragão Lv5',
       value: 'SOA_TALISMAN_OF_BLUE_DRAGON==5',
       acd: 0,
       fct: 1.5,
@@ -220,7 +220,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'SOA_TALISMAN_OF_WHITE_TIGER',
-      label: '[V2] Talism do Tigre Lv5',
+      label: '[V2] Talismã do Tigre Lv5',
       value: 'SOA_TALISMAN_OF_WHITE_TIGER==5',
       acd: 0,
       fct: 1.5,
@@ -244,7 +244,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'SOA_TALISMAN_OF_RED_PHOENIX',
-      label: '[V2] Talim da Fnix Lv5',
+      label: '[V2] Talimã da Fênix Lv5',
       value: 'SOA_TALISMAN_OF_RED_PHOENIX==5',
       acd: 0,
       fct: 1.5,
@@ -268,7 +268,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'SOA_TALISMAN_OF_BLACK_TORTOISE',
-      label: '[V2] Talism do Jabuti Lv5',
+      label: '[V2] Talismã do Jabuti Lv5',
       value: 'SOA_TALISMAN_OF_BLACK_TORTOISE==5',
       acd: 0,
       fct: 1.5,
@@ -292,7 +292,7 @@ export class SoulAscetic extends SoulReaper {
     },
     {
       name: 'SOA_TALISMAN_OF_FOUR_BEARING_GOD',
-      label: '[V2] Talism das Divindades Lv5',
+      label: '[V2] Talismã das Divindades Lv5',
       value: 'SOA_TALISMAN_OF_FOUR_BEARING_GOD==5',
       acd: 0,
       fct: 1.5,
@@ -365,7 +365,7 @@ export class SoulAscetic extends SoulReaper {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'SOA_TALISMAN_MASTERY',
-      label: 'Percia com Talisms',
+      label: 'Perícia com Talismãs',
       inputType: 'dropdown',
       dropdown: genSkillList(10, lv => ({ sMatk: lv })),
     },

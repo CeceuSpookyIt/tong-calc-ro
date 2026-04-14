@@ -2,7 +2,7 @@ import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const S16thNightFn = (): PassiveSkillModel => ({
   inputType: 'dropdown',
-  label: 'Inspirao',
+  label: 'Inspiração',
   name: 'KO_IZAYOI',
   dropdown: [
     { label: '-', value: 0, isUse: false },

@@ -127,7 +127,7 @@ export class Kagerou extends Ninja {
       },
     },
     {
-      label: 'Turbilho de Kunais Lv5',
+      label: 'Turbilhão de Kunais Lv5',
       name: 'KO_HAPPOKUNAI',
       value: 'KO_HAPPOKUNAI==5',
       acd: 0.5,
@@ -143,7 +143,7 @@ export class Kagerou extends Ninja {
       },
     },
     {
-      label: 'Turbilho de Ptalas Lv10',
+      label: 'Turbilhão de Pétalas Lv10',
       name: 'KO_HUUMARANKA',
       value: 'KO_HUUMARANKA==10',
       acd: 0.5,

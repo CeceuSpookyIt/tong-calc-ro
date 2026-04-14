@@ -113,7 +113,7 @@
           <div *ngFor="let a of luckyAccounts; let i = index" class="luck-card">
             <div>
               <span class="mr-2">{{ medals[i] }}</span>
-              <span>{{ a.hash }}… <span class="text-color-secondary">({{ a.spins }} spins)</span></span>
+              <span>{{ a.hash }} <span class="text-color-secondary">({{ a.spins }} spins)</span></span>
               <br><span class="text-xs text-color-secondary ml-4">{{ a.items }}</span>
             </div>
             <div class="text-right">
@@ -130,7 +130,7 @@
           <div *ngFor="let a of unluckyAccounts; let i = index" class="luck-card">
             <div>
               <span class="mr-2">{{ i + 1 }}.</span>
-              <span>{{ a.hash }}… <span class="text-color-secondary">({{ a.spins }} spins)</span></span>
+              <span>{{ a.hash }} <span class="text-color-secondary">({{ a.spins }} spins)</span></span>
             </div>
             <div class="text-right">
               <span class="font-bold unlucky-text">0 raros</span>

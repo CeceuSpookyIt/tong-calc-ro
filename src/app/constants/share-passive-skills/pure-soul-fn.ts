@@ -2,7 +2,7 @@ import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const PureSoulFn = (): PassiveSkillModel => ({
   inputType: 'dropdown',
-  label: 'Purificao da Alma',
+  label: 'Purificação da Alma',
   name: 'KO_MEIKYOUSISUI',
   dropdown: [
     { label: '-', value: 0, isUse: false },

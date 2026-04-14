@@ -87,7 +87,7 @@ export class SuperNovice extends CharacterBase {
   protected readonly _atkSkillList: AtkSkillModel[] = [
     {
       name: 'MG_FIREBOLT',
-      label: 'Lanas de Fogo Lv10',
+      label: 'Lanças de Fogo Lv10',
       value: 'MG_FIREBOLT==10',
       acd: 2.8,
       fct: 1.2,
@@ -102,7 +102,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'MG_COLDBOLT',
-      label: 'Lanas de Gelo Lv10',
+      label: 'Lanças de Gelo Lv10',
       value: 'MG_COLDBOLT==10',
       acd: 2.8,
       fct: 1.2,
@@ -117,7 +117,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'MG_LIGHTNINGBOLT',
-      label: 'Relmpago Lv10',
+      label: 'Relâmpago Lv10',
       value: 'MG_LIGHTNINGBOLT==10',
       acd: 2.8,
       fct: 1.2,
@@ -131,7 +131,7 @@ export class SuperNovice extends CharacterBase {
       },
     },
     {
-      label: 'F¨ria da Terra Lv5',
+      label: 'Fúria da Terra Lv5',
       name: 'WZ_HEAVENDRIVE',
       value: 'WZ_HEAVENDRIVE==5',
       fct: 0.8,
@@ -208,7 +208,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'SO_PSYCHIC_WAVE',
-      label: 'Onda Psquica',
+      label: 'Onda Psíquica',
       value: 'SO_PSYCHIC_WAVE==5',
       fct: (lv) => 1.1 - lv * 0.1,
       vct: (lv) => 7 + lv,
@@ -217,11 +217,11 @@ export class SuperNovice extends CharacterBase {
       totalHit: ({ skillLevel: lv }) => 2 + lv,
       isMatk: true,
       levelList: [
-        { label: 'Onda Psquica Lv1', value: 'SO_PSYCHIC_WAVE==1' },
-        { label: 'Onda Psquica Lv2', value: 'SO_PSYCHIC_WAVE==2' },
-        { label: 'Onda Psquica Lv3', value: 'SO_PSYCHIC_WAVE==3' },
-        { label: 'Onda Psquica Lv4', value: 'SO_PSYCHIC_WAVE==4' },
-        { label: 'Onda Psquica Lv5', value: 'SO_PSYCHIC_WAVE==5' },
+        { label: 'Onda Psíquica Lv1', value: 'SO_PSYCHIC_WAVE==1' },
+        { label: 'Onda Psíquica Lv2', value: 'SO_PSYCHIC_WAVE==2' },
+        { label: 'Onda Psíquica Lv3', value: 'SO_PSYCHIC_WAVE==3' },
+        { label: 'Onda Psíquica Lv4', value: 'SO_PSYCHIC_WAVE==4' },
+        { label: 'Onda Psíquica Lv5', value: 'SO_PSYCHIC_WAVE==5' },
       ],
       formula: (input: AtkSkillFormulaInput): number => {
         const { model, skillLevel, status } = input;
@@ -241,7 +241,7 @@ export class SuperNovice extends CharacterBase {
     },
     {
       name: 'PA_SHIELDCHAIN',
-      label: 'Choque Rpido Lv5',
+      label: 'Choque Rápido Lv5',
       value: 'PA_SHIELDCHAIN==5',
       fct: 0.2,
       vct: 0.8,
@@ -376,7 +376,7 @@ export class SuperNovice extends CharacterBase {
       ],
     },
     {
-      label: 'Transcendncia',
+      label: 'Transcendência',
       name: 'NV_TRANSCENDENCE',
       inputType: 'dropdown',
       isEquipAtk: true,
@@ -392,7 +392,7 @@ export class SuperNovice extends CharacterBase {
     ImproveDodgeFn(),
     SnatcherFn(),
     {
-      label: 'Percia com Espada',
+      label: 'Perícia com Espada',
       name: 'SM_SWORD',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -433,7 +433,7 @@ export class SuperNovice extends CharacterBase {
     FaithFn(),
     BeastBaneFn(),
     {
-      label: 'Percia com Machado e Espada',
+      label: 'Perícia com Machado e Espada',
       name: 'AM_AXEMASTERY',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -453,7 +453,7 @@ export class SuperNovice extends CharacterBase {
     },
     HiltBindingFn(),
     {
-      label: 'Percia em Armamento',
+      label: 'Perícia em Armamento',
       name: 'BS_WEAPONRESEARCH',
       inputType: 'dropdown',
       isMasteryAtk: true,

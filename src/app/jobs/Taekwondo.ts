@@ -120,7 +120,7 @@ export class Taekwondo extends CharacterBase {
     },
     {
       inputType: 'dropdown',
-      label: 'Retiro Rpido',
+      label: 'Retiro Rápido',
       name: 'TK_SPTIME',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -138,7 +138,7 @@ export class Taekwondo extends CharacterBase {
     },
     {
       inputType: 'dropdown',
-      label: 'Trgua Rpida',
+      label: 'Trégua Rápida',
       name: 'TK_HPTIME',
       dropdown: [
         { label: '-', value: 0, isUse: false },

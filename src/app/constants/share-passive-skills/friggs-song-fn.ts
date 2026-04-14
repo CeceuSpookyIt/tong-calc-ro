@@ -1,7 +1,7 @@
 import { PassiveSkillModel } from '../../jobs/_character-base.abstract';
 
 export const FriggsSongFn = (): PassiveSkillModel => ({
-  label: 'Cano de Frigga',
+  label: 'Canção de Frigga',
   name: 'WM_FRIGG_SONG',
   inputType: 'dropdown',
   dropdown: [

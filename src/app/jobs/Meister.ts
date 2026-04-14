@@ -182,7 +182,7 @@ export class Meister extends Mechanic {
     },
     // {
     //   name: 'MT_RUSH_QUAKE',
-    //   label: '[V3] Avano Ssmico Lv10',
+    //   label: '[V3] Avanço Sísmico Lv10',
     //   value: 'MT_RUSH_QUAKE==10',
     //   acd: 0.5,
     //   fct: 0,
@@ -291,7 +291,7 @@ export class Meister extends Mechanic {
   private passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'DK_TWOHANDDEF',
-      label: 'Defesa com as Mos',
+      label: 'Defesa com as Mãos',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

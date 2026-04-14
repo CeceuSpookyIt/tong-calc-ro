@@ -297,7 +297,7 @@ export class Inquisitor extends Sura {
     },
     {
       name: 'IQ_EXPOSION_BLASTER',
-      label: '[V3] Tcnica da Mo Explosiva Lv5',
+      label: '[V3] Técnica da Mão Explosiva Lv5',
       value: 'IQ_EXPOSION_BLASTER==5',
       acd: 0,
       fct: 0,
@@ -369,7 +369,7 @@ export class Inquisitor extends Sura {
   private readonly passiveSkillList4th: PassiveSkillModel[] = [
     {
       name: 'IQ_WILL_OF_FAITH',
-      label: 'Caminhos da F ',
+      label: 'Caminhos da Fé ',
       inputType: 'dropdown',
       dropdown: genSkillList(10),
     },

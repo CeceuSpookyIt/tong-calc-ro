@@ -174,7 +174,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'WL_CHAINLIGHTNING',
-      label: 'Corrente Eltrica Lv5',
+      label: 'Corrente Elétrica Lv5',
       value: 'WL_CHAINLIGHTNING==5',
       acd: 3,
       fct: 1,
@@ -192,7 +192,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'WL_EARTHSTRAIN',
-      label: 'Abalo Ssmico Lv5',
+      label: 'Abalo Sísmico Lv5',
       value: 'WL_EARTHSTRAIN==5',
       acd: 1,
       fct: 1,
@@ -397,7 +397,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'WL_CHAINLIGHTNING',
-      label: 'Corrente Eltrica Lv5 (Released)',
+      label: 'Corrente Elétrica Lv5 (Released)',
       value: 'Chain Lightning Released==5',
       acd: 0,
       fct: 0,
@@ -422,7 +422,7 @@ export class Warlock extends HighWizard {
     },
     {
       name: 'WL_EARTHSTRAIN',
-      label: 'Abalo Ssmico Lv5 (Released)',
+      label: 'Abalo Sísmico Lv5 (Released)',
       value: 'Earth Strain Released==5',
       acd: 0,
       fct: 0,
@@ -609,7 +609,7 @@ export class Warlock extends HighWizard {
       ],
     },
     {
-      label: 'Lanar Magia',
+      label: 'Lançar Magia',
       name: 'WL_RELEASE',
       inputType: 'selectButton',
       dropdown: [
@@ -621,7 +621,7 @@ export class Warlock extends HighWizard {
   protected readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
       inputType: 'dropdown',
-      label: 'Estudo Arcano Avanado',
+      label: 'Estudo Arcano Avançado',
       name: 'WL_FREEZE_SP',
       isEquipAtk: true,
       dropdown: [
@@ -690,7 +690,7 @@ export class Warlock extends HighWizard {
     },
     {
       inputType: 'dropdown',
-      label: 'Corrente Eltrica',
+      label: 'Corrente Elétrica',
       name: 'WL_CHAINLIGHTNING',
       dropdown: [
         { label: '-', isUse: false, value: 0 },

@@ -90,7 +90,7 @@ export class Oboro extends Ninja {
 
   private readonly atkSkillList2nd: AtkSkillModel[] = [
     {
-      label: 'Ptalas Flamejantes Lv10',
+      label: 'Pétalas Flamejantes Lv10',
       name: 'NJ_KOUENKA',
       value: 'NJ_KOUENKA==10',
       acd: 0,
@@ -137,7 +137,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'Lmina de Vento Lv10',
+      label: 'Lâmina de Vento Lv10',
       name: 'NJ_HUUJIN',
       value: 'NJ_HUUJIN==10',
       acd: 0,
@@ -152,7 +152,7 @@ export class Oboro extends Ninja {
       },
     },
     {
-      label: 'Punho do Drago Lv5',
+      label: 'Punho do Dragão Lv5',
       name: 'SR_DRAGONCOMBO',
       value: 'SR_DRAGONCOMBO==5',
       acd: 0.5,
@@ -238,7 +238,7 @@ export class Oboro extends Ninja {
 
   private readonly passiveSkillList2nd: PassiveSkillModel[] = [
     {
-      label: 'Ptalas Flamejantes',
+      label: 'Pétalas Flamejantes',
       name: 'NJ_KOUENKA',
       inputType: 'dropdown',
       dropdown: [
@@ -274,7 +274,7 @@ export class Oboro extends Ninja {
       ],
     },
     {
-      label: 'Lmina de Vento',
+      label: 'Lâmina de Vento',
       name: 'NJ_HUUJIN',
       inputType: 'dropdown',
       dropdown: [
@@ -292,7 +292,7 @@ export class Oboro extends Ninja {
       ],
     },
     {
-      label: 'Genjutsu: Substituio',
+      label: 'Genjutsu: Substituição',
       name: 'KO_GENWAKU',
       inputType: 'dropdown',
       dropdown: [
@@ -319,7 +319,7 @@ export class Oboro extends Ninja {
     },
     IllusionShockFn(),
     {
-      label: 'Iluso do Luar',
+      label: 'Ilusão do Luar',
       name: 'OB_OBOROGENSOU',
       inputType: 'dropdown',
       dropdown: [

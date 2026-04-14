@@ -23,6 +23,7 @@ export interface RouletteEvent {
 @Injectable({ providedIn: 'root' })
 export class RouletteService {
   private cache = new Map<string, RouletteHistoryRow[]>();
+  private aliasCache: Record<string, string> | null = null;
 
   constructor(private supabaseService: SupabaseService) {}
 
@@ -36,6 +37,11 @@ export class RouletteService {
     return from(this.fetchAllRows(eventSlug));
   }
 
+  getAliases(): Observable<Record<string, string>> {
+    if (this.aliasCache) return of(this.aliasCache);
+    return from(this.fetchAliases());
+  }
+
   private async fetchEvents(): Promise<RouletteEvent[]> {
     const { data, error } = await this.supabaseService.client
       .from('roulette_events')
@@ -44,6 +50,20 @@ export class RouletteService {
 
     if (error) throw error;
     return (data ?? []) as RouletteEvent[];
+  }
+
+  private async fetchAliases(): Promise<Record<string, string>> {
+    const { data, error } = await this.supabaseService.client
+      .from('account_aliases')
+      .select('account_hash, alias');
+
+    if (error) return {};
+    const map: Record<string, string> = {};
+    for (const row of data ?? []) {
+      map[row.account_hash] = row.alias;
+    }
+    this.aliasCache = map;
+    return map;
   }
 
   private async fetchAllRows(eventSlug: string): Promise<RouletteHistoryRow[]> {

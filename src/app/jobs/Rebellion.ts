@@ -130,7 +130,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: 'Lanar Mssil Lv10',
+      label: 'Lançar Míssil Lv10',
       name: 'RL_D_TAIL',
       value: 'RL_D_TAIL==10',
       acd: 1,
@@ -147,7 +147,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: 'Execuo Lv10 (0 coin)',
+      label: 'Execução Lv10 (0 coin)',
       name: 'RL_HAMMER_OF_GOD',
       value: 'RL_HAMMER_OF_GOD_0==10',
       acd: 0.5,
@@ -163,7 +163,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: 'Execuo Lv10 (10 coins)',
+      label: 'Execução Lv10 (10 coins)',
       name: 'RL_HAMMER_OF_GOD',
       value: 'RL_HAMMER_OF_GOD==10',
       acd: 0.5,
@@ -179,7 +179,7 @@ export class Rebellion extends Gunslinger {
       },
     },
     {
-      label: 'Rajada Estilhaante Lv5',
+      label: 'Rajada Estilhaçante Lv5',
       name: 'RL_S_STORM',
       value: 'RL_S_STORM==5',
       acd: 0,
@@ -226,7 +226,7 @@ export class Rebellion extends Gunslinger {
       ],
     },
     {
-      label: 'Rajada Estilhaante',
+      label: 'Rajada Estilhaçante',
       name: 'RL_S_STORM',
       inputType: 'selectButton',
       dropdown: [
@@ -266,7 +266,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       inputType: 'dropdown',
-      label: 'Ignio',
+      label: 'Ignição',
       name: 'RL_FLICKER',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -284,7 +284,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       inputType: 'dropdown',
-      label: 'Saque Rpido',
+      label: 'Saque Rápido',
       name: 'RL_QD_SHOT',
       dropdown: [
         { label: '-', value: 0, isUse: false },
@@ -334,7 +334,7 @@ export class Rebellion extends Gunslinger {
       ],
     },
     {
-      label: 'Reao em Cadeia',
+      label: 'Reação em Cadeia',
       name: 'GS_CHAINACTION',
       inputType: 'dropdown',
       dropdown: [
@@ -353,7 +353,7 @@ export class Rebellion extends Gunslinger {
     },
     {
       name: 'RL_P_ALTER',
-      label: 'Proteo de Platina',
+      label: 'Proteção de Platina',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },

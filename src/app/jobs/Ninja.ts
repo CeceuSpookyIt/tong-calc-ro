@@ -96,7 +96,7 @@ export class Ninja extends CharacterBase {
   ];
   protected readonly _passiveSkillList: PassiveSkillModel[] = [
     {
-      label: 'Percia Ninja',
+      label: 'Perícia Ninja',
       name: 'NJ_NINPOU',
       inputType: 'dropdown',
       dropdown: [

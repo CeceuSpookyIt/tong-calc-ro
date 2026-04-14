@@ -105,7 +105,7 @@ export class Genetic extends Creator {
     },
     {
       name: 'GN_CARTCANNON',
-      label: 'Canho de Pr£tons Lv5',
+      label: 'Canhão de Prótons Lv5',
       value: 'GN_CARTCANNON==5',
       values: ['[Improved 1nd] GN_CARTCANNON==5', '[Improved 2nd] GN_CARTCANNON==5'],
       acd: 0.5,
@@ -224,7 +224,7 @@ export class Genetic extends Creator {
 
   private readonly passiveSkillList3rd: PassiveSkillModel[] = [
     {
-      label: 'Percia com Espada',
+      label: 'Perícia com Espada',
       name: 'SM_SWORD',
       inputType: 'dropdown',
       isMasteryAtk: true,
@@ -289,7 +289,7 @@ export class Genetic extends Creator {
       ],
     },
     {
-      label: 'Canho de Pr£tons',
+      label: 'Canhão de Prótons',
       name: 'GN_CARTCANNON',
       inputType: 'dropdown',
       dropdown: [

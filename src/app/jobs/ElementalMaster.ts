@@ -174,7 +174,7 @@ export class ElementalMaster extends Sorcerer {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'EM_DIAMOND_STORM',
-      label: '[V3] Execuo Aurora Lv5',
+      label: '[V3] Execução Aurora Lv5',
       value: 'EM_DIAMOND_STORM==5',
       acd: 0.5,
       fct: 1.5,
@@ -197,7 +197,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'EM_CONFLAGRATION',
-      label: '[V3] Conflagrao Lv5',
+      label: '[V3] Conflagração Lv5',
       value: 'EM_CONFLAGRATION==5',
       acd: 0.5,
       fct: 1.5,
@@ -266,7 +266,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'EM_VENOM_SWAMP',
-      label: '[V3] Poo Venenoso Lv5',
+      label: '[V3] Poço Venenoso Lv5',
       value: 'EM_VENOM_SWAMP==5',
       acd: 0.5,
       fct: 1.5,
@@ -289,7 +289,7 @@ export class ElementalMaster extends Sorcerer {
     },
     {
       name: 'EM_ELEMENTAL_BUSTER',
-      label: '[V3] Crculo Elemental Lv10',
+      label: '[V3] Círculo Elemental Lv10',
       value: 'EM_ELEMENTAL_BUSTER==10',
       acd: 0.5,
       fct: 1.5,

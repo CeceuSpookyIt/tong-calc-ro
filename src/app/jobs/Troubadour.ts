@@ -166,7 +166,7 @@ export class Troubadour extends Minstrel {
   private readonly atkSkillList4th: AtkSkillModel[] = [
     {
       name: 'TR_RHYTHMSHOOTING',
-      label: '[V3] Disparo Rtmico Lv5',
+      label: '[V3] Disparo Rítmico Lv5',
       value: 'TR_RHYTHMSHOOTING==5',
       acd: 0.15,
       fct: 0,
