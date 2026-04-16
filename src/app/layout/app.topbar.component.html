@@ -171,13 +171,7 @@
     [position]="'top'"
   >
     <ng-template pTemplate="header">
-      <div class="flex">
-        <span class="text-xl mr-3 font-medium">CHANGELOG</span>
-        <a class="flex align-items-center gap-2 px-2 youtube-link" target="_blank" href="{{ env.youtubeVideoUrl }}">
-          <i class="pi pi-youtube text-4xl text-red-500"></i>
-          <span class="text-xl text-white-alpha-90">Como usar</span>
-        </a>
-      </div>
+      <span class="text-xl font-medium">CHANGELOG</span>
     </ng-template>
 
     <div *ngFor="let update of updates; index as i" [ngStyle]="{ color: i + 1 > showUnreadVersion ? 'var(--gray-300)' : 'white' }">
