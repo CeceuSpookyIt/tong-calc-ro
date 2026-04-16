@@ -1,0 +1,37 @@
+<div class="promo-footer" *ngIf="selectedPromo">
+  <a
+    *ngIf="selectedPromo.isClickable"
+    class="promo-row promo-clickable"
+    [style.background]="selectedPromo.bgGradient"
+    [href]="selectedPromo.ctaUrl"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <ng-container *ngTemplateOutlet="promoContent"></ng-container>
+  </a>
+  <div
+    *ngIf="!selectedPromo.isClickable"
+    class="promo-row"
+    [style.background]="selectedPromo.bgGradient"
+  >
+    <ng-container *ngTemplateOutlet="promoContent"></ng-container>
+  </div>
+
+  <ng-template #promoContent>
+    <div class="promo-logo">
+      <img [src]="selectedPromo.logoSrc" [alt]="selectedPromo.title" />
+    </div>
+    <div class="promo-copy">
+      <div class="promo-title" [style.color]="selectedPromo.titleColor">
+        {{ selectedPromo.title }}
+        <span class="promo-label">outros projetos da casa</span>
+      </div>
+      <div class="promo-desc">{{ selectedPromo.description }}</div>
+    </div>
+    <span *ngIf="selectedPromo.ctaLabel" class="promo-cta">
+      {{ selectedPromo.ctaLabel }}
+    </span>
+  </ng-template>
+
+  <div class="promo-baseline">© 2026 — RO LATAM Calculator</div>
+</div>
