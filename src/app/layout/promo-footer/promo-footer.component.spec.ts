@@ -76,15 +76,24 @@ describe('PromoFooterComponent', () => {
     expect(div).toBeTruthy();
   });
 
-  it('should display the label tag', () => {
+  it('should display the label tag only for promos with label', () => {
+    // Instanceiro has label
+    fixture.detectChanges();
+    component.selectedPromo = component.promos.find(p => p.id === 'instanceiro')!;
     fixture.detectChanges();
     const label = fixture.nativeElement.querySelector('.promo-label');
     expect(label?.textContent?.trim()).toBe('outros projetos da casa');
+
+    // Claudinhos has no label
+    component.selectedPromo = component.promos.find(p => p.id === 'claudinhos')!;
+    fixture.detectChanges();
+    const labelAfter = fixture.nativeElement.querySelector('.promo-label');
+    expect(labelAfter).toBeNull();
   });
 
-  it('should display the copyright baseline', () => {
+  it('should not display a copyright baseline (banner is at top, not footer)', () => {
     fixture.detectChanges();
     const baseline = fixture.nativeElement.querySelector('.promo-baseline');
-    expect(baseline?.textContent).toContain('© 2026');
+    expect(baseline).toBeNull();
   });
 });

@@ -2,7 +2,6 @@
   <a
     *ngIf="selectedPromo.isClickable"
     class="promo-row promo-clickable"
-    [style.background]="selectedPromo.bgGradient"
     [href]="selectedPromo.ctaUrl"
     target="_blank"
     rel="noreferrer noopener"
@@ -12,7 +11,6 @@
   <div
     *ngIf="!selectedPromo.isClickable"
     class="promo-row"
-    [style.background]="selectedPromo.bgGradient"
   >
     <ng-container *ngTemplateOutlet="promoContent"></ng-container>
   </div>
@@ -22,9 +20,9 @@
       <img [src]="selectedPromo.logoSrc" [alt]="selectedPromo.title" />
     </div>
     <div class="promo-copy">
-      <div class="promo-title" [style.color]="selectedPromo.titleColor">
+      <div class="promo-title">
         {{ selectedPromo.title }}
-        <span class="promo-label">outros projetos da casa</span>
+        <span *ngIf="selectedPromo.label" class="promo-label">{{ selectedPromo.label }}</span>
       </div>
       <div class="promo-desc">{{ selectedPromo.description }}</div>
     </div>
@@ -33,5 +31,4 @@
     </span>
   </ng-template>
 
-  <div class="promo-baseline">© 2026 — RO LATAM Calculator</div>
 </div>

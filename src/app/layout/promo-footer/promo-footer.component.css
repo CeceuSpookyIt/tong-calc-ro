@@ -1,5 +1,9 @@
 .promo-footer {
-  border-top: 1px solid var(--surface-border);
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .promo-row {
@@ -17,13 +21,13 @@
 }
 
 .promo-clickable:hover {
-  background: rgba(200, 121, 65, 0.14) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
 }
 
 .promo-logo {
   width: 44px;
   height: 44px;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   flex-shrink: 0;
   background: rgba(255, 255, 255, 0.04);
@@ -44,18 +48,19 @@
 }
 
 .promo-title {
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 1rem;
   margin-bottom: 2px;
+  color: var(--text-color);
 }
 
 .promo-label {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.06);
-  color: #6c7079;
-  font-size: 9px;
-  padding: 1px 6px;
-  border-radius: 3px;
+  background: var(--surface-hover);
+  color: var(--text-color-secondary);
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: var(--border-radius);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-left: 8px;
@@ -64,26 +69,18 @@
 }
 
 .promo-desc {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--text-color-secondary);
   line-height: 1.4;
 }
 
 .promo-cta {
-  background: #C87941;
-  color: #1a1d24;
-  padding: 7px 14px;
-  border-radius: 4px;
+  background: var(--primary-color);
+  color: var(--primary-color-text);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.875rem;
   white-space: nowrap;
   flex-shrink: 0;
-}
-
-.promo-baseline {
-  padding: 6px 16px;
-  color: var(--text-color-secondary);
-  font-size: 11px;
-  text-align: center;
-  border-top: 1px solid var(--surface-border);
 }

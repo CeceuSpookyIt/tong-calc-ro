@@ -7,6 +7,7 @@ interface PromoItem {
   logoSrc: string;
   ctaLabel?: string;
   ctaUrl?: string;
+  label?: string;
   bgGradient: string;
   titleColor: string;
   isClickable: boolean;
@@ -26,14 +27,15 @@ export class PromoFooterComponent implements OnInit {
       logoSrc: 'assets/images/promo/instanceiro.svg',
       ctaLabel: 'Acessar →',
       ctaUrl: 'https://instanceiro.vercel.app?utm_source=rocalc&utm_medium=promo-footer',
+      label: 'outros projetos da casa',
       bgGradient: 'linear-gradient(90deg, rgba(200,121,65,0.08) 0%, rgba(232,166,101,0.04) 100%)',
       titleColor: '#E8A665',
       isClickable: true,
     },
     {
       id: 'claudinhos',
-      title: 'Guild Claudinhos',
-      description: 'A guild da turma que faz essa calc — servidor Nidhogg.',
+      title: 'Guilda Claudinhos',
+      description: 'Este projeto é um oferecimento da Guilda Claudinhos para a comunidade RO LATAM — servidor Nidhogg.',
       logoSrc: 'assets/images/promo/claudinhos.png',
       bgGradient: 'linear-gradient(90deg, rgba(168,85,247,0.10) 0%, rgba(250,204,21,0.04) 100%)',
       titleColor: '#FACC15',
