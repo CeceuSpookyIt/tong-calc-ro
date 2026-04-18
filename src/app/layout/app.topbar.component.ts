@@ -216,6 +216,8 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
         'Corrigido 12 pedras de costume invisíveis nos dropdowns (Músicos II, Lorde II, Criador II, Cavaleiro Rúnico II)',
         'Corrigido skills das pedras Artistas II (Flecha Melódica ao invés de Vulcão de Flechas)',
         'Corrigido bônus de dano a distância que não funcionavam em 24 itens',
+        'Corrigido Estilingue faltando no Wanderer e encantamento Artistas II (Meio)',
+        'Corrigido bônus de refino da Carta Porcellio Albino que aplicava fora do combo',
       ],
     },
     {
