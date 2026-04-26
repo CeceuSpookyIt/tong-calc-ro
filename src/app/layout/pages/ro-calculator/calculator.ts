@@ -985,6 +985,18 @@ export class Calculator {
       if (restCondition.startsWith('===')) return { isValid: true, restCondition };
     }
 
+    // PET[Esqueleão||Patinho]5
+    const [unusedPet, petCondition] = restCondition.match(/PET\[(.+?)]/) ?? [];
+    if (petCondition) {
+      const petId = (this.model as any).pet;
+      const petName = (petId ? this.items[petId]?.name : '')?.replace(/^Ovo de /, '') ?? '';
+      const isMatch = petCondition.split('||').some((p) => p.trim() === petName);
+      if (!isMatch) return { isValid: false, restCondition };
+
+      restCondition = restCondition.replace(unusedPet, '');
+      if (restCondition.startsWith('===')) return { isValid: true, restCondition: restCondition.replace('===', '') };
+    }
+
     // EQUIP[Bear's Power]===50
     const [setCondition, itemSet] = restCondition.match(/^EQUIP\[(.+?)]/) ?? [];
     if (itemSet) {
