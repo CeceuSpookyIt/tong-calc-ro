@@ -206,6 +206,18 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V0.9',
+      date: '25-04-2026',
+      logs: [
+        'Adicionados combos de Arma Primordial em 5 anéis de classe (Arcano, Feiticeiro, Taekwon, Ninja, Superaprendiz)',
+        'Corrigido skill Ofensiva Fatal no Renegado e Superaprendiz (mapeada para Fatal Menace, antes não aplicava bônus)',
+        'Corrigido FCT da combinação do conjunto Sombrio dos Feitiços',
+        'Corrigido script da Bota Natalina (FCT, proc por refino, elementos, combo)',
+        'Corrigido referência de combo do Espólio de Eremes e Navalha Carrasca',
+        'Adicionados combos de mascote da Cesta de Mascotes [1] (Esqueleão, Bafomé, Kiel-D-01 e demais)',
+      ],
+    },
+    {
       v: 'V0.8',
       date: '16-04-2026',
       logs: [
