@@ -206,6 +206,19 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V0.10',
+      date: '28-04-2026',
+      logs: [
+        'Atualização de itens (patch 28/04): 47 equipamentos novos',
+        'Adicionados 8 conjuntos Shadow Equipment (Explosão, Lumen, Corrente, Cópia, Castigo, Aesir, Erva, Compressora)',
+        'Adicionadas 14 armas Etel/Sucata/Recaída/Fortificada/Maldita das classes 4ª',
+        'Adicionados Mantos Brancos (Físico e Mágico) com bônus de conjunto das Diademas Temporais',
+        'Adicionados Diademas Radiante e Profano, Espada Thanatos, Colar Ampulheta, Camisa de Algodão e Faca Aprimorada',
+        'Adicionado autocast de Cometas Lunáticos e Chute Estelar',
+        'Corrigido 290 itens que não apareciam nos dropdowns (incluindo todos os adicionados no patch de Abril/14)',
+      ],
+    },
+    {
       v: 'V0.9',
       date: '25-04-2026',
       logs: [
