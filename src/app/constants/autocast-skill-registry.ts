@@ -320,4 +320,22 @@ export const AUTOCAST_SKILL_REGISTRY: Record<string, AutocastSkillDef> = {
     totalHit: 1,
     formula: ({ skillLevel, baseLevel, agi }) => (skillLevel * 120 + (agi || 0) * 2) * (baseLevel / 100),
   },
+  'SU_LUNATICCARROTBEAT': {
+    name: 'SU_LUNATICCARROTBEAT',
+    isMatk: false,
+    isMelee: true,
+    element: null,
+    hit: 3,
+    totalHit: 3,
+    formula: ({ skillLevel, baseLevel, str }) => (200 + skillLevel * 100 + (str || 0) * 5) * (baseLevel / 100),
+  },
+  'SJ_FLASHKICK': {
+    name: 'SJ_FLASHKICK',
+    isMatk: false,
+    isMelee: true,
+    element: ElementType.Neutral,
+    hit: 1,
+    totalHit: 1,
+    formula: ({ skillLevel, baseLevel }) => (100 + skillLevel * 100) * (baseLevel / 100),
+  },
 };
