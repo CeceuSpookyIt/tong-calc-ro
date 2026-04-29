@@ -50,9 +50,11 @@ export class PromoFooterComponent implements OnInit {
     title: 'Guilda Claudinhos',
     description: 'Este projeto é um oferecimento da Guilda Claudinhos para a comunidade RO LATAM — servidor Nidhogg.',
     logoSrc: 'assets/images/promo/claudinhos.png',
+    ctaLabel: 'Conheça →',
+    ctaUrl: 'https://claudinhos.org?utm_source=rocalc&utm_medium=promo-footer',
     bgGradient: 'linear-gradient(90deg, rgba(168,85,247,0.10) 0%, rgba(250,204,21,0.04) 100%)',
     titleColor: '#FACC15',
-    isClickable: false,
+    isClickable: true,
   };
 
   selectedPromo: PromoItem;
