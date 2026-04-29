@@ -206,6 +206,16 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V0.11',
+      date: '29-04-2026',
+      logs: [
+        'Adicionado slot de carta em Diadema Radiante, Diadema Profano, Manto Branco Físico e Manto Branco Mágico',
+        'Corrigidos combos e condições de nível em 11 cartas (Lamento de Thanatos, Mímico do Vazio, Alegria, Oração, Sorriso, Barão/Duque Corvo, Ancião Primitivo, Empatia, Livro Morto, Fanático das Trevas)',
+        'Corrigido bônus por refino que não aplicava em 31 itens (Coletes/Motores/Pernas Automatron e armas Pecado Capital — Espada Invidia, Presa Glutonia, Lâmina Hypocritae etc.)',
+        'Corrigidas referências dos enchants das Botas Temporais (Delírio, Ânimo, Histeria) que estavam com nomes antigos',
+      ],
+    },
+    {
       v: 'V0.10',
       date: '28-04-2026',
       logs: [
