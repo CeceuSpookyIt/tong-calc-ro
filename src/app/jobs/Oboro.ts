@@ -152,6 +152,23 @@ export class Oboro extends Ninja {
       },
     },
     {
+      label: 'Lança Congelante Lv10',
+      name: 'NJ_HYOUSENSOU',
+      value: 'NJ_HYOUSENSOU==10',
+      acd: 0,
+      fct: 1.4,
+      vct: 5.6,
+      cd: 0,
+      element: ElementType.Water,
+      isMatk: true,
+      hit: 5,
+      formula: (input: AtkSkillFormulaInput): number => {
+        const { skillLevel } = input;
+
+        return 100 + skillLevel * 100;
+      },
+    },
+    {
       label: 'Punho do Dragão Lv5',
       name: 'SR_DRAGONCOMBO',
       value: 'SR_DRAGONCOMBO==5',
@@ -276,6 +293,24 @@ export class Oboro extends Ninja {
     {
       label: 'Lâmina de Vento',
       name: 'NJ_HUUJIN',
+      inputType: 'dropdown',
+      dropdown: [
+        { label: '-', value: 0, isUse: false },
+        { label: 'Lv 1', value: 1, isUse: true },
+        { label: 'Lv 2', value: 2, isUse: true },
+        { label: 'Lv 3', value: 3, isUse: true },
+        { label: 'Lv 4', value: 4, isUse: true },
+        { label: 'Lv 5', value: 5, isUse: true },
+        { label: 'Lv 6', value: 6, isUse: true },
+        { label: 'Lv 7', value: 7, isUse: true },
+        { label: 'Lv 8', value: 8, isUse: true },
+        { label: 'Lv 9', value: 9, isUse: true },
+        { label: 'Lv 10', value: 10, isUse: true },
+      ],
+    },
+    {
+      label: 'Lança Congelante',
+      name: 'NJ_HYOUSENSOU',
       inputType: 'dropdown',
       dropdown: [
         { label: '-', value: 0, isUse: false },
