@@ -689,6 +689,7 @@ export const EnchantTable: EntTable[] = [
   { name: 'Shawl_Of_Judgement', enchants: [null, shawnOfJudge, shawnOfJudge, shawnOfJudge] },
   { name: 'Shoes_Of_Judgement', enchants: [null, shoeOfJudge, shoeOfJudge, shoeOfJudge] },
 
+  { name: 'Bloody_Eater', enchants: [null, null, malangdo, malangdo] },
   { name: 'Dark_Rose', enchants: [null, null, malangdo, malangdo] },
   { name: 'Just_Finish', enchants: [null, null, malangdo, malangdo] },
   { name: 'Holy_Stick', enchants: [null, null, malangdo, malangdo] },
