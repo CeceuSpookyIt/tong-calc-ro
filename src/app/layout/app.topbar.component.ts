@@ -206,6 +206,20 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V0.12',
+      date: '30-04-2026',
+      logs: [
+        'Desbloqueado 534 cartas que não apareciam nos dropdowns',
+        'Corrigido scripts de 21 cartas (Caranguejo, Fornalha Velha, Holden, Archdam, Ferus Verde, Novus Dourado, Fanat, Mestre Beholder, Bifröst, Munak Ressentida, Búfalo Pistoleiro/Bandido, etc.)',
+        'Corrigido scripts de 62 pedras de encantamento da Torre de Thanatos (Ira/Empatia, Horror/Alegria, Rancor/Abrigo, Lamento/Conforto, Maldade/Crueldade/Bondade/Generosidade)',
+        'Adicionado encantamentos Corpo (Topo/Meio/Baixo) e Alcance (Topo/Baixo) nos dropdowns de Encantamento de Visual',
+        'Corrigido scripts de 11 encantamentos de visual classe II (Arquimago II, Paladino II, Sicário/Algoz II, Bioquímico/Criador II, Arcano II, Guardião Real II)',
+        'Corrigido skills das Diademas Temporais Rúnico (Bafo do Dragão), Renegado (Ofensiva Fatal) e Rebelde (Tiro Neutralizante)',
+        'Adicionada skill Lança Congelante (NJ_HYOUSENSOU) no Oboro',
+        'Adicionado encantamento Comedor Sangrento, agora aceitando encantos Malangdo nos slots 3 e 4',
+      ],
+    },
+    {
       v: 'V0.11',
       date: '29-04-2026',
       logs: [
