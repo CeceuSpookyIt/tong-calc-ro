@@ -8,6 +8,7 @@ import { Observable, Subject, Subscription, catchError, debounceTime, filter, fi
 import { AuthService, PresetModel, PresetService, SharedBuildMetrics, SharedBuildService } from 'src/app/api-services';
 import { RoService } from 'src/app/api-services/ro.service';
 import { AllowedCompareItemTypes } from 'src/app/app-config';
+import { AllowShieldTable } from 'src/app/domain/weapon';
 import { ToErrorDetail } from 'src/app/app-errors';
 import {
   AllowLeftWeaponMapper,
@@ -361,6 +362,20 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
   isAllowLeftWeaponByClass = false;
   showLeftWeapon = false;
   isWeaponCanGrade = false;
+
+  get compareIsAllowShield(): boolean {
+    const id = this.model2?.weapon ?? this.model?.weapon;
+    if (!id) return !this.hiddenMap.shield;
+    const it = this.items?.[id];
+    if (!it) return !this.hiddenMap.shield;
+    const typeName = WeaponTypeNameMapBySubTypeId[it.itemSubTypeId];
+    if (!typeName) return true;
+    return !!AllowShieldTable[typeName];
+  }
+
+  get compareShowLeftWeapon(): boolean {
+    return this.isAllowLeftWeaponByClass && this.compareIsAllowShield;
+  }
 
   isEnableCompare = false;
   showCompareItemMap = {} as any;
@@ -3063,6 +3078,13 @@ export class RoCalculatorComponent implements OnInit, OnDestroy {
       this.compareItemNames.splice(idx, 1);
     } else {
       this.compareItemNames.push(slot);
+      if (slot === ItemTypeEnum.weapon) {
+        const extras: ItemTypeEnum[] = [ItemTypeEnum.shield];
+        if (this.isAllowLeftWeaponByClass) extras.push(ItemTypeEnum.leftWeapon);
+        for (const extra of extras) {
+          if (!this.compareItemNames.includes(extra)) this.compareItemNames.push(extra);
+        }
+      }
     }
     this.onListItemComparingChange();
   }

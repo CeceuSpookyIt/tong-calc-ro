@@ -206,6 +206,15 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V0.14',
+      date: '02-05-2026',
+      logs: [
+        'Comparação de armas agora suporta trocar entre 2 mãos e 1 mão + escudo (e vice-versa)',
+        'Classes que permitem dual wield (GX, Sin, etc.) agora podem comparar Katar com Adaga + Escudo ou Adaga + Adaga',
+        'Reorganizada a ordem dos slots na seção de armas: build principal (arma + arma esquerda + escudo) seguido pelo bloco de comparação',
+      ],
+    },
+    {
       v: 'V0.13',
       date: '01-05-2026',
       logs: [

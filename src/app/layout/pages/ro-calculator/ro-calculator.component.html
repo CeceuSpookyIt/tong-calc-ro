@@ -993,68 +993,6 @@
             ></app-equipment>
           </div>
         </div>
-        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.leftWeapon">
-          <div class="col-12" [hidden]="!model.weapon || !showLeftWeapon || !!model.shield">
-            <app-equipment
-              [itemType]="'leftWeapon'"
-              [placeholder]="'leftWeapon'"
-              [items]="items"
-              [mapEnchant]="mapEnchant"
-              [itemList]="leftWeaponList"
-              [refineList]="refineList"
-              [cardList]="weaponCardList"
-              [optionList]="optionList"
-              [(itemId)]="model2.leftWeapon"
-              [(itemRefine)]="model2.leftWeaponRefine"
-              [(card1Id)]="model2.leftWeaponCard1"
-              [(card2Id)]="model2.leftWeaponCard2"
-              [(card3Id)]="model2.leftWeaponCard3"
-              [(card4Id)]="model2.leftWeaponCard4"
-              [(itemGrade)]="model2.leftWeaponGrade"
-              [(enchant1Id)]="model2.leftWeaponEnchant0"
-              [(enchant2Id)]="model2.leftWeaponEnchant1"
-              [(enchant3Id)]="model2.leftWeaponEnchant2"
-              [(enchant4Id)]="model2.leftWeaponEnchant3"
-              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_1]"
-              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_2]"
-              [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_3]"
-              (selectItemChange)="onCompareItemChange()"
-              (optionChange)="onCompareItemChange()"
-              (gradeChange)="onCompareItemChange()"
-            ></app-equipment>
-          </div>
-        </div>
-        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.weapon">
-          <div class="col-12">
-            <app-equipment
-              [itemType]="'weapon'"
-              [placeholder]="'Weapon'"
-              [items]="items"
-              [mapEnchant]="mapEnchant"
-              [itemList]="weaponList"
-              [refineList]="refineList"
-              [cardList]="weaponCardList"
-              [optionList]="optionList"
-              [(itemId)]="model2.weapon"
-              [(itemRefine)]="model2.weaponRefine"
-              [(card1Id)]="model2.weaponCard1"
-              [(card2Id)]="model2.weaponCard2"
-              [(card3Id)]="model2.weaponCard3"
-              [(card4Id)]="model2.weaponCard4"
-              [(itemGrade)]="model2.weaponGrade"
-              [(enchant1Id)]="model2.weaponEnchant0"
-              [(enchant2Id)]="model2.weaponEnchant1"
-              [(enchant3Id)]="model2.weaponEnchant2"
-              [(enchant4Id)]="model2.weaponEnchant3"
-              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_1]"
-              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_2]"
-              [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_3]"
-              (selectItemChange)="onCompareItemChange()"
-              (optionChange)="onCompareItemChange()"
-              (gradeChange)="onCompareItemChange()"
-            ></app-equipment>
-          </div>
-        </div>
 
         <!-- Shield -->
         <div class="grid grid-nogutter item_label_shield_main equip-slot-compare">
@@ -1086,8 +1024,72 @@
             ></app-equipment>
           </div>
         </div>
+
+        <!-- Compare weapon block: weapon + leftWeapon + shield together -->
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.weapon">
+          <div class="col-12">
+            <app-equipment
+              [itemType]="'weapon'"
+              [placeholder]="'Weapon'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="weaponList"
+              [refineList]="refineList"
+              [cardList]="weaponCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.weapon"
+              [(itemRefine)]="model2.weaponRefine"
+              [(card1Id)]="model2.weaponCard1"
+              [(card2Id)]="model2.weaponCard2"
+              [(card3Id)]="model2.weaponCard3"
+              [(card4Id)]="model2.weaponCard4"
+              [(itemGrade)]="model2.weaponGrade"
+              [(enchant1Id)]="model2.weaponEnchant0"
+              [(enchant2Id)]="model2.weaponEnchant1"
+              [(enchant3Id)]="model2.weaponEnchant2"
+              [(enchant4Id)]="model2.weaponEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_2]"
+              [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Left_3]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
+        <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.leftWeapon">
+          <div class="col-12" [hidden]="!model.weapon || !compareShowLeftWeapon || !!model2.shield">
+            <app-equipment
+              [itemType]="'leftWeapon'"
+              [placeholder]="'leftWeapon'"
+              [items]="items"
+              [mapEnchant]="mapEnchant"
+              [itemList]="leftWeaponList"
+              [refineList]="refineList"
+              [cardList]="weaponCardList"
+              [optionList]="optionList"
+              [(itemId)]="model2.leftWeapon"
+              [(itemRefine)]="model2.leftWeaponRefine"
+              [(card1Id)]="model2.leftWeaponCard1"
+              [(card2Id)]="model2.leftWeaponCard2"
+              [(card3Id)]="model2.leftWeaponCard3"
+              [(card4Id)]="model2.leftWeaponCard4"
+              [(itemGrade)]="model2.leftWeaponGrade"
+              [(enchant1Id)]="model2.leftWeaponEnchant0"
+              [(enchant2Id)]="model2.leftWeaponEnchant1"
+              [(enchant3Id)]="model2.leftWeaponEnchant2"
+              [(enchant4Id)]="model2.leftWeaponEnchant3"
+              [(option1Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_1]"
+              [(option2Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_2]"
+              [(option3Value)]="model2.rawOptionTxts[itemOptionNumber.W_Right_3]"
+              (selectItemChange)="onCompareItemChange()"
+              (optionChange)="onCompareItemChange()"
+              (gradeChange)="onCompareItemChange()"
+            ></app-equipment>
+          </div>
+        </div>
         <div class="grid grid-nogutter item_label_compare equip-slot-compare" *ngIf="showCompareItemMap.shield">
-          <div class="col-12" [hidden]="!model.weapon || hiddenMap.shield || !!model.leftWeapon">
+          <div class="col-12" [hidden]="!model.weapon || !compareIsAllowShield || !!model2.leftWeapon">
             <app-equipment
               [itemType]="'shield'"
               [placeholder]="'Shield'"
