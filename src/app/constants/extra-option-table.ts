@@ -118,7 +118,9 @@ export const ExtraOptionTable = {
   Ring_Of_Spell_Explosion: 2,
   Body_Power_Up_Ring: 2,
 
+  Bloody_Knight_Shield: 2,
   Bloody_Knight_Shield_: 2,
+  Bloody_Knight_Shield__: 3,
   Gambler_Seal: 2,
   Droop_Gunslinger: 2,
   Cat_Lace_Hairband_K: 2,

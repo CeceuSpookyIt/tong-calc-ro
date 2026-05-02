@@ -206,6 +206,14 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
 
   updates: { v: string; date: string; logs: string[]; }[] = [
     {
+      v: 'V0.13',
+      date: '01-05-2026',
+      logs: [
+        'Adicionado opções aleatórias (Random Options) nos escudos Sanguinário, Sanguinário Maldito e Sanguinário Purificado',
+        'Diadema Radiante e Diadema Profano corrigidos para aparecer no slot de Meio (estavam no Topo)',
+      ],
+    },
+    {
       v: 'V0.12',
       date: '30-04-2026',
       logs: [

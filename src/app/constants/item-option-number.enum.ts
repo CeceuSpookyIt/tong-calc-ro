@@ -12,7 +12,7 @@ export enum ItemOptionNumber {
 
   Shield_1 = 6,
   Shield_2 = 7,
-  // Shield_3,
+  Shield_3 = 30,
 
   H_Upper_1 = 8,
   H_Upper_2 = 9,
